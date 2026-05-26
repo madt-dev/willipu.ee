@@ -152,6 +152,7 @@ export const content = {
             { icon: 'kitchen', label: 'Köök' },
             { icon: 'washer', label: 'Pesumasin' },
             { icon: 'trash', label: 'Prügi äraandmine' },
+            { icon: 'pets', label: 'Lemmikloomad lubatud' },
           ],
           rows: [
             { item: 'Haagissuvila ilma elektrita', price: '20 € / öö', note: 'sisaldab 2 inimest' },
@@ -335,6 +336,7 @@ export const content = {
             { icon: 'kitchen', label: 'Kitchen' },
             { icon: 'washer', label: 'Washer' },
             { icon: 'trash', label: 'Waste disposal' },
+            { icon: 'pets', label: 'Pets welcome' },
           ],
           rows: [
             { item: 'Caravan without power', price: '€20 / night', note: 'includes 2 persons' },
