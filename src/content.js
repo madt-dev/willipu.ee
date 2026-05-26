@@ -83,6 +83,13 @@ export const content = {
         {
           label: 'Suur kämpingumaja',
           icon: '🏡',
+          amenities: [
+            { icon: 'wc', label: 'WC' },
+            { icon: 'shower', label: 'Dušš' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'kitchen', label: 'Köök' },
+            { icon: 'grill', label: 'Grill' },
+          ],
           rows: [
             { item: '5 inimesele', price: '110 € / öö' },
             { item: '4 inimesele', price: '100 € / öö' },
@@ -92,6 +99,11 @@ export const content = {
         {
           label: 'Väike kämpingumaja',
           icon: '🛖',
+          amenities: [
+            { icon: 'wc', label: 'WC' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'grill', label: 'Grill' },
+          ],
           rows: [
             { item: '2 inimesele', price: '55 € / öö' },
             { item: '1 inimesele', price: '35 € / öö' },
@@ -100,6 +112,13 @@ export const content = {
         {
           label: 'Kahene tuba',
           icon: '🛏',
+          amenities: [
+            { icon: 'wc', label: 'WC' },
+            { icon: 'shower', label: 'Dušš' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'kitchen', label: 'Ühine köök' },
+            { icon: 'grill', label: 'Grill' },
+          ],
           rows: [
             { item: '2 inimesele', price: '55 € / öö' },
             { item: '1 inimesele', price: '35 € / öö' },
@@ -108,6 +127,13 @@ export const content = {
         {
           label: 'Kolmene tuba',
           icon: '🛏',
+          amenities: [
+            { icon: 'wc', label: 'WC' },
+            { icon: 'shower', label: 'Dušš' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'kitchen', label: 'Ühine köök' },
+            { icon: 'grill', label: 'Grill' },
+          ],
           rows: [
             { item: '3 inimesele', price: '80 € / öö' },
             { item: '2 inimesele', price: '60 € / öö' },
@@ -229,6 +255,13 @@ export const content = {
         {
           label: 'Large Camping Cottage',
           icon: '🏡',
+          amenities: [
+            { icon: 'wc', label: 'WC' },
+            { icon: 'shower', label: 'Shower' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'kitchen', label: 'Kitchen' },
+            { icon: 'grill', label: 'BBQ' },
+          ],
           rows: [
             { item: '5 persons', price: '€110 / night' },
             { item: '4 persons', price: '€100 / night' },
@@ -238,6 +271,11 @@ export const content = {
         {
           label: 'Small Camping Cottage',
           icon: '🛖',
+          amenities: [
+            { icon: 'wc', label: 'WC' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'grill', label: 'BBQ' },
+          ],
           rows: [
             { item: '2 persons', price: '€55 / night' },
             { item: '1 person', price: '€35 / night' },
@@ -246,6 +284,13 @@ export const content = {
         {
           label: 'Double Room',
           icon: '🛏',
+          amenities: [
+            { icon: 'wc', label: 'WC' },
+            { icon: 'shower', label: 'Shower' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'kitchen', label: 'Shared kitchen' },
+            { icon: 'grill', label: 'BBQ' },
+          ],
           rows: [
             { item: '2 persons', price: '€55 / night' },
             { item: '1 person', price: '€35 / night' },
@@ -254,6 +299,13 @@ export const content = {
         {
           label: 'Triple Room',
           icon: '🛏',
+          amenities: [
+            { icon: 'wc', label: 'WC' },
+            { icon: 'shower', label: 'Shower' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'kitchen', label: 'Shared kitchen' },
+            { icon: 'grill', label: 'BBQ' },
+          ],
           rows: [
             { item: '3 persons', price: '€80 / night' },
             { item: '2 persons', price: '€60 / night' },

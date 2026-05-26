@@ -44,6 +44,36 @@ const paths = {
       <circle cx="12" cy="19.5" r=".9" fill="currentColor" stroke="none" />
     </g>
   ),
+  wc: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M11 4H7a1 1 0 00-1 1v4c0 2.5 1.5 4.5 3 5.5V18h4v-3.5c1.5-1 3-3 3-5.5V5a1 1 0 00-1-1h-4z" />
+      <path d="M11 4V2M13 4V2" />
+      <path d="M10 18v2h4v-2" />
+    </g>
+  ),
+  shower: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20l5-5" />
+      <path d="M9 15a5 5 0 005-5" />
+      <circle cx="16" cy="8" r="2" />
+      <path d="M7 18l-1 2M10 19l-1 2M13 20l-1 2" />
+    </g>
+  ),
+  kitchen: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 3v4M8 3v4M7 7c0 2-1 3-1 5h4c0-2-1-3-1-5" />
+      <path d="M15 3c0 3 2 5 2 7h-4c0-2 2-4 2-7z" />
+      <path d="M5 15h14v3a2 2 0 01-2 2H7a2 2 0 01-2-2v-3z" />
+    </g>
+  ),
+  grill: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 3c.5 1 .5 2 0 3M12 3c.5 1 .5 2 0 3M16 3c.5 1 .5 2 0 3" />
+      <path d="M3 9h18" />
+      <path d="M5 9l2 9h10l2-9" />
+      <path d="M12 18v3M9 21h6" />
+    </g>
+  ),
 }
 
 export function Icon({ name }) {

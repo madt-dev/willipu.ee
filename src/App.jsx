@@ -225,6 +225,16 @@ function Pricing({ t }) {
                 <span className="pricing-group-icon">{group.icon}</span>
                 <h3 className="pricing-group-title">{group.label}</h3>
               </div>
+              {group.amenities && (
+                <ul className="amenity-badges">
+                  {group.amenities.map(a => (
+                    <li key={a.icon} title={a.label}>
+                      <Icon name={a.icon} />
+                      <span>{a.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
               <ul className="price-list">
                 {group.rows.map(row => (
                   <li key={row.item}>
