@@ -124,7 +124,7 @@ function Hero({ t }) {
         <h1 className="hero-title">{t.title}</h1>
         <p className="hero-sub">{t.subtitle}</p>
         <div className="hero-cta">
-          <a href="#contact" className="btn btn-primary">
+          <a href="https://willipu.pargihaldur.ee" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             {t.cta}
           </a>
           <a href="#pricing" className="btn btn-ghost">
