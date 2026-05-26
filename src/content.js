@@ -76,7 +76,7 @@ export const content = {
     },
     pricing: {
       kicker: 'Hinnakiri',
-      title: 'Selged hinnad, ilma üllatusteta',
+      title: 'Soodsad hinnad, kõigi mugavustega',
       note:
         'Broneeringu kinnitamiseks tasutakse 50% ettemaksuna. Tühistamisel alla 14 päeva ettemaks ei tagastata.',
       groups: [
@@ -222,7 +222,7 @@ export const content = {
     },
     pricing: {
       kicker: 'Pricing',
-      title: 'Clear prices, no surprises',
+      title: 'Affordable prices, all comforts included',
       note:
         'A 50% deposit confirms your booking. Cancellations within 14 days of arrival forfeit the deposit.',
       groups: [
