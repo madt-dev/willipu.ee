@@ -151,6 +151,7 @@ export const content = {
             { icon: 'chemical', label: 'Keemiline WC' },
             { icon: 'kitchen', label: 'Köök' },
             { icon: 'washer', label: 'Pesumasin' },
+            { icon: 'trash', label: 'Prügi äraandmine' },
           ],
           rows: [
             { item: 'Haagissuvila ilma elektrita', price: '20 € / öö', note: 'sisaldab 2 inimest' },
@@ -333,6 +334,7 @@ export const content = {
             { icon: 'chemical', label: 'Chemical WC' },
             { icon: 'kitchen', label: 'Kitchen' },
             { icon: 'washer', label: 'Washer' },
+            { icon: 'trash', label: 'Waste disposal' },
           ],
           rows: [
             { item: 'Caravan without power', price: '€20 / night', note: 'includes 2 persons' },
