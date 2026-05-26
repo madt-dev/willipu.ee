@@ -159,6 +159,7 @@ export const content = {
             { item: 'Haagissuvila ilma elektrita', price: '20 € / öö', note: 'sisaldab 2 inimest' },
             { item: 'Haagissuvila elektriga', price: '25 € / öö', note: 'sisaldab 2 inimest' },
             { item: 'Telkimine', price: '7 € / inimene' },
+            { item: 'Lisa inimene', price: '3 € / inimene' },
           ],
         },
         {
@@ -344,6 +345,7 @@ export const content = {
             { item: 'Caravan without power', price: '€20 / night', note: 'includes 2 persons' },
             { item: 'Caravan with power', price: '€25 / night', note: 'includes 2 persons' },
             { item: 'Tent camping', price: '€7 / person' },
+            { item: 'Extra person', price: '€3 / person' },
           ],
         },
         {
