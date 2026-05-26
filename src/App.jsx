@@ -218,18 +218,28 @@ function Pricing({ t }) {
           <span className="eyebrow">{t.kicker}</span>
           <h2>{t.title}</h2>
         </header>
-        <div className="pricing-card">
-          <ul className="price-list">
-            {t.rows.map(row => (
-              <li key={row.item}>
-                <span className="price-item">{row.item}</span>
-                <span className="price-dots" aria-hidden />
-                <span className="price-value">{row.price}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="price-note">{t.note}</p>
+        <div className="pricing-grid">
+          {t.groups.map(group => (
+            <div key={group.label} className="pricing-group">
+              <div className="pricing-group-header">
+                <span className="pricing-group-icon">{group.icon}</span>
+                <h3 className="pricing-group-title">{group.label}</h3>
+              </div>
+              <ul className="price-list">
+                {group.rows.map(row => (
+                  <li key={row.item}>
+                    <div className="price-item-wrap">
+                      <span className="price-item">{row.item}</span>
+                      {row.note && <span className="price-note-inline">{row.note}</span>}
+                    </div>
+                    <span className="price-value">{row.price}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
+        <p className="price-note-global">{t.note}</p>
       </div>
     </section>
   )

@@ -79,21 +79,56 @@ export const content = {
       title: 'Selged hinnad, ilma üllatusteta',
       note:
         'Broneeringu kinnitamiseks tasutakse 50% ettemaksuna. Tühistamisel alla 14 päeva ettemaks ei tagastata.',
-      rows: [
-        { item: 'Suur kämpa – 5 inimesele', price: '110 € / öö' },
-        { item: 'Suur kämpa – 4 inimesele', price: '100 € / öö' },
-        { item: 'Suur kämpa – 2–3 inimesele', price: '85 € / öö' },
-        { item: 'Väike kämpa – 2 inimesele', price: '55 € / öö' },
-        { item: 'Väike kämpa – 1 inimesele', price: '35 € / öö' },
-        { item: 'Kahene tuba – 2 inimesele', price: '55 € / öö' },
-        { item: 'Kahene tuba – 1 inimesele', price: '35 € / öö' },
-        { item: 'Kolmene tuba – 3 inimesele', price: '80 € / öö' },
-        { item: 'Kolmene tuba – 2 inimesele', price: '60 € / öö' },
-        { item: 'Telkimine', price: '7 € / inimene' },
-        { item: 'Haagissuvila ilma elektrita', price: '20 € / öö (sisaldab 2 inimest)' },
-        { item: 'Haagissuvila elektriga', price: '25 € / öö (sisaldab 2 inimest)' },
-
-        { item: 'Talvine järvetransport', price: 'küsi hinda' },
+      groups: [
+        {
+          label: 'Suur kämpa',
+          icon: '🏡',
+          rows: [
+            { item: '5 inimesele', price: '110 € / öö' },
+            { item: '4 inimesele', price: '100 € / öö' },
+            { item: '2–3 inimesele', price: '85 € / öö' },
+          ],
+        },
+        {
+          label: 'Väike kämpa',
+          icon: '🛖',
+          rows: [
+            { item: '2 inimesele', price: '55 € / öö' },
+            { item: '1 inimesele', price: '35 € / öö' },
+          ],
+        },
+        {
+          label: 'Kahene tuba',
+          icon: '🛏',
+          rows: [
+            { item: '2 inimesele', price: '55 € / öö' },
+            { item: '1 inimesele', price: '35 € / öö' },
+          ],
+        },
+        {
+          label: 'Kolmene tuba',
+          icon: '🛏',
+          rows: [
+            { item: '3 inimesele', price: '80 € / öö' },
+            { item: '2 inimesele', price: '60 € / öö' },
+          ],
+        },
+        {
+          label: 'Karavanipark',
+          icon: '🚐',
+          rows: [
+            { item: 'Haagissuvila ilma elektrita', price: '20 € / öö', note: 'sisaldab 2 inimest' },
+            { item: 'Haagissuvila elektriga', price: '25 € / öö', note: 'sisaldab 2 inimest' },
+            { item: 'Telkimine', price: '7 € / inimene' },
+          ],
+        },
+        {
+          label: 'Muud',
+          icon: '❄️',
+          rows: [
+            { item: 'Talvine järvetransport', price: 'küsi hinda' },
+          ],
+        },
       ],
     },
     contact: {
@@ -190,21 +225,56 @@ export const content = {
       title: 'Clear prices, no surprises',
       note:
         'A 50% deposit confirms your booking. Cancellations within 14 days of arrival forfeit the deposit.',
-      rows: [
-        { item: 'Large cottage – 5 persons', price: '€110 / night' },
-        { item: 'Large cottage – 4 persons', price: '€100 / night' },
-        { item: 'Large cottage – 2–3 persons', price: '€85 / night' },
-        { item: 'Small cottage – 2 persons', price: '€55 / night' },
-        { item: 'Small cottage – 1 person', price: '€35 / night' },
-        { item: 'Double room – 2 persons', price: '€55 / night' },
-        { item: 'Double room – 1 person', price: '€35 / night' },
-        { item: 'Triple room – 3 persons', price: '€80 / night' },
-        { item: 'Triple room – 2 persons', price: '€60 / night' },
-        { item: 'Tent camping', price: '€7 / person' },
-        { item: 'Caravan without power', price: '€20 / night (includes 2 persons)' },
-        { item: 'Caravan with power', price: '€25 / night (includes 2 persons)' },
-
-        { item: 'Winter lake transport', price: 'ask for price' },
+      groups: [
+        {
+          label: 'Large Cottage',
+          icon: '🏡',
+          rows: [
+            { item: '5 persons', price: '€110 / night' },
+            { item: '4 persons', price: '€100 / night' },
+            { item: '2–3 persons', price: '€85 / night' },
+          ],
+        },
+        {
+          label: 'Small Cottage',
+          icon: '🛖',
+          rows: [
+            { item: '2 persons', price: '€55 / night' },
+            { item: '1 person', price: '€35 / night' },
+          ],
+        },
+        {
+          label: 'Double Room',
+          icon: '🛏',
+          rows: [
+            { item: '2 persons', price: '€55 / night' },
+            { item: '1 person', price: '€35 / night' },
+          ],
+        },
+        {
+          label: 'Triple Room',
+          icon: '🛏',
+          rows: [
+            { item: '3 persons', price: '€80 / night' },
+            { item: '2 persons', price: '€60 / night' },
+          ],
+        },
+        {
+          label: 'Caravan Park',
+          icon: '🚐',
+          rows: [
+            { item: 'Caravan without power', price: '€20 / night', note: 'includes 2 persons' },
+            { item: 'Caravan with power', price: '€25 / night', note: 'includes 2 persons' },
+            { item: 'Tent camping', price: '€7 / person' },
+          ],
+        },
+        {
+          label: 'Other',
+          icon: '❄️',
+          rows: [
+            { item: 'Winter lake transport', price: 'ask for price' },
+          ],
+        },
       ],
     },
     contact: {

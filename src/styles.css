@@ -406,46 +406,88 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 .amenity p { margin: 0; font-size: 0.95rem; }
 
 /* Pricing */
-.pricing-card {
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+.pricing-group {
   background: #fff;
   border-radius: var(--radius);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
   border: 1px solid var(--line);
-  max-width: 760px;
-  margin: 0 auto;
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.pricing-group:hover {
+  box-shadow: 0 6px 24px rgba(20,32,27,0.10);
+  transform: translateY(-2px);
+}
+.pricing-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  background: var(--dark);
+  border-bottom: 1px solid var(--line);
+}
+.pricing-group-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.pricing-group-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 .price-list {
   list-style: none;
-  margin: 0 0 1.5rem;
-  padding: 0;
+  margin: 0;
+  padding: 0.25rem 0;
 }
 .price-list li {
   display: flex;
-  align-items: baseline;
-  padding: 0.85rem 0;
-  border-bottom: 1px dashed var(--line);
-  font-size: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
 }
 .price-list li:last-child { border-bottom: 0; }
-.price-item { flex-shrink: 0; }
-.price-dots {
+.price-item-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
   flex: 1;
-  margin: 0 0.5rem;
-  border-bottom: 1px dotted var(--line);
-  transform: translateY(-3px);
+}
+.price-item {
+  color: var(--ink);
+  font-weight: 500;
+}
+.price-note-inline {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
 }
 .price-value {
   flex-shrink: 0;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink);
   font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
-.price-note {
+.price-note-global {
   font-size: 0.85rem;
   color: var(--ink-soft);
-  margin: 0;
-  padding-top: 0.5rem;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+  padding: 1.25rem 1rem;
   border-top: 1px solid var(--line);
 }
 
