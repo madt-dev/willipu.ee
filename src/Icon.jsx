@@ -98,6 +98,14 @@ const paths = {
       <path d="M8 17h2M12 15h2" />
     </g>
   ),
+  checkin: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="3" />
+      <path d="M10 11l-5 9h14l-5-9" />
+      <path d="M15 3h4v4" />
+      <path d="M19 3l-4 4" />
+    </g>
+  ),
   pets: (
     <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
       <path d="M10 5.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM17 5.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM7 10.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM20 10.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
