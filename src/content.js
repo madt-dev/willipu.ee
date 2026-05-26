@@ -10,7 +10,7 @@ export const content = {
     },
     hero: {
       eyebrow: 'Peipsi järve kaldal',
-      title: 'Willipu Külalistemaja',
+      title: 'Willipu külalisemaja ja karavanipark',
       subtitle:
         'Vaikne paik vee ääres — kohtumiseks, puhkuseks ja peoks. Tartumaal, Pusi külas.',
       cta: 'Broneeri ööbimine',
@@ -116,7 +116,7 @@ export const content = {
     },
     hero: {
       eyebrow: 'On the shore of Lake Peipus',
-      title: 'Willipu Guesthouse',
+      title: 'Willipu Guesthouse and Caravan Park',
       subtitle:
         'A quiet place by the water — for gatherings, getaways and good food. In Pusi village, southern Estonia.',
       cta: 'Book a stay',
