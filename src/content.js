@@ -240,5 +240,4 @@ export const gallery = [
   },
 ]
 
-export const heroImage =
-  'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=2000&q=80'
+export const heroImage = '/52c0d4c0-7aea-429a-b0f0-0f4a1ca2155d.jpg'
