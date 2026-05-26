@@ -81,7 +81,7 @@ export const content = {
         'Broneeringu kinnitamiseks tasutakse 50% ettemaksuna. Tühistamisel alla 14 päeva ettemaks ei tagastata.',
       groups: [
         {
-          label: 'Suur kämpa',
+          label: 'Suur kämpingumaja',
           icon: '🏡',
           rows: [
             { item: '5 inimesele', price: '110 € / öö' },
@@ -90,7 +90,7 @@ export const content = {
           ],
         },
         {
-          label: 'Väike kämpa',
+          label: 'Väike kämpingumaja',
           icon: '🛖',
           rows: [
             { item: '2 inimesele', price: '55 € / öö' },
@@ -227,7 +227,7 @@ export const content = {
         'A 50% deposit confirms your booking. Cancellations within 14 days of arrival forfeit the deposit.',
       groups: [
         {
-          label: 'Large Cottage',
+          label: 'Large Camping Cottage',
           icon: '🏡',
           rows: [
             { item: '5 persons', price: '€110 / night' },
@@ -236,7 +236,7 @@ export const content = {
           ],
         },
         {
-          label: 'Small Cottage',
+          label: 'Small Camping Cottage',
           icon: '🛖',
           rows: [
             { item: '2 persons', price: '€55 / night' },
