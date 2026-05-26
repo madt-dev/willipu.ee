@@ -445,12 +445,12 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   text-transform: uppercase;
 }
 .amenity-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.4rem 0.25rem;
   list-style: none;
   margin: 0;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--line);
   background: rgba(20,32,27,0.08);
 }
@@ -459,7 +459,6 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
-  min-width: 3rem;
 }
 .amenity-badges li svg {
   width: 20px;
@@ -467,7 +466,7 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   color: var(--ink-soft);
 }
 .amenity-badges li span {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: var(--ink-soft);
   text-align: center;
   line-height: 1.2;
