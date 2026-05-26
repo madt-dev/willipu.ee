@@ -143,7 +143,7 @@ export const content = {
           label: 'Karavanipark',
           icon: '🚐',
           amenities: [
-            { icon: 'checkin', label: 'Check-in 24/7' },
+            { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Iseteeninduslik check-in' },
             { icon: 'electric', label: 'Elekter' },
             { icon: 'shower', label: 'Dušš' },
             { icon: 'wifi', label: 'WiFi' },
@@ -328,7 +328,7 @@ export const content = {
           label: 'Caravan Park',
           icon: '🚐',
           amenities: [
-            { icon: 'checkin', label: 'Check-in 24/7' },
+            { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Self-service check-in' },
             { icon: 'electric', label: 'Electric' },
             { icon: 'shower', label: 'Shower' },
             { icon: 'wifi', label: 'WiFi' },
