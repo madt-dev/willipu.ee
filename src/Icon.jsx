@@ -86,10 +86,10 @@ const paths = {
   ),
   dump: (
     <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M8 3h8l1 4H7L8 3z" />
-      <path d="M6 7v11a2 2 0 002 2h8a2 2 0 002-2V7" />
-      <path d="M10 11v6M14 11v6" />
-      <path d="M4 7h16" />
+      <path d="M12 3v10" />
+      <path d="M8 9l4 4 4-4" />
+      <path d="M5 17h14" />
+      <path d="M7 17v2a2 2 0 002 2h6a2 2 0 002-2v-2" />
     </g>
   ),
   chemical: (
