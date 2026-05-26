@@ -92,7 +92,7 @@ export const content = {
         { item: 'Telkimine', price: '7 € / inimene' },
         { item: 'Haagissuvila ilma elektrita', price: '20 € / öö (sisaldab 2 inimest)' },
         { item: 'Haagissuvila elektriga', price: '25 € / öö (sisaldab 2 inimest)' },
-        { item: 'Jalgratta rent', price: '2 € / h · 13 € / päev' },
+
         { item: 'Talvine järvetransport', price: 'küsi hinda' },
       ],
     },
@@ -203,7 +203,7 @@ export const content = {
         { item: 'Tent camping', price: '€7 / person' },
         { item: 'Caravan without power', price: '€20 / night (includes 2 persons)' },
         { item: 'Caravan with power', price: '€25 / night (includes 2 persons)' },
-        { item: 'Bicycle rental', price: '€2 / h · €13 / day' },
+
         { item: 'Winter lake transport', price: 'ask for price' },
       ],
     },
