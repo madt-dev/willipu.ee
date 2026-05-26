@@ -142,6 +142,16 @@ export const content = {
         {
           label: 'Karavanipark',
           icon: '🚐',
+          amenities: [
+            { icon: 'electric', label: 'Elekter' },
+            { icon: 'shower', label: 'Dušš' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'water', label: 'Puhas vesi' },
+            { icon: 'dump', label: 'Purgimine' },
+            { icon: 'chemical', label: 'Keemiline WC' },
+            { icon: 'kitchen', label: 'Köök' },
+            { icon: 'washer', label: 'Pesumasin' },
+          ],
           rows: [
             { item: 'Haagissuvila ilma elektrita', price: '20 € / öö', note: 'sisaldab 2 inimest' },
             { item: 'Haagissuvila elektriga', price: '25 € / öö', note: 'sisaldab 2 inimest' },
@@ -314,6 +324,16 @@ export const content = {
         {
           label: 'Caravan Park',
           icon: '🚐',
+          amenities: [
+            { icon: 'electric', label: 'Electric' },
+            { icon: 'shower', label: 'Shower' },
+            { icon: 'wifi', label: 'WiFi' },
+            { icon: 'water', label: 'Fresh water' },
+            { icon: 'dump', label: 'Waste dump' },
+            { icon: 'chemical', label: 'Chemical WC' },
+            { icon: 'kitchen', label: 'Kitchen' },
+            { icon: 'washer', label: 'Washer' },
+          ],
           rows: [
             { item: 'Caravan without power', price: '€20 / night', note: 'includes 2 persons' },
             { item: 'Caravan with power', price: '€25 / night', note: 'includes 2 persons' },

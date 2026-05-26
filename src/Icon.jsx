@@ -74,6 +74,37 @@ const paths = {
       <path d="M12 18v3M9 21h6" />
     </g>
   ),
+  electric: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M13 2L4.5 13.5H12L11 22l8.5-11.5H12.5L13 2z" />
+    </g>
+  ),
+  water: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C12 2 5 10 5 15a7 7 0 0014 0c0-5-7-13-7-13z" />
+    </g>
+  ),
+  dump: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 3h8l1 4H7L8 3z" />
+      <path d="M6 7v11a2 2 0 002 2h8a2 2 0 002-2V7" />
+      <path d="M10 11v6M14 11v6" />
+      <path d="M4 7h16" />
+    </g>
+  ),
+  chemical: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 3h6M10 3v4l-4 6a4 4 0 000 8h12a4 4 0 000-8l-4-6V3" />
+      <path d="M8 17h2M12 15h2" />
+    </g>
+  ),
+  washer: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <circle cx="12" cy="13" r="4" />
+      <path d="M8 7h.01M11 7h2" />
+    </g>
+  ),
 }
 
 export function Icon({ name }) {
