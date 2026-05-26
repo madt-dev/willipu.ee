@@ -18,7 +18,7 @@ export const content = {
     },
     about: {
       kicker: 'Tere tulemast',
-      title: 'Kümme aastat Peipsi rannas',
+      title: 'Üle 20 aasta kogemusi',
       body:
         'Willipu asub Tartumaal, Alatskivi vallas, Pusi külas, otse Peipsi järve kaldal. Lähim linn Kallaste jääb 2 km kaugusele, Tartu 50 km ja Tallinn 200 km kaugusele. Pakume majutust nii peamajas kui ka suvemajakestes, ruumi pidudeks ja koolitusteks ning kohta haagissuvilatele.',
       stats: [
@@ -124,7 +124,7 @@ export const content = {
     },
     about: {
       kicker: 'Welcome',
-      title: 'A decade by Lake Peipus',
+      title: 'Over 20 years of experience',
       body:
         'Willipu sits in Tartu county, Alatskivi commune, Pusi village — right on the shore of Lake Peipus. The nearest town Kallaste is 2 km away, Tartu is 50 km, Tallinn 200 km. We offer rooms in the main house, summer cottages, a banquet hall for events and a full caravan park.',
       stats: [
