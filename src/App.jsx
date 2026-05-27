@@ -127,11 +127,11 @@ function Hero({ t }) {
           <a href="https://willipu.pargihaldur.ee" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             {t.cta}
           </a>
+          <p className="hero-cta-note">{t.ctaNote}</p>
           <a href="#pricing" className="btn btn-ghost">
             {t.ctaAlt} →
           </a>
         </div>
-        <p className="hero-cta-note">{t.ctaNote}</p>
       </div>
       <a href="#about" className="hero-scroll" aria-label="Scroll to content">
         <span />
