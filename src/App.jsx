@@ -272,8 +272,44 @@ function Gallery() {
   )
 }
 
+const NAV_APPS = [
+  { name: 'Google Maps', url: 'https://www.google.com/maps/search/?api=1&query=58.64483549867105,27.166508285762042' },
+  { name: 'Waze',        url: 'https://waze.com/ul?ll=58.64483549867105,27.166508285762042&navigate=yes' },
+  { name: 'Apple Maps',  url: 'https://maps.apple.com/?q=58.64483549867105,27.166508285762042' },
+  { name: 'HERE Maps',   url: 'https://share.here.com/l/58.64483549867105,27.166508285762042' },
+]
+
+function NavPicker({ address, onClose }) {
+  const ref = useRef(null)
+  useEffect(() => {
+    function onKey(e) { if (e.key === 'Escape') onClose() }
+    function onClick(e) { if (ref.current && !ref.current.contains(e.target)) onClose() }
+    document.addEventListener('keydown', onKey)
+    document.addEventListener('mousedown', onClick)
+    return () => { document.removeEventListener('keydown', onKey); document.removeEventListener('mousedown', onClick) }
+  }, [onClose])
+  return (
+    <div className="nav-picker-backdrop" aria-modal role="dialog">
+      <div className="nav-picker" ref={ref}>
+        <p className="nav-picker-address">{address}</p>
+        <ul className="nav-picker-list">
+          {NAV_APPS.map(app => (
+            <li key={app.name}>
+              <a href={app.url} target="_blank" rel="noopener noreferrer" onClick={onClose}>
+                {app.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <button className="nav-picker-close" onClick={onClose}>✕</button>
+      </div>
+    </div>
+  )
+}
+
 function Contact({ t }) {
   const ref = useRef(null)
+  const [navOpen, setNavOpen] = useState(false)
 
   useEffect(() => {
     const el = ref.current
@@ -303,10 +339,10 @@ function Contact({ t }) {
               <span className="contact-item-label">Email</span>
               <span className="contact-item-value">{t.email}</span>
             </a>
-            <a href={t.mapUrl} target="_blank" rel="noopener noreferrer" className="contact-item">
+            <button className="contact-item" onClick={() => setNavOpen(true)}>
               <span className="contact-item-label">Asukoht ↗</span>
               <span className="contact-item-value">{t.address}</span>
-            </a>
+            </button>
             <div className="contact-item">
               <span className="contact-item-label">Lahtiolekuajad</span>
               <span className="contact-item-value">{t.hours}</span>
@@ -323,6 +359,7 @@ function Contact({ t }) {
           )}
         </div>
       </div>
+      {navOpen && <NavPicker address={t.address} onClose={() => setNavOpen(false)} />}
     </section>
   )
 }

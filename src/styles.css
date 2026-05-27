@@ -614,6 +614,83 @@ a.contact-item:hover { background: rgba(255,255,255,0.09); }
   display: inline-flex;
 }
 .contact-cta:hover { background: var(--gold); }
+
+button.contact-item {
+  appearance: none;
+  border: none;
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+}
+button.contact-item:hover { background: rgba(255,255,255,0.09); }
+
+/* Nav picker modal */
+.nav-picker-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10,18,14,0.7);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.nav-picker {
+  position: relative;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  width: min(340px, 90vw);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  animation: slideUp 0.25s var(--ease);
+}
+@keyframes slideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.nav-picker-address {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.nav-picker-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.nav-picker-list a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-picker-list a:hover { background: var(--dark); color: #fff; }
+.nav-picker-close {
+  position: absolute;
+  top: 0.9rem; right: 0.9rem;
+  appearance: none;
+  border: none;
+  background: var(--bg-soft);
+  color: var(--ink-soft);
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: grid;
+  place-items: center;
+  transition: background 0.15s;
+}
+.nav-picker-close:hover { background: var(--line); }
+
 .contact-legal {
   margin: 1.5rem 0 0;
   font-size: 0.78rem;
