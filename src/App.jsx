@@ -306,6 +306,13 @@ function Contact({ t }) {
           <a className="btn btn-primary" href={`mailto:${t.email}`}>
             {t.cta}
           </a>
+          {t.legal && (
+            <dl className="legal-details">
+              <div><dt>Reg nr.</dt><dd>{t.legal.reg}</dd></div>
+              <div><dt>KMKR (VAT)</dt><dd>{t.legal.vat}</dd></div>
+              <div><dt>Juriidiline aadress</dt><dd>{t.legal.legalAddress}</dd></div>
+            </dl>
+          )}
         </div>
       </div>
     </section>

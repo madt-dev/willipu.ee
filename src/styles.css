@@ -582,6 +582,26 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 .contact-details a:hover { border-color: var(--gold); }
 .contact-grid .btn-primary { background: #fff; color: var(--dark); }
 .contact-grid .btn-primary:hover { background: var(--gold); }
+.legal-details {
+  margin: 1.5rem 0 0;
+  padding: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+.legal-details dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 0.1rem;
+}
+.legal-details dd {
+  margin: 0;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+}
 
 /* Footer */
 .site-footer {

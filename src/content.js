@@ -181,6 +181,11 @@ export const content = {
       phone: '+372 56 955 758',
       email: 'willipu.willipu@gmail.com',
       cta: 'Saada e-kiri',
+      legal: {
+        reg: '10972974',
+        vat: 'EE100878462',
+        legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
+      },
     },
     footer: {
       tagline: 'Peipsi järve ääres alates 2010.',
@@ -369,6 +374,11 @@ export const content = {
       phone: '+372 56 955 758',
       email: 'willipu.willipu@gmail.com',
       cta: 'Send an email',
+      legal: {
+        reg: '10972974',
+        vat: 'EE100878462',
+        legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
+      },
     },
     footer: {
       tagline: 'On Lake Peipus since 2010.',
