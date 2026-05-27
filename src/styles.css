@@ -343,49 +343,6 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   color: var(--ink-soft);
 }
 
-/* Stay cards */
-.stay-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-}
-.stay-card {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 2rem;
-  border: 1px solid var(--line);
-  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
-}
-.stay-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-}
-.stay-card-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.4rem;
-}
-.stay-card h3 { margin: 0; }
-.price-pill {
-  display: inline-block;
-  padding: 0.3rem 0.7rem;
-  border-radius: 999px;
-  background: var(--bg-soft);
-  font-size: 0.78rem;
-  font-weight: 600;
-  white-space: nowrap;
-  color: var(--accent);
-}
-.stay-tag {
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--accent-2);
-  margin: 0 0 0.85rem;
-}
-.stay-desc { margin: 0; }
 
 /* Amenities */
 .amenities-grid {
@@ -761,7 +718,7 @@ main {
   .nav-toggle { display: inline-flex; }
   .about-grid { grid-template-columns: 1fr; }
   .contact-items { grid-template-columns: repeat(2, 1fr); }
-  .stay-grid { grid-template-columns: repeat(2, 1fr); }
+
   .amenities-grid { grid-template-columns: 1fr 1fr; }
   .hero-inner { padding-top: 5rem; padding-bottom: 3rem; }
   .section-head { margin-bottom: 2rem; }
@@ -778,7 +735,7 @@ main {
 
 /* Small tablet / large phone */
 @media (max-width: 640px) {
-  .stay-grid { grid-template-columns: 1fr; }
+
   .pricing-grid { grid-template-columns: 1fr; }
   .amenity-badges { grid-template-columns: repeat(4, 1fr); }
   .hero-cta { flex-direction: column; align-items: flex-start; }

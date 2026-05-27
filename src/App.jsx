@@ -50,7 +50,7 @@ export default function App() {
       <main>
         <Hero t={t.hero} />
         <About t={t.about} />
-        <Stay t={t.stay} />
+
         <Amenities t={t.amenities} />
         <Pricing t={t.pricing} />
         <Gallery />
@@ -64,7 +64,7 @@ export default function App() {
 function Header({ t, lang, setLang, scrolled, navOpen, setNavOpen }) {
   const links = [
     ['about', t.nav.about],
-    ['stay', t.nav.stay],
+
     ['amenities', t.nav.amenities],
     ['pricing', t.nav.pricing],
     ['gallery', t.nav.gallery],
@@ -173,30 +173,7 @@ function About({ t }) {
   )
 }
 
-function Stay({ t }) {
-  return (
-    <section id="stay" className="section section-soft">
-      <div className="container">
-        <header className="section-head">
-          <span className="eyebrow">{t.kicker}</span>
-          <h2>{t.title}</h2>
-        </header>
-        <div className="stay-grid">
-          {t.cards.map(card => (
-            <article key={card.name} className="stay-card">
-              <div className="stay-card-head">
-                <h3>{card.name}</h3>
-                <span className="price-pill">{card.price}</span>
-              </div>
-              <p className="stay-tag">{card.tagline}</p>
-              <p className="stay-desc">{card.desc}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
+
 
 function Amenities({ t }) {
   return (
