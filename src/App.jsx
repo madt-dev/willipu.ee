@@ -1,4 +1,4 @@
-import { useEffect, useRef, useMemo, useState } from 'react'
+import { useEffect, useRef, useMemo, useState, forwardRef } from 'react'
 import { content, gallery, heroImage } from './content.js'
 import { Icon } from './Icon.jsx'
 
@@ -24,7 +24,18 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const footerRef = useRef(null)
   const t = useMemo(() => content[lang], [lang])
+
+  useEffect(() => {
+    const footer = footerRef.current
+    if (!footer) return
+    const update = () =>
+      document.documentElement.style.setProperty('--footer-h', footer.offsetHeight + 'px')
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
 
   return (
     <>
@@ -45,7 +56,7 @@ export default function App() {
         <Gallery />
         <Contact t={t.contact} />
       </main>
-      <Footer t={t.footer} />
+      <Footer t={t.footer} ref={footerRef} />
     </>
   )
 }
@@ -364,9 +375,9 @@ function Contact({ t }) {
   )
 }
 
-function Footer({ t }) {
+const Footer = forwardRef(function Footer({ t }, ref) {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" ref={ref}>
       <div className="container footer-row">
         <div>
           <strong>Willipu Külalistemaja</strong>
@@ -378,4 +389,4 @@ function Footer({ t }) {
       </div>
     </footer>
   )
-}
+})

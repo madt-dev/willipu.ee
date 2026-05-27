@@ -698,11 +698,15 @@ button.contact-item:hover { background: rgba(255,255,255,0.09); }
   line-height: 1.7;
 }
 
-/* Footer */
+/* Footer — peidetud sisu taha, ilmub lehe lõppu kerides */
 .site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  z-index: 0;
   background: var(--ink);
   color: rgba(255,255,255,0.7);
-  padding: 2.5rem 0;
+  padding: 2rem 0;
   font-size: 0.9rem;
 }
 .site-footer strong { color: #fff; font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem; }
@@ -713,6 +717,12 @@ button.contact-item:hover { background: rgba(255,255,255,0.09); }
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  padding-bottom: var(--footer-h, 100px);
 }
 
 /* ─── Responsive ─────────────────────────── */
