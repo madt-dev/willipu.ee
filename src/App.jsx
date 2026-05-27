@@ -131,6 +131,7 @@ function Hero({ t }) {
             {t.ctaAlt} →
           </a>
         </div>
+        <p className="hero-cta-note">{t.ctaNote}</p>
       </div>
       <a href="#about" className="hero-scroll" aria-label="Scroll to content">
         <span />

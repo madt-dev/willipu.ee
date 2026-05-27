@@ -15,6 +15,7 @@ export const content = {
         'Vaikne paik vee ääres — kohtumiseks, puhkuseks ja peoks. Tartumaal, Pusi külas.',
       cta: 'Broneeri ööbimine karavanipargis',
       ctaAlt: 'Vaata hindu',
+      ctaNote: 'Tubade ja kämpingute broneerimine hetkel võimalik vaid e-maili teel.',
     },
     about: {
       kicker: 'Tere tulemast',
@@ -200,6 +201,7 @@ export const content = {
         'A quiet place by the water — for gatherings, getaways and good food. In Pusi village, southern Estonia.',
       cta: 'Book a stay at the caravan park',
       ctaAlt: 'See pricing',
+      ctaNote: 'Room and cottage bookings currently available by email only.',
     },
     about: {
       kicker: 'Welcome',
