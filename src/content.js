@@ -67,7 +67,6 @@ export const content = {
       title: 'Tegevused vee ääres',
       items: [
         { icon: 'wave', title: 'Ujumine ja surf', body: 'Liivane rand, sobib ka surfaritele.' },
-        { icon: 'bike', title: 'Jalgrattalaen', body: '2 € tunnis või 13 € päev.' },
         { icon: 'ball', title: 'Võrkpall ja mängud', body: 'Õueplatsid ja vabad muruväljakud.' },
         { icon: 'fire', title: 'Lõke ja saun', body: 'Lõkkeplats ning saun seltskonnale.' },
         { icon: 'hall', title: 'Peosaal kuni 30', body: 'Konverentsid, peod, koolitused.' },
@@ -253,7 +252,6 @@ export const content = {
       title: 'Life by the lake',
       items: [
         { icon: 'wave', title: 'Swim and surf', body: 'Sandy beach, also great for windsurfers.' },
-        { icon: 'bike', title: 'Bike rental', body: '€2 per hour or €13 per day.' },
         { icon: 'ball', title: 'Volleyball and games', body: 'Outdoor courts and open lawns.' },
         { icon: 'fire', title: 'Bonfire and sauna', body: 'Fire pit and sauna for groups.' },
         { icon: 'hall', title: 'Banquet hall for 30', body: 'Conferences, parties, trainings.' },
