@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useRef, useMemo, useState } from 'react'
 import { content, gallery, heroImage } from './content.js'
 import { Icon } from './Icon.jsx'
 
@@ -273,45 +273,53 @@ function Gallery() {
 }
 
 function Contact({ t }) {
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { el.classList.add('in-view'); obs.disconnect() } },
+      { threshold: 0.12 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
   return (
     <section id="contact" className="section section-dark">
-      <div className="container contact-grid">
-        <div>
-          <span className="eyebrow light">{t.kicker}</span>
-          <h2>{t.title}</h2>
-        </div>
-        <div className="contact-details">
-          <dl>
-            <div>
-              <dt>Tel.</dt>
-              <dd>
-                <a href={`tel:${t.phone.replace(/\s/g, '')}`}>{t.phone}</a>
-              </dd>
+      <div className="container">
+        <div className="contact-wrap" ref={ref}>
+          <div className="contact-head">
+            <span className="eyebrow light">{t.kicker}</span>
+            <h2>{t.title}</h2>
+          </div>
+          <div className="contact-items">
+            <a href={`tel:${t.phone.replace(/\s/g, '')}`} className="contact-item">
+              <span className="contact-item-label">Tel</span>
+              <span className="contact-item-value">{t.phone}</span>
+            </a>
+            <a href={`mailto:${t.email}`} className="contact-item">
+              <span className="contact-item-label">Email</span>
+              <span className="contact-item-value">{t.email}</span>
+            </a>
+            <div className="contact-item">
+              <span className="contact-item-label">Asukoht</span>
+              <span className="contact-item-value">{t.address}</span>
             </div>
-            <div>
-              <dt>Email</dt>
-              <dd>
-                <a href={`mailto:${t.email}`}>{t.email}</a>
-              </dd>
+            <div className="contact-item">
+              <span className="contact-item-label">Lahtiolekuajad</span>
+              <span className="contact-item-value">{t.hours}</span>
             </div>
-            <div>
-              <dt>↳</dt>
-              <dd>{t.address}</dd>
-            </div>
-            <div>
-              <dt>◷</dt>
-              <dd>{t.hours}</dd>
-            </div>
-          </dl>
-          <a className="btn btn-primary" href={`mailto:${t.email}`}>
+          </div>
+          <a className="btn btn-primary contact-cta" href={`mailto:${t.email}`}>
             {t.cta}
           </a>
           {t.legal && (
-            <dl className="legal-details">
-              <div><dt>Reg nr.</dt><dd>{t.legal.reg}</dd></div>
-              <div><dt>KMKR (VAT)</dt><dd>{t.legal.vat}</dd></div>
-              <div><dt>Juriidiline aadress</dt><dd>{t.legal.legalAddress}</dd></div>
-            </dl>
+            <p className="contact-legal">
+              Reg nr. {t.legal.reg} &nbsp;·&nbsp; KMKR (VAT) {t.legal.vat}
+              <br />{t.legal.legalAddress}
+            </p>
           )}
         </div>
       </div>
