@@ -746,8 +746,29 @@ main {
 
 /* Mobile */
 @media (max-width: 480px) {
-  .amenities-grid { grid-template-columns: 1fr; }
+  .amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .amenity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+  }
+  .amenity-icon {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    border-radius: 10px;
+  }
+  .amenity-icon svg { width: 20px; height: 20px; }
+  .amenity h3 { font-size: 0.95rem; margin-bottom: 0.1rem; }
+  .amenity p { font-size: 0.85rem; }
   .amenity-badges { grid-template-columns: repeat(3, 1fr); }
+
   .stats { grid-template-columns: 1fr 1fr; }
   .hero { min-height: 88vh; }
   .hero-inner { padding-top: 4.5rem; padding-bottom: 2.5rem; }
