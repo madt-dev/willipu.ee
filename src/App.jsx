@@ -303,10 +303,10 @@ function Contact({ t }) {
               <span className="contact-item-label">Email</span>
               <span className="contact-item-value">{t.email}</span>
             </a>
-            <div className="contact-item">
-              <span className="contact-item-label">Asukoht</span>
+            <a href={t.mapUrl} target="_blank" rel="noopener noreferrer" className="contact-item">
+              <span className="contact-item-label">Asukoht ↗</span>
               <span className="contact-item-value">{t.address}</span>
-            </div>
+            </a>
             <div className="contact-item">
               <span className="contact-item-label">Lahtiolekuajad</span>
               <span className="contact-item-value">{t.hours}</span>
