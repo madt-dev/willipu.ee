@@ -27,6 +27,8 @@ export const content = {
         { value: '30', label: 'kohta peosaalis' },
         { value: '41', label: 'haagissuvila kohta' },
         { value: '2 km', label: 'Kallaste linna' },
+        { value: '16', label: 'kohta kämpingutes' },
+        { value: 'kuni 5', label: 'lisakohta' },
       ],
     },
     stay: {
@@ -213,6 +215,8 @@ export const content = {
         { value: '30', label: 'seats in banquet hall' },
         { value: '41', label: 'caravan spots' },
         { value: '2 km', label: 'to Kallaste' },
+        { value: '16', label: 'beds in cottages' },
+        { value: 'up to 5', label: 'extra beds' },
       ],
     },
     stay: {
