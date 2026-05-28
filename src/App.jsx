@@ -5,8 +5,13 @@ import { Icon } from './Icon.jsx'
 export default function App() {
   const [lang, setLang] = useState(() => {
     const saved = typeof window !== 'undefined' && localStorage.getItem('willipu_lang')
-    if (saved === 'et' || saved === 'en') return saved
-    if (typeof navigator !== 'undefined' && navigator.language?.startsWith('et')) return 'et'
+    if (['et', 'en', 'de', 'fi'].includes(saved)) return saved
+    if (typeof navigator !== 'undefined') {
+      const l = navigator.language?.toLowerCase() ?? ''
+      if (l.startsWith('fi')) return 'fi'
+      if (l.startsWith('de')) return 'de'
+      if (l.startsWith('en')) return 'en'
+    }
     return 'et'
   })
   const [navOpen, setNavOpen] = useState(false)
@@ -79,20 +84,16 @@ function Header({ t, lang, setLang, scrolled, navOpen, setNavOpen }) {
 
         <div className="header-actions">
           <div className="lang-toggle" role="group" aria-label="Language">
-            <button
-              className={lang === 'et' ? 'active' : ''}
-              onClick={() => setLang('et')}
-              aria-pressed={lang === 'et'}
-            >
-              ET
-            </button>
-            <button
-              className={lang === 'en' ? 'active' : ''}
-              onClick={() => setLang('en')}
-              aria-pressed={lang === 'en'}
-            >
-              EN
-            </button>
+            {['ET', 'EN', 'DE', 'FI'].map(l => (
+              <button
+                key={l}
+                className={lang === l.toLowerCase() ? 'active' : ''}
+                onClick={() => setLang(l.toLowerCase())}
+                aria-pressed={lang === l.toLowerCase()}
+              >
+                {l}
+              </button>
+            ))}
           </div>
           <button
             className="nav-toggle"
@@ -389,7 +390,7 @@ function Contact({ t }) {
               <span className="contact-item-value">{t.email}</span>
             </a>
             <button className="contact-item contact-item-nav" onClick={() => setNavOpen(true)}>
-              <span className="contact-item-label">Asukoht</span>
+              <span className="contact-item-label">{t.locationLabel}</span>
               <span className="contact-item-value">
                 {t.address}
                 <span className="contact-nav-icon" aria-hidden>
@@ -398,7 +399,7 @@ function Contact({ t }) {
               </span>
             </button>
             <div className="contact-item">
-              <span className="contact-item-label">Lahtiolekuajad</span>
+              <span className="contact-item-label">{t.hoursLabel}</span>
               <span className="contact-item-value">{t.hours}</span>
             </div>
           </div>
