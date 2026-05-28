@@ -109,8 +109,10 @@ export const content = {
           label: 'Väike kämpingumaja',
           icon: '🛖',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Väike kämpingumaja' },
-            { url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80', alt: 'Ümbrus' },
+            { url: '/v4.jpeg', alt: 'Väike kämpingumaja' },
+            { url: '/v1.jpeg', alt: 'Väike kämpingumaja' },
+            { url: '/v2.jpeg', alt: 'Väike kämpingumaja' },
+            { url: '/v3.jpeg', alt: 'Väike kämpingumaja' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -333,6 +335,12 @@ export const content = {
         {
           label: 'Small Camping Cottage',
           icon: '🛖',
+          photos: [
+            { url: '/v4.jpeg', alt: 'Small Camping Cottage' },
+            { url: '/v1.jpeg', alt: 'Small Camping Cottage' },
+            { url: '/v2.jpeg', alt: 'Small Camping Cottage' },
+            { url: '/v3.jpeg', alt: 'Small Camping Cottage' },
+          ],
           amenities: [
             { icon: 'wc', label: 'WC' },
             { icon: 'wifi', label: 'WiFi' },
@@ -520,8 +528,10 @@ export const content = {
           label: 'Kleines Campinghaus',
           icon: '🛖',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Kleines Campinghaus' },
-            { url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80', alt: 'Umgebung' },
+            { url: '/v4.jpeg', alt: 'Kleines Campinghaus' },
+            { url: '/v1.jpeg', alt: 'Kleines Campinghaus' },
+            { url: '/v2.jpeg', alt: 'Kleines Campinghaus' },
+            { url: '/v3.jpeg', alt: 'Kleines Campinghaus' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -710,8 +720,10 @@ export const content = {
           label: 'Pieni leirintämökki',
           icon: '🛖',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Pieni leirintämökki' },
-            { url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80', alt: 'Ympäristö' },
+            { url: '/v4.jpeg', alt: 'Pieni leirintämökki' },
+            { url: '/v1.jpeg', alt: 'Pieni leirintämökki' },
+            { url: '/v2.jpeg', alt: 'Pieni leirintämökki' },
+            { url: '/v3.jpeg', alt: 'Pieni leirintämökki' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -900,8 +912,10 @@ export const content = {
           label: 'Mazais kempinga namiņš',
           icon: '🛖',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Mazais kempinga namiņš' },
-            { url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80', alt: 'Apkārtne' },
+            { url: '/v4.jpeg', alt: 'Mazais kempinga namiņš' },
+            { url: '/v1.jpeg', alt: 'Mazais kempinga namiņš' },
+            { url: '/v2.jpeg', alt: 'Mazais kempinga namiņš' },
+            { url: '/v3.jpeg', alt: 'Mazais kempinga namiņš' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -1090,8 +1104,10 @@ export const content = {
           label: 'Mažas kempingo namelis',
           icon: '🛖',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Mažas kempingo namelis' },
-            { url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80', alt: 'Apylinkės' },
+            { url: '/v4.jpeg', alt: 'Mažas kempingo namelis' },
+            { url: '/v1.jpeg', alt: 'Mažas kempingo namelis' },
+            { url: '/v2.jpeg', alt: 'Mažas kempingo namelis' },
+            { url: '/v3.jpeg', alt: 'Mažas kempingo namelis' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
