@@ -75,7 +75,7 @@ export const content = {
         { icon: 'ball', title: 'Võrkpall ja mängud', body: 'Õueplatsid ja vabad muruväljakud.' },
         { icon: 'fire', title: 'Lõke ja saun', body: 'Lõkkeplats ning saun seltskonnale.' },
         { icon: 'hall', title: 'Peosaal kuni 30', body: 'Konverentsid, peod, koolitused.' },
-        { icon: 'wifi', title: 'WiFi terves majas', body: 'Tasuta levi peamajas.' },
+        { icon: 'wifi', title: 'Kiire WiFi kogu territooriumil', body: 'Tasuta kiire WiFi kogu territooriumil.' },
       ],
     },
     pricing: {
@@ -303,7 +303,7 @@ export const content = {
         { icon: 'ball', title: 'Volleyball and games', body: 'Outdoor courts and open lawns.' },
         { icon: 'fire', title: 'Bonfire and sauna', body: 'Fire pit and sauna for groups.' },
         { icon: 'hall', title: 'Banquet hall for 30', body: 'Conferences, parties, trainings.' },
-        { icon: 'wifi', title: 'WiFi throughout', body: 'Free coverage in the main house.' },
+        { icon: 'wifi', title: 'Fast WiFi across the property', body: 'Free high-speed WiFi across the entire property.' },
       ],
     },
     pricing: {
@@ -495,7 +495,7 @@ export const content = {
         { icon: 'ball', title: 'Volleyball und Spiele', body: 'Außenplätze und offene Rasenflächen.' },
         { icon: 'fire', title: 'Lagerfeuer und Sauna', body: 'Feuerstelle und Sauna für Gruppen.' },
         { icon: 'hall', title: 'Festsaal für 30', body: 'Konferenzen, Feiern, Schulungen.' },
-        { icon: 'wifi', title: 'WiFi überall', body: 'Kostenloses WLAN im Haupthaus.' },
+        { icon: 'wifi', title: 'Schnelles WLAN auf dem gesamten Gelände', body: 'Kostenloses Hochgeschwindigkeits-WLAN auf dem gesamten Gelände.' },
       ],
     },
     pricing: {
@@ -686,7 +686,7 @@ export const content = {
         { icon: 'ball', title: 'Lentopallo ja pelit', body: 'Ulkokentät ja avoimet nurmikenttät.' },
         { icon: 'fire', title: 'Nuotio ja sauna', body: 'Nuotiopaikka ja sauna ryhmille.' },
         { icon: 'hall', title: 'Juhlatila 30 hengelle', body: 'Kokoukset, juhlat, koulutukset.' },
-        { icon: 'wifi', title: 'WiFi kaikkialla', body: 'Ilmainen yhteys päätalossa.' },
+        { icon: 'wifi', title: 'Nopea WiFi koko alueella', body: 'Ilmainen nopea WiFi koko alueella.' },
       ],
     },
     pricing: {
@@ -877,7 +877,7 @@ export const content = {
         { icon: 'ball', title: 'Volejbols un spēles', body: 'Āra laukumi un brīvas zaļas zonas.' },
         { icon: 'fire', title: 'Ugunskurs un pirts', body: 'Ugunskura vieta un pirts grupām.' },
         { icon: 'hall', title: 'Banketu zāle 30 cilvēkiem', body: 'Konferences, svētki, apmācības.' },
-        { icon: 'wifi', title: 'WiFi visur', body: 'Bezmaksas pieslēgums galvenajā mājā.' },
+        { icon: 'wifi', title: 'Ātrs WiFi visā teritorijā', body: 'Bezmaksas ātrs WiFi visā teritorijā.' },
       ],
     },
     pricing: {
@@ -1068,7 +1068,7 @@ export const content = {
         { icon: 'ball', title: 'Tinklinis ir žaidimai', body: 'Lauko aikštelės ir atviros žolės erdvės.' },
         { icon: 'fire', title: 'Laužas ir pirtis', body: 'Laužavietė ir pirtis grupėms.' },
         { icon: 'hall', title: 'Salė 30 žmonių', body: 'Konferencijos, šventės, mokymai.' },
-        { icon: 'wifi', title: 'WiFi visur', body: 'Nemokamas internetas pagrindiniame name.' },
+        { icon: 'wifi', title: 'Greitas WiFi visoje teritorijoje', body: 'Nemokamas greitas WiFi visoje teritorijoje.' },
       ],
     },
     pricing: {
