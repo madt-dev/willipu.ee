@@ -123,7 +123,7 @@ export const content = {
           ],
         },
         {
-          label: 'Kahene tuba',
+          label: 'Peamaja - kahene tuba',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Peamaja' },
@@ -145,7 +145,7 @@ export const content = {
           ],
         },
         {
-          label: 'Kolmene tuba',
+          label: 'Peamaja - kolmene tuba',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Peamaja' },
@@ -344,7 +344,7 @@ export const content = {
           ],
         },
         {
-          label: 'Double Room',
+          label: 'Main house - double room',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Main house' },
@@ -366,7 +366,7 @@ export const content = {
           ],
         },
         {
-          label: 'Triple Room',
+          label: 'Main house - triple room',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Main house' },
@@ -534,7 +534,7 @@ export const content = {
           ],
         },
         {
-          label: 'Doppelzimmer',
+          label: 'Haupthaus - Doppelzimmer',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Haupthaus' },
@@ -556,7 +556,7 @@ export const content = {
           ],
         },
         {
-          label: 'Dreibettzimmer',
+          label: 'Haupthaus - Dreibettzimmer',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Haupthaus' },
@@ -724,7 +724,7 @@ export const content = {
           ],
         },
         {
-          label: 'Kahden hengen huone',
+          label: 'Päätalo - kahden hengen huone',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Päätalo' },
@@ -746,7 +746,7 @@ export const content = {
           ],
         },
         {
-          label: 'Kolmen hengen huone',
+          label: 'Päätalo - kolmen hengen huone',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Päätalo' },
@@ -914,7 +914,7 @@ export const content = {
           ],
         },
         {
-          label: 'Divvietīgs numurs',
+          label: 'Galvenā māja - divvietīgs numurs',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Galvenā māja' },
@@ -936,7 +936,7 @@ export const content = {
           ],
         },
         {
-          label: 'Trīsvietīgs numurs',
+          label: 'Galvenā māja - trīsvietīgs numurs',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Galvenā māja' },
@@ -1104,7 +1104,7 @@ export const content = {
           ],
         },
         {
-          label: 'Dvivietis kambarys',
+          label: 'Pagrindinis namas - dvivietis kambarys',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Pagrindinis namas' },
@@ -1126,7 +1126,7 @@ export const content = {
           ],
         },
         {
-          label: 'Trivietis kambarys',
+          label: 'Pagrindinis namas - trivietis kambarys',
           icon: '🛏',
           photos: [
             { url: '/peamaja.jpg', alt: 'Pagrindinis namas' },
