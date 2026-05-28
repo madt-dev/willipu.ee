@@ -164,9 +164,10 @@ export const content = {
           label: 'Karavanipark',
           icon: '🚐',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Järv' },
-            { url: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&q=80', alt: 'Männimets vee ääres' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Rand kuldsel tunnil' },
+            { url: '/kar1.jpg', alt: 'Karavanipark' },
+            { url: '/kar2.jpg', alt: 'Karavanipark' },
+            { url: '/kar3.jpg', alt: 'Karavanipark' },
+            { url: '/kar4.jpg', alt: 'Karavanipark' },
           ],
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Iseteeninduslik check-in' },
@@ -369,6 +370,12 @@ export const content = {
         {
           label: 'Caravan Park',
           icon: '🚐',
+          photos: [
+            { url: '/kar1.jpg', alt: 'Caravan Park' },
+            { url: '/kar2.jpg', alt: 'Caravan Park' },
+            { url: '/kar3.jpg', alt: 'Caravan Park' },
+            { url: '/kar4.jpg', alt: 'Caravan Park' },
+          ],
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Self-service check-in' },
             { icon: 'electric', label: 'Electric' },
@@ -548,9 +555,10 @@ export const content = {
           label: 'Campingpark',
           icon: '🚐',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'See' },
-            { url: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&q=80', alt: 'Kiefernwald am Wasser' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Strand in der goldenen Stunde' },
+            { url: '/kar1.jpg', alt: 'Campingpark' },
+            { url: '/kar2.jpg', alt: 'Campingpark' },
+            { url: '/kar3.jpg', alt: 'Campingpark' },
+            { url: '/kar4.jpg', alt: 'Campingpark' },
           ],
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Selbstbedienung Check-in' },
@@ -731,9 +739,10 @@ export const content = {
           label: 'Asuntovaunupuisto',
           icon: '🚐',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Järvi' },
-            { url: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&q=80', alt: 'Mäntymetsä veden äärellä' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Ranta kultaisella hetkellä' },
+            { url: '/kar1.jpg', alt: 'Asuntovaunupuisto' },
+            { url: '/kar2.jpg', alt: 'Asuntovaunupuisto' },
+            { url: '/kar3.jpg', alt: 'Asuntovaunupuisto' },
+            { url: '/kar4.jpg', alt: 'Asuntovaunupuisto' },
           ],
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Itsepalvelu check-in' },
@@ -914,9 +923,10 @@ export const content = {
           label: 'Kempings',
           icon: '🚐',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Ezers' },
-            { url: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&q=80', alt: 'Priežu mežs pie ūdens' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Pludmale zeltainajā stundā' },
+            { url: '/kar1.jpg', alt: 'Kempings' },
+            { url: '/kar2.jpg', alt: 'Kempings' },
+            { url: '/kar3.jpg', alt: 'Kempings' },
+            { url: '/kar4.jpg', alt: 'Kempings' },
           ],
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Pašapkalpošanās reģistrācija' },
@@ -1097,9 +1107,10 @@ export const content = {
           label: 'Kempingas',
           icon: '🚐',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Ežeras' },
-            { url: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&q=80', alt: 'Pušynas prie vandens' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Paplūdimys auksinę valandą' },
+            { url: '/kar1.jpg', alt: 'Kempingas' },
+            { url: '/kar2.jpg', alt: 'Kempingas' },
+            { url: '/kar3.jpg', alt: 'Kempingas' },
+            { url: '/kar4.jpg', alt: 'Kempingas' },
           ],
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Savitarnos registracija' },
