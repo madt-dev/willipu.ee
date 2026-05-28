@@ -74,10 +74,10 @@ def draw_banner(filename):
 
     # Eyebrow
     c.saveState()
-    c.setFillColor(GOLD)
-    c.setFillAlpha(0.92)
-    c.setFont("Helvetica", 19*mm)
-    c.drawString(tx, mid + 205*mm, "PUHKEMAJUTUS  ·  KARAVAN PARK")
+    c.setFillColor(white)
+    c.setFillAlpha(1)
+    c.setFont("Helvetica-Bold", 24*mm)
+    c.drawString(tx, mid + 210*mm, "PUHKEMAJUTUS  ·  KARAVAN PARK")
     c.restoreState()
 
     # "Willipu" - suur pealkiri
@@ -107,10 +107,10 @@ def draw_banner(filename):
 
     # Veebiaadress
     c.saveState()
-    c.setFillColor(GOLD_LIGHT)
-    c.setFillAlpha(0.75)
-    c.setFont("Helvetica", 22*mm)
-    c.drawString(tx, mid - 185*mm, "willipu.ee")
+    c.setFillColor(white)
+    c.setFillAlpha(1)
+    c.setFont("Helvetica-Bold", 28*mm)
+    c.drawString(tx, mid - 190*mm, "willipu.ee")
     c.restoreState()
 
     # ── 5. Nurga kaunistused ──────────────────────────────────────────────
