@@ -126,8 +126,11 @@ export const content = {
           label: 'Kahene tuba',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Kahene tuba' },
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Vaade järvele' },
+            { url: '/peamaja.jpg', alt: 'Peamaja' },
+            { url: '/peamaja%201.jpg', alt: 'Peamaja' },
+            { url: '/peamaja%202.jpg', alt: 'Peamaja' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Köök' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Köök' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -145,8 +148,11 @@ export const content = {
           label: 'Kolmene tuba',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Kolmene tuba' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Rand' },
+            { url: '/peamaja.jpg', alt: 'Peamaja' },
+            { url: '/peamaja%201.jpg', alt: 'Peamaja' },
+            { url: '/peamaja%202.jpg', alt: 'Peamaja' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Köök' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Köök' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -340,6 +346,13 @@ export const content = {
         {
           label: 'Double Room',
           icon: '🛏',
+          photos: [
+            { url: '/peamaja.jpg', alt: 'Main house' },
+            { url: '/peamaja%201.jpg', alt: 'Main house' },
+            { url: '/peamaja%202.jpg', alt: 'Main house' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Kitchen' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Kitchen' },
+          ],
           amenities: [
             { icon: 'wc', label: 'WC' },
             { icon: 'shower', label: 'Shower' },
@@ -355,6 +368,13 @@ export const content = {
         {
           label: 'Triple Room',
           icon: '🛏',
+          photos: [
+            { url: '/peamaja.jpg', alt: 'Main house' },
+            { url: '/peamaja%201.jpg', alt: 'Main house' },
+            { url: '/peamaja%202.jpg', alt: 'Main house' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Kitchen' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Kitchen' },
+          ],
           amenities: [
             { icon: 'wc', label: 'WC' },
             { icon: 'shower', label: 'Shower' },
@@ -517,8 +537,11 @@ export const content = {
           label: 'Doppelzimmer',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Doppelzimmer' },
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Blick auf den See' },
+            { url: '/peamaja.jpg', alt: 'Haupthaus' },
+            { url: '/peamaja%201.jpg', alt: 'Haupthaus' },
+            { url: '/peamaja%202.jpg', alt: 'Haupthaus' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Küche' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Küche' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -536,8 +559,11 @@ export const content = {
           label: 'Dreibettzimmer',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Dreibettzimmer' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Strand' },
+            { url: '/peamaja.jpg', alt: 'Haupthaus' },
+            { url: '/peamaja%201.jpg', alt: 'Haupthaus' },
+            { url: '/peamaja%202.jpg', alt: 'Haupthaus' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Küche' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Küche' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -701,8 +727,11 @@ export const content = {
           label: 'Kahden hengen huone',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Kahden hengen huone' },
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Näkymä järvelle' },
+            { url: '/peamaja.jpg', alt: 'Päätalo' },
+            { url: '/peamaja%201.jpg', alt: 'Päätalo' },
+            { url: '/peamaja%202.jpg', alt: 'Päätalo' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Keittiö' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Keittiö' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -720,8 +749,11 @@ export const content = {
           label: 'Kolmen hengen huone',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Kolmen hengen huone' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Ranta' },
+            { url: '/peamaja.jpg', alt: 'Päätalo' },
+            { url: '/peamaja%201.jpg', alt: 'Päätalo' },
+            { url: '/peamaja%202.jpg', alt: 'Päätalo' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Keittiö' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Keittiö' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -885,8 +917,11 @@ export const content = {
           label: 'Divvietīgs numurs',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Divvietīgs numurs' },
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Skats uz ezeru' },
+            { url: '/peamaja.jpg', alt: 'Galvenā māja' },
+            { url: '/peamaja%201.jpg', alt: 'Galvenā māja' },
+            { url: '/peamaja%202.jpg', alt: 'Galvenā māja' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Virtuve' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Virtuve' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -904,8 +939,11 @@ export const content = {
           label: 'Trīsvietīgs numurs',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Trīsvietīgs numurs' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Pludmale' },
+            { url: '/peamaja.jpg', alt: 'Galvenā māja' },
+            { url: '/peamaja%201.jpg', alt: 'Galvenā māja' },
+            { url: '/peamaja%202.jpg', alt: 'Galvenā māja' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Virtuve' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Virtuve' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -1069,8 +1107,11 @@ export const content = {
           label: 'Dvivietis kambarys',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Dvivietis kambarys' },
-            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Vaizdas į ežerą' },
+            { url: '/peamaja.jpg', alt: 'Pagrindinis namas' },
+            { url: '/peamaja%201.jpg', alt: 'Pagrindinis namas' },
+            { url: '/peamaja%202.jpg', alt: 'Pagrindinis namas' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Virtuvė' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Virtuvė' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -1088,8 +1129,11 @@ export const content = {
           label: 'Trivietis kambarys',
           icon: '🛏',
           photos: [
-            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Trivietis kambarys' },
-            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Paplūdimys' },
+            { url: '/peamaja.jpg', alt: 'Pagrindinis namas' },
+            { url: '/peamaja%201.jpg', alt: 'Pagrindinis namas' },
+            { url: '/peamaja%202.jpg', alt: 'Pagrindinis namas' },
+            { url: '/K%C3%B6%C3%B6k_1.jpg', alt: 'Virtuvė' },
+            { url: '/k%C3%B6%C3%B6k_2.jpg', alt: 'Virtuvė' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
