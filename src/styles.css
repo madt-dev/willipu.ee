@@ -342,6 +342,16 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   font-size: 0.85rem;
   color: var(--ink-soft);
 }
+@media (max-width: 640px) {
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  .stats li { padding: 0.5rem 0.25rem; }
+  .stat-value { font-size: 1.3rem; margin-bottom: 0.15rem; }
+  .stat-label { font-size: 0.7rem; line-height: 1.3; }
+}
 
 
 /* Amenities */
@@ -891,7 +901,6 @@ main {
   .amenity p { font-size: 0.85rem; }
   .amenity-badges { grid-template-columns: repeat(3, 1fr); }
 
-  .stats { grid-template-columns: 1fr 1fr; }
   .hero { min-height: 88vh; }
   .hero-inner { padding-top: 4.5rem; padding-bottom: 2.5rem; }
   .price-list li { padding: 0.6rem 1rem; font-size: 0.88rem; }
