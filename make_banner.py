@@ -61,7 +61,56 @@ def draw_banner(filename):
     c.rect(0, 0, W, H, fill=1, stroke=0)
     c.restoreState()
 
-    # ── 3. Kuldne riba ülaosas ja alaosas ────────────────────────────────
+    # ── 3. Logo (ring + laine + päike) ───────────────────────────────────
+    def draw_logo(cx, cy, r):
+        LOGO_GREEN = HexColor('#2d4a3e')
+        LOGO_WATER = HexColor('#7fb3d5')
+        LOGO_SUN   = HexColor('#f4d35e')
+
+        # Roheline ring
+        c.saveState()
+        c.setFillColor(LOGO_GREEN)
+        c.setFillAlpha(1)
+        c.circle(cx, cy, r, fill=1, stroke=0)
+
+        # Laine (Q12 16 16 20 T26 20 V26 H6 — skaleeritud)
+        # SVG viewBox 0 0 32 32, skaleerime r/16 faktoriga
+        s = r / 16.0
+        ox = cx - 16*s   # SVG cx=0 → meie cx - r
+        oy = cy - 16*s   # SVG cy=0 → meie cy - r (NB: Y on ReportLab-is ülespoole)
+
+        def sx(x): return ox + x * s
+        def sy(y): return oy + (32 - y) * s   # SVG Y pööratud
+
+        c.setFillColor(LOGO_WATER)
+        p = c.beginPath()
+        # M6 20
+        p.moveTo(sx(6), sy(20))
+        # Q12 16 16 20  (quadratic → cubikis approx)
+        p.curveTo(sx(6 + (12-6)*2/3), sy(20 + (16-20)*2/3),
+                  sx(16 + (12-16)*2/3), sy(20 + (16-20)*2/3),
+                  sx(16), sy(20))
+        # T26 20 (reflect)
+        p.curveTo(sx(16 + (16-12)*2/3), sy(20 + (20-16)*2/3),
+                  sx(26 + (20-16)*2/3), sy(20 + (20-20)*2/3),
+                  sx(26), sy(20))
+        # V26 H6 Z
+        p.lineTo(sx(26), sy(26))
+        p.lineTo(sx(6),  sy(26))
+        p.close()
+        c.drawPath(p, fill=1, stroke=0)
+
+        # Päike
+        c.setFillColor(LOGO_SUN)
+        c.circle(sx(22), sy(10), 3*s, fill=1, stroke=0)
+        c.restoreState()
+
+    logo_r = 120 * mm
+    logo_x = W - 220 * mm
+    logo_y = H / 2
+    draw_logo(logo_x, logo_y, logo_r)
+
+    # ── 4. Kuldne riba ülaosas ja alaosas ────────────────────────────────
     bar_h = 7 * mm
     c.setFillColor(GOLD)
     c.setFillAlpha(0.9)
