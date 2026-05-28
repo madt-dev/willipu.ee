@@ -137,7 +137,7 @@ function Header({ t, lang, chooseLang, scrolled, navOpen, setNavOpen }) {
   return (
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container header-row">
-        <a href="#top" className="brand">
+        <a href="/" className="brand" onClick={e => { e.preventDefault(); location.href = '/' }}>
           <span className="brand-mark" aria-hidden>
             <Icon name="wave" />
           </span>
