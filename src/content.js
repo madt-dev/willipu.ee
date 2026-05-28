@@ -30,6 +30,7 @@ export const content = {
         { value: '16', label: 'kohta kämpingutes' },
         { value: 'kuni 5', label: 'lisakohta' },
         { value: '🏖', label: 'lapsesõbralik liivarand' },
+        { value: '🌿', label: 'suur muruplats väliürituste korraldamiseks' },
       ],
     },
     stay: {
@@ -225,6 +226,7 @@ export const content = {
         { value: '16', label: 'beds in cottages' },
         { value: 'up to 5', label: 'extra beds' },
         { value: '🏖', label: 'child-friendly sandy beach' },
+        { value: '🌿', label: 'large lawn for outdoor events' },
       ],
     },
     stay: {
