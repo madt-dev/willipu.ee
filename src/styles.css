@@ -499,16 +499,18 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   height: 100%;
   cursor: zoom-in;
   display: block;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease);
 }
+.card-carousel-img-btn:hover { transform: scale(1.04); }
 .card-carousel-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.35s var(--ease);
   display: block;
   max-width: none;
+  image-rendering: auto;
 }
-.card-carousel-img-btn:hover .card-carousel-img { transform: scale(1.04); }
 .card-carousel-arrow {
   position: absolute;
   top: 50%;
