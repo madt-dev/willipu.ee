@@ -781,32 +781,25 @@ button.contact-item:hover { background: rgba(255,255,255,0.09); }
   line-height: 1.7;
 }
 
-/* Footer — peidetud sisu taha, ilmub lehe lõppu kerides */
 .site-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0; right: 0;
-  z-index: 0;
   background: var(--ink);
-  color: rgba(255,255,255,0.7);
-  padding: 2rem 0;
-  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  padding: 1.1rem 0;
+  font-size: 0.82rem;
 }
-.site-footer strong { color: #fff; font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem; }
-.site-footer p { margin: 0.25rem 0 0; color: rgba(255,255,255,0.6); }
 .footer-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
+.site-footer strong { color: rgba(255,255,255,0.9); font-family: inherit; font-weight: 600; }
 
 main {
   position: relative;
   z-index: 1;
   background: var(--bg);
-  padding-bottom: var(--footer-h, 100px);
 }
 
 /* ─── Responsive ─────────────────────────── */

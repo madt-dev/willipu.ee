@@ -1,4 +1,4 @@
-import { useEffect, useRef, useMemo, useState, forwardRef } from 'react'
+import { useEffect, useRef, useMemo, useState } from 'react'
 import { content, heroImage } from './content.js'
 import { Icon } from './Icon.jsx'
 
@@ -24,18 +24,7 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const footerRef = useRef(null)
   const t = useMemo(() => content[lang], [lang])
-
-  useEffect(() => {
-    const footer = footerRef.current
-    if (!footer) return
-    const update = () =>
-      document.documentElement.style.setProperty('--footer-h', footer.offsetHeight + 'px')
-    update()
-    window.addEventListener('resize', update)
-    return () => window.removeEventListener('resize', update)
-  }, [])
 
   return (
     <>
@@ -56,7 +45,7 @@ export default function App() {
 
         <Contact t={t.contact} />
       </main>
-      <Footer t={t.footer} ref={footerRef} />
+      <Footer t={t.footer} />
     </>
   )
 }
@@ -424,18 +413,13 @@ function Contact({ t }) {
   )
 }
 
-const Footer = forwardRef(function Footer({ t }, ref) {
+function Footer({ t }) {
   return (
-    <footer className="site-footer" ref={ref}>
+    <footer className="site-footer">
       <div className="container footer-row">
-        <div>
-          <strong>Willipu Külalistemaja</strong>
-          <p>{t.tagline}</p>
-        </div>
-        <p className="footer-rights">
-          © {new Date().getFullYear()} · {t.rights}
-        </p>
+        <span><strong>Willipu</strong> · {t.tagline}</span>
+        <span>© {new Date().getFullYear()} · {t.rights}</span>
       </div>
     </footer>
   )
-})
+}
