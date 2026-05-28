@@ -41,10 +41,8 @@ def prepare_bg_image(src_path):
     arr = np.array(img, dtype=float)
     arr = arr * 0.52   # tumenda 48%
     img_dark = PILImage.fromarray(arr.clip(0,255).astype('uint8'))
-    # Teravusta
-    from PIL import ImageFilter, ImageEnhance
-    img_dark = img_dark.filter(ImageFilter.UnsharpMask(radius=1.5, percent=180, threshold=2))
-    img_dark = ImageEnhance.Sharpness(img_dark).enhance(2.2)
+    from PIL import ImageFilter
+    img_dark = img_dark.filter(ImageFilter.GaussianBlur(radius=4))
     buf = io.BytesIO()
     img_dark.save(buf, format='JPEG', quality=92)
     buf.seek(0)
