@@ -477,8 +477,8 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   color: var(--ink-soft);
 }
 .amenity-badges li span {
-  font-size: 0.6rem;
-  color: var(--ink-soft);
+  font-size: 0.68rem;
+  color: var(--ink);
   text-align: center;
   line-height: 1.2;
 }
@@ -728,10 +728,10 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 }
 a.contact-item:hover { background: rgba(255,255,255,0.09); }
 .contact-item-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.65);
 }
 .contact-item-value {
   font-size: 0.95rem;
@@ -835,8 +835,8 @@ button.contact-item:hover { background: rgba(255,255,255,0.09); }
 
 .contact-legal {
   margin: 1.5rem 0 0;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.35);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
   line-height: 1.7;
 }
 
