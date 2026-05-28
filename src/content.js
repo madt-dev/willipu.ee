@@ -90,6 +90,7 @@ export const content = {
           photos: [
             { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Suur kämpingumaja' },
             { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Sisevaade' },
+            { url: '/DJI_20260528073517_0134_D.JPG', alt: 'Suur kämpingumaja' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -306,6 +307,9 @@ export const content = {
         {
           label: 'Large Camping Cottage',
           icon: '🏡',
+          photos: [
+            { url: '/DJI_20260528073517_0134_D.JPG', alt: 'Large Camping Cottage' },
+          ],
           amenities: [
             { icon: 'wc', label: 'WC' },
             { icon: 'shower', label: 'Shower' },
@@ -470,6 +474,7 @@ export const content = {
           photos: [
             { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Großes Campinghaus' },
             { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Innenansicht' },
+            { url: '/DJI_20260528073517_0134_D.JPG', alt: 'Großes Campinghaus' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -652,6 +657,7 @@ export const content = {
           photos: [
             { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Suuri leirintämökki' },
             { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Sisänäkymä' },
+            { url: '/DJI_20260528073517_0134_D.JPG', alt: 'Suuri leirintämökki' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -834,6 +840,7 @@ export const content = {
           photos: [
             { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Lielais kempinga namiņš' },
             { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Interjers' },
+            { url: '/DJI_20260528073517_0134_D.JPG', alt: 'Lielais kempinga namiņš' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
@@ -1016,6 +1023,7 @@ export const content = {
           photos: [
             { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Didelis kempingo namelis' },
             { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Interjeras' },
+            { url: '/DJI_20260528073517_0134_D.JPG', alt: 'Didelis kempingo namelis' },
           ],
           amenities: [
             { icon: 'wc', label: 'WC' },
