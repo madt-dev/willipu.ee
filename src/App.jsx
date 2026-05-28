@@ -1,5 +1,5 @@
 import { useEffect, useRef, useMemo, useState, forwardRef } from 'react'
-import { content, gallery, heroImage } from './content.js'
+import { content, heroImage } from './content.js'
 import { Icon } from './Icon.jsx'
 
 export default function App() {
@@ -53,7 +53,7 @@ export default function App() {
 
         <Amenities t={t.amenities} />
         <Pricing t={t.pricing} />
-        <Gallery />
+
         <Contact t={t.contact} />
       </main>
       <Footer t={t.footer} ref={footerRef} />
@@ -67,7 +67,7 @@ function Header({ t, lang, setLang, scrolled, navOpen, setNavOpen }) {
 
     ['amenities', t.nav.amenities],
     ['pricing', t.nav.pricing],
-    ['gallery', t.nav.gallery],
+
     ['contact', t.nav.contact],
   ]
   return (
@@ -199,7 +199,41 @@ function Amenities({ t }) {
   )
 }
 
+function Lightbox({ photos, startIndex, onClose }) {
+  const [idx, setIdx] = useState(startIndex)
+  const prev = () => setIdx(i => (i - 1 + photos.length) % photos.length)
+  const next = () => setIdx(i => (i + 1) % photos.length)
+
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft') prev()
+      if (e.key === 'ArrowRight') next()
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [])
+
+  return (
+    <div className="lightbox-backdrop" onClick={onClose}>
+      <div className="lightbox" onClick={e => e.stopPropagation()}>
+        <img src={photos[idx].url} alt={photos[idx].alt} className="lightbox-img" />
+        {photos.length > 1 && (
+          <>
+            <button className="lightbox-arrow lightbox-prev" onClick={prev}>‹</button>
+            <button className="lightbox-arrow lightbox-next" onClick={next}>›</button>
+            <span className="lightbox-count">{idx + 1} / {photos.length}</span>
+          </>
+        )}
+        <button className="lightbox-close" onClick={onClose}>✕</button>
+      </div>
+    </div>
+  )
+}
+
 function Pricing({ t }) {
+  const [lightbox, setLightbox] = useState(null)
+
   return (
     <section id="pricing" className="section section-soft">
       <div className="container">
@@ -213,6 +247,14 @@ function Pricing({ t }) {
               <div className="pricing-group-header">
                 <span className="pricing-group-icon">{group.icon}</span>
                 <h3 className="pricing-group-title">{group.label}</h3>
+                {group.photos?.length > 0 && (
+                  <button
+                    className="pricing-gallery-btn"
+                    onClick={() => setLightbox(group.photos)}
+                  >
+                    📷 {group.photos.length}
+                  </button>
+                )}
               </div>
               {group.amenities && (
                 <ul className="amenity-badges">
@@ -223,6 +265,20 @@ function Pricing({ t }) {
                     </li>
                   ))}
                 </ul>
+              )}
+              {group.photos?.length > 0 && (
+                <div className="pricing-thumbs">
+                  {group.photos.slice(0, 3).map((p, i) => (
+                    <button key={p.url} className="pricing-thumb" onClick={() => setLightbox(group.photos)}>
+                      <img src={p.url} alt={p.alt} loading="lazy" />
+                    </button>
+                  ))}
+                  {group.photos.length > 3 && (
+                    <button className="pricing-thumb pricing-thumb-more" onClick={() => setLightbox(group.photos)}>
+                      +{group.photos.length - 3}
+                    </button>
+                  )}
+                </div>
               )}
               <ul className="price-list">
                 {group.rows.map(row => (
@@ -240,25 +296,11 @@ function Pricing({ t }) {
         </div>
         <p className="price-note-global">{t.note}</p>
       </div>
+      {lightbox && <Lightbox photos={lightbox} startIndex={0} onClose={() => setLightbox(null)} />}
     </section>
   )
 }
 
-function Gallery() {
-  return (
-    <section id="gallery" className="section">
-      <div className="container">
-        <div className="gallery-grid">
-          {gallery.map((img, i) => (
-            <figure key={img.url} className={`g-${i}`}>
-              <img src={img.url} alt={img.alt} loading="lazy" />
-            </figure>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 const NAV_APPS = [
   { name: 'Google Maps', url: 'https://www.google.com/maps/search/?api=1&query=58.64483549867105,27.166508285762042' },

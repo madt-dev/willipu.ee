@@ -87,6 +87,10 @@ export const content = {
         {
           label: 'Suur kämpingumaja',
           icon: '🏡',
+          photos: [
+            { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Suur kämpingumaja' },
+            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Sisevaade' },
+          ],
           amenities: [
             { icon: 'wc', label: 'WC' },
             { icon: 'shower', label: 'Dušš' },
@@ -103,6 +107,10 @@ export const content = {
         {
           label: 'Väike kämpingumaja',
           icon: '🛖',
+          photos: [
+            { url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80', alt: 'Väike kämpingumaja' },
+            { url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80', alt: 'Ümbrus' },
+          ],
           amenities: [
             { icon: 'wc', label: 'WC' },
             { icon: 'wifi', label: 'WiFi' },
@@ -116,6 +124,10 @@ export const content = {
         {
           label: 'Kahene tuba',
           icon: '🛏',
+          photos: [
+            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Kahene tuba' },
+            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Vaade järvele' },
+          ],
           amenities: [
             { icon: 'wc', label: 'WC' },
             { icon: 'shower', label: 'Dušš' },
@@ -131,6 +143,10 @@ export const content = {
         {
           label: 'Kolmene tuba',
           icon: '🛏',
+          photos: [
+            { url: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1200&q=80', alt: 'Kolmene tuba' },
+            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Rand' },
+          ],
           amenities: [
             { icon: 'wc', label: 'WC' },
             { icon: 'shower', label: 'Dušš' },
@@ -146,6 +162,11 @@ export const content = {
         {
           label: 'Karavanipark',
           icon: '🚐',
+          photos: [
+            { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80', alt: 'Järv' },
+            { url: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&q=80', alt: 'Männimets vee ääres' },
+            { url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80', alt: 'Rand kuldsel tunnil' },
+          ],
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Iseteeninduslik check-in' },
             { icon: 'electric', label: 'Elekter' },
