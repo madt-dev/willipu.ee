@@ -2,25 +2,53 @@ import { useEffect, useRef, useMemo, useState } from 'react'
 import { content, heroImage } from './content.js'
 import { Icon } from './Icon.jsx'
 
+const SUPPORTED = ['et', 'en', 'de', 'fi', 'lv', 'lt']
+
+const COUNTRY_LANG = {
+  EE: 'et', LV: 'lv', LT: 'lt', FI: 'fi',
+  DE: 'de', AT: 'de', CH: 'de', LI: 'de',
+}
+
+const LANGS = [
+  { code: 'et', label: 'Eesti' },
+  { code: 'en', label: 'English' },
+  { code: 'de', label: 'Deutsch' },
+  { code: 'fi', label: 'Suomi' },
+  { code: 'lv', label: 'Latviešu' },
+  { code: 'lt', label: 'Lietuvių' },
+]
+
 export default function App() {
-  const [lang, setLang] = useState(() => {
+  const [lang, setLangState] = useState(() => {
     const saved = typeof window !== 'undefined' && localStorage.getItem('willipu_lang')
-    if (['et', 'en', 'de', 'fi'].includes(saved)) return saved
-    if (typeof navigator !== 'undefined') {
-      const l = navigator.language?.toLowerCase() ?? ''
-      if (l.startsWith('fi')) return 'fi'
-      if (l.startsWith('de')) return 'de'
-      if (l.startsWith('en')) return 'en'
-    }
-    return 'et'
+    return SUPPORTED.includes(saved) ? saved : 'et'
   })
   const [navOpen, setNavOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+  const chooseLang = (code) => {
+    localStorage.setItem('willipu_lang', code)
+    setLangState(code)
+  }
+
   useEffect(() => {
-    localStorage.setItem('willipu_lang', lang)
     document.documentElement.lang = lang
   }, [lang])
+
+  useEffect(() => {
+    if (localStorage.getItem('willipu_lang')) return
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 3000)
+    fetch('https://ipapi.co/json/', { signal: ctrl.signal })
+      .then(r => r.json())
+      .then(({ country_code }) => {
+        const detected = COUNTRY_LANG[country_code]
+        if (detected) setLangState(detected)
+      })
+      .catch(() => {})
+      .finally(() => clearTimeout(timer))
+    return () => { ctrl.abort(); clearTimeout(timer) }
+  }, [])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -36,7 +64,7 @@ export default function App() {
       <Header
         t={t}
         lang={lang}
-        setLang={setLang}
+        chooseLang={chooseLang}
         scrolled={scrolled}
         navOpen={navOpen}
         setNavOpen={setNavOpen}
@@ -44,10 +72,8 @@ export default function App() {
       <main>
         <Hero t={t.hero} />
         <About t={t.about} />
-
         <Amenities t={t.amenities} />
         <Pricing t={t.pricing} />
-
         <Contact t={t.contact} />
       </main>
       <Footer t={t.footer} />
@@ -55,13 +81,57 @@ export default function App() {
   )
 }
 
-function Header({ t, lang, setLang, scrolled, navOpen, setNavOpen }) {
+function LangDropdown({ lang, chooseLang, scrolled }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const onDown = e => { if (ref.current && !ref.current.contains(e.target)) setOpen(false) }
+    const onKey = e => { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => { document.removeEventListener('mousedown', onDown); document.removeEventListener('keydown', onKey) }
+  }, [])
+
+  const current = LANGS.find(l => l.code === lang)
+
+  return (
+    <div className="lang-dropdown" ref={ref}>
+      <button
+        className={`lang-dropdown-btn ${scrolled ? 'scrolled' : ''}`}
+        onClick={() => setOpen(o => !o)}
+        aria-expanded={open}
+        aria-haspopup="listbox"
+      >
+        {current?.code.toUpperCase()}
+        <svg className="lang-dropdown-chevron" viewBox="0 0 10 6" width="10" height="6" aria-hidden>
+          <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+      {open && (
+        <ul className="lang-dropdown-menu" role="listbox">
+          {LANGS.map(l => (
+            <li key={l.code} role="option" aria-selected={lang === l.code}>
+              <button
+                className={lang === l.code ? 'active' : ''}
+                onClick={() => { chooseLang(l.code); setOpen(false) }}
+              >
+                <span className="lang-code">{l.code.toUpperCase()}</span>
+                <span className="lang-name">{l.label}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
+function Header({ t, lang, chooseLang, scrolled, navOpen, setNavOpen }) {
   const links = [
     ['about', t.nav.about],
-
     ['amenities', t.nav.amenities],
     ['pricing', t.nav.pricing],
-
     ['contact', t.nav.contact],
   ]
   return (
@@ -83,18 +153,7 @@ function Header({ t, lang, setLang, scrolled, navOpen, setNavOpen }) {
         </nav>
 
         <div className="header-actions">
-          <div className="lang-toggle" role="group" aria-label="Language">
-            {['ET', 'EN', 'DE', 'FI'].map(l => (
-              <button
-                key={l}
-                className={lang === l.toLowerCase() ? 'active' : ''}
-                onClick={() => setLang(l.toLowerCase())}
-                aria-pressed={lang === l.toLowerCase()}
-              >
-                {l}
-              </button>
-            ))}
-          </div>
+          <LangDropdown lang={lang} chooseLang={chooseLang} scrolled={scrolled} />
           <button
             className="nav-toggle"
             aria-label="Toggle navigation"

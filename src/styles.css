@@ -140,30 +140,66 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 
 .header-actions { display: flex; align-items: center; gap: 0.75rem; }
 
-.lang-toggle {
+.lang-dropdown { position: relative; }
+.lang-dropdown-btn {
   display: inline-flex;
-  background: rgba(255,255,255,0.15);
-  border-radius: 999px;
-  padding: 3px;
-  backdrop-filter: blur(10px);
-}
-.site-header.scrolled .lang-toggle { background: var(--bg-soft); }
-.lang-toggle button {
+  align-items: center;
+  gap: 0.3rem;
   appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 0.4rem 0.85rem;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.92);
   font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: inherit;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.4rem 0.75rem;
   border-radius: 999px;
   cursor: pointer;
+  font-family: inherit;
+  backdrop-filter: blur(10px);
   transition: background 0.2s, color 0.2s;
 }
-.site-header:not(.scrolled) .lang-toggle button { color: rgba(255,255,255,0.9); }
-.lang-toggle button.active { background: var(--ink); color: var(--bg); }
-.site-header:not(.scrolled) .lang-toggle button.active { background: #fff; color: var(--ink); }
+.lang-dropdown-btn:hover { background: rgba(255,255,255,0.28); }
+.lang-dropdown-btn.scrolled {
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+.lang-dropdown-btn.scrolled:hover { background: var(--line); }
+.lang-dropdown-chevron { opacity: 0.7; flex-shrink: 0; }
+.lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px -8px rgba(20,32,27,0.22);
+  padding: 0.3rem;
+  list-style: none;
+  margin: 0;
+  min-width: 150px;
+  z-index: 200;
+}
+.lang-dropdown-menu li button {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.8rem;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--ink);
+  transition: background 0.15s;
+  text-align: left;
+}
+.lang-dropdown-menu li button:hover { background: var(--bg-soft); }
+.lang-dropdown-menu li button.active { background: var(--accent); color: #fff; }
+.lang-code { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; min-width: 2ch; }
+.lang-name { font-size: 0.88rem; color: var(--ink-soft); }
+.lang-dropdown-menu li button.active .lang-name { color: rgba(255,255,255,0.75); }
 
 .nav-toggle {
   display: none;
