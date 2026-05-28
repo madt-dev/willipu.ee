@@ -39,8 +39,12 @@ def prepare_bg_image(src_path):
     # Tumendame pilti (multiply dark overlay)
     import numpy as np
     arr = np.array(img, dtype=float)
-    arr = arr * 0.42   # tumenda 58%
+    arr = arr * 0.52   # tumenda 48%
     img_dark = PILImage.fromarray(arr.clip(0,255).astype('uint8'))
+    # Teravusta
+    from PIL import ImageFilter, ImageEnhance
+    img_dark = img_dark.filter(ImageFilter.UnsharpMask(radius=1.5, percent=180, threshold=2))
+    img_dark = ImageEnhance.Sharpness(img_dark).enhance(2.2)
     buf = io.BytesIO()
     img_dark.save(buf, format='JPEG', quality=92)
     buf.seek(0)
@@ -59,18 +63,12 @@ def draw_banner(filename):
         preserveAspectRatio=False
     )
 
-    # ── 2. Gradient overlay vasakult (tumedam) paremale (läbipaistvam) ───
-    steps = 80
-    for i in range(steps):
-        t = i / steps
-        alpha = 0.55 * (1 - t * 0.6)   # 0.55 → 0.22
-        c.saveState()
-        c.setFillColor(DARK)
-        c.setFillAlpha(alpha)
-        x = W * i / steps
-        strip_w = W / steps + 1
-        c.rect(x, 0, strip_w, H, fill=1, stroke=0)
-        c.restoreState()
+    # ── 2. Ühtlane tumendav overlay kogu pildile ─────────────────────────
+    c.saveState()
+    c.setFillColor(DARK)
+    c.setFillAlpha(0.32)
+    c.rect(0, 0, W, H, fill=1, stroke=0)
+    c.restoreState()
 
     # ── 3. Kuldne riba ülaosas ja alaosas ────────────────────────────────
     bar_h = 7 * mm
