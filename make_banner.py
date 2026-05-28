@@ -36,15 +36,8 @@ def prepare_bg_image(src_path):
         new_h = int(img.width / target_ratio)
         top = (img.height - new_h) // 2
         img = img.crop((0, top, new_w, top + new_h))
-    # Tumendame pilti (multiply dark overlay)
-    import numpy as np
-    arr = np.array(img, dtype=float)
-    arr = arr * 0.52   # tumenda 48%
-    img_dark = PILImage.fromarray(arr.clip(0,255).astype('uint8'))
-    from PIL import ImageFilter
-    img_dark = img_dark.filter(ImageFilter.GaussianBlur(radius=4))
     buf = io.BytesIO()
-    img_dark.save(buf, format='JPEG', quality=92)
+    img.save(buf, format='JPEG', quality=95)
     buf.seek(0)
     return buf
 
