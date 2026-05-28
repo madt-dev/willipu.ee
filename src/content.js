@@ -29,6 +29,7 @@ export const content = {
         { value: '2 km', label: 'Kallaste linna' },
         { value: '16', label: 'kohta kämpingutes' },
         { value: 'kuni 5', label: 'lisakohta' },
+        { value: '🏖', label: 'lapsesõbralik liivarand' },
       ],
     },
     stay: {
@@ -223,6 +224,7 @@ export const content = {
         { value: '2 km', label: 'to Kallaste' },
         { value: '16', label: 'beds in cottages' },
         { value: 'up to 5', label: 'extra beds' },
+        { value: '🏖', label: 'child-friendly sandy beach' },
       ],
     },
     stay: {
