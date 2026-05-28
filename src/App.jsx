@@ -199,6 +199,46 @@ function Amenities({ t }) {
   )
 }
 
+function CardCarousel({ photos, onOpenLightbox }) {
+  const [idx, setIdx] = useState(0)
+  const touchStartX = useRef(null)
+
+  const prev = (e) => { e.stopPropagation(); setIdx(i => (i - 1 + photos.length) % photos.length) }
+  const next = (e) => { e.stopPropagation(); setIdx(i => (i + 1) % photos.length) }
+
+  const onTouchStart = e => { touchStartX.current = e.touches[0].clientX }
+  const onTouchEnd = e => {
+    if (touchStartX.current === null) return
+    const dx = e.changedTouches[0].clientX - touchStartX.current
+    if (Math.abs(dx) > 40) dx < 0 ? setIdx(i => (i + 1) % photos.length) : setIdx(i => (i - 1 + photos.length) % photos.length)
+    touchStartX.current = null
+  }
+
+  return (
+    <div className="card-carousel" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+      <button className="card-carousel-img-btn" onClick={() => onOpenLightbox(idx)} aria-label="View photo">
+        <img src={photos[idx].url} alt={photos[idx].alt} className="card-carousel-img" loading="lazy" />
+      </button>
+      {photos.length > 1 && (
+        <>
+          <button className="card-carousel-arrow card-carousel-prev" onClick={prev} aria-label="Previous">‹</button>
+          <button className="card-carousel-arrow card-carousel-next" onClick={next} aria-label="Next">›</button>
+          <div className="card-carousel-dots">
+            {photos.map((_, i) => (
+              <button
+                key={i}
+                className={`card-carousel-dot ${i === idx ? 'active' : ''}`}
+                onClick={e => { e.stopPropagation(); setIdx(i) }}
+                aria-label={`Photo ${i + 1}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+
 function Lightbox({ photos, startIndex, onClose }) {
   const [idx, setIdx] = useState(startIndex)
   const prev = () => setIdx(i => (i - 1 + photos.length) % photos.length)
@@ -247,14 +287,6 @@ function Pricing({ t }) {
               <div className="pricing-group-header">
                 <span className="pricing-group-icon">{group.icon}</span>
                 <h3 className="pricing-group-title">{group.label}</h3>
-                {group.photos?.length > 0 && (
-                  <button
-                    className="pricing-gallery-btn"
-                    onClick={() => setLightbox(group.photos)}
-                  >
-                    📷 {group.photos.length}
-                  </button>
-                )}
               </div>
               {group.amenities && (
                 <ul className="amenity-badges">
@@ -267,18 +299,10 @@ function Pricing({ t }) {
                 </ul>
               )}
               {group.photos?.length > 0 && (
-                <div className="pricing-thumbs">
-                  {group.photos.slice(0, 3).map((p, i) => (
-                    <button key={p.url} className="pricing-thumb" onClick={() => setLightbox(group.photos)}>
-                      <img src={p.url} alt={p.alt} loading="lazy" />
-                    </button>
-                  ))}
-                  {group.photos.length > 3 && (
-                    <button className="pricing-thumb pricing-thumb-more" onClick={() => setLightbox(group.photos)}>
-                      +{group.photos.length - 3}
-                    </button>
-                  )}
-                </div>
+                <CardCarousel
+                  photos={group.photos}
+                  onOpenLightbox={startIndex => setLightbox({ photos: group.photos, startIndex })}
+                />
               )}
               <ul className="price-list">
                 {group.rows.map(row => (
@@ -296,7 +320,13 @@ function Pricing({ t }) {
         </div>
         <p className="price-note-global">{t.note}</p>
       </div>
-      {lightbox && <Lightbox photos={lightbox} startIndex={0} onClose={() => setLightbox(null)} />}
+      {lightbox && (
+        <Lightbox
+          photos={lightbox.photos}
+          startIndex={lightbox.startIndex}
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </section>
   )
 }

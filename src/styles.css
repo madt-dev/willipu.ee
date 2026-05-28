@@ -436,57 +436,79 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   text-align: center;
   line-height: 1.2;
 }
-/* Gallery button in pricing header */
-.pricing-gallery-btn {
-  margin-left: auto;
-  appearance: none;
-  border: none;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background 0.2s;
-  white-space: nowrap;
-}
-.pricing-gallery-btn:hover { background: rgba(255,255,255,0.3); }
-
-/* Thumbnail strip */
-.pricing-thumbs {
-  display: flex;
-  gap: 4px;
-  padding: 0.5rem 0.75rem;
+/* Card carousel */
+.card-carousel {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
   border-bottom: 1px solid var(--line);
-  background: rgba(20,32,27,0.03);
+  background: var(--bg-soft);
 }
-.pricing-thumb {
+.card-carousel-img-btn {
   appearance: none;
   border: none;
   padding: 0;
-  cursor: pointer;
-  flex: 1;
-  height: 64px;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+  display: block;
 }
-.pricing-thumb img {
-  width: 100%; height: 100%;
+.card-carousel-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.3s var(--ease);
+  transition: transform 0.35s var(--ease);
+  display: block;
+  max-width: none;
 }
-.pricing-thumb:hover img { transform: scale(1.07); }
-.pricing-thumb-more {
-  background: var(--bg-soft);
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 0.9rem;
-  font-family: inherit;
+.card-carousel-img-btn:hover .card-carousel-img { transform: scale(1.04); }
+.card-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  appearance: none;
+  border: none;
+  background: rgba(20,32,27,0.45);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   display: grid;
   place-items: center;
-  flex: 0 0 48px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s;
+  z-index: 2;
+}
+.card-carousel-arrow:hover { background: rgba(20,32,27,0.75); }
+.card-carousel-prev { left: 8px; }
+.card-carousel-next { right: 8px; }
+.card-carousel-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 2;
+}
+.card-carousel-dot {
+  appearance: none;
+  border: none;
+  padding: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.card-carousel-dot.active {
+  background: #fff;
+  transform: scale(1.3);
 }
 
 /* Lightbox */
@@ -783,6 +805,7 @@ button.contact-item:hover { background: rgba(255,255,255,0.09); }
 main {
   position: relative;
   z-index: 1;
+  background: var(--bg);
   padding-bottom: var(--footer-h, 100px);
 }
 
