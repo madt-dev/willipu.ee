@@ -388,9 +388,14 @@ function Contact({ t }) {
               <span className="contact-item-label">Email</span>
               <span className="contact-item-value">{t.email}</span>
             </a>
-            <button className="contact-item" onClick={() => setNavOpen(true)}>
-              <span className="contact-item-label">Asukoht ↗</span>
-              <span className="contact-item-value">{t.address}</span>
+            <button className="contact-item contact-item-nav" onClick={() => setNavOpen(true)}>
+              <span className="contact-item-label">Asukoht</span>
+              <span className="contact-item-value">
+                {t.address}
+                <span className="contact-nav-icon" aria-hidden>
+                  <Icon name="location" />
+                </span>
+              </span>
             </button>
             <div className="contact-item">
               <span className="contact-item-label">Lahtiolekuajad</span>

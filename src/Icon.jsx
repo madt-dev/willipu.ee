@@ -126,6 +126,12 @@ const paths = {
       <path d="M8 7h.01M11 7h2" />
     </g>
   ),
+  location: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 13 6 13s6-8.5 6-13c0-3.314-2.686-6-6-6z" />
+      <circle cx="12" cy="8" r="2.2" />
+    </g>
+  ),
 }
 
 export function Icon({ name }) {

@@ -690,6 +690,9 @@ a.contact-item:hover { background: rgba(255,255,255,0.09); }
   color: #fff;
   font-weight: 500;
   word-break: break-word;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 .contact-cta {
   background: #fff;
@@ -708,6 +711,14 @@ button.contact-item {
   font-family: inherit;
 }
 button.contact-item:hover { background: rgba(255,255,255,0.09); }
+.contact-nav-icon {
+  display: inline-flex;
+  opacity: 0.55;
+  flex-shrink: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.contact-nav-icon svg { width: 16px; height: 16px; }
+.contact-item-nav:hover .contact-nav-icon { opacity: 1; transform: translateY(-1px); }
 
 /* Nav picker modal */
 .nav-picker-backdrop {
