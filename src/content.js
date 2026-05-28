@@ -168,7 +168,7 @@ export const content = {
           ],
         },
         {
-          label: 'Karavanipark',
+          label: 'Karavanipark 24/7',
           icon: '🚐',
           photos: [
             { url: '/kar1.jpg', alt: 'Karavanipark' },
@@ -396,7 +396,7 @@ export const content = {
           ],
         },
         {
-          label: 'Caravan Park',
+          label: 'Caravan Park 24/7',
           icon: '🚐',
           photos: [
             { url: '/kar1.jpg', alt: 'Caravan Park' },
@@ -587,7 +587,7 @@ export const content = {
           ],
         },
         {
-          label: 'Campingpark',
+          label: 'Campingpark 24/7',
           icon: '🚐',
           photos: [
             { url: '/kar1.jpg', alt: 'Campingpark' },
@@ -778,7 +778,7 @@ export const content = {
           ],
         },
         {
-          label: 'Asuntovaunupuisto',
+          label: 'Asuntovaunupuisto 24/7',
           icon: '🚐',
           photos: [
             { url: '/kar1.jpg', alt: 'Asuntovaunupuisto' },
@@ -969,7 +969,7 @@ export const content = {
           ],
         },
         {
-          label: 'Kempings',
+          label: 'Kempings 24/7',
           icon: '🚐',
           photos: [
             { url: '/kar1.jpg', alt: 'Kempings' },
@@ -1160,7 +1160,7 @@ export const content = {
           ],
         },
         {
-          label: 'Kempingas',
+          label: 'Kempingas 24/7',
           icon: '🚐',
           photos: [
             { url: '/kar1.jpg', alt: 'Kempingas' },
