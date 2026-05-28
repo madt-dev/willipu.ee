@@ -131,10 +131,7 @@ def make_fb_banner(filename):
     draw.text((tx, mid + 100), "willipu.ee",
               font=font_sm, fill=(*WHITE, 255))
 
-    # ── 5. Logo (parem pool) ─────────────────────────────────────────────
-    draw_logo(draw, base, cx=W - 160, cy=H//2, r=130)
-
-    # ── 6. Nurga kaunistused ─────────────────────────────────────────────
+    # ── 5. Nurga kaunistused ─────────────────────────────────────────────
     pad, arm, lw = 22, 45, 3
     for (x, y, dx, dy) in [(pad,pad,1,1),(pad,H-pad,1,-1),(W-pad,pad,-1,1),(W-pad,H-pad,-1,-1)]:
         draw.line([(x,y),(x+dx*arm,y)], fill=(*GOLD, 160), width=lw)
