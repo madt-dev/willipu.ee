@@ -291,6 +291,12 @@ function CardCarousel({ photos, onOpenLightbox }) {
 function Lightbox({ photos, startIndex, onClose }) {
   const [idx, setIdx] = useState(startIndex)
   const [swipeHint, setSwipeHint] = useState(photos.length > 1)
+  const [swipeHintKey, setSwipeHintKey] = useState(0)
+  const triggerHint = () => {
+    if (photos.length <= 1) return
+    setSwipeHintKey(k => k + 1)
+    setSwipeHint(true)
+  }
   const prev = () => setIdx(i => (i - 1 + photos.length) % photos.length)
   const next = () => setIdx(i => (i + 1) % photos.length)
   const touchStartX = useRef(null)
@@ -326,12 +332,12 @@ function Lightbox({ photos, startIndex, onClose }) {
   return (
     <div className="lightbox-backdrop" onClick={onClose}>
       <div className="lightbox" onClick={e => e.stopPropagation()} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-        <img src={photos[idx].url} alt={photos[idx].alt} className="lightbox-img" />
+        <img src={photos[idx].url} alt={photos[idx].alt} className="lightbox-img" onClick={triggerHint} />
         {photos.length > 1 && (
           <span className="lightbox-count">{idx + 1} / {photos.length}</span>
         )}
         {swipeHint && (
-          <div className="lightbox-swipe-hint" onAnimationEnd={() => setSwipeHint(false)}>
+          <div key={swipeHintKey} className="lightbox-swipe-hint" onAnimationEnd={() => setSwipeHint(false)}>
             <svg className="lightbox-swipe-icon" viewBox="0 0 48 22" width="48" height="22" fill="none" aria-hidden>
               <path d="M13 11H3M3 11l5-4M3 11l5 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               <circle cx="24" cy="11" r="5.5" fill="currentColor" opacity="0.85"/>
