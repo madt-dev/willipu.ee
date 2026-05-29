@@ -300,7 +300,18 @@ function Lightbox({ photos, startIndex, onClose }) {
       if (e.key === 'ArrowRight') next()
     }
     document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
+
+    // Push a history entry so mobile back button closes the lightbox instead of leaving the page
+    history.pushState({ lightbox: true }, '')
+    let closedByBack = false
+    const onPopState = () => { closedByBack = true; onClose() }
+    window.addEventListener('popstate', onPopState)
+
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      window.removeEventListener('popstate', onPopState)
+      if (!closedByBack && history.state?.lightbox) history.back()
+    }
   }, [])
 
   return (
@@ -314,7 +325,11 @@ function Lightbox({ photos, startIndex, onClose }) {
             <span className="lightbox-count">{idx + 1} / {photos.length}</span>
           </>
         )}
-        <button className="lightbox-close" onClick={onClose}>✕</button>
+        <button className="lightbox-close" onClick={onClose} aria-label="Close">
+          <svg viewBox="0 0 14 14" width="16" height="16" aria-hidden>
+            <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   )

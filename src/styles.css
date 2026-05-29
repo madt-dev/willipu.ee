@@ -620,20 +620,20 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 .lightbox-close {
   position: fixed;
   top: 1rem; right: 1rem;
+  z-index: 302;
   appearance: none;
   border: none;
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  width: 44px; height: 44px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 1rem;
   display: grid;
   place-items: center;
-  transition: background 0.2s;
-  backdrop-filter: blur(6px);
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
 }
-.lightbox-close:hover { background: rgba(255,255,255,0.25); }
+.lightbox-close:hover { background: #fff; transform: scale(1.08); }
 
 .price-list {
   list-style: none;
