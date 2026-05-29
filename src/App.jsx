@@ -292,6 +292,14 @@ function Lightbox({ photos, startIndex, onClose }) {
   const [idx, setIdx] = useState(startIndex)
   const prev = () => setIdx(i => (i - 1 + photos.length) % photos.length)
   const next = () => setIdx(i => (i + 1) % photos.length)
+  const touchStartX = useRef(null)
+  const onTouchStart = e => { touchStartX.current = e.touches[0].clientX }
+  const onTouchEnd = e => {
+    if (touchStartX.current === null) return
+    const dx = e.changedTouches[0].clientX - touchStartX.current
+    if (Math.abs(dx) > 40) dx < 0 ? next() : prev()
+    touchStartX.current = null
+  }
 
   useEffect(() => {
     const onKey = e => {
@@ -316,7 +324,7 @@ function Lightbox({ photos, startIndex, onClose }) {
 
   return (
     <div className="lightbox-backdrop" onClick={onClose}>
-      <div className="lightbox" onClick={e => e.stopPropagation()}>
+      <div className="lightbox" onClick={e => e.stopPropagation()} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <img src={photos[idx].url} alt={photos[idx].alt} className="lightbox-img" />
         {photos.length > 1 && (
           <>
