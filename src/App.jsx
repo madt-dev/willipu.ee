@@ -57,6 +57,42 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const footer = document.querySelector('.site-footer')
+    if (!footer) return
+    let startY = 0
+    let atBottom = false
+    const lerp = (a, b, t) => Math.round(a + (b - a) * t)
+    const isAtBottom = () =>
+      window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 5
+    const onTouchStart = e => {
+      startY = e.touches[0].clientY
+      atBottom = isAtBottom()
+    }
+    const onTouchMove = e => {
+      if (!atBottom) return
+      const pull = Math.max(0, Math.min((startY - e.touches[0].clientY) / 110, 1))
+      if (pull <= 0) { footer.style.background = ''; return }
+      // interpolate from --ink #1c2620 → --accent-2 #5d8a6a
+      footer.style.transition = 'none'
+      footer.style.background = `rgb(${lerp(28,93,pull)},${lerp(38,138,pull)},${lerp(32,106,pull)})`
+    }
+    const onTouchEnd = () => {
+      atBottom = false
+      footer.style.transition = 'background 0.55s ease'
+      footer.style.background = ''
+      setTimeout(() => { footer.style.transition = '' }, 600)
+    }
+    document.addEventListener('touchstart', onTouchStart, { passive: true })
+    document.addEventListener('touchmove', onTouchMove, { passive: true })
+    document.addEventListener('touchend', onTouchEnd, { passive: true })
+    return () => {
+      document.removeEventListener('touchstart', onTouchStart)
+      document.removeEventListener('touchmove', onTouchMove)
+      document.removeEventListener('touchend', onTouchEnd)
+    }
+  }, [])
+
   const t = useMemo(() => content[lang], [lang])
 
   return (
