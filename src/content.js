@@ -2,10 +2,8 @@ export const content = {
   et: {
     nav: {
       about: 'Meist',
-      stay: 'Majutus',
       amenities: 'Tegevused',
       pricing: 'Hinnakiri',
-      gallery: 'Galerii',
       contact: 'Kontakt',
     },
     hero: {
@@ -23,48 +21,10 @@ export const content = {
       body:
         'Willipu asub Tartumaal, Alatskivi vallas, Pusi külas, otse Peipsi järve kaldal. Lähim linn Kallaste jääb 2 km kaugusele, Tartu 50 km ja Tallinn 200 km kaugusele. Pakume majutust nii peamajas kui ka suvemajakestes, ruumi pidudeks ja koolitusteks ning kohta haagissuvilatele.',
       stats: [
+        { value: '41', label: 'haagissuvila kohta' },
         { value: '10', label: 'kohta peamajas' },
         { value: '30', label: 'kohta peosaalis' },
-        { value: '41', label: 'haagissuvila kohta' },
         { value: '2 km', label: 'Kallaste linna' },
-        { value: '16', label: 'kohta kämpingutes' },
-        { value: 'kuni 5', label: 'lisakohta' },
-        { value: '🏖', label: 'lapsesõbralik liivarand' },
-        { value: '🌿', label: 'suur muruplats väliürituste korraldamiseks' },
-      ],
-    },
-    stay: {
-      kicker: 'Majutus',
-      title: 'Vali endale sobiv variant',
-      cards: [
-        {
-          name: 'Peamaja',
-          tagline: '2–3 inimese toad, kuni 10 külalist',
-          desc:
-            'Kolmes toas on TV, WiFi, dušš ja WC. Ühel toal on dušš ja WC koridoris. Esimesel korrusel asub peosaal kuni 30 inimesele.',
-          price: 'al. 25 € / inimene',
-        },
-        {
-          name: 'Pereaiamaja',
-          tagline: '5 magamiskohta, köök, dušš, WC',
-          desc:
-            'Kaks tuba, WC, dušš ja köök. Konditsioneer. Sobib perele või väiksele seltskonnale.',
-          price: '110 € / öö',
-        },
-        {
-          name: 'Väike aiamaja',
-          tagline: '2 magamiskohta, soojustatud',
-          desc:
-            'Talvel kasutatav, sooja vee ja WC-ga. Mõnus paaridele või paigaks, kui peamaja täis.',
-          price: '40 € / öö',
-        },
-        {
-          name: 'Karavani park',
-          tagline: 'Elekter, vesi, duššid, WC',
-          desc:
-            'Kuni 41 haagissuvilakohta. Elektri-, vee- ja kanalisatsiooniühendused. Telkimine lubatud.',
-          price: 'al. 14 € / öö',
-        },
       ],
     },
     amenities: {
@@ -75,7 +35,7 @@ export const content = {
         { icon: 'ball', title: 'Võrkpall ja mängud', body: 'Õueplatsid ja vabad muruväljakud.' },
         { icon: 'fire', title: 'Lõke ja saun', body: 'Lõkkeplats ning saun seltskonnale.' },
         { icon: 'hall', title: 'Peosaal kuni 30', body: 'Konverentsid, peod, koolitused.' },
-        { icon: 'wifi', title: 'Kiire WiFi kogu territooriumil', body: 'Tasuta kiire WiFi kogu territooriumil.' },
+        { icon: 'wifi', title: 'Kiire WiFi kogu territooriumil', body: 'Tasuta ühendus nii toas kui õuealal.' },
       ],
     },
     pricing: {
@@ -236,10 +196,8 @@ export const content = {
   en: {
     nav: {
       about: 'About',
-      stay: 'Stay',
       amenities: 'Activities',
       pricing: 'Pricing',
-      gallery: 'Gallery',
       contact: 'Contact',
     },
     hero: {
@@ -257,48 +215,10 @@ export const content = {
       body:
         'Willipu sits in Tartu county, Alatskivi commune, Pusi village — right on the shore of Lake Peipus. The nearest town Kallaste is 2 km away, Tartu is 50 km, Tallinn 200 km. We offer rooms in the main house, summer cottages, a banquet hall for events and a full caravan park.',
       stats: [
+        { value: '41', label: 'caravan spots' },
         { value: '10', label: 'beds in main house' },
         { value: '30', label: 'seats in banquet hall' },
-        { value: '41', label: 'caravan spots' },
         { value: '2 km', label: 'to Kallaste' },
-        { value: '16', label: 'beds in cottages' },
-        { value: 'up to 5', label: 'extra beds' },
-        { value: '🏖', label: 'child-friendly sandy beach' },
-        { value: '🌿', label: 'large lawn for outdoor events' },
-      ],
-    },
-    stay: {
-      kicker: 'Stay',
-      title: 'Find the right place to sleep',
-      cards: [
-        {
-          name: 'Main house',
-          tagline: 'Rooms for 2–3, up to 10 guests',
-          desc:
-            'Three rooms have TV, WiFi, shower and toilet. One room has shower and toilet in the hall. The ground floor holds our banquet hall for up to 30 people.',
-          price: 'from €25 / person',
-        },
-        {
-          name: 'Family cottage',
-          tagline: '5 beds, kitchen, shower, toilet',
-          desc:
-            'Two bedrooms, full bathroom and kitchen. Air conditioning. Comfortable for a family or small group.',
-          price: '€110 / night',
-        },
-        {
-          name: 'Small cottage',
-          tagline: '2 beds, heated, year-round',
-          desc:
-            'Insulated for winter use, with hot water and toilet. A cosy spot for couples or overflow guests.',
-          price: '€40 / night',
-        },
-        {
-          name: 'Caravan park',
-          tagline: 'Power, water, showers, WC',
-          desc:
-            'Up to 41 caravan spots with electric, water and sewage hookups. Tent camping welcome.',
-          price: 'from €14 / night',
-        },
       ],
     },
     amenities: {
@@ -309,7 +229,7 @@ export const content = {
         { icon: 'ball', title: 'Volleyball and games', body: 'Outdoor courts and open lawns.' },
         { icon: 'fire', title: 'Bonfire and sauna', body: 'Fire pit and sauna for groups.' },
         { icon: 'hall', title: 'Banquet hall for 30', body: 'Conferences, parties, trainings.' },
-        { icon: 'wifi', title: 'Fast WiFi across the property', body: 'Free high-speed WiFi across the entire property.' },
+        { icon: 'wifi', title: 'Fast WiFi across the property', body: 'Free connection indoors and throughout the grounds.' },
       ],
     },
     pricing: {
@@ -470,10 +390,8 @@ export const content = {
   de: {
     nav: {
       about: 'Über uns',
-      stay: 'Unterkunft',
       amenities: 'Aktivitäten',
       pricing: 'Preise',
-      gallery: 'Galerie',
       contact: 'Kontakt',
     },
     hero: {
@@ -489,14 +407,10 @@ export const content = {
       title: 'Über 20 Jahre Erfahrung',
       body: 'Willipu liegt im Kreis Tartu, Gemeinde Alatskivi, Dorf Pusi — direkt am Ufer des Peipussees. Die nächste Stadt Kallaste ist 2 km entfernt, Tartu 50 km und Tallinn 200 km. Wir bieten Zimmer im Haupthaus, Sommerhütten, einen Festsaal für Veranstaltungen und einen vollständigen Campingpark.',
       stats: [
+        { value: '41', label: 'Campingstellplätze' },
         { value: '10', label: 'Betten im Haupthaus' },
         { value: '30', label: 'Plätze im Festsaal' },
-        { value: '41', label: 'Campingstellplätze' },
         { value: '2 km', label: 'bis Kallaste' },
-        { value: '16', label: 'Betten in Hütten' },
-        { value: 'bis 5', label: 'Zusatzbetten' },
-        { value: '🏖', label: 'kinderfreundlicher Sandstrand' },
-        { value: '🌿', label: 'großer Rasen für Freiluftveranstaltungen' },
       ],
     },
     amenities: {
@@ -507,7 +421,7 @@ export const content = {
         { icon: 'ball', title: 'Volleyball und Spiele', body: 'Außenplätze und offene Rasenflächen.' },
         { icon: 'fire', title: 'Lagerfeuer und Sauna', body: 'Feuerstelle und Sauna für Gruppen.' },
         { icon: 'hall', title: 'Festsaal für 30', body: 'Konferenzen, Feiern, Schulungen.' },
-        { icon: 'wifi', title: 'Schnelles WLAN auf dem gesamten Gelände', body: 'Kostenloses Hochgeschwindigkeits-WLAN auf dem gesamten Gelände.' },
+        { icon: 'wifi', title: 'Schnelles WLAN auf dem gesamten Gelände', body: 'Kostenlose Verbindung im Haus und im Außenbereich.' },
       ],
     },
     pricing: {
@@ -667,10 +581,8 @@ export const content = {
   fi: {
     nav: {
       about: 'Meistä',
-      stay: 'Majoitus',
       amenities: 'Aktiviteetit',
       pricing: 'Hinnat',
-      gallery: 'Galleria',
       contact: 'Yhteystiedot',
     },
     hero: {
@@ -686,14 +598,10 @@ export const content = {
       title: 'Yli 20 vuoden kokemus',
       body: 'Willipu sijaitsee Tarton maakunnassa, Alatskivin kunnassa, Pusin kylässä – suoraan Peipsijärven rannalla. Lähin kaupunki Kallaste on 2 km päässä, Tartu 50 km ja Tallinn 200 km. Tarjoamme huoneita päätalossa, kesämökkejä, juhlatilan tapahtumia varten sekä täyden asuntovaunualueen.',
       stats: [
+        { value: '41', label: 'asuntovaunupaikkaa' },
         { value: '10', label: 'paikkaa päätalossa' },
         { value: '30', label: 'paikkaa juhlatilassa' },
-        { value: '41', label: 'asuntovaunupaikkaa' },
-        { value: '2 km', label: 'Kallasteen kaupunkiin' },
-        { value: '16', label: 'paikkaa mökeissä' },
-        { value: 'enint. 5', label: 'lisäpaikkaa' },
-        { value: '🏖', label: 'lapsiystävällinen hiekkaranta' },
-        { value: '🌿', label: 'suuri nurmialue ulkotapahtumia varten' },
+        { value: '2 km', label: 'Kallasteen' },
       ],
     },
     amenities: {
@@ -704,7 +612,7 @@ export const content = {
         { icon: 'ball', title: 'Lentopallo ja pelit', body: 'Ulkokentät ja avoimet nurmikenttät.' },
         { icon: 'fire', title: 'Nuotio ja sauna', body: 'Nuotiopaikka ja sauna ryhmille.' },
         { icon: 'hall', title: 'Juhlatila 30 hengelle', body: 'Kokoukset, juhlat, koulutukset.' },
-        { icon: 'wifi', title: 'Nopea WiFi koko alueella', body: 'Ilmainen nopea WiFi koko alueella.' },
+        { icon: 'wifi', title: 'Nopea WiFi koko alueella', body: 'Maksuton yhteys sisällä ja ulkoalueella.' },
       ],
     },
     pricing: {
@@ -864,10 +772,8 @@ export const content = {
   lv: {
     nav: {
       about: 'Par mums',
-      stay: 'Izmitināšana',
       amenities: 'Aktivitātes',
       pricing: 'Cenas',
-      gallery: 'Galerija',
       contact: 'Kontakti',
     },
     hero: {
@@ -883,14 +789,10 @@ export const content = {
       title: 'Vairāk nekā 20 gadu pieredze',
       body: 'Willipu atrodas Tartu novadā, Alatskivi pagastā, Pusi ciemā — tieši pie Peipusa ezera krasta. Tuvākā pilsēta Kallaste ir 2 km attālumā, Tartu — 50 km un Tallina — 200 km. Mēs piedāvājam istabas galvenajā mājā, vasarnamiņus, banketu zāli pasākumiem un pilnvērtīgu kempingu.',
       stats: [
-        { value: '10', label: 'gultas galvenajā mājā' },
-        { value: '30', label: 'vietas banketu zālē' },
         { value: '41', label: 'kempinga vietas' },
+        { value: '10', label: 'vietas galvenajā mājā' },
+        { value: '30', label: 'vietas banketu zālē' },
         { value: '2 km', label: 'līdz Kallastei' },
-        { value: '16', label: 'gultas namiņos' },
-        { value: 'līdz 5', label: 'papildu gultas' },
-        { value: '🏖', label: 'bērniem draudzīgs smilšu pludmale' },
-        { value: '🌿', label: 'liels zālājs āra pasākumiem' },
       ],
     },
     amenities: {
@@ -901,7 +803,7 @@ export const content = {
         { icon: 'ball', title: 'Volejbols un spēles', body: 'Āra laukumi un brīvas zaļas zonas.' },
         { icon: 'fire', title: 'Ugunskurs un pirts', body: 'Ugunskura vieta un pirts grupām.' },
         { icon: 'hall', title: 'Banketu zāle 30 cilvēkiem', body: 'Konferences, svētki, apmācības.' },
-        { icon: 'wifi', title: 'Ātrs WiFi visā teritorijā', body: 'Bezmaksas ātrs WiFi visā teritorijā.' },
+        { icon: 'wifi', title: 'Ātrs WiFi visā teritorijā', body: 'Bezmaksas savienojums telpās un āra zonā.' },
       ],
     },
     pricing: {
@@ -1061,10 +963,8 @@ export const content = {
   lt: {
     nav: {
       about: 'Apie mus',
-      stay: 'Nakvynė',
       amenities: 'Veikla',
       pricing: 'Kainos',
-      gallery: 'Galerija',
       contact: 'Kontaktai',
     },
     hero: {
@@ -1080,14 +980,10 @@ export const content = {
       title: 'Daugiau nei 20 metų patirtis',
       body: 'Willipu yra Tartu apskrityje, Alatskivi seniūnijoje, Pusi kaime — tiesiai prie Peipaus ežero kranto. Artimiausias miestas Kallaste yra 2 km, Tartu — 50 km, Talinas — 200 km. Siūlome kambarius pagrindiniame name, vasarnamiukus, salę renginiams ir pilnavertį kempingą.',
       stats: [
+        { value: '41', label: 'kempingo vietos' },
         { value: '10', label: 'vietų pagrindiniame name' },
-        { value: '30', label: 'vietų salėje' },
-        { value: '41', label: 'kempingo aikštelių' },
+        { value: '30', label: 'vietų banketų salėje' },
         { value: '2 km', label: 'iki Kallaste' },
-        { value: '16', label: 'vietų nameliuose' },
-        { value: 'iki 5', label: 'papildomų vietų' },
-        { value: '🏖', label: 'vaikams draugiškas smėlio paplūdimys' },
-        { value: '🌿', label: 'didelis vejas lauko renginiams' },
       ],
     },
     amenities: {
@@ -1098,7 +994,7 @@ export const content = {
         { icon: 'ball', title: 'Tinklinis ir žaidimai', body: 'Lauko aikštelės ir atviros žolės erdvės.' },
         { icon: 'fire', title: 'Laužas ir pirtis', body: 'Laužavietė ir pirtis grupėms.' },
         { icon: 'hall', title: 'Salė 30 žmonių', body: 'Konferencijos, šventės, mokymai.' },
-        { icon: 'wifi', title: 'Greitas WiFi visoje teritorijoje', body: 'Nemokamas greitas WiFi visoje teritorijoje.' },
+        { icon: 'wifi', title: 'Greitas WiFi visoje teritorijoje', body: 'Nemokamas ryšys patalpose ir lauke.' },
       ],
     },
     pricing: {
@@ -1258,10 +1154,8 @@ export const content = {
   ru: {
     nav: {
       about: 'О нас',
-      stay: 'Размещение',
       amenities: 'Активности',
       pricing: 'Цены',
-      gallery: 'Галерея',
       contact: 'Контакты',
     },
     hero: {
@@ -1277,44 +1171,10 @@ export const content = {
       title: 'Более 20 лет опыта',
       body: 'Willipu расположен в Тартумаа, волости Алатскиви, деревне Пуси, прямо на берегу Чудского озера. Ближайший город Каллясте находится в 2 км, Тарту — в 50 км, Таллин — в 200 км. Мы предлагаем номера в главном доме, летние коттеджи, банкетный зал для мероприятий и кемпинг для домов на колёсах.',
       stats: [
+        { value: '41', label: 'мест для кемпинга' },
         { value: '10', label: 'мест в главном доме' },
         { value: '30', label: 'мест в банкетном зале' },
-        { value: '41', label: 'место для дома на колёсах' },
-        { value: '2 км', label: 'до г. Каллясте' },
-        { value: '16', label: 'мест в коттеджах' },
-        { value: 'до 5', label: 'доп. мест' },
-        { value: '🏖', label: 'детский пляж с песком' },
-        { value: '🌿', label: 'большая лужайка для мероприятий' },
-      ],
-    },
-    stay: {
-      kicker: 'Размещение',
-      title: 'Выберите подходящий вариант',
-      cards: [
-        {
-          name: 'Главный дом',
-          tagline: 'Номера на 2–3 человека, до 10 гостей',
-          desc: 'В трёх номерах есть TV, WiFi, душ и WC. В одном номере душ и WC общие. На первом этаже — банкетный зал до 30 человек.',
-          price: 'от 25 € / чел.',
-        },
-        {
-          name: 'Большой коттедж',
-          tagline: '5 спальных мест, кухня, душ, WC',
-          desc: 'Две комнаты, WC, душ и кухня. Кондиционер. Подходит для семьи или небольшой группы.',
-          price: '110 € / ночь',
-        },
-        {
-          name: 'Малый коттедж',
-          tagline: '2 спальных места, утеплённый',
-          desc: 'Используется зимой, с горячей водой и WC. Уютное место для пары или дополнительное размещение.',
-          price: '40 € / ночь',
-        },
-        {
-          name: 'Кемпинг',
-          tagline: 'Электричество, вода, душ, WC',
-          desc: 'До 41 места для домов на колёсах с подключением к электричеству, воде и канализации. Палатки разрешены.',
-          price: 'от 14 € / ночь',
-        },
+        { value: '2 км', label: 'до Калласте' },
       ],
     },
     amenities: {
@@ -1325,7 +1185,7 @@ export const content = {
         { icon: 'ball', title: 'Волейбол и игры', body: 'Спортплощадки и открытые травяные поля.' },
         { icon: 'fire', title: 'Костёр и сауна', body: 'Место для костра и сауна для компании.' },
         { icon: 'hall', title: 'Банкетный зал до 30 чел.', body: 'Конференции, вечеринки, тренинги.' },
-        { icon: 'wifi', title: 'Быстрый WiFi по всей территории', body: 'Бесплатный быстрый WiFi по всей территории.' },
+        { icon: 'wifi', title: 'Быстрый WiFi по всей территории', body: 'Бесплатный доступ в помещениях и на открытом воздухе.' },
       ],
     },
     pricing: {

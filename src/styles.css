@@ -914,6 +914,8 @@ button.contact-item:hover { background: rgba(255,255,255,0.09); }
   font-size: 0.8rem;
   color: rgba(255,255,255,0.5);
   line-height: 1.7;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .site-footer {

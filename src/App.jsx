@@ -43,6 +43,11 @@ export default function App() {
   }, [lang])
 
   useEffect(() => {
+    const t = content[lang]
+    document.title = `Willipu · ${t.hero.eyebrow}`
+  }, [lang])
+
+  useEffect(() => {
     if (localStorage.getItem('willipu_lang')) return
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 3000)
@@ -230,11 +235,11 @@ function Hero({ t, lang }) {
           <a href={bookingUrl(lang)} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             {t.cta}
           </a>
-          <p className="hero-cta-note">{t.ctaNote}</p>
           <a href="#pricing" className="btn btn-ghost">
             {t.ctaAlt} →
           </a>
         </div>
+        {t.ctaNote && <p className="hero-cta-note">{t.ctaNote}</p>}
       </div>
       <a href="#about" className="hero-scroll" aria-label="Scroll to content">
         <span />
