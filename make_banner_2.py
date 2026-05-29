@@ -117,7 +117,7 @@ def make_banner(filename):
     c.saveState()
     c.setFillColor(white)
     c.setFillAlpha(1)
-    c.setFont("Helvetica-Bold", 36*mm)
+    c.setFont("Helvetica-Bold", 55*mm)
     c.drawString(tx, mid + 215*mm, "PUHKEMAJUTUS  ·  KARAVAN PARK")
     c.restoreState()
 
