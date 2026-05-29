@@ -619,6 +619,9 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   backdrop-filter: blur(6px);
 }
 .lightbox-arrow:hover { background: rgba(255,255,255,0.25); }
+@media (hover: none) and (pointer: coarse) {
+  .lightbox-arrow { display: none; }
+}
 .lightbox-prev { left: 1rem; }
 .lightbox-next { right: 1rem; }
 .lightbox-count {

@@ -370,7 +370,11 @@ function Lightbox({ photos, startIndex, onClose }) {
       <div className="lightbox" onClick={e => e.stopPropagation()} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <img src={photos[idx].url} alt={photos[idx].alt} className="lightbox-img" onClick={triggerHint} />
         {photos.length > 1 && (
-          <span className="lightbox-count">{idx + 1} / {photos.length}</span>
+          <>
+            <button className="lightbox-arrow lightbox-prev" onClick={prev}>‹</button>
+            <button className="lightbox-arrow lightbox-next" onClick={next}>›</button>
+            <span className="lightbox-count">{idx + 1} / {photos.length}</span>
+          </>
         )}
         {swipeHint && (
           <div key={swipeHintKey} className="lightbox-swipe-hint" onAnimationEnd={() => setSwipeHint(false)}>
