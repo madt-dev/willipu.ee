@@ -83,6 +83,7 @@ export const content = {
       title: 'Soodsad hinnad, kõigi mugavustega',
       note:
         'Broneeringu kinnitamiseks tasutakse 50% ettemaksuna. Tühistamisel alla 14 päeva ettemaks ei tagastata.',
+      downloadLabel: 'Laadi hinnakiri alla (.xlsx)',
       groups: [
         {
           label: 'Suur kämpingumaja',
@@ -311,6 +312,7 @@ export const content = {
       title: 'Affordable prices, all comforts included',
       note:
         'A 50% deposit confirms your booking. Cancellations within 14 days of arrival forfeit the deposit.',
+      downloadLabel: 'Download price list (.xlsx)',
       groups: [
         {
           label: 'Large Camping Cottage',
@@ -502,6 +504,7 @@ export const content = {
       kicker: 'Preise',
       title: 'Günstige Preise, alle Annehmlichkeiten inklusive',
       note: 'Eine Anzahlung von 50 % bestätigt Ihre Buchung. Bei Stornierung innerhalb von 14 Tagen vor Anreise verfällt die Anzahlung.',
+      downloadLabel: 'Preisliste herunterladen (.xlsx)',
       groups: [
         {
           label: 'Großes Campinghaus',
@@ -693,6 +696,7 @@ export const content = {
       kicker: 'Hinnat',
       title: 'Edulliset hinnat, kaikki mukavuudet mukana',
       note: '50 %:n ennakkomaksu vahvistaa varauksen. Peruutuksista alle 14 päivää ennen saapumista ennakkomaksua ei palauteta.',
+      downloadLabel: 'Lataa hinnasto (.xlsx)',
       groups: [
         {
           label: 'Suuri leirintämökki',
@@ -884,6 +888,7 @@ export const content = {
       kicker: 'Cenas',
       title: 'Pieejamas cenas ar visām ērtībām',
       note: '50% avansa maksājums apstiprina rezervāciju. Atcelšanas gadījumā mazāk nekā 14 dienas pirms ierašanās avansa maksa netiek atgriezta.',
+      downloadLabel: 'Lejupielādēt cenrādi (.xlsx)',
       groups: [
         {
           label: 'Lielais kempinga namiņš',
@@ -1075,6 +1080,7 @@ export const content = {
       kicker: 'Kainos',
       title: 'Prieinamos kainos su visais patogumais',
       note: '50% išankstinis mokėjimas patvirtina rezervaciją. Atšaukus rezervaciją likus mažiau nei 14 dienų iki atvykimo, avansas negrąžinamas.',
+      downloadLabel: 'Atsisiųsti kainoraštį (.xlsx)',
       groups: [
         {
           label: 'Didelis kempingo namelis',

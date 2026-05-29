@@ -717,6 +717,30 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 }
 
 
+/* Price download */
+.price-download-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 0.25rem 0 0.5rem;
+}
+.price-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.price-download-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(45,74,62,0.05);
+}
+
 /* Contact */
 .contact-wrap {
   max-width: 720px;

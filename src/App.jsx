@@ -440,6 +440,15 @@ function Pricing({ t }) {
           ))}
         </div>
         <p className="price-note-global">{t.note}</p>
+        <div className="price-download-wrap">
+          <a href="/hinnakiri.xlsx" download className="price-download-link">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden>
+              <path d="M10 2v10M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M3 14v2a1 1 0 001 1h12a1 1 0 001-1v-2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+            </svg>
+            {t.downloadLabel}
+          </a>
+        </div>
       </div>
       {lightbox && (
         <Lightbox
