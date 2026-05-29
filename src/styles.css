@@ -617,6 +617,40 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   border-radius: 999px;
   backdrop-filter: blur(6px);
 }
+.lightbox-swipe-hint {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0,0,0,0.52);
+  backdrop-filter: blur(6px);
+  color: rgba(255,255,255,0.92);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 1rem 0.45rem 0.75rem;
+  border-radius: 999px;
+  pointer-events: none;
+  animation: swipeHintShow 2.8s ease forwards;
+}
+@keyframes swipeHintShow {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(6px); }
+  12%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  72%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+.lightbox-swipe-icon {
+  animation: swipeIconBounce 0.85s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes swipeIconBounce {
+  0%   { transform: translateX(5px); }
+  50%  { transform: translateX(-5px); }
+  100% { transform: translateX(5px); }
+}
+
 .lightbox-close {
   position: absolute;
   top: 0.6rem; right: 0.6rem;

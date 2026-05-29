@@ -290,6 +290,7 @@ function CardCarousel({ photos, onOpenLightbox }) {
 
 function Lightbox({ photos, startIndex, onClose }) {
   const [idx, setIdx] = useState(startIndex)
+  const [swipeHint, setSwipeHint] = useState(photos.length > 1)
   const prev = () => setIdx(i => (i - 1 + photos.length) % photos.length)
   const next = () => setIdx(i => (i + 1) % photos.length)
   const touchStartX = useRef(null)
@@ -332,6 +333,16 @@ function Lightbox({ photos, startIndex, onClose }) {
             <button className="lightbox-arrow lightbox-next" onClick={next}>›</button>
             <span className="lightbox-count">{idx + 1} / {photos.length}</span>
           </>
+        )}
+        {swipeHint && (
+          <div className="lightbox-swipe-hint" onAnimationEnd={() => setSwipeHint(false)}>
+            <svg className="lightbox-swipe-icon" viewBox="0 0 48 22" width="48" height="22" fill="none" aria-hidden>
+              <path d="M13 11H3M3 11l5-4M3 11l5 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="24" cy="11" r="5.5" fill="currentColor" opacity="0.85"/>
+              <path d="M35 11h10M45 11l-5-4M45 11l-5 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span>swipe</span>
+          </div>
         )}
         <button className="lightbox-close" onClick={onClose} aria-label="Close">
           <svg viewBox="0 0 14 14" width="16" height="16" aria-hidden>
