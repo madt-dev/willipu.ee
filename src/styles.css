@@ -618,8 +618,8 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   backdrop-filter: blur(6px);
 }
 .lightbox-close {
-  position: fixed;
-  top: 1rem; right: 1rem;
+  position: absolute;
+  top: 0.6rem; right: 0.6rem;
   z-index: 302;
   appearance: none;
   border: none;
