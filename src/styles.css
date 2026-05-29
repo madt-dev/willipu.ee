@@ -1137,32 +1137,8 @@ main {
   box-shadow: 0 0 0 3px rgba(45,74,62,0.12);
 }
 .cf-textarea { min-height: 90px; resize: vertical; }
-.cf-captcha { margin-top: 0.1rem; }
-.cf-error { font-size: 0.82rem; color: #c0392b; margin: 0; }
-.cf-submit { width: 100%; justify-content: center; margin-top: 0.1rem; }
-
-.cf-success {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 1.8rem 1.2rem 1.4rem;
-  text-align: center;
-}
-.cf-success-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #e8f5e9;
-  color: var(--accent);
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-.cf-success p { font-size: 0.9rem; color: var(--ink); margin: 0; }
-.cf-again { font-size: 0.88rem; padding: 0.55rem 1.4rem; }
+.cf-hint { font-size: 0.78rem; color: rgba(0,0,0,0.45); margin: 0; line-height: 1.4; }
+.cf-submit { width: 100%; justify-content: center; }
 
 @media (max-width: 480px) {
   .cf-wrapper { bottom: 5rem; }

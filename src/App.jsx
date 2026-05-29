@@ -583,8 +583,7 @@ function Footer({ t }) {
   )
 }
 
-const FORMSPREE_ID = 'xpwrdkva'
-const HCAPTCHA_SITEKEY = '10000000-ffff-ffff-ffff-000000000001'
+const CONTACT_EMAIL = 'willipu.willipu@gmail.com'
 
 function ContactFloat({ t }) {
   const fc = t.floatContact
@@ -592,40 +591,7 @@ function ContactFloat({ t }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [status, setStatus] = useState('idle') // idle | sending | success | error
-  const captchaRef = useRef(null)
-  const captchaWidgetRef = useRef(null)
   const panelRef = useRef(null)
-
-  useEffect(() => {
-    if (document.getElementById('hcaptcha-script')) return
-    const s = document.createElement('script')
-    s.id = 'hcaptcha-script'
-    s.src = 'https://js.hcaptcha.com/1/api.js?render=explicit&recaptchacompat=off'
-    s.async = true
-    s.defer = true
-    document.head.appendChild(s)
-  }, [])
-
-  useEffect(() => {
-    if (!open) {
-      captchaWidgetRef.current = null
-      return
-    }
-    const tryRender = () => {
-      if (!captchaRef.current || !window.hcaptcha) return
-      if (captchaWidgetRef.current !== null) return
-      captchaWidgetRef.current = window.hcaptcha.render(captchaRef.current, {
-        sitekey: HCAPTCHA_SITEKEY,
-        theme: 'light',
-        size: 'normal',
-      })
-    }
-    const interval = setInterval(() => {
-      if (window.hcaptcha) { tryRender(); clearInterval(interval) }
-    }, 200)
-    return () => clearInterval(interval)
-  }, [open])
 
   useEffect(() => {
     if (!open) return
@@ -641,52 +607,22 @@ function ContactFloat({ t }) {
     }
   }, [open])
 
-  const resetForm = () => {
-    setName(''); setEmail(''); setMessage(''); setStatus('idle')
-    if (captchaWidgetRef.current !== null && window.hcaptcha) {
-      window.hcaptcha.reset(captchaWidgetRef.current)
-    }
-  }
+  const resetForm = () => { setName(''); setEmail(''); setMessage('') }
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault()
-    if (status === 'sending' || status === 'success') return
-    let token = ''
-    if (captchaWidgetRef.current !== null && window.hcaptcha) {
-      token = window.hcaptcha.getResponse(captchaWidgetRef.current)
-    }
-    if (!token) {
-      if (captchaWidgetRef.current !== null && window.hcaptcha) {
-        window.hcaptcha.execute(captchaWidgetRef.current)
-      }
-      return
-    }
-    setStatus('sending')
-    try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ name, email, message, 'h-captcha-response': token }),
-      })
-      if (res.ok) {
-        setStatus('success')
-        setName(''); setEmail(''); setMessage('')
-      } else {
-        setStatus('error')
-      }
-    } catch {
-      setStatus('error')
-    }
-    if (captchaWidgetRef.current !== null && window.hcaptcha) {
-      window.hcaptcha.reset(captchaWidgetRef.current)
-    }
+    const subject = encodeURIComponent(fc.emailSubject.replace('{name}', name))
+    const body = encodeURIComponent(`${fc.emailFrom}: ${name}\n${fc.emailReply}: ${email}\n\n${message}`)
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+    resetForm()
+    setOpen(false)
   }
 
   return (
     <div className={`cf-wrapper${open ? ' cf-open' : ''}`} ref={panelRef}>
       <button
         className="cf-tab"
-        onClick={() => { setOpen(o => !o); if (status === 'success') resetForm() }}
+        onClick={() => setOpen(o => !o)}
         aria-label={fc.tab}
         aria-expanded={open}
       >
@@ -700,55 +636,36 @@ function ContactFloat({ t }) {
           <span className="cf-panel-title">{fc.title}</span>
           <button className="cf-close" onClick={() => setOpen(false)} aria-label="Sulge">✕</button>
         </div>
-        {status === 'success' ? (
-          <div className="cf-success">
-            <span className="cf-success-icon" aria-hidden>✓</span>
-            <p>{fc.successMsg}</p>
-            <button className="btn btn-primary cf-again" onClick={resetForm}>
-              {fc.send}
-            </button>
-          </div>
-        ) : (
-          <form className="cf-form" onSubmit={handleSubmit} noValidate>
-            <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-            <input
-              className="cf-input"
-              type="text"
-              placeholder={fc.namePlaceholder}
-              value={name}
-              onChange={e => setName(e.target.value)}
-              required
-              disabled={status === 'sending'}
-            />
-            <input
-              className="cf-input"
-              type="email"
-              placeholder={fc.emailPlaceholder}
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              required
-              disabled={status === 'sending'}
-            />
-            <textarea
-              className="cf-input cf-textarea"
-              placeholder={fc.messagePlaceholder}
-              value={message}
-              onChange={e => setMessage(e.target.value)}
-              required
-              rows={4}
-              disabled={status === 'sending'}
-            />
-            <div ref={captchaRef} className="cf-captcha" />
-            {status === 'error' && <p className="cf-error">{fc.errorMsg}</p>}
-            <button
-              className="btn btn-primary cf-submit"
-              type="submit"
-              disabled={status === 'sending'}
-            >
-              {status === 'sending' ? fc.sending : fc.send}
-            </button>
-          </form>
-        )}
+        <form className="cf-form" onSubmit={handleSubmit}>
+          <input
+            className="cf-input"
+            type="text"
+            placeholder={fc.namePlaceholder}
+            value={name}
+            onChange={e => setName(e.target.value)}
+            required
+          />
+          <input
+            className="cf-input"
+            type="email"
+            placeholder={fc.emailPlaceholder}
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+          <textarea
+            className="cf-input cf-textarea"
+            placeholder={fc.messagePlaceholder}
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+            required
+            rows={4}
+          />
+          <p className="cf-hint">{fc.hint}</p>
+          <button className="btn btn-primary cf-submit" type="submit">
+            {fc.send}
+          </button>
+        </form>
       </div>
     </div>
   )
