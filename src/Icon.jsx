@@ -132,6 +132,12 @@ const paths = {
       <circle cx="12" cy="8" r="2.2" />
     </g>
   ),
+  mail: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 6 9-6" />
+    </g>
+  ),
 }
 
 export function Icon({ name }) {

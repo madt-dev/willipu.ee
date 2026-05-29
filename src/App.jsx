@@ -120,6 +120,7 @@ export default function App() {
         <Contact t={t.contact} />
       </main>
       <Footer t={t.footer} />
+      <ContactFloat t={t} />
     </>
   )
 }
@@ -562,6 +563,7 @@ function Contact({ t }) {
               {t.legal.companyName}<br />
               Reg nr. {t.legal.reg} &nbsp;·&nbsp; KMKR (VAT) {t.legal.vat}
               <br />{t.legal.legalAddress}
+              <br />{t.legal.bankLabel}: {t.legal.iban} &nbsp;·&nbsp; {t.legal.bank} &nbsp;·&nbsp; SWIFT: {t.legal.swift}
             </p>
           )}
         </div>
@@ -579,5 +581,93 @@ function Footer({ t }) {
         <span>© {new Date().getFullYear()} · {t.rights}</span>
       </div>
     </footer>
+  )
+}
+
+const CONTACT_EMAIL = 'willipu.willipu@gmail.com'
+
+function ContactFloat({ t }) {
+  const fc = t.floatContact
+  const [open, setOpen] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const panelRef = useRef(null)
+
+  useEffect(() => {
+    if (!open) return
+    const onKey = e => { if (e.key === 'Escape') setOpen(false) }
+    const onDown = e => {
+      if (panelRef.current && !panelRef.current.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('keydown', onKey)
+    document.addEventListener('mousedown', onDown)
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.removeEventListener('mousedown', onDown)
+    }
+  }, [open])
+
+  const resetForm = () => { setName(''); setEmail(''); setMessage('') }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const subject = encodeURIComponent(fc.emailSubject.replace('{name}', name))
+    const body = encodeURIComponent(`${fc.emailFrom}: ${name}\n${fc.emailReply}: ${email}\n\n${message}`)
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+    resetForm()
+    setOpen(false)
+  }
+
+  return (
+    <div className={`cf-wrapper${open ? ' cf-open' : ''}`} ref={panelRef}>
+      <button
+        className="cf-tab"
+        onClick={() => setOpen(o => !o)}
+        aria-label={fc.tab}
+        aria-expanded={open}
+      >
+        <span className="cf-tab-icon" aria-hidden>
+          <Icon name="mail" />
+        </span>
+        <span className="cf-tab-label">{fc.tab}</span>
+      </button>
+      <div className="cf-panel" aria-hidden={!open}>
+        <div className="cf-panel-head">
+          <span className="cf-panel-title">{fc.title}</span>
+          <button className="cf-close" onClick={() => setOpen(false)} aria-label="Sulge">✕</button>
+        </div>
+        <form className="cf-form" onSubmit={handleSubmit}>
+          <input
+            className="cf-input"
+            type="text"
+            placeholder={fc.namePlaceholder}
+            value={name}
+            onChange={e => setName(e.target.value)}
+            required
+          />
+          <input
+            className="cf-input"
+            type="email"
+            placeholder={fc.emailPlaceholder}
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+          <textarea
+            className="cf-input cf-textarea"
+            placeholder={fc.messagePlaceholder}
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+            required
+            rows={4}
+          />
+          <p className="cf-hint">{fc.hint}</p>
+          <button className="btn btn-primary cf-submit" type="submit">
+            {fc.send}
+          </button>
+        </form>
+      </div>
+    </div>
   )
 }
