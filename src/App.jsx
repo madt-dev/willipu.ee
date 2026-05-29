@@ -4,6 +4,11 @@ import { Icon } from './Icon.jsx'
 
 const SUPPORTED = ['et', 'en', 'de', 'fi', 'lv', 'lt', 'ru']
 
+// Languages supported by the booking system at willipu.pargihaldur.ee
+const BOOKING_LANGS = new Set(['et', 'en', 'ru'])
+const BOOKING_BASE = 'https://willipu.pargihaldur.ee'
+const bookingUrl = lang => `${BOOKING_BASE}?lang=${BOOKING_LANGS.has(lang) ? lang : 'en'}`
+
 const COUNTRY_LANG = {
   EE: 'et', LV: 'lv', LT: 'lt', FI: 'fi',
   DE: 'de', AT: 'de', CH: 'de', LI: 'de',
@@ -108,7 +113,7 @@ export default function App() {
         setNavOpen={setNavOpen}
       />
       <main>
-        <Hero t={t.hero} />
+        <Hero t={t.hero} lang={lang} />
         <About t={t.about} />
         <Amenities t={t.amenities} />
         <Pricing t={t.pricing} />
@@ -208,7 +213,7 @@ function Header({ t, lang, chooseLang, scrolled, navOpen, setNavOpen }) {
   )
 }
 
-function Hero({ t }) {
+function Hero({ t, lang }) {
   return (
     <section id="top" className="hero">
       <div
@@ -222,7 +227,7 @@ function Hero({ t }) {
         <h1 className="hero-title">{t.title}</h1>
         <p className="hero-sub">{t.subtitle}</p>
         <div className="hero-cta">
-          <a href="https://willipu.pargihaldur.ee" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <a href={bookingUrl(lang)} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             {t.cta}
           </a>
           <p className="hero-cta-note">{t.ctaNote}</p>
