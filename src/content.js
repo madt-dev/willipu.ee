@@ -222,6 +222,9 @@ export const content = {
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
+        bankLabel: 'Pangakonto',
+        iban: 'EE402200221023806138',
+        bank: 'Swedbank AS',
       },
     },
     floatContact: {
@@ -464,6 +467,9 @@ export const content = {
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
+        bankLabel: 'Bank account',
+        iban: 'EE402200221023806138',
+        bank: 'Swedbank AS',
       },
     },
     floatContact: {
@@ -669,6 +675,9 @@ export const content = {
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
+        bankLabel: 'Bankkonto',
+        iban: 'EE402200221023806138',
+        bank: 'Swedbank AS',
       },
     },
     floatContact: {
@@ -874,6 +883,9 @@ export const content = {
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
+        bankLabel: 'Pankkitili',
+        iban: 'EE402200221023806138',
+        bank: 'Swedbank AS',
       },
     },
     floatContact: {
@@ -1079,6 +1091,9 @@ export const content = {
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
+        bankLabel: 'Bankas konts',
+        iban: 'EE402200221023806138',
+        bank: 'Swedbank AS',
       },
     },
     floatContact: {
@@ -1284,6 +1299,9 @@ export const content = {
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
+        bankLabel: 'Banko sąskaita',
+        iban: 'EE402200221023806138',
+        bank: 'Swedbank AS',
       },
     },
     floatContact: {
@@ -1519,6 +1537,9 @@ export const content = {
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
+        bankLabel: 'Банковский счёт',
+        iban: 'EE402200221023806138',
+        bank: 'Swedbank AS',
       },
     },
     floatContact: {
