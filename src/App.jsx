@@ -563,7 +563,7 @@ function Contact({ t }) {
               {t.legal.companyName}<br />
               Reg nr. {t.legal.reg} &nbsp;·&nbsp; KMKR (VAT) {t.legal.vat}
               <br />{t.legal.legalAddress}
-              <br />{t.legal.bankLabel}: {t.legal.iban} &nbsp;·&nbsp; {t.legal.bank}
+              <br />{t.legal.bankLabel}: {t.legal.iban} &nbsp;·&nbsp; {t.legal.bank} &nbsp;·&nbsp; SWIFT: {t.legal.swift}
             </p>
           )}
         </div>

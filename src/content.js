@@ -225,6 +225,7 @@ export const content = {
         bankLabel: 'Pangakonto',
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
+        swift: 'HABAEE2X',
       },
     },
     floatContact: {
@@ -470,6 +471,7 @@ export const content = {
         bankLabel: 'Bank account',
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
+        swift: 'HABAEE2X',
       },
     },
     floatContact: {
@@ -678,6 +680,7 @@ export const content = {
         bankLabel: 'Bankkonto',
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
+        swift: 'HABAEE2X',
       },
     },
     floatContact: {
@@ -886,6 +889,7 @@ export const content = {
         bankLabel: 'Pankkitili',
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
+        swift: 'HABAEE2X',
       },
     },
     floatContact: {
@@ -1094,6 +1098,7 @@ export const content = {
         bankLabel: 'Bankas konts',
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
+        swift: 'HABAEE2X',
       },
     },
     floatContact: {
@@ -1302,6 +1307,7 @@ export const content = {
         bankLabel: 'Banko sąskaita',
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
+        swift: 'HABAEE2X',
       },
     },
     floatContact: {
@@ -1540,6 +1546,7 @@ export const content = {
         bankLabel: 'Банковский счёт',
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
+        swift: 'HABAEE2X',
       },
     },
     floatContact: {
