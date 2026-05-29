@@ -121,8 +121,23 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   border-radius: 50%;
   background: var(--accent);
   color: #fff;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
 .site-header:not(.scrolled) .brand-mark { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
+.brand:hover .brand-mark {
+  transform: scale(1.1);
+  box-shadow: 0 4px 18px rgba(45,74,62,0.45);
+}
+.site-header:not(.scrolled) .brand:hover .brand-mark {
+  box-shadow: 0 4px 18px rgba(255,255,255,0.22);
+}
+.brand-mark svg {
+  animation: brandWaveFloat 3.2s ease-in-out infinite;
+}
+@keyframes brandWaveFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-2.5px); }
+}
 
 .nav {
   display: flex;
