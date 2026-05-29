@@ -5,7 +5,7 @@ import { Icon } from './Icon.jsx'
 const SUPPORTED = ['et', 'en', 'de', 'fi', 'lv', 'lt', 'ru']
 
 // Languages supported by the booking system at willipu.pargihaldur.ee
-const BOOKING_LANGS = new Set(['et', 'en', 'ru'])
+const BOOKING_LANGS = new Set(['et', 'en', 'de', 'fi', 'lv', 'lt', 'ru'])
 const BOOKING_BASE = 'https://willipu.pargihaldur.ee'
 const bookingUrl = lang => `${BOOKING_BASE}?lang=${BOOKING_LANGS.has(lang) ? lang : 'en'}`
 
