@@ -117,16 +117,16 @@ def make_banner(filename):
     c.saveState()
     c.setFillColor(white)
     c.setFillAlpha(1)
-    c.setFont("Helvetica-Bold", 24*mm)
-    c.drawString(tx, mid + 210*mm, "PUHKEMAJUTUS  ·  KARAVAN PARK")
+    c.setFont("Helvetica-Bold", 36*mm)
+    c.drawString(tx, mid + 215*mm, "PUHKEMAJUTUS  ·  KARAVAN PARK")
     c.restoreState()
 
     # "Willipu"
     c.saveState()
     c.setFillColor(white)
     c.setFillAlpha(1)
-    c.setFont("Helvetica-Bold", 200*mm)
-    c.drawString(tx, mid + 5*mm, "Willipu")
+    c.setFont("Helvetica-Bold", 260*mm)
+    c.drawString(tx, mid - 10*mm, "Willipu")
     c.restoreState()
 
     # Kuldne eraldajajoon
@@ -153,10 +153,7 @@ def make_banner(filename):
     c.drawString(tx, mid - 190*mm, "willipu.ee")
     c.restoreState()
 
-    # ── 5. Logo (parem pool) ─────────────────────────────────────────────
-    draw_wave_icon(c, cx=W - 250*mm, cy=H*0.5, radius=170*mm)
-
-    # ── 6. Nurga kaunistused ─────────────────────────────────────────────
+    # ── 5. Nurga kaunistused ─────────────────────────────────────────────
     pad, arm, lw = 30*mm, 55*mm, 2*mm
     c.saveState()
     c.setStrokeColor(GOLD)
