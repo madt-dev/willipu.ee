@@ -548,6 +548,7 @@ function Contact({ t }) {
           </a>
           {t.legal && (
             <p className="contact-legal">
+              {t.legal.companyName}<br />
               Reg nr. {t.legal.reg} &nbsp;·&nbsp; KMKR (VAT) {t.legal.vat}
               <br />{t.legal.legalAddress}
             </p>

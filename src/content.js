@@ -218,6 +218,7 @@ export const content = {
       email: 'willipu.willipu@gmail.com',
       cta: 'Saada e-kiri',
       legal: {
+        companyName: 'OÜ Willipu Turism',
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
@@ -447,6 +448,7 @@ export const content = {
       email: 'willipu.willipu@gmail.com',
       cta: 'Send an email',
       legal: {
+        companyName: 'OÜ Willipu Turism',
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
@@ -639,6 +641,7 @@ export const content = {
       email: 'willipu.willipu@gmail.com',
       cta: 'E-Mail senden',
       legal: {
+        companyName: 'OÜ Willipu Turism',
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
@@ -831,6 +834,7 @@ export const content = {
       email: 'willipu.willipu@gmail.com',
       cta: 'Lähetä sähköposti',
       legal: {
+        companyName: 'OÜ Willipu Turism',
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
@@ -1023,6 +1027,7 @@ export const content = {
       email: 'willipu.willipu@gmail.com',
       cta: 'Sūtīt e-pastu',
       legal: {
+        companyName: 'OÜ Willipu Turism',
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
@@ -1215,6 +1220,7 @@ export const content = {
       email: 'willipu.willipu@gmail.com',
       cta: 'Siųsti el. laišką',
       legal: {
+        companyName: 'OÜ Willipu Turism',
         reg: '10972974',
         vat: 'EE100878462',
         legalAddress: 'Villipu, Pusi küla, 60217 Peipsiääre vald, Tartu maakond',
