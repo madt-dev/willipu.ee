@@ -192,8 +192,8 @@ export const content = {
           rows: [
             { item: 'Haagissuvila ilma elektrita', price: '20 € / öö', note: 'sisaldab 2 inimest' },
             { item: 'Haagissuvila elektriga', price: '25 € / öö', note: 'sisaldab 2 inimest' },
+            { item: 'Haagissuvila lisa inimene', price: '3 € / inimene' },
             { item: 'Telkimine', price: '7 € / inimene' },
-            { item: 'Lisa inimene', price: '3 € / inimene' },
           ],
         },
         {
@@ -420,8 +420,8 @@ export const content = {
           rows: [
             { item: 'Caravan without power', price: '€20 / night', note: 'includes 2 persons' },
             { item: 'Caravan with power', price: '€25 / night', note: 'includes 2 persons' },
+            { item: 'Caravan extra person', price: '€3 / person' },
             { item: 'Tent camping', price: '€7 / person' },
-            { item: 'Extra person', price: '€3 / person' },
           ],
         },
         {
@@ -611,8 +611,8 @@ export const content = {
           rows: [
             { item: 'Wohnwagen ohne Strom', price: '20 € / Nacht', note: 'inkl. 2 Personen' },
             { item: 'Wohnwagen mit Strom', price: '25 € / Nacht', note: 'inkl. 2 Personen' },
+            { item: 'Wohnwagen Zusatzperson', price: '3 € / Person' },
             { item: 'Zelten', price: '7 € / Person' },
-            { item: 'Zusatzperson', price: '3 € / Person' },
           ],
         },
         {
@@ -802,8 +802,8 @@ export const content = {
           rows: [
             { item: 'Asuntovaunu ilman sähköä', price: '20 € / yö', note: 'sis. 2 henkilöä' },
             { item: 'Asuntovaunu sähköllä', price: '25 € / yö', note: 'sis. 2 henkilöä' },
+            { item: 'Asuntovaunu lisähenkilö', price: '3 € / henkilö' },
             { item: 'Telttailu', price: '7 € / henkilö' },
-            { item: 'Lisähenkilö', price: '3 € / henkilö' },
           ],
         },
         {
@@ -993,8 +993,8 @@ export const content = {
           rows: [
             { item: 'Kemperis bez elektrības', price: '20 € / naktī', note: 'ietver 2 cilvēkus' },
             { item: 'Kemperis ar elektrību', price: '25 € / naktī', note: 'ietver 2 cilvēkus' },
+            { item: 'Kemperis papildu persona', price: '3 € / persona' },
             { item: 'Telšošana', price: '7 € / persona' },
-            { item: 'Papildu persona', price: '3 € / persona' },
           ],
         },
         {
@@ -1184,8 +1184,8 @@ export const content = {
           rows: [
             { item: 'Kemperis be elektros', price: '20 € / naktis', note: 'apima 2 asmenis' },
             { item: 'Kemperis su elektra', price: '25 € / naktis', note: 'apima 2 asmenis' },
+            { item: 'Kemperio papildomas asmuo', price: '3 € / asmuo' },
             { item: 'Palapinė', price: '7 € / asmuo' },
-            { item: 'Papildomas asmuo', price: '3 € / asmuo' },
           ],
         },
         {
