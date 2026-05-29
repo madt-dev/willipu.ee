@@ -2,11 +2,12 @@ import { useEffect, useRef, useMemo, useState } from 'react'
 import { content, heroImage } from './content.js'
 import { Icon } from './Icon.jsx'
 
-const SUPPORTED = ['et', 'en', 'de', 'fi', 'lv', 'lt']
+const SUPPORTED = ['et', 'en', 'de', 'fi', 'lv', 'lt', 'ru']
 
 const COUNTRY_LANG = {
   EE: 'et', LV: 'lv', LT: 'lt', FI: 'fi',
   DE: 'de', AT: 'de', CH: 'de', LI: 'de',
+  RU: 'ru', BY: 'ru',
 }
 
 const LANGS = [
@@ -16,6 +17,7 @@ const LANGS = [
   { code: 'fi', label: 'Suomi' },
   { code: 'lv', label: 'Latviešu' },
   { code: 'lt', label: 'Lietuvių' },
+  { code: 'ru', label: 'Русский' },
 ]
 
 export default function App() {
