@@ -567,6 +567,7 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   background: rgba(0,0,0,0.92);
   display: grid;
   place-items: center;
+  transform: translateZ(0);
   animation: fadeIn 0.2s ease;
 }
 .lightbox {
@@ -625,8 +626,7 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(0,0,0,0.52);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.58);
   color: rgba(255,255,255,0.92);
   font-size: 0.8rem;
   letter-spacing: 0.08em;
@@ -638,8 +638,8 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 @keyframes swipeHintShow {
   0%   { opacity: 0; transform: translateX(-50%) translateY(6px); }
   12%  { opacity: 1; transform: translateX(-50%) translateY(0); }
-  72%  { opacity: 1; }
-  100% { opacity: 0; }
+  72%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(0); }
 }
 .lightbox-swipe-icon {
   animation: swipeIconBounce 0.85s ease-in-out infinite;
