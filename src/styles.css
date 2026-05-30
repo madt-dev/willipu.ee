@@ -575,28 +575,21 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   transform: scale(1.3);
 }
 
-/* Checkin amenity badge — clickable trigger for 24/7 info slide */
+/* Amenity badge with info — icon pulses gently to signal interactivity */
 .amenity-badge-trigger {
   cursor: pointer;
   border-radius: 8px;
   transition: background 0.15s;
-  position: relative;
 }
 .amenity-badge-trigger:hover { background: rgba(45,74,62,0.1); }
-.amenity-badge-trigger svg { color: var(--accent); }
-.amenity-badge-trigger::after {
-  content: '';
-  position: absolute;
-  top: 2px; right: 2px;
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: #3ec96e;
-  border: 1.5px solid #fff;
-  animation: livePulse 2.4s ease-in-out infinite;
+.amenity-badge-trigger svg {
+  color: var(--accent);
+  animation: badgeIconPulse 3.5s ease-in-out infinite;
 }
-@keyframes livePulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(62,201,110,0.6); }
-  55%       { box-shadow: 0 0 0 4px rgba(62,201,110,0); }
+.amenity-badge-trigger:hover svg { animation-play-state: paused; }
+@keyframes badgeIconPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
 }
 
 /* 24/7 info slide — appears inside carousel like an extra photo */
