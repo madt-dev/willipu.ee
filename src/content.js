@@ -160,6 +160,12 @@ export const content = {
             { item: 'Haagissuvila lisa inimene', price: '3 € / inimene' },
             { item: 'Telkimine', price: '7 € / inimene' },
           ],
+          badge24h: {
+            title: 'Automaatne sissepääs 24/7',
+            body: 'Parki saab sõita igal ajal — tõkepuu avaneb online-broneeringuga saadud koodiga. Broneeri, maksa ja registreeri end iseseisvalt pargihaldur.ee kaudu.',
+            linkLabel: 'Broneeri · pargihaldur.ee',
+            linkUrl: 'https://willipu.pargihaldur.ee',
+          },
         },
         {
           label: 'Muud',
@@ -358,6 +364,12 @@ export const content = {
             { item: 'Caravan extra person', price: '€3 / person' },
             { item: 'Tent camping', price: '€7 / person' },
           ],
+          badge24h: {
+            title: 'Automated 24/7 access',
+            body: 'Arrive whenever it suits you — the barrier opens with a code sent at booking. Book, pay and check in independently at pargihaldur.ee.',
+            linkLabel: 'Book · pargihaldur.ee',
+            linkUrl: 'https://willipu.pargihaldur.ee',
+          },
         },
         {
           label: 'Other',
@@ -553,6 +565,12 @@ export const content = {
             { item: 'Wohnwagen Zusatzperson', price: '3 € / Person' },
             { item: 'Zelten', price: '7 € / Person' },
           ],
+          badge24h: {
+            title: 'Automatischer Zugang 24/7',
+            body: 'Anreise jederzeit — die Schranke öffnet sich mit dem Buchungscode. Buchen, bezahlen und selbstständig einchecken über pargihaldur.ee.',
+            linkLabel: 'Buchen · pargihaldur.ee',
+            linkUrl: 'https://willipu.pargihaldur.ee',
+          },
         },
         {
           label: 'Sonstiges',
@@ -748,6 +766,12 @@ export const content = {
             { item: 'Asuntovaunu lisähenkilö', price: '3 € / henkilö' },
             { item: 'Telttailu', price: '7 € / henkilö' },
           ],
+          badge24h: {
+            title: 'Automaattinen sisäänpääsy 24/7',
+            body: 'Saapua voi milloin tahansa — puomi avautuu varauksen koodilla. Varaa, maksa ja tee check-in itsenäisesti pargihaldur.ee-palvelussa.',
+            linkLabel: 'Varaa · pargihaldur.ee',
+            linkUrl: 'https://willipu.pargihaldur.ee',
+          },
         },
         {
           label: 'Muut',
@@ -943,6 +967,12 @@ export const content = {
             { item: 'Kemperis papildu persona', price: '3 € / persona' },
             { item: 'Telšošana', price: '7 € / persona' },
           ],
+          badge24h: {
+            title: 'Automātiska piekļuve 24/7',
+            body: 'Ierasties var jebkurā laikā — barjera atveras ar rezervācijas kodu. Rezervējiet, apmaksājiet un reģistrējieties patstāvīgi vietnē pargihaldur.ee.',
+            linkLabel: 'Rezervēt · pargihaldur.ee',
+            linkUrl: 'https://willipu.pargihaldur.ee',
+          },
         },
         {
           label: 'Citi',
@@ -1138,6 +1168,12 @@ export const content = {
             { item: 'Kemperio papildomas asmuo', price: '3 € / asmuo' },
             { item: 'Palapinė', price: '7 € / asmuo' },
           ],
+          badge24h: {
+            title: 'Automatinis patekimas 24/7',
+            body: 'Atvykti galima bet kada — vartai atsidarys su rezervacijos kodu. Rezervuokite, apmokėkite ir registruokitės savarankiškai per pargihaldur.ee.',
+            linkLabel: 'Rezervuoti · pargihaldur.ee',
+            linkUrl: 'https://willipu.pargihaldur.ee',
+          },
         },
         {
           label: 'Kita',
@@ -1333,6 +1369,12 @@ export const content = {
             { item: 'Доп. человек для дома на колёсах', price: '3 € / чел.' },
             { item: 'Палатка', price: '7 € / чел.' },
           ],
+          badge24h: {
+            title: 'Автоматический доступ 24/7',
+            body: 'Приезжайте в любое время — шлагбаум откроется с кодом из бронирования. Бронируйте, оплачивайте и регистрируйтесь самостоятельно на pargihaldur.ee.',
+            linkLabel: 'Забронировать · pargihaldur.ee',
+            linkUrl: 'https://willipu.pargihaldur.ee',
+          },
         },
         {
           label: 'Прочее',

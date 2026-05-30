@@ -296,8 +296,10 @@ function Amenities({ t }) {
   )
 }
 
-function CardCarousel({ photos, onOpenLightbox }) {
+function CardCarousel({ photos, onOpenLightbox, badge24h }) {
   const [idx, setIdx] = useState(0)
+  const [infoOpen, setInfoOpen] = useState(false)
+  const [infoVisible, setInfoVisible] = useState(false)
   const touchStartX = useRef(null)
 
   const prev = (e) => { e.stopPropagation(); setIdx(i => (i - 1 + photos.length) % photos.length) }
@@ -309,6 +311,17 @@ function CardCarousel({ photos, onOpenLightbox }) {
     const dx = e.changedTouches[0].clientX - touchStartX.current
     if (Math.abs(dx) > 40) dx < 0 ? setIdx(i => (i + 1) % photos.length) : setIdx(i => (i - 1 + photos.length) % photos.length)
     touchStartX.current = null
+  }
+
+  const openInfo = (e) => {
+    e.stopPropagation()
+    setInfoOpen(true)
+    requestAnimationFrame(() => requestAnimationFrame(() => setInfoVisible(true)))
+  }
+  const closeInfo = (e) => {
+    if (e) e.stopPropagation()
+    setInfoVisible(false)
+    setTimeout(() => setInfoOpen(false), 260)
   }
 
   return (
@@ -331,6 +344,32 @@ function CardCarousel({ photos, onOpenLightbox }) {
             ))}
           </div>
         </>
+      )}
+      {badge24h && (
+        <button className="badge-24h" onClick={openInfo} aria-label="24/7 info">
+          <span className="badge-24h-dot" />
+          24/7
+        </button>
+      )}
+      {badge24h && infoOpen && (
+        <div
+          className={`badge24h-overlay${infoVisible ? ' visible' : ''}`}
+          onClick={closeInfo}
+        >
+          <div className="badge24h-card" onClick={e => e.stopPropagation()}>
+            <h4 className="badge24h-title">{badge24h.title}</h4>
+            <p className="badge24h-body">{badge24h.body}</p>
+            <a
+              href={badge24h.linkUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="badge24h-link"
+            >
+              {badge24h.linkLabel} ↗
+            </a>
+            <button className="badge24h-close" onClick={closeInfo} aria-label="Close">✕</button>
+          </div>
+        </div>
       )}
     </div>
   )
@@ -439,6 +478,7 @@ function Pricing({ t }) {
                 <CardCarousel
                   photos={group.photos}
                   onOpenLightbox={startIndex => setLightbox({ photos: group.photos, startIndex })}
+                  badge24h={group.badge24h}
                 />
               )}
               <ul className="price-list">
