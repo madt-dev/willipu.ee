@@ -296,7 +296,7 @@ function Amenities({ t }) {
   )
 }
 
-function CardCarousel({ photos, onOpenLightbox, badge24h, infoOpen, onCloseInfo }) {
+function CardCarousel({ photos, onOpenLightbox, badgeInfo, infoOpen, onCloseInfo }) {
   const [idx, setIdx] = useState(0)
   const [slideRendered, setSlideRendered] = useState(false)
   const [slideVisible, setSlideVisible] = useState(false)
@@ -306,7 +306,7 @@ function CardCarousel({ photos, onOpenLightbox, badge24h, infoOpen, onCloseInfo 
   const touchStartX = useRef(null)
 
   useEffect(() => {
-    if (!infoOpen || !badge24h) return
+    if (!infoOpen || !badgeInfo) return
     infoActiveRef.current = true
     setSlideRendered(true)
     setProgressKey(k => k + 1)
@@ -362,14 +362,16 @@ function CardCarousel({ photos, onOpenLightbox, badge24h, infoOpen, onCloseInfo 
           </div>
         </>
       )}
-      {badge24h && slideRendered && (
+      {badgeInfo && slideRendered && (
         <div className={`badge24h-slide${slideVisible ? ' visible' : ''}`} onClick={dismiss}>
           <div className="badge24h-card" onClick={e => e.stopPropagation()}>
-            <h4 className="badge24h-title">{badge24h.title}</h4>
-            <p className="badge24h-body">{badge24h.body}</p>
-            <a href={badge24h.linkUrl} target="_blank" rel="noopener noreferrer" className="badge24h-link">
-              {badge24h.linkLabel} ↗
-            </a>
+            <h4 className="badge24h-title">{badgeInfo.title}</h4>
+            <p className="badge24h-body">{badgeInfo.body}</p>
+            {badgeInfo.linkUrl && (
+              <a href={badgeInfo.linkUrl} target="_blank" rel="noopener noreferrer" className="badge24h-link">
+                {badgeInfo.linkLabel} ↗
+              </a>
+            )}
             <button className="badge24h-close" onClick={dismiss} aria-label="Close">✕</button>
           </div>
           <div key={progressKey} className="badge24h-progress" />
@@ -452,7 +454,7 @@ function Lightbox({ photos, startIndex, onClose }) {
 }
 
 function PricingCard({ group, onOpenLightbox }) {
-  const [infoOpen, setInfoOpen] = useState(false)
+  const [activeBadge, setActiveBadge] = useState(null)
 
   return (
     <div className="pricing-group">
@@ -463,16 +465,16 @@ function PricingCard({ group, onOpenLightbox }) {
       {group.amenities && (
         <ul className="amenity-badges">
           {group.amenities.map(a => {
-            const isTrigger = a.icon === 'checkin' && !!group.badge24h
+            const info = group.badges?.[a.icon]
             return (
               <li
                 key={a.icon}
                 title={a.tooltip || a.label}
-                className={isTrigger ? 'amenity-badge-trigger' : ''}
-                onClick={isTrigger ? () => setInfoOpen(true) : undefined}
-                role={isTrigger ? 'button' : undefined}
-                tabIndex={isTrigger ? 0 : undefined}
-                onKeyDown={isTrigger ? e => e.key === 'Enter' && setInfoOpen(true) : undefined}
+                className={info ? 'amenity-badge-trigger' : ''}
+                onClick={info ? () => setActiveBadge(info) : undefined}
+                role={info ? 'button' : undefined}
+                tabIndex={info ? 0 : undefined}
+                onKeyDown={info ? e => e.key === 'Enter' && setActiveBadge(info) : undefined}
               >
                 <Icon name={a.icon} />
                 <span>{a.label}</span>
@@ -485,9 +487,9 @@ function PricingCard({ group, onOpenLightbox }) {
         <CardCarousel
           photos={group.photos}
           onOpenLightbox={startIndex => onOpenLightbox({ photos: group.photos, startIndex })}
-          badge24h={group.badge24h}
-          infoOpen={infoOpen}
-          onCloseInfo={() => setInfoOpen(false)}
+          badgeInfo={activeBadge}
+          infoOpen={!!activeBadge}
+          onCloseInfo={() => setActiveBadge(null)}
         />
       )}
       <ul className="price-list">

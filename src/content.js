@@ -160,11 +160,17 @@ export const content = {
             { item: 'Haagissuvila lisa inimene', price: '3 € / inimene' },
             { item: 'Telkimine', price: '7 € / inimene' },
           ],
-          badge24h: {
-            title: 'Automaatne sissepääs 24/7',
-            body: 'Parki saab sõita igal ajal — tõkepuu avaneb online-broneeringuga saadud koodiga. Broneeri, maksa ja registreeri end iseseisvalt pargihaldur.ee kaudu.',
-            linkLabel: 'Broneeri · pargihaldur.ee',
-            linkUrl: 'https://willipu.pargihaldur.ee',
+          badges: {
+            checkin: {
+              title: 'Automaatne sissepääs 24/7',
+              body: 'Parki saab sõita igal ajal — tõkepuu avaneb online-broneeringuga saadud koodiga. Broneeri, maksa ja registreeri end iseseisvalt pargihaldur.ee kaudu.',
+              linkLabel: 'Broneeri · pargihaldur.ee',
+              linkUrl: 'https://willipu.pargihaldur.ee',
+            },
+            electric: {
+              title: 'Elektriühendus · kuni 16 A',
+              body: 'Maksimaalne lubatud võimsus on 16 A ühe koha kohta. Föönide ja elektriliste soojapuhuritelkasutamine karavanipargis on keelatud — ülekoormuse vältimiseks.',
+            },
           },
         },
         {
@@ -364,11 +370,17 @@ export const content = {
             { item: 'Caravan extra person', price: '€3 / person' },
             { item: 'Tent camping', price: '€7 / person' },
           ],
-          badge24h: {
-            title: 'Automated 24/7 access',
-            body: 'Arrive whenever it suits you — the barrier opens with a code sent at booking. Book, pay and check in independently at pargihaldur.ee.',
-            linkLabel: 'Book · pargihaldur.ee',
-            linkUrl: 'https://willipu.pargihaldur.ee',
+          badges: {
+            checkin: {
+              title: 'Automated 24/7 access',
+              body: 'Arrive whenever it suits you — the barrier opens with a code sent at booking. Book, pay and check in independently at pargihaldur.ee.',
+              linkLabel: 'Book · pargihaldur.ee',
+              linkUrl: 'https://willipu.pargihaldur.ee',
+            },
+            electric: {
+              title: 'Electric hook-up · max 16 A',
+              body: 'Maximum permitted load is 16 A per pitch. Hair dryers and electric fan heaters are not allowed on the caravan park.',
+            },
           },
         },
         {
@@ -565,11 +577,17 @@ export const content = {
             { item: 'Wohnwagen Zusatzperson', price: '3 € / Person' },
             { item: 'Zelten', price: '7 € / Person' },
           ],
-          badge24h: {
-            title: 'Automatischer Zugang 24/7',
-            body: 'Anreise jederzeit — die Schranke öffnet sich mit dem Buchungscode. Buchen, bezahlen und selbstständig einchecken über pargihaldur.ee.',
-            linkLabel: 'Buchen · pargihaldur.ee',
-            linkUrl: 'https://willipu.pargihaldur.ee',
+          badges: {
+            checkin: {
+              title: 'Automatischer Zugang 24/7',
+              body: 'Anreise jederzeit — die Schranke öffnet sich mit dem Buchungscode. Buchen, bezahlen und selbstständig einchecken über pargihaldur.ee.',
+              linkLabel: 'Buchen · pargihaldur.ee',
+              linkUrl: 'https://willipu.pargihaldur.ee',
+            },
+            electric: {
+              title: 'Stromanschluss · max. 16 A',
+              body: 'Die maximale zulässige Last beträgt 16 A pro Stellplatz. Haartrockner und Elektroheizer sind auf dem Campingplatz nicht gestattet.',
+            },
           },
         },
         {
@@ -766,11 +784,17 @@ export const content = {
             { item: 'Asuntovaunu lisähenkilö', price: '3 € / henkilö' },
             { item: 'Telttailu', price: '7 € / henkilö' },
           ],
-          badge24h: {
-            title: 'Automaattinen sisäänpääsy 24/7',
-            body: 'Saapua voi milloin tahansa — puomi avautuu varauksen koodilla. Varaa, maksa ja tee check-in itsenäisesti pargihaldur.ee-palvelussa.',
-            linkLabel: 'Varaa · pargihaldur.ee',
-            linkUrl: 'https://willipu.pargihaldur.ee',
+          badges: {
+            checkin: {
+              title: 'Automaattinen sisäänpääsy 24/7',
+              body: 'Saapua voi milloin tahansa — puomi avautuu varauksen koodilla. Varaa, maksa ja tee check-in itsenäisesti pargihaldur.ee-palvelussa.',
+              linkLabel: 'Varaa · pargihaldur.ee',
+              linkUrl: 'https://willipu.pargihaldur.ee',
+            },
+            electric: {
+              title: 'Sähköliitäntä · max. 16 A',
+              body: 'Suurin sallittu teho on 16 A per paikka. Hiustenkuivaajien ja sähkölämpöpuhaltimien käyttö leirintäalueella on kielletty.',
+            },
           },
         },
         {
@@ -967,11 +991,17 @@ export const content = {
             { item: 'Kemperis papildu persona', price: '3 € / persona' },
             { item: 'Telšošana', price: '7 € / persona' },
           ],
-          badge24h: {
-            title: 'Automātiska piekļuve 24/7',
-            body: 'Ierasties var jebkurā laikā — barjera atveras ar rezervācijas kodu. Rezervējiet, apmaksājiet un reģistrējieties patstāvīgi vietnē pargihaldur.ee.',
-            linkLabel: 'Rezervēt · pargihaldur.ee',
-            linkUrl: 'https://willipu.pargihaldur.ee',
+          badges: {
+            checkin: {
+              title: 'Automātiska piekļuve 24/7',
+              body: 'Ierasties var jebkurā laikā — barjera atveras ar rezervācijas kodu. Rezervējiet, apmaksājiet un reģistrējieties patstāvīgi vietnē pargihaldur.ee.',
+              linkLabel: 'Rezervēt · pargihaldur.ee',
+              linkUrl: 'https://willipu.pargihaldur.ee',
+            },
+            electric: {
+              title: 'Elektropievienojums · līdz 16 A',
+              body: 'Maksimālā atļautā slodze ir 16 A vienai vietai. Matu žāvētāju un elektrisko sildītāju izmantošana kempingā ir aizliegta.',
+            },
           },
         },
         {
@@ -1168,11 +1198,17 @@ export const content = {
             { item: 'Kemperio papildomas asmuo', price: '3 € / asmuo' },
             { item: 'Palapinė', price: '7 € / asmuo' },
           ],
-          badge24h: {
-            title: 'Automatinis patekimas 24/7',
-            body: 'Atvykti galima bet kada — vartai atsidarys su rezervacijos kodu. Rezervuokite, apmokėkite ir registruokitės savarankiškai per pargihaldur.ee.',
-            linkLabel: 'Rezervuoti · pargihaldur.ee',
-            linkUrl: 'https://willipu.pargihaldur.ee',
+          badges: {
+            checkin: {
+              title: 'Automatinis patekimas 24/7',
+              body: 'Atvykti galima bet kada — vartai atsidarys su rezervacijos kodu. Rezervuokite, apmokėkite ir registruokitės savarankiškai per pargihaldur.ee.',
+              linkLabel: 'Rezervuoti · pargihaldur.ee',
+              linkUrl: 'https://willipu.pargihaldur.ee',
+            },
+            electric: {
+              title: 'Elektros jungtis · iki 16 A',
+              body: 'Didžiausia leistina apkrova yra 16 A vienai vietai. Plaukų džiovintuvų ir elektrinių šildytuvų naudojimas stovyklavietėje draudžiamas.',
+            },
           },
         },
         {
@@ -1369,11 +1405,17 @@ export const content = {
             { item: 'Доп. человек для дома на колёсах', price: '3 € / чел.' },
             { item: 'Палатка', price: '7 € / чел.' },
           ],
-          badge24h: {
-            title: 'Автоматический доступ 24/7',
-            body: 'Приезжайте в любое время — шлагбаум откроется с кодом из бронирования. Бронируйте, оплачивайте и регистрируйтесь самостоятельно на pargihaldur.ee.',
-            linkLabel: 'Забронировать · pargihaldur.ee',
-            linkUrl: 'https://willipu.pargihaldur.ee',
+          badges: {
+            checkin: {
+              title: 'Автоматический доступ 24/7',
+              body: 'Приезжайте в любое время — шлагбаум откроется с кодом из бронирования. Бронируйте, оплачивайте и регистрируйтесь самостоятельно на pargihaldur.ee.',
+              linkLabel: 'Забронировать · pargihaldur.ee',
+              linkUrl: 'https://willipu.pargihaldur.ee',
+            },
+            electric: {
+              title: 'Электроподключение · до 16 А',
+              body: 'Максимально допустимая нагрузка — 16 А на место. Использование фенов и электрических тепловентиляторов на территории кемпинга запрещено.',
+            },
           },
         },
         {
