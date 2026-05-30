@@ -73,8 +73,16 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
-    localStorage.setItem('willipu_theme', darkMode ? 'dark' : 'light')
   }, [darkMode])
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)')
+    const onChange = e => {
+      if (!localStorage.getItem('willipu_theme')) setDarkMode(e.matches)
+    }
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
 
   useEffect(() => {
     const t = content[lang]
@@ -151,7 +159,11 @@ export default function App() {
         navOpen={navOpen}
         setNavOpen={setNavOpen}
         darkMode={darkMode}
-        toggleDark={() => setDarkMode(d => !d)}
+        toggleDark={() => setDarkMode(d => {
+          const next = !d
+          localStorage.setItem('willipu_theme', next ? 'dark' : 'light')
+          return next
+        })}
       />
       <main>
         <Hero t={t.hero} lang={lang} />
