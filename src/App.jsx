@@ -56,8 +56,7 @@ export default function App() {
   })
   const [darkMode, setDarkMode] = useState(() => {
     const stored = typeof window !== 'undefined' && localStorage.getItem('willipu_theme')
-    if (stored) return stored === 'dark'
-    return typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
+    return stored === 'dark'
   })
   const [navOpen, setNavOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -75,14 +74,6 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
   }, [darkMode])
 
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)')
-    const onChange = e => {
-      if (!localStorage.getItem('willipu_theme')) setDarkMode(e.matches)
-    }
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
-  }, [])
 
   useEffect(() => {
     const t = content[lang]
