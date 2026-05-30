@@ -588,8 +588,8 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 }
 .amenity-badge-trigger:hover svg { animation-play-state: paused; }
 @keyframes badgeIconPulse {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.2); }
+  0%, 100% { transform: scale(1);    color: #2d4a3e; }
+  50%       { transform: scale(1.2); color: #5d8a6a; }
 }
 
 /* 24/7 info slide — appears inside carousel like an extra photo */
