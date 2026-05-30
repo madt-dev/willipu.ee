@@ -241,6 +241,7 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 .hero {
   position: relative;
   min-height: min(92vh, 880px);
+  min-height: min(92dvh, 880px);
   display: flex;
   align-items: center;
   color: #fff;
@@ -395,13 +396,13 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 }
 @media (max-width: 640px) {
   .stats {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
-    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 1.25rem;
   }
-  .stats li { padding: 0.5rem 0.25rem; }
-  .stat-value { font-size: 1.3rem; margin-bottom: 0.15rem; }
-  .stat-label { font-size: 0.7rem; line-height: 1.3; }
+  .stats li { padding: 0.6rem 0.5rem; }
+  .stat-value { font-size: 1.55rem; margin-bottom: 0.2rem; }
+  .stat-label { font-size: 0.75rem; line-height: 1.35; }
 }
 
 
@@ -814,8 +815,9 @@ a.contact-item:hover { background: rgba(255,255,255,0.09); }
   color: #fff;
   font-weight: 500;
   word-break: break-word;
+  overflow-wrap: anywhere;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.4rem;
 }
 .contact-cta {
@@ -973,7 +975,7 @@ main {
   }
   .nav a:hover { background: var(--bg-soft); }
   .nav-toggle { display: inline-flex; }
-  .about-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .contact-items { grid-template-columns: repeat(2, 1fr); }
 
   .amenities-grid { grid-template-columns: 1fr 1fr; }
@@ -986,10 +988,11 @@ main {
 
   .pricing-grid { grid-template-columns: 1fr; }
   .amenity-badges { grid-template-columns: repeat(4, 1fr); }
-  .hero-cta { flex-direction: column; align-items: flex-start; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { width: 100%; justify-content: center; }
   .gallery-grid { grid-auto-rows: 130px; }
   .contact-items { grid-template-columns: repeat(2, 1fr); }
+  .section-head { margin-bottom: 1.5rem; }
 }
 
 /* Mobile */
@@ -1017,10 +1020,15 @@ main {
   .amenity p { font-size: 0.85rem; }
   .amenity-badges { grid-template-columns: repeat(3, 1fr); }
 
-  .hero { min-height: 88vh; }
+  .contact-items { grid-template-columns: 1fr; }
+  .contact-item { padding: 0.9rem 1.25rem; }
+
+  .hero { min-height: 88vh; min-height: 88dvh; }
   .hero-inner { padding-top: 4.5rem; padding-bottom: 2.5rem; }
   .price-list li { padding: 0.6rem 1rem; font-size: 0.88rem; }
   .footer-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+  .contact-legal { font-size: 0.75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
