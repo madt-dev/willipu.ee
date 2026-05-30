@@ -175,6 +175,10 @@ export const content = {
               title: 'Puhas vesi karavanide veepaakide täitmiseks',
               body: 'Meelespea: Kuumal suvepäeval lase veel joosta vähemalt 3 minutit, et veevoolikus olev vesi asenduks värskega.',
             },
+            pets: {
+              title: 'Lemmikloomad on teretulnud',
+              body: 'Hästi käituvad lemmikloomad on karavaniparki oodatud. Lemmiklooma eest vastutab omanik — palume hoida looma järelvalve all ning koristada tema järelt.',
+            },
           },
         },
         {
@@ -389,6 +393,10 @@ export const content = {
               title: 'Fresh water for filling caravan tanks',
               body: 'Reminder: On a hot summer day, let the water run for at least 3 minutes so that the water standing in the hose is replaced with fresh water.',
             },
+            pets: {
+              title: 'Pets are welcome',
+              body: 'Well-behaved pets are welcome in the caravan park. The owner is responsible for their pet at all times — please keep your animal supervised and clean up after them.',
+            },
           },
         },
         {
@@ -599,6 +607,10 @@ export const content = {
             water: {
               title: 'Frischwasser zum Befüllen der Wohnwagen-Tanks',
               body: 'Hinweis: An einem heißen Sommertag das Wasser mindestens 3 Minuten laufen lassen, damit das im Schlauch stehende Wasser durch frisches ersetzt wird.',
+            },
+            pets: {
+              title: 'Haustiere sind willkommen',
+              body: 'Gut erzogene Haustiere sind im Caravanpark herzlich willkommen. Der Besitzer trägt die Verantwortung für sein Tier — bitte halten Sie Ihr Tier unter Aufsicht und beseitigen Sie Hinterlassenschaften.',
             },
           },
         },
@@ -811,6 +823,10 @@ export const content = {
               title: 'Puhdas vesi asuntovaunun vesisäiliön täyttöön',
               body: 'Muistutus: Kuumana kesäpäivänä anna veden juosta vähintään 3 minuuttia, jotta letkussa seisova vesi korvautuu tuoreella.',
             },
+            pets: {
+              title: 'Lemmikit ovat tervetulleita',
+              body: 'Hyvin käyttäytyvät lemmikit ovat tervetulleita leirintäalueelle. Omistaja on vastuussa lemmikistään — pidä eläin valvonnassa ja siivoa jäljet.',
+            },
           },
         },
         {
@@ -1021,6 +1037,10 @@ export const content = {
             water: {
               title: 'Tīrs ūdens kempinga ūdens tvertnes uzpildīšanai',
               body: 'Atgādinājums: Karstā vasaras dienā ļauj ūdenim tecēt vismaz 3 minūtes, lai šļūtenē stāvošais ūdens nomainītos ar svaigu.',
+            },
+            pets: {
+              title: 'Mājdzīvnieki ir laipni gaidīti',
+              body: 'Labi audzināti mājdzīvnieki ir laipni gaidīti kempingā. Īpašnieks ir atbildīgs par savu dzīvnieku — lūdzu, uzturiet to uzraudzībā un savāciet atstātās pēdas.',
             },
           },
         },
@@ -1233,6 +1253,10 @@ export const content = {
               title: 'Švarus vanduo kemperio vandens bakui pildyti',
               body: 'Priminti: Karštą vasaros dieną leiskite vandeniui tekėti bent 3 minutes, kad žarnoje stovėjęs vanduo pakeistų šviežiu.',
             },
+            pets: {
+              title: 'Augintiniai yra laukiami',
+              body: 'Gerai besielgiantys augintiniai yra laukiami kempinge. Savininkas atsako už savo gyvūną — prašome laikyti jį prižiūrimą ir susirinkti po jo.',
+            },
           },
         },
         {
@@ -1443,6 +1467,10 @@ export const content = {
             water: {
               title: 'Чистая вода для наполнения баков домов на колёсах',
               body: 'Напоминание: В жаркий летний день пропустите воду не менее 3 минут, чтобы вода, застоявшаяся в шланге, сменилась свежей.',
+            },
+            pets: {
+              title: 'Домашние животные приветствуются',
+              body: 'Воспитанные домашние животные добро пожаловать на территорию кемпинга. Ответственность за питомца несёт его владелец — пожалуйста, держите животное под присмотром и убирайте за ним.',
             },
           },
         },
