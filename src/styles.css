@@ -15,6 +15,71 @@
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+/* ─── Dark mode ──────────────────────────── */
+[data-theme="dark"] {
+  --bg: #101a14;
+  --bg-soft: #172019;
+  --ink: #e3ddd0;
+  --ink-soft: #8a9e92;
+  --line: #223028;
+  --accent: #68a87c;
+  --accent-2: #8bc498;
+  --dark: #080e0a;
+  --shadow: 0 30px 60px -30px rgba(0,0,0,0.7);
+  --shadow-sm: 0 8px 20px -10px rgba(0,0,0,0.5);
+}
+
+/* Hard-coded #fff and specific-color overrides */
+[data-theme="dark"] .stats,
+[data-theme="dark"] .amenity,
+[data-theme="dark"] .pricing-group     { background: var(--bg-soft); }
+
+[data-theme="dark"] .lang-dropdown-menu {
+  background: var(--bg-soft);
+  box-shadow: 0 16px 40px -8px rgba(0,0,0,0.55);
+}
+[data-theme="dark"] .lang-dropdown-menu li button { color: var(--ink); }
+
+[data-theme="dark"] .nav-picker        { background: var(--bg-soft); }
+[data-theme="dark"] .nav-picker-list a { background: var(--bg); color: var(--ink); }
+[data-theme="dark"] .nav-picker-close  { background: var(--line); color: var(--ink-soft); }
+[data-theme="dark"] .nav-picker-close:hover { background: var(--bg); }
+[data-theme="dark"] .nav-picker-address { border-color: var(--line); color: var(--ink-soft); }
+
+[data-theme="dark"] .site-header.scrolled {
+  background: rgba(16, 26, 20, 0.94);
+}
+
+[data-theme="dark"] .site-footer {
+  background: #060d08;
+}
+
+[data-theme="dark"] .amenity-badge-trigger:hover {
+  background: rgba(104,168,124,0.12);
+}
+
+[data-theme="dark"] .contact-cta { background: var(--accent); color: #fff; }
+[data-theme="dark"] .contact-cta:hover { background: var(--accent-2); color: #fff; }
+
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.92);
+  transition: background 0.2s, color 0.2s, transform 0.25s;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+}
+.theme-toggle:hover { background: rgba(255,255,255,0.28); transform: scale(1.08); }
+.site-header.scrolled .theme-toggle { background: var(--bg-soft); color: var(--ink); }
+.site-header.scrolled .theme-toggle:hover { background: var(--line); }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -588,8 +653,8 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 }
 .amenity-badge-trigger:hover svg { animation-play-state: paused; }
 @keyframes badgeIconPulse {
-  0%, 100% { transform: scale(1);    color: #2d4a3e; }
-  50%       { transform: scale(1.2); color: #5d8a6a; }
+  0%, 100% { transform: scale(1);    color: var(--accent); }
+  50%       { transform: scale(1.2); color: var(--accent-2); }
 }
 
 /* 24/7 info slide — appears inside carousel like an extra photo */
