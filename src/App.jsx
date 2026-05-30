@@ -296,32 +296,49 @@ function Amenities({ t }) {
   )
 }
 
-function CardCarousel({ photos, onOpenLightbox, badge24h }) {
+function CardCarousel({ photos, onOpenLightbox, badge24h, infoOpen, onCloseInfo }) {
   const [idx, setIdx] = useState(0)
-  const [infoOpen, setInfoOpen] = useState(false)
-  const [infoVisible, setInfoVisible] = useState(false)
+  const [slideRendered, setSlideRendered] = useState(false)
+  const [slideVisible, setSlideVisible] = useState(false)
+  const [progressKey, setProgressKey] = useState(0)
+  const infoActiveRef = useRef(false)
+  const timerRef = useRef(null)
   const touchStartX = useRef(null)
 
-  const prev = (e) => { e.stopPropagation(); setIdx(i => (i - 1 + photos.length) % photos.length) }
-  const next = (e) => { e.stopPropagation(); setIdx(i => (i + 1) % photos.length) }
+  useEffect(() => {
+    if (!infoOpen || !badge24h) return
+    infoActiveRef.current = true
+    setSlideRendered(true)
+    setProgressKey(k => k + 1)
+    requestAnimationFrame(() => requestAnimationFrame(() => setSlideVisible(true)))
+    timerRef.current = setTimeout(dismiss, 10000)
+    return () => clearTimeout(timerRef.current)
+  }, [infoOpen])
+
+  const dismiss = () => {
+    if (!infoActiveRef.current) return
+    infoActiveRef.current = false
+    clearTimeout(timerRef.current)
+    setSlideVisible(false)
+    setTimeout(() => { setSlideRendered(false); onCloseInfo() }, 420)
+  }
+
+  const navigate = (newIdx) => {
+    if (infoActiveRef.current) dismiss()
+    setIdx(newIdx)
+  }
+
+  const prev = (e) => { e.stopPropagation(); navigate((idx - 1 + photos.length) % photos.length) }
+  const next = (e) => { e.stopPropagation(); navigate((idx + 1) % photos.length) }
 
   const onTouchStart = e => { touchStartX.current = e.touches[0].clientX }
   const onTouchEnd = e => {
     if (touchStartX.current === null) return
     const dx = e.changedTouches[0].clientX - touchStartX.current
-    if (Math.abs(dx) > 40) dx < 0 ? setIdx(i => (i + 1) % photos.length) : setIdx(i => (i - 1 + photos.length) % photos.length)
+    if (Math.abs(dx) > 40) {
+      navigate(dx < 0 ? (idx + 1) % photos.length : (idx - 1 + photos.length) % photos.length)
+    }
     touchStartX.current = null
-  }
-
-  const openInfo = (e) => {
-    e.stopPropagation()
-    setInfoOpen(true)
-    requestAnimationFrame(() => requestAnimationFrame(() => setInfoVisible(true)))
-  }
-  const closeInfo = (e) => {
-    if (e) e.stopPropagation()
-    setInfoVisible(false)
-    setTimeout(() => setInfoOpen(false), 260)
   }
 
   return (
@@ -338,37 +355,24 @@ function CardCarousel({ photos, onOpenLightbox, badge24h }) {
               <button
                 key={i}
                 className={`card-carousel-dot ${i === idx ? 'active' : ''}`}
-                onClick={e => { e.stopPropagation(); setIdx(i) }}
+                onClick={e => { e.stopPropagation(); navigate(i) }}
                 aria-label={`Photo ${i + 1}`}
               />
             ))}
           </div>
         </>
       )}
-      {badge24h && (
-        <button className="badge-24h" onClick={openInfo} aria-label="24/7 info">
-          <span className="badge-24h-dot" />
-          24/7
-        </button>
-      )}
-      {badge24h && infoOpen && (
-        <div
-          className={`badge24h-overlay${infoVisible ? ' visible' : ''}`}
-          onClick={closeInfo}
-        >
+      {badge24h && slideRendered && (
+        <div className={`badge24h-slide${slideVisible ? ' visible' : ''}`} onClick={dismiss}>
           <div className="badge24h-card" onClick={e => e.stopPropagation()}>
             <h4 className="badge24h-title">{badge24h.title}</h4>
             <p className="badge24h-body">{badge24h.body}</p>
-            <a
-              href={badge24h.linkUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="badge24h-link"
-            >
+            <a href={badge24h.linkUrl} target="_blank" rel="noopener noreferrer" className="badge24h-link">
               {badge24h.linkLabel} ↗
             </a>
-            <button className="badge24h-close" onClick={closeInfo} aria-label="Close">✕</button>
+            <button className="badge24h-close" onClick={dismiss} aria-label="Close">✕</button>
           </div>
+          <div key={progressKey} className="badge24h-progress" />
         </div>
       )}
     </div>
@@ -447,6 +451,60 @@ function Lightbox({ photos, startIndex, onClose }) {
   )
 }
 
+function PricingCard({ group, onOpenLightbox }) {
+  const [infoOpen, setInfoOpen] = useState(false)
+
+  return (
+    <div className="pricing-group">
+      <div className="pricing-group-header">
+        <span className="pricing-group-icon">{group.icon}</span>
+        <h3 className="pricing-group-title">{group.label}</h3>
+      </div>
+      {group.amenities && (
+        <ul className="amenity-badges">
+          {group.amenities.map(a => {
+            const isTrigger = a.icon === 'checkin' && !!group.badge24h
+            return (
+              <li
+                key={a.icon}
+                title={a.tooltip || a.label}
+                className={isTrigger ? 'amenity-badge-trigger' : ''}
+                onClick={isTrigger ? () => setInfoOpen(true) : undefined}
+                role={isTrigger ? 'button' : undefined}
+                tabIndex={isTrigger ? 0 : undefined}
+                onKeyDown={isTrigger ? e => e.key === 'Enter' && setInfoOpen(true) : undefined}
+              >
+                <Icon name={a.icon} />
+                <span>{a.label}</span>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+      {group.photos?.length > 0 && (
+        <CardCarousel
+          photos={group.photos}
+          onOpenLightbox={startIndex => onOpenLightbox({ photos: group.photos, startIndex })}
+          badge24h={group.badge24h}
+          infoOpen={infoOpen}
+          onCloseInfo={() => setInfoOpen(false)}
+        />
+      )}
+      <ul className="price-list">
+        {group.rows.map(row => (
+          <li key={row.item}>
+            <div className="price-item-wrap">
+              <span className="price-item">{row.item}</span>
+              {row.note && <span className="price-note-inline">{row.note}</span>}
+            </div>
+            <span className="price-value">{row.price}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 function Pricing({ t }) {
   const [lightbox, setLightbox] = useState(null)
 
@@ -459,40 +517,11 @@ function Pricing({ t }) {
         </header>
         <div className="pricing-grid">
           {t.groups.map(group => (
-            <div key={group.label} className="pricing-group">
-              <div className="pricing-group-header">
-                <span className="pricing-group-icon">{group.icon}</span>
-                <h3 className="pricing-group-title">{group.label}</h3>
-              </div>
-              {group.amenities && (
-                <ul className="amenity-badges">
-                  {group.amenities.map(a => (
-                    <li key={a.icon} title={a.tooltip || a.label}>
-                      <Icon name={a.icon} />
-                      <span>{a.label}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {group.photos?.length > 0 && (
-                <CardCarousel
-                  photos={group.photos}
-                  onOpenLightbox={startIndex => setLightbox({ photos: group.photos, startIndex })}
-                  badge24h={group.badge24h}
-                />
-              )}
-              <ul className="price-list">
-                {group.rows.map(row => (
-                  <li key={row.item}>
-                    <div className="price-item-wrap">
-                      <span className="price-item">{row.item}</span>
-                      {row.note && <span className="price-note-inline">{row.note}</span>}
-                    </div>
-                    <span className="price-value">{row.price}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <PricingCard
+              key={group.label}
+              group={group}
+              onOpenLightbox={({ photos, startIndex }) => setLightbox({ photos, startIndex })}
+            />
           ))}
         </div>
         <p className="price-note-global">{t.note}</p>
