@@ -171,6 +171,10 @@ export const content = {
               title: 'Elektriühendus · kuni 10 A',
               body: 'Maksimaalne lubatud võimsus ühe karavani kohta on 10 A. Soojapuhurite ja föönide kasutamine pole lubatud. Kasutatavad elektriseadmed peavad olema korras ning ühendusjuhtmete isolatsioon terve.',
             },
+            water: {
+              title: 'Puhas vesi karavanide veepaakide täitmiseks',
+              body: 'Meelespea: Kuumal suvepäeval lase veel joosta vähemalt 3 minutit, et veevoolikus olev vesi asenduks värskega.',
+            },
           },
         },
         {
@@ -381,6 +385,10 @@ export const content = {
               title: 'Electric hook-up · max 10 A',
               body: 'Maximum permitted load per caravan is 10 A. Fan heaters and hair dryers are not permitted. All electrical appliances must be in good working order and cable insulation must be intact.',
             },
+            water: {
+              title: 'Fresh water for filling caravan tanks',
+              body: 'Reminder: On a hot summer day, let the water run for at least 3 minutes so that the water standing in the hose is replaced with fresh water.',
+            },
           },
         },
         {
@@ -587,6 +595,10 @@ export const content = {
             electric: {
               title: 'Stromanschluss · max. 10 A',
               body: 'Die maximale zulässige Last pro Wohnwagen beträgt 10 A. Heizlüfter und Haartrockner sind nicht gestattet. Alle Elektrogeräte müssen einwandfrei funktionieren und die Isolation der Anschlusskabel muss intakt sein.',
+            },
+            water: {
+              title: 'Frischwasser zum Befüllen der Wohnwagen-Tanks',
+              body: 'Hinweis: An einem heißen Sommertag das Wasser mindestens 3 Minuten laufen lassen, damit das im Schlauch stehende Wasser durch frisches ersetzt wird.',
             },
           },
         },
@@ -795,6 +807,10 @@ export const content = {
               title: 'Sähköliitäntä · max. 10 A',
               body: 'Suurin sallittu teho asuntovaunua kohti on 10 A. Lämpöpuhaltimien ja hiustenkuivaajien käyttö ei ole sallittua. Kaikkien sähkölaitteiden tulee olla kunnossa ja liitäntäkaapeleiden eristyksen ehjiä.',
             },
+            water: {
+              title: 'Puhdas vesi asuntovaunun vesisäiliön täyttöön',
+              body: 'Muistutus: Kuumana kesäpäivänä anna veden juosta vähintään 3 minuuttia, jotta letkussa seisova vesi korvautuu tuoreella.',
+            },
           },
         },
         {
@@ -1001,6 +1017,10 @@ export const content = {
             electric: {
               title: 'Elektropievienojums · līdz 10 A',
               body: 'Maksimālā atļautā slodze vienam kempingam ir 10 A. Elektrisko sildītāju un matu žāvētāju izmantošana nav atļauta. Visām elektroierīcēm jābūt labā kārtībā un savienojuma kabeļu izolācijai — neskariai.',
+            },
+            water: {
+              title: 'Tīrs ūdens kempinga ūdens tvertnes uzpildīšanai',
+              body: 'Atgādinājums: Karstā vasaras dienā ļauj ūdenim tecēt vismaz 3 minūtes, lai šļūtenē stāvošais ūdens nomainītos ar svaigu.',
             },
           },
         },
@@ -1209,6 +1229,10 @@ export const content = {
               title: 'Elektros jungtis · iki 10 A',
               body: 'Didžiausia leistina apkrova vienam kempingui yra 10 A. Šildytuvų ir plaukų džiovintuvų naudojimas neleidžiamas. Visi elektros prietaisai turi būti tvarkingi, o jungimo kabelių izoliacija — nepažeista.',
             },
+            water: {
+              title: 'Švarus vanduo kemperio vandens bakui pildyti',
+              body: 'Priminti: Karštą vasaros dieną leiskite vandeniui tekėti bent 3 minutes, kad žarnoje stovėjęs vanduo pakeistų šviežiu.',
+            },
           },
         },
         {
@@ -1415,6 +1439,10 @@ export const content = {
             electric: {
               title: 'Электроподключение · до 10 А',
               body: 'Максимально допустимая нагрузка на один дом на колёсах — 10 А. Использование тепловентиляторов и фенов не разрешено. Все электроприборы должны быть исправны, изоляция соединительных кабелей — без повреждений.',
+            },
+            water: {
+              title: 'Чистая вода для наполнения баков домов на колёсах',
+              body: 'Напоминание: В жаркий летний день пропустите воду не менее 3 минут, чтобы вода, застоявшаяся в шланге, сменилась свежей.',
             },
           },
         },
