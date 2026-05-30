@@ -169,7 +169,7 @@ export const content = {
             },
             electric: {
               title: 'Elektriühendus · kuni 10 A',
-              body: 'Maksimaalne lubatud võimsus ühe karavani kohta on 10 A. Soojapuhurite ja föönide kasutamine pole lubatud.',
+              body: 'Maksimaalne lubatud võimsus ühe karavani kohta on 10 A. Soojapuhurite ja föönide kasutamine pole lubatud. Kasutatavad elektriseadmed peavad olema korras ning ühendusjuhtmete isolatsioon terve.',
             },
           },
         },
@@ -379,7 +379,7 @@ export const content = {
             },
             electric: {
               title: 'Electric hook-up · max 10 A',
-              body: 'Maximum permitted load per caravan is 10 A. The use of fan heaters and hair dryers is not permitted.',
+              body: 'Maximum permitted load per caravan is 10 A. Fan heaters and hair dryers are not permitted. All electrical appliances must be in good working order and cable insulation must be intact.',
             },
           },
         },
@@ -586,7 +586,7 @@ export const content = {
             },
             electric: {
               title: 'Stromanschluss · max. 10 A',
-              body: 'Die maximale zulässige Last pro Wohnwagen beträgt 10 A. Die Verwendung von Heizlüftern und Haartrocknern ist nicht gestattet.',
+              body: 'Die maximale zulässige Last pro Wohnwagen beträgt 10 A. Heizlüfter und Haartrockner sind nicht gestattet. Alle Elektrogeräte müssen einwandfrei funktionieren und die Isolation der Anschlusskabel muss intakt sein.',
             },
           },
         },
@@ -793,7 +793,7 @@ export const content = {
             },
             electric: {
               title: 'Sähköliitäntä · max. 10 A',
-              body: 'Suurin sallittu teho asuntovaunua kohti on 10 A. Lämpöpuhaltimien ja hiustenkuivaajien käyttö ei ole sallittua.',
+              body: 'Suurin sallittu teho asuntovaunua kohti on 10 A. Lämpöpuhaltimien ja hiustenkuivaajien käyttö ei ole sallittua. Kaikkien sähkölaitteiden tulee olla kunnossa ja liitäntäkaapeleiden eristyksen ehjiä.',
             },
           },
         },
@@ -1000,7 +1000,7 @@ export const content = {
             },
             electric: {
               title: 'Elektropievienojums · līdz 10 A',
-              body: 'Maksimālā atļautā slodze vienam kempingam ir 10 A. Elektrisko sildītāju un matu žāvētāju izmantošana nav atļauta.',
+              body: 'Maksimālā atļautā slodze vienam kempingam ir 10 A. Elektrisko sildītāju un matu žāvētāju izmantošana nav atļauta. Visām elektroierīcēm jābūt labā kārtībā un savienojuma kabeļu izolācijai — neskariai.',
             },
           },
         },
@@ -1207,7 +1207,7 @@ export const content = {
             },
             electric: {
               title: 'Elektros jungtis · iki 10 A',
-              body: 'Didžiausia leistina apkrova vienam kempingui yra 10 A. Šildytuvų ir plaukų džiovintuvų naudojimas neleidžiamas.',
+              body: 'Didžiausia leistina apkrova vienam kempingui yra 10 A. Šildytuvų ir plaukų džiovintuvų naudojimas neleidžiamas. Visi elektros prietaisai turi būti tvarkingi, o jungimo kabelių izoliacija — nepažeista.',
             },
           },
         },
@@ -1414,7 +1414,7 @@ export const content = {
             },
             electric: {
               title: 'Электроподключение · до 10 А',
-              body: 'Максимально допустимая нагрузка на один дом на колёсах — 10 А. Использование тепловентиляторов и фенов не разрешено.',
+              body: 'Максимально допустимая нагрузка на один дом на колёсах — 10 А. Использование тепловентиляторов и фенов не разрешено. Все электроприборы должны быть исправны, изоляция соединительных кабелей — без повреждений.',
             },
           },
         },
