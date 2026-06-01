@@ -161,18 +161,24 @@ def make_banner(filename):
     row1_y       = row2_y + font_contact + 18*mm   # veebileht (ülemine rida)
 
     def draw_phone_icon(cx, cy, r):
+        """Klassikaline telefonitoru: kaks ovaali (kõrv+suu) kaarjalt ühendatud."""
         c.saveState()
+        c.setFillColor(white)
+        c.setFillAlpha(1)
+        # Ikoon on 45° nurga all — roteerime lõuendit
+        c.translate(cx, cy)
+        c.rotate(20)
+        # Ülemine ovaalsõõr (kõrvapool)
+        c.ellipse(-r*0.28, r*0.38, r*0.28, r*1.0, fill=1, stroke=0)
+        # Alumine ovaalsõõr (suupool)
+        c.ellipse(-r*0.28, -r*1.0, r*0.28, -r*0.38, fill=1, stroke=0)
+        # Keskel ühendav kaarjas kepp (paksema joonena)
         c.setStrokeColor(white)
-        c.setStrokeAlpha(1)
-        c.setLineWidth(r * 0.22)
+        c.setLineWidth(r * 0.5)
         c.setLineCap(1)
-        c.setLineJoin(1)
         p = c.beginPath()
-        p.moveTo(cx - r*0.55, cy + r*0.9)
-        p.curveTo(cx - r*1.1, cy + r*0.9, cx - r*1.1, cy - r*0.9, cx - r*0.55, cy - r*0.9)
-        p.curveTo(cx - r*0.2, cy - r*0.9, cx - r*0.2, cy - r*0.4, cx,          cy - r*0.15)
-        p.curveTo(cx + r*0.25, cy,         cx + r*0.25, cy + r*0.25, cx,        cy + r*0.45)
-        p.curveTo(cx - r*0.2, cy + r*0.9,  cx - r*0.2, cy + r*0.9,  cx - r*0.55, cy + r*0.9)
+        p.moveTo(0, r*0.38)
+        p.curveTo(-r*0.9, r*0.2, -r*0.9, -r*0.2, 0, -r*0.38)
         c.drawPath(p, stroke=1, fill=0)
         c.restoreState()
 
