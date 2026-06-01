@@ -153,7 +153,49 @@ def make_banner(filename):
     c.drawString(tx, mid - 190*mm, "willipu.ee")
     c.restoreState()
 
-    # ── 5. Nurga kaunistused ─────────────────────────────────────────────
+    # ── 5. Telefoni piktogram + number alumises servas ───────────────────
+    phone_y  = 38 * mm
+    phone_x  = tx
+    icon_r   = 18 * mm   # ikoon mahtub ~36mm × 36mm kasti
+
+    def draw_phone_icon(cx, cy, r):
+        """Lihtne telefonitoru kujutis ReportLab-i kõveritega."""
+        s = r / 12.0
+        c.saveState()
+        c.setStrokeColor(white)
+        c.setStrokeAlpha(1)
+        c.setLineWidth(r * 0.22)
+        c.setLineCap(1)
+        c.setLineJoin(1)
+        # Telefonitoru kuju: kaks C-kõverat ühendatuna
+        p = c.beginPath()
+        # Väliskaar (suurem poolring)
+        p.moveTo(cx - r*0.55, cy + r*0.9)
+        p.curveTo(cx - r*1.1, cy + r*0.9,
+                  cx - r*1.1, cy - r*0.9,
+                  cx - r*0.55, cy - r*0.9)
+        p.curveTo(cx - r*0.2,  cy - r*0.9,
+                  cx - r*0.2,  cy - r*0.4,
+                  cx,          cy - r*0.15)
+        p.curveTo(cx + r*0.25, cy,
+                  cx + r*0.25, cy + r*0.25,
+                  cx,          cy + r*0.45)
+        p.curveTo(cx - r*0.2,  cy + r*0.9,
+                  cx - r*0.2,  cy + r*0.9,
+                  cx - r*0.55, cy + r*0.9)
+        c.drawPath(p, stroke=1, fill=0)
+        c.restoreState()
+
+    draw_phone_icon(phone_x + icon_r, phone_y + icon_r * 0.9, icon_r)
+
+    c.saveState()
+    c.setFillColor(white)
+    c.setFillAlpha(1)
+    c.setFont("Helvetica-Bold", 32*mm)
+    c.drawString(phone_x + icon_r * 2.8, phone_y, "+372 56 955 758")
+    c.restoreState()
+
+    # ── 6. Nurga kaunistused ─────────────────────────────────────────────
     pad, arm, lw = 30*mm, 55*mm, 2*mm
     c.saveState()
     c.setStrokeColor(GOLD)
