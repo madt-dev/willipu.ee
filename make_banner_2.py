@@ -153,47 +153,75 @@ def make_banner(filename):
     c.drawString(tx, mid - 190*mm, "willipu.ee")
     c.restoreState()
 
-    # ── 5. Telefoni piktogram + number alumises servas ───────────────────
-    phone_y  = 38 * mm
-    phone_x  = tx
-    icon_r   = 18 * mm   # ikoon mahtub ~36mm × 36mm kasti
+    # ── 5. Kontaktinfo — parem alaserv ───────────────────────────────────
+    font_contact = 48 * mm
+    icon_r       = 26 * mm
+    pad_right    = 80 * mm
+    row2_y       = 30 * mm          # telefon (alumine rida)
+    row1_y       = row2_y + font_contact + 18*mm   # veebileht (ülemine rida)
 
     def draw_phone_icon(cx, cy, r):
-        """Lihtne telefonitoru kujutis ReportLab-i kõveritega."""
-        s = r / 12.0
         c.saveState()
         c.setStrokeColor(white)
         c.setStrokeAlpha(1)
         c.setLineWidth(r * 0.22)
         c.setLineCap(1)
         c.setLineJoin(1)
-        # Telefonitoru kuju: kaks C-kõverat ühendatuna
         p = c.beginPath()
-        # Väliskaar (suurem poolring)
         p.moveTo(cx - r*0.55, cy + r*0.9)
-        p.curveTo(cx - r*1.1, cy + r*0.9,
-                  cx - r*1.1, cy - r*0.9,
-                  cx - r*0.55, cy - r*0.9)
-        p.curveTo(cx - r*0.2,  cy - r*0.9,
-                  cx - r*0.2,  cy - r*0.4,
-                  cx,          cy - r*0.15)
-        p.curveTo(cx + r*0.25, cy,
-                  cx + r*0.25, cy + r*0.25,
-                  cx,          cy + r*0.45)
-        p.curveTo(cx - r*0.2,  cy + r*0.9,
-                  cx - r*0.2,  cy + r*0.9,
-                  cx - r*0.55, cy + r*0.9)
+        p.curveTo(cx - r*1.1, cy + r*0.9, cx - r*1.1, cy - r*0.9, cx - r*0.55, cy - r*0.9)
+        p.curveTo(cx - r*0.2, cy - r*0.9, cx - r*0.2, cy - r*0.4, cx,          cy - r*0.15)
+        p.curveTo(cx + r*0.25, cy,         cx + r*0.25, cy + r*0.25, cx,        cy + r*0.45)
+        p.curveTo(cx - r*0.2, cy + r*0.9,  cx - r*0.2, cy + r*0.9,  cx - r*0.55, cy + r*0.9)
         c.drawPath(p, stroke=1, fill=0)
         c.restoreState()
 
-    draw_phone_icon(phone_x + icon_r, phone_y + icon_r * 0.9, icon_r)
+    def draw_globe_icon(cx, cy, r):
+        """Lihtne globuse ikoon veebilehe jaoks."""
+        c.saveState()
+        c.setStrokeColor(white)
+        c.setStrokeAlpha(1)
+        c.setFillAlpha(0)
+        c.setLineWidth(r * 0.18)
+        c.setLineCap(1)
+        # Välisring
+        c.circle(cx, cy, r, fill=0, stroke=1)
+        # Vertikaalne ellips (meridian)
+        c.setLineWidth(r * 0.14)
+        p = c.beginPath()
+        p.moveTo(cx, cy + r)
+        p.curveTo(cx + r*0.55, cy + r*0.6, cx + r*0.55, cy - r*0.6, cx, cy - r)
+        c.drawPath(p, stroke=1, fill=0)
+        p = c.beginPath()
+        p.moveTo(cx, cy + r)
+        p.curveTo(cx - r*0.55, cy + r*0.6, cx - r*0.55, cy - r*0.6, cx, cy - r)
+        c.drawPath(p, stroke=1, fill=0)
+        # Horisontaalne joon
+        c.line(cx - r, cy, cx + r, cy)
+        c.restoreState()
 
     c.saveState()
+    c.setFont("Helvetica-Bold", font_contact)
+
+    # Mõõda tekstilaiused parempoolseks joonduseks
+    phone_text = "+372 56 955 758"
+    web_text   = "www.willipu.ee"
+    phone_w = c.stringWidth(phone_text, "Helvetica-Bold", font_contact)
+    web_w   = c.stringWidth(web_text,   "Helvetica-Bold", font_contact)
+    gap = icon_r * 2.4   # ikoon + vahe
+
+    phone_x = W - pad_right - phone_w
+    web_x   = W - pad_right - web_w
+
     c.setFillColor(white)
     c.setFillAlpha(1)
-    c.setFont("Helvetica-Bold", 32*mm)
-    c.drawString(phone_x + icon_r * 2.8, phone_y, "+372 56 955 758")
+    c.drawString(phone_x, row2_y, phone_text)
+    c.drawString(web_x,   row1_y, web_text)
     c.restoreState()
+
+    # Ikoonid tekstist vasakule
+    draw_phone_icon(phone_x - icon_r * 1.4, row2_y + icon_r * 0.85, icon_r)
+    draw_globe_icon(web_x   - icon_r * 1.4, row1_y + icon_r * 0.85, icon_r)
 
     # ── 6. Nurga kaunistused ─────────────────────────────────────────────
     pad, arm, lw = 30*mm, 55*mm, 2*mm
