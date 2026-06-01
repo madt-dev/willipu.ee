@@ -217,9 +217,10 @@ def make_banner(filename):
     c.drawString(web_x,   row1_y, web_text)
     c.restoreState()
 
-    # Ikoonid tekstist vasakule
-    draw_phone_icon(phone_x - font_contact * 1.1, row2_y, font_contact)
-    draw_globe_icon(web_x   - icon_r * 1.4, row1_y + icon_r * 0.85, icon_r)
+    # Ikoonid tekstist vasakule (tühimik = font_contact * 0.35)
+    gap = font_contact * 0.35
+    draw_phone_icon(phone_x - font_contact - gap, row2_y, font_contact)
+    draw_globe_icon(web_x   - icon_r * 2.0 - gap, row1_y + icon_r * 0.85, icon_r)
 
     # ── 6. Nurga kaunistused ─────────────────────────────────────────────
     pad, arm, lw = 30*mm, 55*mm, 2*mm
