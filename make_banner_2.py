@@ -6,8 +6,13 @@ from reportlab.lib.units import mm
 from reportlab.lib.colors import HexColor, white
 from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from PIL import Image as PILImage
 import io, os
+
+pdfmetrics.registerFont(TTFont('DejaVu', '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
+pdfmetrics.registerFont(TTFont('DejaVuBold', '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
 
 # ── Mõõdud ──────────────────────────────────────────────────────────────
 W = 2200 * mm   # laius
@@ -160,26 +165,13 @@ def make_banner(filename):
     row2_y       = 30 * mm          # telefon (alumine rida)
     row1_y       = row2_y + font_contact + 18*mm   # veebileht (ülemine rida)
 
-    def draw_phone_icon(cx, cy, r):
-        """Klassikaline telefonitoru: kaks ovaali (kõrv+suu) kaarjalt ühendatud."""
+    def draw_phone_icon(x, y, size):
+        """☎ Unicode lauatelefoni sümbol."""
         c.saveState()
         c.setFillColor(white)
         c.setFillAlpha(1)
-        # Ikoon on 45° nurga all — roteerime lõuendit
-        c.translate(cx, cy)
-        c.rotate(20)
-        # Ülemine ovaalsõõr (kõrvapool)
-        c.ellipse(-r*0.28, r*0.38, r*0.28, r*1.0, fill=1, stroke=0)
-        # Alumine ovaalsõõr (suupool)
-        c.ellipse(-r*0.28, -r*1.0, r*0.28, -r*0.38, fill=1, stroke=0)
-        # Keskel ühendav kaarjas kepp (paksema joonena)
-        c.setStrokeColor(white)
-        c.setLineWidth(r * 0.5)
-        c.setLineCap(1)
-        p = c.beginPath()
-        p.moveTo(0, r*0.38)
-        p.curveTo(-r*0.9, r*0.2, -r*0.9, -r*0.2, 0, -r*0.38)
-        c.drawPath(p, stroke=1, fill=0)
+        c.setFont('DejaVu', size)
+        c.drawString(x, y, '☎')
         c.restoreState()
 
     def draw_globe_icon(cx, cy, r):
@@ -226,7 +218,7 @@ def make_banner(filename):
     c.restoreState()
 
     # Ikoonid tekstist vasakule
-    draw_phone_icon(phone_x - icon_r * 1.4, row2_y + icon_r * 0.85, icon_r)
+    draw_phone_icon(phone_x - font_contact * 1.1, row2_y, font_contact)
     draw_globe_icon(web_x   - icon_r * 1.4, row1_y + icon_r * 0.85, icon_r)
 
     # ── 6. Nurga kaunistused ─────────────────────────────────────────────
