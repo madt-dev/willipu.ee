@@ -538,7 +538,7 @@ function PricingCard({ group, onOpenLightbox }) {
             infoOpen={!!activeBadge}
             onCloseInfo={() => setActiveBadge(null)}
           />
-          <p className="photo-credit">Liisi Laanemäe</p>
+          <p className="photo-credit">pictures by Liisi Laanemäe</p>
         </>
       )}
       <ul className="price-list">
