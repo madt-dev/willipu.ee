@@ -563,6 +563,16 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   text-align: center;
   line-height: 1.2;
 }
+/* Photo credit */
+.photo-credit {
+  font-family: 'Caveat', cursive;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted, #888);
+  text-align: right;
+  padding: 4px 10px 0;
+  letter-spacing: 0.01em;
+}
 /* Card carousel */
 .card-carousel {
   position: relative;

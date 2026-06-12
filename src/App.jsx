@@ -530,13 +530,16 @@ function PricingCard({ group, onOpenLightbox }) {
         </ul>
       )}
       {group.photos?.length > 0 && (
-        <CardCarousel
-          photos={group.photos}
-          onOpenLightbox={startIndex => onOpenLightbox({ photos: group.photos, startIndex })}
-          badgeInfo={activeBadge}
-          infoOpen={!!activeBadge}
-          onCloseInfo={() => setActiveBadge(null)}
-        />
+        <>
+          <CardCarousel
+            photos={group.photos}
+            onOpenLightbox={startIndex => onOpenLightbox({ photos: group.photos, startIndex })}
+            badgeInfo={activeBadge}
+            infoOpen={!!activeBadge}
+            onCloseInfo={() => setActiveBadge(null)}
+          />
+          <p className="photo-credit">Liisi Laanemäe</p>
+        </>
       )}
       <ul className="price-list">
         {group.rows.map(row => (
