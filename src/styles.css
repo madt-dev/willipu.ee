@@ -445,8 +445,13 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   position: absolute; inset: 0;
   background:
     linear-gradient(180deg, rgba(20,32,27,0.55) 0%, rgba(20,32,27,0.25) 35%, rgba(20,32,27,0.85) 100%);
+  transition: background 0.4s var(--ease);
   opacity: 0;
   animation: heroFade 1.6s ease forwards;
+}
+[data-theme="dark"] .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(10,18,14,0.72) 0%, rgba(10,18,14,0.5) 35%, rgba(10,18,14,0.92) 100%);
 }
 @keyframes heroFade {
   0%   { opacity: 0; }
