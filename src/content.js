@@ -141,6 +141,7 @@ export const content = {
             { url: '/kar3.jpg', alt: 'Karavanipark' },
             { url: '/kar4.jpg', alt: 'Karavanipark' },
           ],
+          photoCredit: 'pictures by Liisi Laanemäe',
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Iseteeninduslik check-in' },
             { icon: 'electric', label: 'Elekter' },
@@ -359,6 +360,7 @@ export const content = {
             { url: '/kar3.jpg', alt: 'Caravan Park' },
             { url: '/kar4.jpg', alt: 'Caravan Park' },
           ],
+          photoCredit: 'pictures by Liisi Laanemäe',
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Self-service check-in' },
             { icon: 'electric', label: 'Electric' },
@@ -574,6 +576,7 @@ export const content = {
             { url: '/kar3.jpg', alt: 'Campingpark' },
             { url: '/kar4.jpg', alt: 'Campingpark' },
           ],
+          photoCredit: 'pictures by Liisi Laanemäe',
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Selbstbedienung Check-in' },
             { icon: 'electric', label: 'Strom' },
@@ -789,6 +792,7 @@ export const content = {
             { url: '/kar3.jpg', alt: 'Asuntovaunupuisto' },
             { url: '/kar4.jpg', alt: 'Asuntovaunupuisto' },
           ],
+          photoCredit: 'pictures by Liisi Laanemäe',
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Itsepalvelu check-in' },
             { icon: 'electric', label: 'Sähkö' },
@@ -1004,6 +1008,7 @@ export const content = {
             { url: '/kar3.jpg', alt: 'Kempings' },
             { url: '/kar4.jpg', alt: 'Kempings' },
           ],
+          photoCredit: 'pictures by Liisi Laanemäe',
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Pašapkalpošanās reģistrācija' },
             { icon: 'electric', label: 'Elektrība' },
@@ -1219,6 +1224,7 @@ export const content = {
             { url: '/kar3.jpg', alt: 'Kempingas' },
             { url: '/kar4.jpg', alt: 'Kempingas' },
           ],
+          photoCredit: 'pictures by Liisi Laanemäe',
           amenities: [
             { icon: 'checkin', label: 'Check-in 24/7', tooltip: 'Savitarnos registracija' },
             { icon: 'electric', label: 'Elektra' },
@@ -1434,6 +1440,7 @@ export const content = {
             { url: '/kar3.jpg', alt: 'Кемпинг' },
             { url: '/kar4.jpg', alt: 'Кемпинг' },
           ],
+          photoCredit: 'pictures by Liisi Laanemäe',
           amenities: [
             { icon: 'checkin', label: 'Заезд 24/7', tooltip: 'Самостоятельный заезд' },
             { icon: 'electric', label: 'Электричество' },
