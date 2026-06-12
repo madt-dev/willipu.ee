@@ -49,6 +49,10 @@
 [data-theme="dark"] .site-header.scrolled {
   background: rgba(16, 26, 20, 0.94);
 }
+[data-theme="dark"] .site-header.scrolled .nav-toggle {
+  background: var(--line);
+  color: var(--ink);
+}
 
 [data-theme="dark"] .site-footer {
   background: #060d08;
