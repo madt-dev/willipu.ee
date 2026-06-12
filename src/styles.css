@@ -724,6 +724,17 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   max-width: none;
   image-rendering: auto;
 }
+[data-theme="dark"] .card-carousel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 18, 14, 0.32);
+  pointer-events: none;
+  z-index: 1;
+}
+[data-theme="dark"] .lightbox-img {
+  filter: brightness(0.78);
+}
 .card-carousel-arrow {
   position: absolute;
   top: 50%;
