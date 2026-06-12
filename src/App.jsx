@@ -214,6 +214,31 @@ function LangDropdown({ lang, chooseLang, scrolled }) {
   )
 }
 
+const SEARCH_PLACEHOLDER = {
+  et: 'Otsi...', en: 'Search...', de: 'Suchen...',
+  fi: 'Etsi...', lv: 'Meklēt...', lt: 'Ieškoti...', ru: 'Поиск...',
+}
+
+function buildSearchIndex(t) {
+  const items = []
+  const add = (text, section, hint) => items.push({ text, section, hint })
+  add(t.nav.about, 'about', t.about?.title || '')
+  add(t.nav.amenities, 'amenities', t.amenities?.title || '')
+  add(t.nav.pricing, 'pricing', t.pricing?.title || '')
+  add(t.nav.contact, 'contact', t.contact?.title || '')
+  t.amenities?.items?.forEach(item => add(item.title, 'amenities', t.nav.amenities))
+  t.pricing?.groups?.forEach(g => add(g.label, 'pricing', t.nav.pricing))
+  return items
+}
+
+function scrollToSection(id) {
+  const el = document.getElementById(id)
+  if (!el) return
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  el.classList.add('search-highlight')
+  setTimeout(() => el.classList.remove('search-highlight'), 1800)
+}
+
 function Header({ t, lang, chooseLang, scrolled, navOpen, setNavOpen, darkMode, toggleDark }) {
   const links = [
     ['about', t.nav.about],
@@ -221,6 +246,52 @@ function Header({ t, lang, chooseLang, scrolled, navOpen, setNavOpen, darkMode, 
     ['pricing', t.nav.pricing],
     ['contact', t.nav.contact],
   ]
+
+  const [query, setQuery] = useState('')
+  const [results, setResults] = useState([])
+  const [open, setOpen] = useState(false)
+  const [activeIdx, setActiveIdx] = useState(-1)
+  const inputRef = useRef(null)
+  const listRef = useRef(null)
+  const index = useMemo(() => buildSearchIndex(t), [t])
+
+  const handleInput = (e) => {
+    const q = e.target.value
+    setQuery(q)
+    setActiveIdx(-1)
+    if (!q.trim()) { setResults([]); setOpen(false); return }
+    const ql = q.toLowerCase()
+    const filtered = index.filter(item => item.text.toLowerCase().includes(ql)).slice(0, 7)
+    setResults(filtered)
+    setOpen(filtered.length > 0)
+  }
+
+  const selectResult = (item) => {
+    setQuery('')
+    setOpen(false)
+    setActiveIdx(-1)
+    inputRef.current?.blur()
+    scrollToSection(item.section)
+  }
+
+  const handleKeyDown = (e) => {
+    if (!open) return
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setActiveIdx(i => Math.min(i + 1, results.length - 1))
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setActiveIdx(i => Math.max(i - 1, -1))
+    } else if (e.key === 'Enter' && activeIdx >= 0) {
+      e.preventDefault()
+      selectResult(results[activeIdx])
+    } else if (e.key === 'Escape') {
+      setOpen(false)
+      setQuery('')
+      inputRef.current?.blur()
+    }
+  }
+
   return (
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container header-row">
@@ -258,6 +329,52 @@ function Header({ t, lang, chooseLang, scrolled, navOpen, setNavOpen, darkMode, 
             <span />
             <span />
           </button>
+        </div>
+      </div>
+      <div className={`search-row${scrolled ? ' visible' : ''}`}>
+        <div className="container">
+          <div className="search-wrap" onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setOpen(false) }}>
+            <div className="search-input-wrap">
+              <svg className="search-icon" viewBox="0 0 20 20" fill="none" aria-hidden>
+                <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" strokeWidth="1.6" />
+                <path d="M13 13l4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+              <input
+                ref={inputRef}
+                type="search"
+                className="search-input"
+                placeholder={SEARCH_PLACEHOLDER[lang] || 'Search...'}
+                value={query}
+                onChange={handleInput}
+                onKeyDown={handleKeyDown}
+                onFocus={() => query && setOpen(results.length > 0)}
+                autoComplete="off"
+                aria-label="Search"
+                aria-expanded={open}
+                aria-controls="search-results-list"
+              />
+              {query && (
+                <button className="search-clear" onClick={() => { setQuery(''); setOpen(false); inputRef.current?.focus() }} aria-label="Clear">✕</button>
+              )}
+            </div>
+            {open && (
+              <ul id="search-results-list" ref={listRef} className="search-results" role="listbox">
+                {results.map((item, i) => (
+                  <li
+                    key={`${item.section}-${item.text}`}
+                    role="option"
+                    aria-selected={i === activeIdx}
+                    className={`search-result-item${i === activeIdx ? ' active' : ''}`}
+                    onMouseDown={e => { e.preventDefault(); selectResult(item) }}
+                    onMouseEnter={() => setActiveIdx(i)}
+                  >
+                    <span className="search-result-text">{item.text}</span>
+                    <span className="search-result-hint">{item.hint}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       </div>
     </header>
