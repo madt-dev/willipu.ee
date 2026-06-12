@@ -501,6 +501,20 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 .hero-cta .btn-primary:hover { background: var(--gold); color: var(--dark); }
 .hero-cta .btn-ghost { color: #fff; }
 
+/* Dark mode: dim hero CTA and light texts */
+[data-theme="dark"] .hero-cta .btn-primary {
+  background: var(--accent);
+  color: #0e1611;
+}
+[data-theme="dark"] .hero-cta .btn-primary:hover {
+  background: var(--accent-2);
+  color: #0e1611;
+}
+[data-theme="dark"] .hero-title { color: rgba(227, 221, 208, 0.92); }
+[data-theme="dark"] .hero-sub { color: rgba(227, 221, 208, 0.72); }
+[data-theme="dark"] .eyebrow.light { color: rgba(227, 221, 208, 0.65); }
+[data-theme="dark"] .hero-cta .btn-ghost { color: rgba(227, 221, 208, 0.85); }
+
 .hero-scroll {
   position: absolute;
   bottom: 2rem;
