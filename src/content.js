@@ -8,7 +8,7 @@ export const content = {
     },
     hero: {
       eyebrow: 'Peipsi järve kaldal',
-      title: 'Willipu külalisemaja ja karavanipark',
+      title: 'Willipu külalistemaja ja karavanipark',
       subtitle:
         'Vaikne paik vee ääres — kohtumiseks, puhkuseks ja peoks. Tartumaal, Pusi külas.',
       cta: 'Broneeri ööbimine karavanipargis',
