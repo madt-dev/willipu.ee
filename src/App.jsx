@@ -84,9 +84,9 @@ export default function App() {
     }
     setMeta('meta[name="description"]', t.seo.description)
     setMeta('meta[property="og:title"]', t.seo.title)
-    setMeta('meta[property="og:description"]', t.seo.description)
+    setMeta('meta[property="og:description"]', t.seo.ogDescription)
     setMeta('meta[name="twitter:title"]', t.seo.title)
-    setMeta('meta[name="twitter:description"]', t.seo.description)
+    setMeta('meta[name="twitter:description"]', t.seo.ogDescription)
   }, [lang])
 
   useEffect(() => {
