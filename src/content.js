@@ -1,5 +1,10 @@
 export const content = {
   et: {
+    seo: {
+      title: 'Willipu Karavanipark ja Külalistemaja · Peipsi järve ääres, Tartumaa',
+      description:
+        'Karavanipark 24/7 automaatse check-iniga otse Peipsi järve kaldal — 41 kohta haagissuvilatele ja matkaautodele: elekter, puhas vesi, purgimine, dušš ja WiFi. Lisaks toad, kämpingumajad, liivarand ja peosaal 30-le. Pusi küla, Tartumaa — 2 km Kallastest.',
+    },
     nav: {
       about: 'Meist',
       amenities: 'Tegevused',
@@ -219,6 +224,11 @@ export const content = {
     },
   },
   en: {
+    seo: {
+      title: 'Willipu Caravan Park & Guesthouse · Lake Peipus, Estonia',
+      description:
+        '24/7 caravan park with automated check-in on the shore of Lake Peipus, Estonia — 41 pitches for caravans, motorhomes and campervans with electric hook-up, fresh water, waste dump, showers and WiFi. Plus rooms, camping cottages, a sandy beach and a banquet hall.',
+    },
     nav: {
       about: 'About',
       amenities: 'Activities',
@@ -438,6 +448,11 @@ export const content = {
     },
   },
   de: {
+    seo: {
+      title: 'Willipu Wohnmobilstellplatz & Gästehaus · Peipussee, Estland',
+      description:
+        'Wohnmobil- und Wohnwagenstellplatz mit 24/7-Check-in direkt am Peipussee in Estland — 41 Stellplätze mit Strom, Frischwasser, Entsorgung, Duschen und WLAN. Dazu Zimmer, Campinghütten, Sandstrand und Festsaal.',
+    },
     nav: {
       about: 'Über uns',
       amenities: 'Aktivitäten',
@@ -654,6 +669,11 @@ export const content = {
     },
   },
   fi: {
+    seo: {
+      title: 'Willipu asuntovaunualue ja vierastalo · Peipsijärvi, Viro',
+      description:
+        'Asuntovaunu- ja matkailuautoalue 24/7-sisäänkirjautumisella Peipsijärven rannalla Virossa — 41 paikkaa: sähkö, puhdas vesi, jäteveden tyhjennys, suihkut ja WiFi. Lisäksi huoneita, leirintämökkejä, hiekkaranta ja juhlatila.',
+    },
     nav: {
       about: 'Meistä',
       amenities: 'Aktiviteetit',
@@ -870,6 +890,11 @@ export const content = {
     },
   },
   lv: {
+    seo: {
+      title: 'Willipu kempings un viesu nams · Peipusa ezers, Igaunija',
+      description:
+        'Kemperu un treileru kempings ar 24/7 reģistrāciju Peipusa ezera krastā Igaunijā — 41 vieta ar elektrību, ūdeni, notekūdeņu iztukšošanu, dušām un WiFi. Istabas, kempinga namiņi, smilšu pludmale un banketu zāle.',
+    },
     nav: {
       about: 'Par mums',
       amenities: 'Aktivitātes',
@@ -1086,6 +1111,11 @@ export const content = {
     },
   },
   lt: {
+    seo: {
+      title: 'Willipu kempingas ir svečių namai · Peipaus ežeras, Estija',
+      description:
+        'Kemperių ir karavanų aikštelė su 24/7 registracija prie Peipaus ežero Estijoje — 41 vieta su elektra, vandeniu, nuotekų išpylimu, dušais ir WiFi. Kambariai, kempingo nameliai, smėlio paplūdimys ir pokylių salė.',
+    },
     nav: {
       about: 'Apie mus',
       amenities: 'Veikla',
@@ -1302,6 +1332,11 @@ export const content = {
     },
   },
   ru: {
+    seo: {
+      title: 'Willipu кемпинг и гостевой дом · Чудское озеро, Эстония',
+      description:
+        'Кемпинг для автодомов и караванов с круглосуточной регистрацией на берегу Чудского озера в Эстонии — 41 место: электричество, вода, слив, душ и WiFi. Номера, коттеджи, песчаный пляж и банкетный зал.',
+    },
     nav: {
       about: 'О нас',
       amenities: 'Активности',

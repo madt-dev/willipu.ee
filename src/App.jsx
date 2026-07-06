@@ -77,7 +77,16 @@ export default function App() {
 
   useEffect(() => {
     const t = content[lang]
-    document.title = `Willipu · ${t.hero.eyebrow}`
+    document.title = t.seo.title
+    const setMeta = (selector, value) => {
+      const el = document.querySelector(selector)
+      if (el) el.setAttribute('content', value)
+    }
+    setMeta('meta[name="description"]', t.seo.description)
+    setMeta('meta[property="og:title"]', t.seo.title)
+    setMeta('meta[property="og:description"]', t.seo.description)
+    setMeta('meta[name="twitter:title"]', t.seo.title)
+    setMeta('meta[name="twitter:description"]', t.seo.description)
   }, [lang])
 
   useEffect(() => {
