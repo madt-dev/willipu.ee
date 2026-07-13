@@ -112,6 +112,7 @@
       line-height: 1.5;
       position: relative;
     }
+    .notice + .notice { margin-top: 10px; }
     .notice::before {
       content: '!';
       position: absolute;
@@ -193,7 +194,10 @@
         'Ära ületäida masinat — pesu peab trumlis vabalt liikuma.',
         'Ära jäta pesu pärast pesukorra lõppu pikaks ajaks masinasse ning jäta pärast lõpetamist pesumasina uks praokile.',
       ],
-      notice: 'Kui seade ei tööta korrektselt, anna sellest koheselt teada külalistemaja personalile.',
+      notices: [
+        'Kasuta pesuvahendina ainult selleks ettenähtud tooteid. Pesuseebi või muu mitte-sihtotstarbelise vahendi kasutamine on keelatud ja võib masina rikkuda.',
+        'Kui seade ei tööta korrektselt, anna sellest koheselt teada külalistemaja personalile.',
+      ],
       disclaimer: 'Willipu ei vastuta seadme valesti kasutamisest tekkinud kahjude eest.',
       contact: 'Küsimuste või probleemide korral helista',
     },
@@ -214,7 +218,10 @@
         'Do not overload the machine — laundry should move freely in the drum.',
         'Do not leave laundry in the machine for a long time after the wash has finished, and leave the door ajar when you are done.',
       ],
-      notice: 'If the machine is not working properly, please inform the guesthouse staff immediately.',
+      notices: [
+        'Use only detergents intended for washing machines. Using soap bars or other unsuitable products is prohibited and may damage the machine.',
+        'If the machine is not working properly, please inform the guesthouse staff immediately.',
+      ],
       disclaimer: 'Willipu is not liable for any damage caused by improper use of the appliance.',
       contact: 'If you have questions or problems, call',
     },
@@ -235,7 +242,10 @@
         'Maschine nicht überladen — die Wäsche muss sich frei bewegen können.',
         'Lassen Sie die Wäsche nach Programmende nicht lange in der Maschine und lassen Sie die Tür danach einen Spalt offen.',
       ],
-      notice: 'Wenn das Gerät nicht ordnungsgemäß funktioniert, informieren Sie bitte sofort das Personal des Gästehauses.',
+      notices: [
+        'Verwenden Sie nur für Waschmaschinen vorgesehene Waschmittel. Die Verwendung von Seife oder anderen ungeeigneten Mitteln ist untersagt und kann die Maschine beschädigen.',
+        'Wenn das Gerät nicht ordnungsgemäß funktioniert, informieren Sie bitte sofort das Personal des Gästehauses.',
+      ],
       disclaimer: 'Willipu haftet nicht für Schäden, die durch unsachgemäße Nutzung des Geräts entstehen.',
       contact: 'Bei Fragen oder Problemen rufen Sie an',
     },
@@ -256,7 +266,10 @@
         'Älä ylitäytä konetta — pyykin pitää mahtua liikkumaan rummussa.',
         'Älä jätä pyykkiä koneeseen pitkäksi aikaa pesun päätyttyä, ja jätä luukku raolleen pesun jälkeen.',
       ],
-      notice: 'Jos laite ei toimi oikein, ilmoita siitä välittömästi vierastalon henkilökunnalle.',
+      notices: [
+        'Käytä vain pesukoneisiin tarkoitettuja pesuaineita. Saippuan tai muun sopimattoman aineen käyttö on kielletty ja voi vaurioittaa konetta.',
+        'Jos laite ei toimi oikein, ilmoita siitä välittömästi vierastalon henkilökunnalle.',
+      ],
       disclaimer: 'Willipu ei vastaa laitteen virheellisestä käytöstä aiheutuneista vahingoista.',
       contact: 'Kysymyksissä ja ongelmissa soita',
     },
@@ -277,7 +290,10 @@
         'Nepārpildiet mašīnu — veļai tvertnē brīvi jākustas.',
         'Neatstājiet veļu mašīnā ilgu laiku pēc mazgāšanas beigām un pēc lietošanas atstājiet durvis pusvirus.',
       ],
-      notice: 'Ja ierīce nedarbojas pareizi, lūdzu, nekavējoties informējiet viesu nama personālu.',
+      notices: [
+        'Izmantojiet tikai veļas mašīnām paredzētus mazgāšanas līdzekļus. Ziepju vai citu nepiemērotu līdzekļu lietošana ir aizliegta un var sabojāt mašīnu.',
+        'Ja ierīce nedarbojas pareizi, lūdzu, nekavējoties informējiet viesu nama personālu.',
+      ],
       disclaimer: 'Willipu neatbild par bojājumiem, kas radušies ierīces nepareizas lietošanas dēļ.',
       contact: 'Jautājumu vai problēmu gadījumā zvaniet',
     },
@@ -298,7 +314,10 @@
         'Neperkraukite mašinos — skalbiniai būgne turi laisvai judėti.',
         'Nepalikite skalbinių mašinoje ilgam laikui pasibaigus skalbimui, o baigę palikite dureles praviras.',
       ],
-      notice: 'Jei įrenginys veikia netinkamai, nedelsdami praneškite svečių namų personalui.',
+      notices: [
+        'Naudokite tik skalbimo mašinoms skirtas priemones. Muilo ar kitų netinkamų priemonių naudojimas draudžiamas ir gali sugadinti mašiną.',
+        'Jei įrenginys veikia netinkamai, nedelsdami praneškite svečių namų personalui.',
+      ],
       disclaimer: 'Willipu neatsako už žalą, atsiradusią dėl netinkamo įrenginio naudojimo.',
       contact: 'Kilus klausimams ar problemoms skambinkite',
     },
@@ -319,7 +338,10 @@
         'Не перегружайте машину — бельё должно свободно двигаться в барабане.',
         'Не оставляйте бельё в машине надолго после окончания стирки; после стирки оставьте дверцу приоткрытой.',
       ],
-      notice: 'Если машина работает некорректно, немедленно сообщите об этом персоналу гостевого дома.',
+      notices: [
+        'Используйте только средства, предназначенные для стиральных машин. Использование мыла или других неподходящих средств запрещено и может повредить машину.',
+        'Если машина работает некорректно, немедленно сообщите об этом персоналу гостевого дома.',
+      ],
       disclaimer: 'Willipu не несёт ответственности за ущерб, возникший в результате неправильного использования оборудования.',
       contact: 'По вопросам и проблемам звоните',
     },
@@ -344,7 +366,7 @@
       '<ol class="steps">' + t.steps.map(s => '<li>' + esc(s) + '</li>').join('') + '</ol>' +
       '<h2>' + esc(t.tipsTitle) + '</h2>' +
       '<ul class="tips">' + t.tips.map(s => '<li>' + esc(s) + '</li>').join('') + '</ul>' +
-      '<div class="notice">' + esc(t.notice) + '</div>' +
+      t.notices.map(s => '<div class="notice">' + esc(s) + '</div>').join('') +
       '<div class="contact">' + esc(t.contact) + ': <a href="tel:+37256955758">' + PHONE + '</a></div>' +
       '<p class="disclaimer">' + esc(t.disclaimer) + '</p>';
     document.querySelectorAll('.langs button').forEach(b =>
