@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#2d4a3e" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>Puuküttega sauna kasutusjuhend · Willipu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f5f2ea;
+      color: #22322b;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: #2d4a3e;
+      color: #fff;
+      padding: 20px 20px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header svg { flex: none; }
+    header .name {
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    header .sub { font-size: 12px; opacity: 0.75; margin-top: 1px; }
+    .langs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 16px 20px 0;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .langs button {
+      font: 600 13px 'Inter', sans-serif;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1.5px solid #2d4a3e33;
+      background: #fff;
+      color: #2d4a3e;
+      cursor: pointer;
+    }
+    .langs button.active { background: #2d4a3e; color: #fff; border-color: #2d4a3e; }
+    main { max-width: 640px; margin: 0 auto; padding: 20px 20px 48px; }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #22322b;
+      margin: 10px 0 4px;
+    }
+    .intro { color: #5a6b62; font-size: 15px; margin-bottom: 22px; }
+    ol.steps { list-style: none; counter-reset: step; display: grid; gap: 12px; }
+    ol.steps li {
+      counter-increment: step;
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px 18px 16px 60px;
+      position: relative;
+      font-size: 15.5px;
+      line-height: 1.55;
+      box-shadow: 0 1px 3px rgba(34, 50, 43, 0.07);
+    }
+    ol.steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #2d4a3e;
+      color: #fff;
+      font: 700 15px 'Fraunces', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      margin: 28px 0 10px;
+    }
+    ul.tips { list-style: none; display: grid; gap: 8px; }
+    ul.tips li {
+      background: #e9efe9;
+      border-radius: 12px;
+      padding: 12px 16px 12px 40px;
+      font-size: 14.5px;
+      line-height: 1.5;
+      position: relative;
+    }
+    ul.tips li::before { content: '✓'; position: absolute; left: 16px; color: #2d4a3e; font-weight: 700; }
+    .notice {
+      margin-top: 24px;
+      background: #fbf0dd;
+      border: 1px solid #e8d5ae;
+      border-radius: 12px;
+      padding: 14px 16px 14px 46px;
+      font-size: 14.5px;
+      line-height: 1.5;
+      position: relative;
+    }
+    .notice + .notice { margin-top: 10px; }
+    .notice::before {
+      content: '!';
+      position: absolute;
+      left: 14px;
+      top: 13px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #c9932e;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact {
+      margin-top: 20px;
+      background: #2d4a3e;
+      color: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .contact a { color: #ffd98e; font-weight: 600; text-decoration: none; }
+    .disclaimer {
+      margin-top: 16px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #8b978f;
+    }
+    footer {
+      text-align: center;
+      font-size: 12.5px;
+      color: #8b978f;
+      padding: 0 20px 32px;
+    }
+    footer a { color: #2d4a3e; }
+  </style>
+</head>
+<body>
+  <header>
+    <svg width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="50" fill="#fff" opacity="0.14"/>
+      <path d="M20 44 q7.5 -9 15 0 t15 0 t15 0 t15 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+      <path d="M20 62 q7.5 -9 15 0 t15 0 t15 0 t15 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="name">Willipu</div>
+      <div class="sub">Külalistemaja ja Karavanipark</div>
+    </div>
+  </header>
+
+  <nav class="langs" id="langs" aria-label="Keel / Language"></nav>
+
+  <main id="content"></main>
+
+  <footer>
+    <a href="https://willipu.ee">willipu.ee</a> · +372 56 955 758
+  </footer>
+
+  <script>
+  const T = {
+    et: {
+      title: 'Puuküttega sauna kasutusjuhend',
+      intro: 'Sauna kasutamine lepitakse eelnevalt kokku külalistemaja personaliga. Kütmisel ja kasutamisel järgi palun järgmisi samme:',
+      steps: [
+        'Enne kütmist veendu, et kerise peal ja selle läheduses pole kõrvalisi esemeid, ning ava korstna siiber.',
+        'Süüta tuli ahjus paberi ja peente puudega — süütevedelikku kasutada ei tohi.',
+        'Lisa puid mõõdukalt ja hoia ahjuuks suletuna — ära küta sauna üle.',
+        'Leili viskamiseks kasuta ainult puhast vett.',
+        'Ära jäta põlevat ahju kunagi järelevalveta.',
+        'Lahkudes veendu, et tuli ahjus on raugenud, kustuta tuled ja korista enda järelt prügi.',
+      ],
+      tipsTitle: 'Hea teada',
+      tips: [
+        'Kata lava istumisel rätikuga.',
+        'Joo piisavalt vett ja tee jahutuspause.',
+      ],
+      notices: [
+        'Ära küta sauna üle — ülekuumenenud keris ja korsten on tuleohtlikud.',
+        'Riiete, rätikute ja muude esemete kuivatamine leiliruumis on keelatud — tuleoht!',
+        'Suitsetamine siseruumides on keelatud.',
+        'Tulekustuti asub sauna koridori seinal.',
+        'Probleemi korral (suits, rike vms) teavita koheselt külalistemaja personali.',
+      ],
+      disclaimer: 'Willipu ei vastuta sauna valesti kasutamisest tekkinud kahjude eest.',
+      contact: 'Küsimuste või probleemide korral helista',
+    },
+    en: {
+      title: 'Wood-fired sauna instructions',
+      intro: 'Sauna use is arranged in advance with the guesthouse staff. When heating and using the sauna, please follow these steps:',
+      steps: [
+        'Before lighting, make sure there are no objects on or near the stove, and open the flue damper.',
+        'Light the fire using paper and small kindling — never use lighter fluid.',
+        'Add firewood in moderation and keep the stove door closed — do not overheat the sauna.',
+        'Use only clean water for throwing steam.',
+        'Never leave the burning stove unattended.',
+        'When leaving, make sure the fire has burned down, switch off the lights and take your rubbish with you.',
+      ],
+      tipsTitle: 'Good to know',
+      tips: [
+        'Sit on a towel on the sauna benches.',
+        'Drink plenty of water and take breaks to cool down.',
+      ],
+      notices: [
+        'Do not overheat the sauna — an overheated stove and chimney are a fire hazard.',
+        'Drying clothes, towels or any other items in the steam room is prohibited — fire hazard!',
+        'Smoking indoors is prohibited.',
+        'The fire extinguisher is on the wall of the sauna corridor.',
+        'In case of a problem (smoke, malfunction etc.), inform the guesthouse staff immediately.',
+      ],
+      disclaimer: 'Willipu is not liable for any damage caused by improper use of the sauna.',
+      contact: 'If you have questions or problems, call',
+    },
+    de: {
+      title: 'Holzbeheizte Sauna — Anleitung',
+      intro: 'Die Saunanutzung wird im Voraus mit dem Personal des Gästehauses vereinbart. Beim Heizen und Benutzen folgen Sie bitte diesen Schritten:',
+      steps: [
+        'Vor dem Anheizen sicherstellen, dass sich keine Gegenstände auf oder neben dem Ofen befinden, und die Zugklappe des Schornsteins öffnen.',
+        'Das Feuer mit Papier und dünnem Anzündholz entfachen — niemals Brennflüssigkeit verwenden.',
+        'Holz maßvoll nachlegen und die Ofentür geschlossen halten — die Sauna nicht überheizen.',
+        'Für den Aufguss nur sauberes Wasser verwenden.',
+        'Den brennenden Ofen niemals unbeaufsichtigt lassen.',
+        'Beim Verlassen sicherstellen, dass das Feuer heruntergebrannt ist, das Licht ausschalten und den Müll mitnehmen.',
+      ],
+      tipsTitle: 'Gut zu wissen',
+      tips: [
+        'Setzen Sie sich in der Sauna auf ein Handtuch.',
+        'Trinken Sie ausreichend Wasser und legen Sie Abkühlpausen ein.',
+      ],
+      notices: [
+        'Die Sauna nicht überheizen — ein überhitzter Ofen und Schornstein sind brandgefährlich.',
+        'Das Trocknen von Kleidung, Handtüchern oder anderen Gegenständen in der Saunakabine ist verboten — Brandgefahr!',
+        'Rauchen ist in den Innenräumen verboten.',
+        'Der Feuerlöscher befindet sich an der Wand im Saunaflur.',
+        'Bei Problemen (Rauch, Defekt usw.) informieren Sie bitte sofort das Personal des Gästehauses.',
+      ],
+      disclaimer: 'Willipu haftet nicht für Schäden, die durch unsachgemäße Nutzung der Sauna entstehen.',
+      contact: 'Bei Fragen oder Problemen rufen Sie an',
+    },
+    fi: {
+      title: 'Puulämmitteisen saunan käyttöohje',
+      intro: 'Saunan käytöstä sovitaan etukäteen vierastalon henkilökunnan kanssa. Lämmitä ja käytä saunaa näiden ohjeiden mukaan:',
+      steps: [
+        'Varmista ennen lämmitystä, ettei kiukaan päällä tai lähellä ole ylimääräisiä esineitä, ja avaa savupelti.',
+        'Sytytä tuli paperilla ja pienillä puilla — älä käytä sytytysnestettä.',
+        'Lisää puita maltillisesti ja pidä tulipesän luukku kiinni — älä ylikuumenna saunaa.',
+        'Käytä löylyvetenä vain puhdasta vettä.',
+        'Älä koskaan jätä palavaa kiuasta valvomatta.',
+        'Lähtiessäsi varmista, että tuli on palanut loppuun, sammuta valot ja vie roskat mukanasi.',
+      ],
+      tipsTitle: 'Hyvä tietää',
+      tips: [
+        'Istu lauteilla pyyhkeen päällä.',
+        'Juo riittävästi vettä ja pidä vilvoittelutaukoja.',
+      ],
+      notices: [
+        'Älä ylikuumenna saunaa — ylikuumentunut kiuas ja hormi aiheuttavat palovaaran.',
+        'Vaatteiden, pyyhkeiden tai muiden esineiden kuivattaminen löylyhuoneessa on kielletty — palovaara!',
+        'Tupakointi sisätiloissa on kielletty.',
+        'Sammutin on saunan käytävän seinällä.',
+        'Ongelmatilanteessa (savu, vika tms.) ilmoita välittömästi vierastalon henkilökunnalle.',
+      ],
+      disclaimer: 'Willipu ei vastaa saunan virheellisestä käytöstä aiheutuneista vahingoista.',
+      contact: 'Kysymyksissä ja ongelmissa soita',
+    },
+    lv: {
+      title: 'Ar malku kurināmas pirts instrukcija',
+      intro: 'Pirts lietošana iepriekš jāsaskaņo ar viesu nama personālu. Kurinot un lietojot, lūdzu, sekojiet šiem soļiem:',
+      steps: [
+        'Pirms kurināšanas pārliecinieties, ka uz krāsns un tās tuvumā nav priekšmetu, un atveriet dūmvada aizbīdni.',
+        'Aizdedziniet uguni ar papīru un smalku malku — nekad nelietojiet degšķidrumu.',
+        'Malku pievienojiet mēreni un turiet krāsns durtiņas aizvērtas — nepārkuriniet pirti.',
+        'Garam metiet tikai tīru ūdeni.',
+        'Nekad neatstājiet degošu krāsni bez uzraudzības.',
+        'Aizejot pārliecinieties, ka uguns ir izdegusi, izslēdziet gaismu un paņemiet līdzi atkritumus.',
+      ],
+      tipsTitle: 'Noderīgi zināt',
+      tips: [
+        'Uz lāvas sēdiet uz dvieļa.',
+        'Dzeriet pietiekami daudz ūdens un ievērojiet atpūtas pauzes.',
+      ],
+      notices: [
+        'Nepārkuriniet pirti — pārkarsēta krāsns un dūmvads ir ugunsbīstami.',
+        'Apģērbu, dvieļu un citu priekšmetu žāvēšana garā telpā ir aizliegta — ugunsbīstamība!',
+        'Smēķēt telpās ir aizliegts.',
+        'Ugunsdzēšamais aparāts atrodas pie pirts gaiteņa sienas.',
+        'Problēmu gadījumā (dūmi, bojājums u.c.) nekavējoties informējiet viesu nama personālu.',
+      ],
+      disclaimer: 'Willipu neatbild par bojājumiem, kas radušies pirts nepareizas lietošanas dēļ.',
+      contact: 'Jautājumu vai problēmu gadījumā zvaniet',
+    },
+    lt: {
+      title: 'Malkomis kūrenamos pirties instrukcija',
+      intro: 'Dėl pirties naudojimo iš anksto susitariama su svečių namų personalu. Kūrendami ir naudodamiesi sekite šiuos žingsnius:',
+      steps: [
+        'Prieš kūrenimą įsitikinkite, kad ant krosnies ir šalia jos nėra daiktų, ir atidarykite dūmtraukio sklendę.',
+        'Ugnį įkurkite popieriumi ir smulkiomis malkomis — niekada nenaudokite degiųjų skysčių.',
+        'Malkų dėkite saikingai ir laikykite krosnies dureles uždarytas — neperkaitinkite pirties.',
+        'Garui naudokite tik švarų vandenį.',
+        'Niekada nepalikite degančios krosnies be priežiūros.',
+        'Išeidami įsitikinkite, kad ugnis išblėso, išjunkite šviesas ir išsineškite šiukšles.',
+      ],
+      tipsTitle: 'Naudinga žinoti',
+      tips: [
+        'Ant plautų sėdėkite ant rankšluosčio.',
+        'Gerkite pakankamai vandens ir darykite pertraukas atsivėsinti.',
+      ],
+      notices: [
+        'Neperkaitinkite pirties — perkaitusi krosnis ir kaminas kelia gaisro pavojų.',
+        'Drabužių, rankšluosčių ar kitų daiktų džiovinimas garinėje draudžiamas — gaisro pavojus!',
+        'Rūkyti patalpose draudžiama.',
+        'Gesintuvas kabo ant pirties koridoriaus sienos.',
+        'Iškilus problemai (dūmai, gedimas ir pan.), nedelsdami praneškite svečių namų personalui.',
+      ],
+      disclaimer: 'Willipu neatsako už žalą, atsiradusią dėl netinkamo pirties naudojimo.',
+      contact: 'Kilus klausimams ar problemoms skambinkite',
+    },
+    ru: {
+      title: 'Инструкция бани на дровах',
+      intro: 'Пользование баней согласовывается заранее с персоналом гостевого дома. При растопке и использовании следуйте этим шагам:',
+      steps: [
+        'Перед растопкой убедитесь, что на печи и рядом с ней нет посторонних предметов, и откройте заслонку дымохода.',
+        'Разжигайте огонь бумагой и мелкими дровами — никогда не используйте жидкость для розжига.',
+        'Подкладывайте дрова умеренно и держите дверцу печи закрытой — не перетапливайте баню.',
+        'Для пара используйте только чистую воду.',
+        'Никогда не оставляйте горящую печь без присмотра.',
+        'Уходя, убедитесь, что огонь догорел, выключите свет и заберите мусор с собой.',
+      ],
+      tipsTitle: 'Полезно знать',
+      tips: [
+        'Сидите на полке на полотенце.',
+        'Пейте достаточно воды и делайте перерывы для охлаждения.',
+      ],
+      notices: [
+        'Не перетапливайте баню — перегретая печь и дымоход пожароопасны.',
+        'Сушить одежду, полотенца и другие вещи в парной запрещено — опасность пожара!',
+        'Курение в помещениях запрещено.',
+        'Огнетушитель находится на стене в коридоре бани.',
+        'При возникновении проблемы (дым, неисправность и т. п.) немедленно сообщите персоналу гостевого дома.',
+      ],
+      disclaimer: 'Willipu не несёт ответственности за ущерб, возникший в результате неправильного использования бани.',
+      contact: 'По вопросам и проблемам звоните',
+    },
+  };
+
+  const PHONE = '+372 56 955 758';
+  const LANGS = Object.keys(T);
+
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function render(lang) {
+    const t = T[lang];
+    document.documentElement.lang = lang;
+    document.title = t.title + ' · Willipu';
+    document.getElementById('content').innerHTML =
+      '<h1>' + esc(t.title) + '</h1>' +
+      '<p class="intro">' + esc(t.intro) + '</p>' +
+      '<ol class="steps">' + t.steps.map(s => '<li>' + esc(s) + '</li>').join('') + '</ol>' +
+      '<h2>' + esc(t.tipsTitle) + '</h2>' +
+      '<ul class="tips">' + t.tips.map(s => '<li>' + esc(s) + '</li>').join('') + '</ul>' +
+      t.notices.map(s => '<div class="notice">' + esc(s) + '</div>').join('') +
+      '<div class="contact">' + esc(t.contact) + ': <a href="tel:+37256955758">' + PHONE + '</a></div>' +
+      '<p class="disclaimer">' + esc(t.disclaimer) + '</p>';
+    document.querySelectorAll('.langs button').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === lang));
+    try { localStorage.setItem('willipu_lang', lang); } catch (e) {}
+  }
+
+  const nav = document.getElementById('langs');
+  LANGS.forEach(code => {
+    const b = document.createElement('button');
+    b.dataset.lang = code;
+    b.textContent = code.toUpperCase();
+    b.onclick = () => render(code);
+    nav.appendChild(b);
+  });
+
+  let initial = 'et';
+  try {
+    const saved = localStorage.getItem('willipu_lang');
+    if (LANGS.includes(saved)) initial = saved;
+    else {
+      const nav2 = (navigator.languages || [navigator.language || '']).map(l => l.slice(0, 2).toLowerCase());
+      initial = nav2.find(l => LANGS.includes(l)) || 'et';
+    }
+  } catch (e) {}
+  render(initial);
+  </script>
+</body>
+</html>
