@@ -28,3 +28,15 @@ and caravan park on Lake Peipus, Pusi küla, Tartumaa, Estonia).
   sitemap `lastmod` when content changes.
 - Caravan park bookings go through https://willipu.pargihaldur.ee; rooms
   and cottages are booked by email.
+
+## QR manual pages (`/juhend/`)
+
+- Standalone multilingual manual/info pages live in
+  `public/juhend/<slug>/index.html`. They are reachable only by direct URL
+  (QR-code stickers on-site), are NOT linked from the main site, and carry
+  `noindex, nofollow` — keep them out of the sitemap.
+- To add a new manual: copy `public/juhend/pesumasin/index.html`, edit the
+  `T` translations object (all 7 languages), and add a card link to the
+  list in `public/juhend/index.html`.
+- Generate the QR code + print-ready sticker (80x100 mm, 300 dpi):
+  `python3 make_qr_kleebis.py <slug> "<Estonian title>" "<subtitle>"`.

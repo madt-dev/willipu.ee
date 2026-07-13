@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#2d4a3e" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>Pesumasina kasutusjuhend · Willipu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f5f2ea;
+      color: #22322b;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: #2d4a3e;
+      color: #fff;
+      padding: 20px 20px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header svg { flex: none; }
+    header .name {
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    header .sub { font-size: 12px; opacity: 0.75; margin-top: 1px; }
+    .langs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 16px 20px 0;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .langs button {
+      font: 600 13px 'Inter', sans-serif;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1.5px solid #2d4a3e33;
+      background: #fff;
+      color: #2d4a3e;
+      cursor: pointer;
+    }
+    .langs button.active { background: #2d4a3e; color: #fff; border-color: #2d4a3e; }
+    main { max-width: 640px; margin: 0 auto; padding: 20px 20px 48px; }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #22322b;
+      margin: 10px 0 4px;
+    }
+    .intro { color: #5a6b62; font-size: 15px; margin-bottom: 22px; }
+    ol.steps { list-style: none; counter-reset: step; display: grid; gap: 12px; }
+    ol.steps li {
+      counter-increment: step;
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px 18px 16px 60px;
+      position: relative;
+      font-size: 15.5px;
+      line-height: 1.55;
+      box-shadow: 0 1px 3px rgba(34, 50, 43, 0.07);
+    }
+    ol.steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #2d4a3e;
+      color: #fff;
+      font: 700 15px 'Fraunces', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      margin: 28px 0 10px;
+    }
+    ul.tips { list-style: none; display: grid; gap: 8px; }
+    ul.tips li {
+      background: #e9efe9;
+      border-radius: 12px;
+      padding: 12px 16px 12px 40px;
+      font-size: 14.5px;
+      line-height: 1.5;
+      position: relative;
+    }
+    ul.tips li::before { content: '✓'; position: absolute; left: 16px; color: #2d4a3e; font-weight: 700; }
+    .contact {
+      margin-top: 28px;
+      background: #2d4a3e;
+      color: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .contact a { color: #ffd98e; font-weight: 600; text-decoration: none; }
+    footer {
+      text-align: center;
+      font-size: 12.5px;
+      color: #8b978f;
+      padding: 0 20px 32px;
+    }
+    footer a { color: #2d4a3e; }
+  </style>
+</head>
+<body>
+  <header>
+    <svg width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="50" fill="#fff" opacity="0.14"/>
+      <path d="M20 44 q7.5 -9 15 0 t15 0 t15 0 t15 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+      <path d="M20 62 q7.5 -9 15 0 t15 0 t15 0 t15 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="name">Willipu</div>
+      <div class="sub">Külalistemaja ja Karavanipark</div>
+    </div>
+  </header>
+
+  <nav class="langs" id="langs" aria-label="Keel / Language"></nav>
+
+  <main id="content"></main>
+
+  <footer>
+    <a href="https://willipu.ee">willipu.ee</a> · +372 56 955 758
+  </footer>
+
+  <script>
+  const T = {
+    et: {
+      title: 'Pesumasina kasutusjuhend',
+      intro: 'Pesumasina kasutamine on külalistele tasuta. Palun järgi lihtsaid samme:',
+      steps: [
+        'Tühjenda taskud ja aseta pesu trumlisse — täida trummel kuni ¾.',
+        'Sulge uks korralikult.',
+        'Lisa pesuaine sahtli lahtrisse II (põhipesu). Doseeri mõõdukalt.',
+        'Vali programm ja temperatuur — igapäevane pesu: puuvill või eco 40°, õrn pesu 30°.',
+        'Vajuta Start.',
+        'Pärast pesu lõppu võta pesu kohe välja ning jäta uks ja pesuainesahtel paokile kuivama.',
+      ],
+      tipsTitle: 'Hea teada',
+      tips: [
+        'Villased ja õrnad esemed pese vastava programmiga.',
+        'Ära ületäida masinat — pesu peab trumlis vabalt liikuma.',
+      ],
+      contact: 'Küsimuste või probleemide korral helista',
+    },
+    en: {
+      title: 'Washing machine instructions',
+      intro: 'The washing machine is free for guests to use. Please follow these simple steps:',
+      steps: [
+        'Empty all pockets and load the drum — fill it no more than ¾ full.',
+        'Close the door firmly.',
+        'Add detergent to drawer compartment II (main wash). Dose moderately.',
+        'Choose a programme and temperature — everyday laundry: cotton or eco 40°, delicates 30°.',
+        'Press Start.',
+        'When the programme ends, take the laundry out promptly and leave the door and detergent drawer ajar to dry.',
+      ],
+      tipsTitle: 'Good to know',
+      tips: [
+        'Wash wool and delicate items on the appropriate programme.',
+        'Do not overload the machine — laundry should move freely in the drum.',
+      ],
+      contact: 'If you have questions or problems, call',
+    },
+    de: {
+      title: 'Waschmaschine — Anleitung',
+      intro: 'Die Nutzung der Waschmaschine ist für Gäste kostenlos. Bitte folgen Sie diesen Schritten:',
+      steps: [
+        'Alle Taschen leeren und die Wäsche in die Trommel geben — höchstens zu ¾ füllen.',
+        'Die Tür fest schließen.',
+        'Waschmittel in Fach II (Hauptwäsche) geben. Sparsam dosieren.',
+        'Programm und Temperatur wählen — Alltagswäsche: Baumwolle oder Eco 40°, Feinwäsche 30°.',
+        'Start drücken.',
+        'Nach Programmende die Wäsche zeitnah entnehmen; Tür und Waschmittelfach zum Trocknen offen lassen.',
+      ],
+      tipsTitle: 'Gut zu wissen',
+      tips: [
+        'Wolle und Feinwäsche mit dem passenden Programm waschen.',
+        'Maschine nicht überladen — die Wäsche muss sich frei bewegen können.',
+      ],
+      contact: 'Bei Fragen oder Problemen rufen Sie an',
+    },
+    fi: {
+      title: 'Pesukoneen käyttöohje',
+      intro: 'Pesukoneen käyttö on vieraille maksutonta. Seuraa näitä yksinkertaisia ohjeita:',
+      steps: [
+        'Tyhjennä taskut ja laita pyykki rumpuun — täytä enintään ¾.',
+        'Sulje luukku kunnolla.',
+        'Annostele pesuaine lokeroon II (varsinainen pesu). Käytä kohtuullisesti.',
+        'Valitse ohjelma ja lämpötila — arkipyykki: puuvilla tai eco 40°, hienopesu 30°.',
+        'Paina Start.',
+        'Ohjelman päätyttyä ota pyykki heti pois ja jätä luukku ja pesuainelokero raolleen kuivumaan.',
+      ],
+      tipsTitle: 'Hyvä tietää',
+      tips: [
+        'Pese villa ja arat tekstiilit sopivalla ohjelmalla.',
+        'Älä ylitäytä konetta — pyykin pitää mahtua liikkumaan rummussa.',
+      ],
+      contact: 'Kysymyksissä ja ongelmissa soita',
+    },
+    lv: {
+      title: 'Veļas mašīnas lietošanas instrukcija',
+      intro: 'Veļas mašīnas lietošana viesiem ir bez maksas. Lūdzu, sekojiet šiem soļiem:',
+      steps: [
+        'Iztukšojiet kabatas un ielieciet veļu tvertnē — piepildiet ne vairāk kā ¾.',
+        'Cieši aizveriet durvis.',
+        'Ieberiet veļas līdzekli nodalījumā II (pamatmazgāšana). Dozējiet mēreni.',
+        'Izvēlieties programmu un temperatūru — ikdienas veļa: kokvilna vai eco 40°, smalkā veļa 30°.',
+        'Nospiediet Start.',
+        'Pēc programmas beigām izņemiet veļu uzreiz un atstājiet durvis un nodalījumu pusvirus, lai izžūst.',
+      ],
+      tipsTitle: 'Noderīgi zināt',
+      tips: [
+        'Vilnu un smalko veļu mazgājiet ar atbilstošu programmu.',
+        'Nepārpildiet mašīnu — veļai tvertnē brīvi jākustas.',
+      ],
+      contact: 'Jautājumu vai problēmu gadījumā zvaniet',
+    },
+    lt: {
+      title: 'Skalbimo mašinos instrukcija',
+      intro: 'Svečiai skalbimo mašina gali naudotis nemokamai. Sekite šiuos paprastus žingsnius:',
+      steps: [
+        'Ištuštinkite kišenes ir sudėkite skalbinius į būgną — pripildykite ne daugiau kaip ¾.',
+        'Tvirtai uždarykite dureles.',
+        'Įpilkite skalbiklio į II skyrelį (pagrindinis skalbimas). Dozuokite saikingai.',
+        'Pasirinkite programą ir temperatūrą — kasdieniai skalbiniai: medvilnė arba eco 40°, gležni audiniai 30°.',
+        'Paspauskite Start.',
+        'Programai pasibaigus skalbinius išimkite iš karto, dureles ir skyrelį palikite praviras išdžiūti.',
+      ],
+      tipsTitle: 'Naudinga žinoti',
+      tips: [
+        'Vilną ir gležnus audinius skalbkite tinkama programa.',
+        'Neperkraukite mašinos — skalbiniai būgne turi laisvai judėti.',
+      ],
+      contact: 'Kilus klausimams ar problemoms skambinkite',
+    },
+    ru: {
+      title: 'Инструкция стиральной машины',
+      intro: 'Стиральная машина для гостей бесплатна. Пожалуйста, следуйте простым шагам:',
+      steps: [
+        'Проверьте карманы и загрузите бельё в барабан — не более чем на ¾.',
+        'Плотно закройте дверцу.',
+        'Засыпьте порошок в отсек II (основная стирка). Дозируйте умеренно.',
+        'Выберите программу и температуру — повседневное бельё: хлопок или eco 40°, деликатная стирка 30°.',
+        'Нажмите «Старт».',
+        'По окончании программы сразу выньте бельё; дверцу и лоток оставьте приоткрытыми для просушки.',
+      ],
+      tipsTitle: 'Полезно знать',
+      tips: [
+        'Шерсть и деликатные ткани стирайте на соответствующей программе.',
+        'Не перегружайте машину — бельё должно свободно двигаться в барабане.',
+      ],
+      contact: 'По вопросам и проблемам звоните',
+    },
+  };
+
+  const PHONE = '+372 56 955 758';
+  const LANGS = Object.keys(T);
+
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function render(lang) {
+    const t = T[lang];
+    document.documentElement.lang = lang;
+    document.title = t.title + ' · Willipu';
+    document.getElementById('content').innerHTML =
+      '<h1>' + esc(t.title) + '</h1>' +
+      '<p class="intro">' + esc(t.intro) + '</p>' +
+      '<ol class="steps">' + t.steps.map(s => '<li>' + esc(s) + '</li>').join('') + '</ol>' +
+      '<h2>' + esc(t.tipsTitle) + '</h2>' +
+      '<ul class="tips">' + t.tips.map(s => '<li>' + esc(s) + '</li>').join('') + '</ul>' +
+      '<div class="contact">' + esc(t.contact) + ': <a href="tel:+37256955758">' + PHONE + '</a></div>';
+    document.querySelectorAll('.langs button').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === lang));
+    try { localStorage.setItem('willipu_lang', lang); } catch (e) {}
+  }
+
+  const nav = document.getElementById('langs');
+  LANGS.forEach(code => {
+    const b = document.createElement('button');
+    b.dataset.lang = code;
+    b.textContent = code.toUpperCase();
+    b.onclick = () => render(code);
+    nav.appendChild(b);
+  });
+
+  let initial = 'et';
+  try {
+    const saved = localStorage.getItem('willipu_lang');
+    if (LANGS.includes(saved)) initial = saved;
+    else {
+      const nav2 = (navigator.languages || [navigator.language || '']).map(l => l.slice(0, 2).toLowerCase());
+      initial = nav2.find(l => LANGS.includes(l)) || 'et';
+    }
+  } catch (e) {}
+  render(initial);
+  </script>
+</body>
+</html>
