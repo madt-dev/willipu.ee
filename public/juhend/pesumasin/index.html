@@ -102,8 +102,34 @@
       position: relative;
     }
     ul.tips li::before { content: '✓'; position: absolute; left: 16px; color: #2d4a3e; font-weight: 700; }
+    .notice {
+      margin-top: 24px;
+      background: #fbf0dd;
+      border: 1px solid #e8d5ae;
+      border-radius: 12px;
+      padding: 14px 16px 14px 46px;
+      font-size: 14.5px;
+      line-height: 1.5;
+      position: relative;
+    }
+    .notice::before {
+      content: '!';
+      position: absolute;
+      left: 14px;
+      top: 13px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #c9932e;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .contact {
-      margin-top: 28px;
+      margin-top: 20px;
       background: #2d4a3e;
       color: #fff;
       border-radius: 14px;
@@ -112,6 +138,12 @@
       line-height: 1.5;
     }
     .contact a { color: #ffd98e; font-weight: 600; text-decoration: none; }
+    .disclaimer {
+      margin-top: 16px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #8b978f;
+    }
     footer {
       text-align: center;
       font-size: 12.5px;
@@ -159,7 +191,10 @@
       tips: [
         'Villased ja õrnad esemed pese vastava programmiga.',
         'Ära ületäida masinat — pesu peab trumlis vabalt liikuma.',
+        'Ära jäta pesu pärast pesukorra lõppu pikaks ajaks masinasse ning jäta pärast lõpetamist pesumasina uks praokile.',
       ],
+      notice: 'Kui seade ei tööta korrektselt, anna sellest koheselt teada külalistemaja personalile.',
+      disclaimer: 'Willipu ei vastuta seadme valesti kasutamisest tekkinud kahjude eest.',
       contact: 'Küsimuste või probleemide korral helista',
     },
     en: {
@@ -177,7 +212,10 @@
       tips: [
         'Wash wool and delicate items on the appropriate programme.',
         'Do not overload the machine — laundry should move freely in the drum.',
+        'Do not leave laundry in the machine for a long time after the wash has finished, and leave the door ajar when you are done.',
       ],
+      notice: 'If the machine is not working properly, please inform the guesthouse staff immediately.',
+      disclaimer: 'Willipu is not liable for any damage caused by improper use of the appliance.',
       contact: 'If you have questions or problems, call',
     },
     de: {
@@ -195,7 +233,10 @@
       tips: [
         'Wolle und Feinwäsche mit dem passenden Programm waschen.',
         'Maschine nicht überladen — die Wäsche muss sich frei bewegen können.',
+        'Lassen Sie die Wäsche nach Programmende nicht lange in der Maschine und lassen Sie die Tür danach einen Spalt offen.',
       ],
+      notice: 'Wenn das Gerät nicht ordnungsgemäß funktioniert, informieren Sie bitte sofort das Personal des Gästehauses.',
+      disclaimer: 'Willipu haftet nicht für Schäden, die durch unsachgemäße Nutzung des Geräts entstehen.',
       contact: 'Bei Fragen oder Problemen rufen Sie an',
     },
     fi: {
@@ -213,7 +254,10 @@
       tips: [
         'Pese villa ja arat tekstiilit sopivalla ohjelmalla.',
         'Älä ylitäytä konetta — pyykin pitää mahtua liikkumaan rummussa.',
+        'Älä jätä pyykkiä koneeseen pitkäksi aikaa pesun päätyttyä, ja jätä luukku raolleen pesun jälkeen.',
       ],
+      notice: 'Jos laite ei toimi oikein, ilmoita siitä välittömästi vierastalon henkilökunnalle.',
+      disclaimer: 'Willipu ei vastaa laitteen virheellisestä käytöstä aiheutuneista vahingoista.',
       contact: 'Kysymyksissä ja ongelmissa soita',
     },
     lv: {
@@ -231,7 +275,10 @@
       tips: [
         'Vilnu un smalko veļu mazgājiet ar atbilstošu programmu.',
         'Nepārpildiet mašīnu — veļai tvertnē brīvi jākustas.',
+        'Neatstājiet veļu mašīnā ilgu laiku pēc mazgāšanas beigām un pēc lietošanas atstājiet durvis pusvirus.',
       ],
+      notice: 'Ja ierīce nedarbojas pareizi, lūdzu, nekavējoties informējiet viesu nama personālu.',
+      disclaimer: 'Willipu neatbild par bojājumiem, kas radušies ierīces nepareizas lietošanas dēļ.',
       contact: 'Jautājumu vai problēmu gadījumā zvaniet',
     },
     lt: {
@@ -249,7 +296,10 @@
       tips: [
         'Vilną ir gležnus audinius skalbkite tinkama programa.',
         'Neperkraukite mašinos — skalbiniai būgne turi laisvai judėti.',
+        'Nepalikite skalbinių mašinoje ilgam laikui pasibaigus skalbimui, o baigę palikite dureles praviras.',
       ],
+      notice: 'Jei įrenginys veikia netinkamai, nedelsdami praneškite svečių namų personalui.',
+      disclaimer: 'Willipu neatsako už žalą, atsiradusią dėl netinkamo įrenginio naudojimo.',
       contact: 'Kilus klausimams ar problemoms skambinkite',
     },
     ru: {
@@ -267,7 +317,10 @@
       tips: [
         'Шерсть и деликатные ткани стирайте на соответствующей программе.',
         'Не перегружайте машину — бельё должно свободно двигаться в барабане.',
+        'Не оставляйте бельё в машине надолго после окончания стирки; после стирки оставьте дверцу приоткрытой.',
       ],
+      notice: 'Если машина работает некорректно, немедленно сообщите об этом персоналу гостевого дома.',
+      disclaimer: 'Willipu не несёт ответственности за ущерб, возникший в результате неправильного использования оборудования.',
       contact: 'По вопросам и проблемам звоните',
     },
   };
@@ -291,7 +344,9 @@
       '<ol class="steps">' + t.steps.map(s => '<li>' + esc(s) + '</li>').join('') + '</ol>' +
       '<h2>' + esc(t.tipsTitle) + '</h2>' +
       '<ul class="tips">' + t.tips.map(s => '<li>' + esc(s) + '</li>').join('') + '</ul>' +
-      '<div class="contact">' + esc(t.contact) + ': <a href="tel:+37256955758">' + PHONE + '</a></div>';
+      '<div class="notice">' + esc(t.notice) + '</div>' +
+      '<div class="contact">' + esc(t.contact) + ': <a href="tel:+37256955758">' + PHONE + '</a></div>' +
+      '<p class="disclaimer">' + esc(t.disclaimer) + '</p>';
     document.querySelectorAll('.langs button').forEach(b =>
       b.classList.toggle('active', b.dataset.lang === lang));
     try { localStorage.setItem('willipu_lang', lang); } catch (e) {}
