@@ -109,14 +109,15 @@ header = f'''
 # --- panel 1: dump station ---
 P1_Y, P1_H = 52, 158
 ICON_CX, ICON_CY, ICON_R = 78, P1_Y + P1_H / 2, 44
-# dump pictogram from Icon.jsx, scaled so 24-unit viewBox spans ~60mm
+# dump pictogram: WC pot emptying into a container below (24-unit viewBox → ~60mm)
 DUMP_S = 60 / 24
 dump_icon = f'''
   <circle cx="{ICON_CX}" cy="{ICON_CY}" r="{ICON_R}" fill="{LIGHT}"/>
   <g transform="translate({ICON_CX - 30} {ICON_CY - 30}) scale({DUMP_S:.4f})"
      fill="none" stroke="{GREEN}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 3v10"/>
-    <path d="M8 9l4 4 4-4"/>
+    <path d="M9.5 2.5h5a1 1 0 011 1V5c0 1.9-1 3.4-2.3 4.2h-2.4C9.5 8.4 8.5 6.9 8.5 5V3.5a1 1 0 011-1z"/>
+    <path d="M10.8 9.2v1.6h2.4V9.2"/>
+    <path d="M12 12.8v1.7M9.6 12.3v1.4M14.4 12.3v1.4"/>
     <path d="M5 17h14"/>
     <path d="M7 17v2a2 2 0 002 2h6a2 2 0 002-2v-2"/>
   </g>
