@@ -123,12 +123,11 @@ dump_icon = f'''
 '''
 TXT1_X = 138
 p1_texts = (
-    placed("fraunces-700.ttf", "Purgimiskoht", 13.5, P1_Y + 44, DARK, left_x=TXT1_X)
-    + placed("inter-500.ttf", "Dump station · Entsorgungsstation", 6.4, P1_Y + 66, "#5a6b62", left_x=TXT1_X)
-    + placed("inter-500.ttf", "Tyhjennyspiste · Notekūdeņu izliešana", 6.4, P1_Y + 78, "#5a6b62", left_x=TXT1_X)
-    + placed("inter-500.ttf", "Nuotekų išpylimas · Слив отходов", 6.4, P1_Y + 90, "#5a6b62", left_x=TXT1_X)
-    + placed("inter-500.ttf", "Hallvesi · keemiline WC · joogivesi", 6.4, P1_Y + 118, GREEN, left_x=TXT1_X)
-    + placed("inter-500.ttf", "Grey water · chemical toilet · fresh water", 5.4, P1_Y + 129, "#8b978f", left_x=TXT1_X)
+    placed("fraunces-700.ttf", "Purgimiskoht", 13.5, P1_Y + 48, DARK, left_x=TXT1_X)
+    + placed("inter-500.ttf", "Entsorgungsstation", 6.8, P1_Y + 72, "#5a6b62", left_x=TXT1_X)
+    + placed("inter-500.ttf", "Tyhjennyspiste", 6.8, P1_Y + 85, "#5a6b62", left_x=TXT1_X)
+    + placed("inter-500.ttf", "Слив отходов", 6.8, P1_Y + 98, "#5a6b62", left_x=TXT1_X)
+    + placed("inter-500.ttf", "Hallvesi · keemiline WC", 6.8, P1_Y + 124, GREEN, left_x=TXT1_X)
 )
 
 # --- panel 2: no parking ---
@@ -145,13 +144,12 @@ sign = f'''
 '''
 TXT2_X = 138
 p2_texts = (
-    placed("fraunces-700.ttf", "Parkimine keelatud", 11.5, P2_Y + 40, RED, left_x=TXT2_X)
-    + placed("inter-600.ttf", "purgimisplatsi alal", 7.2, P2_Y + 55, DARK, left_x=TXT2_X)
-    + placed("inter-500.ttf", "No parking in the dump station area", 6.0, P2_Y + 78, "#5a6b62", left_x=TXT2_X)
-    + placed("inter-500.ttf", "Parken im Entsorgungsbereich verboten", 6.0, P2_Y + 90, "#5a6b62", left_x=TXT2_X)
-    + placed("inter-500.ttf", "Pysäköinti kielletty tyhjennysalueella", 6.0, P2_Y + 102, "#5a6b62", left_x=TXT2_X)
-    + placed("inter-500.ttf", "Парковка в зоне слива запрещена", 6.0, P2_Y + 114, "#5a6b62", left_x=TXT2_X)
-    + placed("inter-500.ttf", "Palun hoia plats purgijatele vaba", 6.0, P2_Y + 136, GREEN, left_x=TXT2_X)
+    placed("fraunces-700.ttf", "Parkimine keelatud", 11.5, P2_Y + 42, RED, left_x=TXT2_X)
+    + placed("inter-600.ttf", "purgimisplatsi alal", 7.2, P2_Y + 57, DARK, left_x=TXT2_X)
+    + placed("inter-500.ttf", "Parken im Entsorgungsbereich verboten", 6.4, P2_Y + 82, "#5a6b62", left_x=TXT2_X)
+    + placed("inter-500.ttf", "Pysäköinti kielletty tyhjennysalueella", 6.4, P2_Y + 96, "#5a6b62", left_x=TXT2_X)
+    + placed("inter-500.ttf", "Парковка в зоне слива запрещена", 6.4, P2_Y + 110, "#5a6b62", left_x=TXT2_X)
+    + placed("inter-500.ttf", "Palun hoia plats purgijatele vaba", 6.4, P2_Y + 136, GREEN, left_x=TXT2_X)
 )
 
 footer = placed("inter-600.ttf", "willipu.ee  ·  +372 56 955 758", 7, 405, CREAM, center_x=W / 2)
