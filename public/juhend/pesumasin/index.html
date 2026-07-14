@@ -129,6 +129,19 @@
       align-items: center;
       justify-content: center;
     }
+    .manual-link {
+      display: block;
+      margin-top: 20px;
+      background: #fff;
+      border: 1.5px solid #2d4a3e;
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: #2d4a3e;
+      font-weight: 600;
+      font-size: 14.5px;
+      text-decoration: none;
+      text-align: center;
+    }
     .contact {
       margin-top: 20px;
       background: #2d4a3e;
@@ -179,173 +192,189 @@
   const T = {
     et: {
       title: 'Pesumasina kasutusjuhend',
-      intro: 'Pesumasina kasutamine on tasuline — osta kasutuskord vastavalt hinnakirjale. Seejärel järgi lihtsaid samme:',
+      intro: 'Pesumasin: Samsung WW5000 seeria. Kasutamine on tasuline — osta kasutuskord vastavalt hinnakirjale. Seejärel järgi lihtsaid samme:',
       steps: [
-        'Tühjenda taskud ja aseta pesu trumlisse — täida trummel kuni ¾.',
-        'Sulge uks korralikult.',
-        'Lisa pesuaine sahtli lahtrisse II (põhipesu). Doseeri mõõdukalt.',
-        'Vali programm ja temperatuur — igapäevane pesu: puuvill või eco 40°, õrn pesu 30°.',
-        'Vajuta Start.',
+        'Tühjenda taskud ja kontrolli hooldussilte. Aseta pesu trumlisse — ära ületäida — ja sulge uks õrnalt.',
+        'Lisa pesuaine sahtli vasakusse lahtrisse (põhipesu); loputusvahend keskmisse lahtrisse, mitte üle max-joone. Ära pane sahtlisse tablette ega kapsleid.',
+        'Vajuta Power, et masin sisse lülitada.',
+        'Vali programmikettaga programm — igapäevaseks pesuks ECO 40-60 (vaikimisi) või COTTON. Vajadusel muuda temperatuuri (Temp.) ja tsentrifuugi (Spin).',
+        'Vajuta Start/Pause.',
         'Pärast pesu lõppu võta pesu kohe välja ning jäta uks ja pesuainesahtel paokile kuivama.',
       ],
       tipsTitle: 'Hea teada',
       tips: [
-        'Villased ja õrnad esemed pese vastava programmiga.',
-        'Ära ületäida masinat — pesu peab trumlis vabalt liikuma.',
-        'Ära jäta pesu pärast pesukorra lõppu pikaks ajaks masinasse ning jäta pärast lõpetamist pesumasina uks praokile.',
+        'Kiireks pesuks sobib QUICK WASH 15’ (kuni 2 kg, max 20 g / 20 ml pesuainet); villasele ja õrnale pesule WOOL/DELICATES koos vedela pesuainega.',
+        'Pane rinnahoidjad ja väikesed esemed (sokid, sukkpüksid) pesuvõrku.',
+        'Pesu lisamiseks töö ajal hoia Start/Pause all, ava uks, lisa pesu ja jätka sama nupuga.',
+        'Ära jäta pesu pärast pesukorra lõppu pikaks ajaks masinasse.',
       ],
       notices: [
         'Kasuta pesuvahendina ainult selleks ettenähtud tooteid. Pesuseebi või muu mitte-sihtotstarbelise vahendi kasutamine on keelatud ja võib masina rikkuda.',
         'Kui seade ei tööta korrektselt, anna sellest koheselt teada külalistemaja personalile.',
       ],
+      manualLabel: 'Programmide detailne info — Samsungi kasutusjuhend (PDF, inglise keeles)',
       disclaimer: 'Willipu ei vastuta seadme valesti kasutamisest tekkinud kahjude eest.',
       contact: 'Küsimuste või probleemide korral helista',
     },
     en: {
       title: 'Washing machine instructions',
-      intro: 'Using the washing machine is a paid service — please purchase a wash according to the price list. Then follow these simple steps:',
+      intro: 'Washer: Samsung WW5000 series. Using the washing machine is a paid service — please purchase a wash according to the price list. Then follow these simple steps:',
       steps: [
-        'Empty all pockets and load the drum — fill it no more than ¾ full.',
-        'Close the door firmly.',
-        'Add detergent to drawer compartment II (main wash). Dose moderately.',
-        'Choose a programme and temperature — everyday laundry: cotton or eco 40°, delicates 30°.',
-        'Press Start.',
-        'When the programme ends, take the laundry out promptly and leave the door and detergent drawer ajar to dry.',
+        'Empty all pockets and check the care labels. Load the drum — do not overload — and close the door gently.',
+        'Add detergent to the left compartment of the drawer (main wash); fabric softener goes in the centre compartment, not above the max line. Do not put tablets or capsules in the drawer.',
+        'Press Power to turn the washing machine on.',
+        'Turn the Cycle Selector to select a cycle — ECO 40-60 (default) or COTTON suits everyday laundry. Adjust Temp. and Spin if needed.',
+        'Press Start/Pause.',
+        'When the wash ends, take the laundry out promptly and leave the door and detergent drawer ajar to dry.',
       ],
       tipsTitle: 'Good to know',
       tips: [
-        'Wash wool and delicate items on the appropriate programme.',
-        'Do not overload the machine — laundry should move freely in the drum.',
-        'Do not leave laundry in the machine for a long time after the wash has finished, and leave the door ajar when you are done.',
+        'For a quick wash use QUICK WASH 15’ (up to 2 kg, max 20 g / 20 ml of detergent); for wool and delicates use WOOL/DELICATES with liquid detergent.',
+        'Put bras and small items (socks, stockings) in a laundry net.',
+        'To add laundry mid-cycle, hold Start/Pause, open the door, add the items and hold Start/Pause again to resume.',
+        'Do not leave laundry in the machine for a long time after the wash has finished.',
       ],
       notices: [
         'Use only detergents intended for washing machines. Using soap bars or other unsuitable products is prohibited and may damage the machine.',
         'If the machine is not working properly, please inform the guesthouse staff immediately.',
       ],
+      manualLabel: 'Detailed programme info — Samsung user manual (PDF, English)',
       disclaimer: 'Willipu is not liable for any damage caused by improper use of the appliance.',
       contact: 'If you have questions or problems, call',
     },
     de: {
       title: 'Waschmaschine — Anleitung',
-      intro: 'Die Nutzung der Waschmaschine ist kostenpflichtig — bitte erwerben Sie einen Waschgang gemäß Preisliste. Folgen Sie dann diesen Schritten:',
+      intro: 'Waschmaschine: Samsung Serie WW5000. Die Nutzung ist kostenpflichtig — bitte erwerben Sie einen Waschgang gemäß Preisliste. Folgen Sie dann diesen Schritten:',
       steps: [
-        'Alle Taschen leeren und die Wäsche in die Trommel geben — höchstens zu ¾ füllen.',
-        'Die Tür fest schließen.',
-        'Waschmittel in Fach II (Hauptwäsche) geben. Sparsam dosieren.',
-        'Programm und Temperatur wählen — Alltagswäsche: Baumwolle oder Eco 40°, Feinwäsche 30°.',
-        'Start drücken.',
-        'Nach Programmende die Wäsche zeitnah entnehmen; Tür und Waschmittelfach zum Trocknen offen lassen.',
+        'Alle Taschen leeren und Pflegeetiketten prüfen. Wäsche einfüllen — nicht überladen — und die Tür sanft schließen.',
+        'Waschmittel in das linke Fach der Schublade geben (Hauptwäsche); Weichspüler in das mittlere Fach, nicht über die Max-Linie. Keine Tabs oder Kapseln in die Schublade geben.',
+        'Power drücken, um die Maschine einzuschalten.',
+        'Mit dem Programmwahlrad ein Programm wählen — für Alltagswäsche ECO 40-60 (Standard) oder COTTON. Bei Bedarf Temp. und Schleudern (Spin) anpassen.',
+        'Start/Pause drücken.',
+        'Nach dem Waschen die Wäsche zeitnah entnehmen; Tür und Waschmittelschublade zum Trocknen offen lassen.',
       ],
       tipsTitle: 'Gut zu wissen',
       tips: [
-        'Wolle und Feinwäsche mit dem passenden Programm waschen.',
-        'Maschine nicht überladen — die Wäsche muss sich frei bewegen können.',
-        'Lassen Sie die Wäsche nach Programmende nicht lange in der Maschine und lassen Sie die Tür danach einen Spalt offen.',
+        'Für schnelle Wäschen QUICK WASH 15’ (bis 2 kg, max. 20 g / 20 ml Waschmittel); für Wolle und Feines WOOL/DELICATES mit Flüssigwaschmittel.',
+        'BHs und Kleinteile (Socken, Strümpfe) in ein Wäschenetz geben.',
+        'Zum Nachlegen von Wäsche Start/Pause gedrückt halten, Tür öffnen, Wäsche hinzugeben und mit Start/Pause fortsetzen.',
+        'Lassen Sie die Wäsche nach Programmende nicht lange in der Maschine.',
       ],
       notices: [
         'Verwenden Sie nur für Waschmaschinen vorgesehene Waschmittel. Die Verwendung von Seife oder anderen ungeeigneten Mitteln ist untersagt und kann die Maschine beschädigen.',
         'Wenn das Gerät nicht ordnungsgemäß funktioniert, informieren Sie bitte sofort das Personal des Gästehauses.',
       ],
+      manualLabel: 'Detaillierte Programminfos — Samsung-Handbuch (PDF, Englisch)',
       disclaimer: 'Willipu haftet nicht für Schäden, die durch unsachgemäße Nutzung des Geräts entstehen.',
       contact: 'Bei Fragen oder Problemen rufen Sie an',
     },
     fi: {
       title: 'Pesukoneen käyttöohje',
-      intro: 'Pesukoneen käyttö on maksullista — osta pesukerta hinnaston mukaan. Seuraa sitten näitä ohjeita:',
+      intro: 'Pesukone: Samsung WW5000 -sarja. Käyttö on maksullista — osta pesukerta hinnaston mukaan. Seuraa sitten näitä ohjeita:',
       steps: [
-        'Tyhjennä taskut ja laita pyykki rumpuun — täytä enintään ¾.',
-        'Sulje luukku kunnolla.',
-        'Annostele pesuaine lokeroon II (varsinainen pesu). Käytä kohtuullisesti.',
-        'Valitse ohjelma ja lämpötila — arkipyykki: puuvilla tai eco 40°, hienopesu 30°.',
-        'Paina Start.',
-        'Ohjelman päätyttyä ota pyykki heti pois ja jätä luukku ja pesuainelokero raolleen kuivumaan.',
+        'Tyhjennä taskut ja tarkista hoito-ohjeet. Laita pyykki rumpuun — älä ylitäytä — ja sulje luukku kevyesti.',
+        'Annostele pesuaine lokerikon vasempaan lokeroon (varsinainen pesu); huuhteluaine keskilokeroon, ei yli max-viivan. Älä laita lokerikkoon tabletteja tai kapseleita.',
+        'Kytke kone päälle painamalla Power.',
+        'Valitse ohjelma ohjelmanvalitsimella — arkipyykille ECO 40-60 (oletus) tai COTTON. Säädä tarvittaessa lämpötila (Temp.) ja linkous (Spin).',
+        'Paina Start/Pause.',
+        'Pesun päätyttyä ota pyykki heti pois ja jätä luukku ja pesuainelokero raolleen kuivumaan.',
       ],
       tipsTitle: 'Hyvä tietää',
       tips: [
-        'Pese villa ja arat tekstiilit sopivalla ohjelmalla.',
-        'Älä ylitäytä konetta — pyykin pitää mahtua liikkumaan rummussa.',
-        'Älä jätä pyykkiä koneeseen pitkäksi aikaa pesun päätyttyä, ja jätä luukku raolleen pesun jälkeen.',
+        'Nopeaan pesuun QUICK WASH 15’ (enintään 2 kg, enintään 20 g / 20 ml pesuainetta); villalle ja aroille WOOL/DELICATES ja nestemäinen pesuaine.',
+        'Laita rintaliivit ja pienet tekstiilit (sukat, sukkahousut) pesupussiin.',
+        'Lisätäksesi pyykkiä kesken pesun pidä Start/Pause pohjassa, avaa luukku, lisää pyykki ja jatka samalla painikkeella.',
+        'Älä jätä pyykkiä koneeseen pitkäksi aikaa pesun päätyttyä.',
       ],
       notices: [
         'Käytä vain pesukoneisiin tarkoitettuja pesuaineita. Saippuan tai muun sopimattoman aineen käyttö on kielletty ja voi vaurioittaa konetta.',
         'Jos laite ei toimi oikein, ilmoita siitä välittömästi vierastalon henkilökunnalle.',
       ],
+      manualLabel: 'Tarkat ohjelmatiedot — Samsungin käyttöohje (PDF, englanniksi)',
       disclaimer: 'Willipu ei vastaa laitteen virheellisestä käytöstä aiheutuneista vahingoista.',
       contact: 'Kysymyksissä ja ongelmissa soita',
     },
     lv: {
       title: 'Veļas mašīnas lietošanas instrukcija',
-      intro: 'Veļas mašīnas lietošana ir maksas pakalpojums — lūdzu, iegādājieties mazgāšanas reizi saskaņā ar cenrādi. Pēc tam sekojiet šiem soļiem:',
+      intro: 'Veļas mašīna: Samsung WW5000 sērija. Lietošana ir maksas pakalpojums — lūdzu, iegādājieties mazgāšanas reizi saskaņā ar cenrādi. Pēc tam sekojiet šiem soļiem:',
       steps: [
-        'Iztukšojiet kabatas un ielieciet veļu tvertnē — piepildiet ne vairāk kā ¾.',
-        'Cieši aizveriet durvis.',
-        'Ieberiet veļas līdzekli nodalījumā II (pamatmazgāšana). Dozējiet mēreni.',
-        'Izvēlieties programmu un temperatūru — ikdienas veļa: kokvilna vai eco 40°, smalkā veļa 30°.',
-        'Nospiediet Start.',
-        'Pēc programmas beigām izņemiet veļu uzreiz un atstājiet durvis un nodalījumu pusvirus, lai izžūst.',
+        'Iztukšojiet kabatas un pārbaudiet kopšanas etiķetes. Ielieciet veļu tvertnē — nepārpildiet — un maigi aizveriet durvis.',
+        'Ieberiet mazgāšanas līdzekli atvilktnes kreisajā nodalījumā (pamatmazgāšana); veļas mīkstinātāju — vidējā nodalījumā, ne virs max līnijas. Nelieciet atvilktnē tabletes vai kapsulas.',
+        'Nospiediet Power, lai ieslēgtu mašīnu.',
+        'Ar programmu pārslēgu izvēlieties programmu — ikdienas veļai ECO 40-60 (noklusējums) vai COTTON. Ja nepieciešams, pielāgojiet temperatūru (Temp.) un izgriešanu (Spin).',
+        'Nospiediet Start/Pause.',
+        'Pēc mazgāšanas izņemiet veļu uzreiz un atstājiet durvis un atvilktni pusvirus, lai izžūst.',
       ],
       tipsTitle: 'Noderīgi zināt',
       tips: [
-        'Vilnu un smalko veļu mazgājiet ar atbilstošu programmu.',
-        'Nepārpildiet mašīnu — veļai tvertnē brīvi jākustas.',
-        'Neatstājiet veļu mašīnā ilgu laiku pēc mazgāšanas beigām un pēc lietošanas atstājiet durvis pusvirus.',
+        'Ātrai mazgāšanai QUICK WASH 15’ (līdz 2 kg, ne vairāk kā 20 g / 20 ml līdzekļa); vilnai un smalkveļai WOOL/DELICATES ar šķidro līdzekli.',
+        'Krūšturus un sīkas lietas (zeķes, zeķubikses) lieciet veļas maisiņā.',
+        'Lai pievienotu veļu mazgāšanas laikā, turiet Start/Pause, atveriet durvis, pievienojiet veļu un turpiniet ar to pašu pogu.',
+        'Neatstājiet veļu mašīnā ilgu laiku pēc mazgāšanas beigām.',
       ],
       notices: [
         'Izmantojiet tikai veļas mašīnām paredzētus mazgāšanas līdzekļus. Ziepju vai citu nepiemērotu līdzekļu lietošana ir aizliegta un var sabojāt mašīnu.',
         'Ja ierīce nedarbojas pareizi, lūdzu, nekavējoties informējiet viesu nama personālu.',
       ],
+      manualLabel: 'Detalizēta programmu informācija — Samsung rokasgrāmata (PDF, angļu val.)',
       disclaimer: 'Willipu neatbild par bojājumiem, kas radušies ierīces nepareizas lietošanas dēļ.',
       contact: 'Jautājumu vai problēmu gadījumā zvaniet',
     },
     lt: {
       title: 'Skalbimo mašinos instrukcija',
-      intro: 'Skalbimo mašinos naudojimas yra mokamas — įsigykite skalbimą pagal kainoraštį. Tada sekite šiuos paprastus žingsnius:',
+      intro: 'Skalbimo mašina: Samsung WW5000 serija. Naudojimas mokamas — įsigykite skalbimą pagal kainoraštį. Tada sekite šiuos žingsnius:',
       steps: [
-        'Ištuštinkite kišenes ir sudėkite skalbinius į būgną — pripildykite ne daugiau kaip ¾.',
-        'Tvirtai uždarykite dureles.',
-        'Įpilkite skalbiklio į II skyrelį (pagrindinis skalbimas). Dozuokite saikingai.',
-        'Pasirinkite programą ir temperatūrą — kasdieniai skalbiniai: medvilnė arba eco 40°, gležni audiniai 30°.',
-        'Paspauskite Start.',
-        'Programai pasibaigus skalbinius išimkite iš karto, dureles ir skyrelį palikite praviras išdžiūti.',
+        'Ištuštinkite kišenes ir patikrinkite priežiūros etiketes. Sudėkite skalbinius į būgną — neperkraukite — ir švelniai uždarykite dureles.',
+        'Įpilkite skalbiklio į kairįjį stalčiaus skyrelį (pagrindinis skalbimas); minkštiklį — į vidurinį, ne virš max linijos. Nedėkite į stalčių tablečių ar kapsulių.',
+        'Paspauskite Power, kad įjungtumėte mašiną.',
+        'Programų ratuku pasirinkite programą — kasdieniams skalbiniams ECO 40-60 (numatytoji) arba COTTON. Jei reikia, pakeiskite temperatūrą (Temp.) ir gręžimą (Spin).',
+        'Paspauskite Start/Pause.',
+        'Skalbimui pasibaigus skalbinius išimkite iš karto, dureles ir stalčių palikite pravirus išdžiūti.',
       ],
       tipsTitle: 'Naudinga žinoti',
       tips: [
-        'Vilną ir gležnus audinius skalbkite tinkama programa.',
-        'Neperkraukite mašinos — skalbiniai būgne turi laisvai judėti.',
-        'Nepalikite skalbinių mašinoje ilgam laikui pasibaigus skalbimui, o baigę palikite dureles praviras.',
+        'Greitam skalbimui QUICK WASH 15’ (iki 2 kg, ne daugiau 20 g / 20 ml skalbiklio); vilnai ir gležniems audiniams WOOL/DELICATES su skystu skalbikliu.',
+        'Liemenėles ir smulkius daiktus (kojines, pėdkelnes) dėkite į skalbimo maišelį.',
+        'Norėdami įdėti skalbinių skalbimo metu, palaikykite Start/Pause, atidarykite dureles, įdėkite ir tęskite tuo pačiu mygtuku.',
+        'Nepalikite skalbinių mašinoje ilgam laikui pasibaigus skalbimui.',
       ],
       notices: [
         'Naudokite tik skalbimo mašinoms skirtas priemones. Muilo ar kitų netinkamų priemonių naudojimas draudžiamas ir gali sugadinti mašiną.',
         'Jei įrenginys veikia netinkamai, nedelsdami praneškite svečių namų personalui.',
       ],
+      manualLabel: 'Išsami programų informacija — Samsung instrukcija (PDF, anglų k.)',
       disclaimer: 'Willipu neatsako už žalą, atsiradusią dėl netinkamo įrenginio naudojimo.',
       contact: 'Kilus klausimams ar problemoms skambinkite',
     },
     ru: {
       title: 'Инструкция стиральной машины',
-      intro: 'Пользование стиральной машиной платное — приобретите стирку согласно прейскуранту. Затем следуйте простым шагам:',
+      intro: 'Стиральная машина: Samsung серии WW5000. Пользование платное — приобретите стирку согласно прейскуранту. Затем следуйте простым шагам:',
       steps: [
-        'Проверьте карманы и загрузите бельё в барабан — не более чем на ¾.',
-        'Плотно закройте дверцу.',
-        'Засыпьте порошок в отсек II (основная стирка). Дозируйте умеренно.',
-        'Выберите программу и температуру — повседневное бельё: хлопок или eco 40°, деликатная стирка 30°.',
-        'Нажмите «Старт».',
-        'По окончании программы сразу выньте бельё; дверцу и лоток оставьте приоткрытыми для просушки.',
+        'Проверьте карманы и ярлыки по уходу. Загрузите бельё в барабан — не перегружайте — и аккуратно закройте дверцу.',
+        'Засыпьте порошок в левый отсек лотка (основная стирка); кондиционер — в средний отсек, не выше отметки max. Не кладите в лоток таблетки или капсулы.',
+        'Нажмите Power, чтобы включить машину.',
+        'Поворотным переключателем выберите программу — для повседневного белья ECO 40-60 (по умолчанию) или COTTON. При необходимости настройте температуру (Temp.) и отжим (Spin).',
+        'Нажмите Start/Pause.',
+        'По окончании стирки сразу выньте бельё; дверцу и лоток оставьте приоткрытыми для просушки.',
       ],
       tipsTitle: 'Полезно знать',
       tips: [
-        'Шерсть и деликатные ткани стирайте на соответствующей программе.',
-        'Не перегружайте машину — бельё должно свободно двигаться в барабане.',
-        'Не оставляйте бельё в машине надолго после окончания стирки; после стирки оставьте дверцу приоткрытой.',
+        'Для быстрой стирки QUICK WASH 15’ (до 2 кг, не более 20 г / 20 мл средства); для шерсти и деликатных тканей WOOL/DELICATES с жидким средством.',
+        'Бюстгальтеры и мелкие вещи (носки, колготки) кладите в мешок для стирки.',
+        'Чтобы добавить бельё во время стирки, удерживайте Start/Pause, откройте дверцу, добавьте вещи и продолжите той же кнопкой.',
+        'Не оставляйте бельё в машине надолго после окончания стирки.',
       ],
       notices: [
         'Используйте только средства, предназначенные для стиральных машин. Использование мыла или других неподходящих средств запрещено и может повредить машину.',
         'Если машина работает некорректно, немедленно сообщите об этом персоналу гостевого дома.',
       ],
+      manualLabel: 'Подробная информация о программах — руководство Samsung (PDF, англ.)',
       disclaimer: 'Willipu не несёт ответственности за ущерб, возникший в результате неправильного использования оборудования.',
       contact: 'По вопросам и проблемам звоните',
     },
   };
+
+  const MANUAL_URL = '/juhend/pesumasin/samsung-kasutusjuhend.pdf';
 
   const PHONE = '+372 56 955 758';
   const LANGS = Object.keys(T);
@@ -367,6 +396,7 @@
       '<h2>' + esc(t.tipsTitle) + '</h2>' +
       '<ul class="tips">' + t.tips.map(s => '<li>' + esc(s) + '</li>').join('') + '</ul>' +
       t.notices.map(s => '<div class="notice">' + esc(s) + '</div>').join('') +
+      '<a class="manual-link" href="' + MANUAL_URL + '" target="_blank" rel="noopener">' + esc(t.manualLabel) + ' ↗</a>' +
       '<div class="contact">' + esc(t.contact) + ': <a href="tel:+37256955758">' + PHONE + '</a></div>' +
       '<p class="disclaimer">' + esc(t.disclaimer) + '</p>';
     document.querySelectorAll('.langs button').forEach(b =>
