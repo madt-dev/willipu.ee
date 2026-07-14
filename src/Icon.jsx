@@ -86,8 +86,9 @@ const paths = {
   ),
   dump: (
     <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3v10" />
-      <path d="M8 9l4 4 4-4" />
+      <path d="M9.5 2.5h5a1 1 0 011 1V5c0 1.9-1 3.4-2.3 4.2h-2.4C9.5 8.4 8.5 6.9 8.5 5V3.5a1 1 0 011-1z" />
+      <path d="M10.8 9.2v1.6h2.4V9.2" />
+      <path d="M12 12.8v1.7M9.6 12.3v1.4M14.4 12.3v1.4" />
       <path d="M5 17h14" />
       <path d="M7 17v2a2 2 0 002 2h6a2 2 0 002-2v-2" />
     </g>
