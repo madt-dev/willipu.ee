@@ -40,3 +40,12 @@ and caravan park on Lake Peipus, Pusi küla, Tartumaa, Estonia).
   list in `public/juhend/index.html`.
 - Generate the QR code + print-ready sticker (80x100 mm, 300 dpi):
   `python3 make_qr_kleebis.py <slug> "<Estonian title>" "<subtitle>"`.
+
+## Marketing materials page (`/turundus/`)
+
+- `public/turundus/index.html` is a hidden download page (noindex, not
+  linked from the site) listing all logos, banners, Facebook ads and QR
+  stickers. Share by direct URL only.
+- Generated assets live in the repo root (script outputs); the copies
+  served for download live in `public/turundus/`. When a new asset is
+  generated, copy it there and add a row to the page.
