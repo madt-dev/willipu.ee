@@ -19,7 +19,7 @@ def build_svg(filename):
         stroke="{GOLD}" stroke-width="2.5" opacity="0.85"/>
 
   <!-- ══ Mees (vasakul) ══ -->
-  <g fill="{WHITE}">
+  <g fill="{WHITE}" transform="translate(-12,0)">
     <!-- pea -->
     <circle cx="78" cy="78" r="17"/>
     <!-- keha -->
@@ -34,7 +34,7 @@ def build_svg(filename):
   </g>
 
   <!-- ══ Naine (keskel) ══ -->
-  <g fill="{WHITE}">
+  <g fill="{WHITE}" transform="translate(10,0)">
     <!-- pea -->
     <circle cx="150" cy="78" r="17"/>
     <!-- keha + seelik -->
@@ -67,10 +67,10 @@ def build_svg(filename):
   <!-- Kuldne eraldusjoon -->
   <line x1="40" y1="238" x2="260" y2="238" stroke="{GOLD}" stroke-width="2.5" opacity="0.9"/>
 
-  <!-- Tekst: WC · DUŠŠ -->
-  <text x="150" y="272" text-anchor="middle"
-        font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="bold"
-        letter-spacing="4" fill="{WHITE}">WC · DU&#352;&#352;</text>
+  <!-- Tekst: WC · DUŠŠ · SHOWER -->
+  <text x="150" y="270" text-anchor="middle"
+        font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="bold"
+        letter-spacing="2" fill="{WHITE}">WC · DU&#352;&#352; · SHOWER</text>
 </svg>'''
     with open(filename, 'w') as f:
         f.write(svg)

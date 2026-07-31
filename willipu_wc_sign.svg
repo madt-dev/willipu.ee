@@ -7,7 +7,7 @@
         stroke="#c89b3c" stroke-width="2.5" opacity="0.85"/>
 
   <!-- ══ Mees (vasakul) ══ -->
-  <g fill="#ffffff">
+  <g fill="#ffffff" transform="translate(-12,0)">
     <!-- pea -->
     <circle cx="78" cy="78" r="17"/>
     <!-- keha -->
@@ -22,7 +22,7 @@
   </g>
 
   <!-- ══ Naine (keskel) ══ -->
-  <g fill="#ffffff">
+  <g fill="#ffffff" transform="translate(10,0)">
     <!-- pea -->
     <circle cx="150" cy="78" r="17"/>
     <!-- keha + seelik -->
@@ -55,8 +55,8 @@
   <!-- Kuldne eraldusjoon -->
   <line x1="40" y1="238" x2="260" y2="238" stroke="#c89b3c" stroke-width="2.5" opacity="0.9"/>
 
-  <!-- Tekst: WC · DUŠŠ -->
-  <text x="150" y="272" text-anchor="middle"
-        font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="bold"
-        letter-spacing="4" fill="#ffffff">WC · DU&#352;&#352;</text>
+  <!-- Tekst: WC · DUŠŠ · SHOWER -->
+  <text x="150" y="270" text-anchor="middle"
+        font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="bold"
+        letter-spacing="2" fill="#ffffff">WC · DU&#352;&#352; · SHOWER</text>
 </svg>
