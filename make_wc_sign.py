@@ -18,8 +18,8 @@ def build_svg(filename):
   <rect x="14" y="14" width="272" height="272" rx="22" fill="none"
         stroke="{GOLD}" stroke-width="2.5" opacity="0.85"/>
 
-  <!-- ══ Mees (vasakul) ══ -->
-  <g fill="{WHITE}" transform="translate(-12,0)">
+  <!-- ══ Mees (keskel) ══ -->
+  <g fill="{WHITE}" transform="translate(62,0)">
     <!-- pea -->
     <circle cx="78" cy="78" r="17"/>
     <!-- keha -->
@@ -33,8 +33,8 @@ def build_svg(filename):
              l 0 -40 c 0 -14 -8 -22 -22 -22 z"/>
   </g>
 
-  <!-- ══ Naine (keskel) ══ -->
-  <g fill="{WHITE}" transform="translate(10,0)">
+  <!-- ══ Naine (paremal) ══ -->
+  <g fill="{WHITE}" transform="translate(84,0)">
     <!-- pea -->
     <circle cx="150" cy="78" r="17"/>
     <!-- keha + seelik -->
@@ -48,8 +48,9 @@ def build_svg(filename):
              l -11 -42 c -3 -10.5 -10 -17 -22 -17 z"/>
   </g>
 
-  <!-- ══ Dušš (paremal) ══ -->
-  <g stroke="{WHITE}" stroke-width="7" stroke-linecap="round" fill="none">
+  <!-- ══ Dušš (esimesena, vasakul, suurem) ══ -->
+  <g stroke="{WHITE}" stroke-width="6" stroke-linecap="round" fill="none"
+     transform="translate(-233,-32) scale(1.32)">
     <!-- toru -->
     <path d="M256 62 l -24 0 c -6 0 -10 4 -10 10 l 0 8"/>
     <!-- dušipea -->
@@ -67,10 +68,10 @@ def build_svg(filename):
   <!-- Kuldne eraldusjoon -->
   <line x1="40" y1="238" x2="260" y2="238" stroke="{GOLD}" stroke-width="2.5" opacity="0.9"/>
 
-  <!-- Tekst: WC · DUŠŠ · SHOWER -->
+  <!-- Tekst: DUŠŠ · SHOWER · WC -->
   <text x="150" y="270" text-anchor="middle"
         font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="bold"
-        letter-spacing="2" fill="{WHITE}">WC · DU&#352;&#352; · SHOWER</text>
+        letter-spacing="2" fill="{WHITE}">DU&#352;&#352; · SHOWER · WC</text>
 </svg>'''
     with open(filename, 'w') as f:
         f.write(svg)
