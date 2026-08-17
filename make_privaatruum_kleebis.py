@@ -49,27 +49,33 @@ def placed_text(font_file, text, em_mm, baseline_y, fill, center_x=60):
     w, frag = text_outline(font_file, text, em_mm)
     return f'<g transform="translate({center_x - w / 2:.3f} {baseline_y:.3f})" fill="{fill}">{frag}</g>'
 
-en = placed_text("inter-600.ttf", "Private · Staff only", 5.2, 56.4, "#ffffff")
-brand = placed_text("fraunces-700.ttf", "Willipu", 3.2, 65.6, "#ffffff")
+def placed_text_left(font_file, text, em_mm, baseline_y, fill, left_x=0):
+    _, frag = text_outline(font_file, text, em_mm)
+    return f'<g transform="translate({left_x:.3f} {baseline_y:.3f})" fill="{fill}">{frag}</g>'
+
+en = placed_text("inter-600.ttf", "Private · Staff only", 5.2, 59.0, "#ffffff")
+brand = placed_text_left("fraunces-700.ttf", "Willipu", 6.5, 14.4, "#ffffff", left_x=21.0)
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="70mm" viewBox="0 0 120 70">
   <rect width="120" height="70" rx="4" fill="{GREEN_HEX}"/>
-  <g transform="translate(53.5 5.5) scale(0.1)">
+  <g transform="translate(7.2 5.2) scale(0.083)">
     <circle cx="65" cy="65" r="55" fill="#ffffff" fill-opacity="0.14"/>
     <g transform="translate(27.60 27.60) scale(3.1167)" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round">
       <path d="M3 14c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3"/>
       <path d="M3 19c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3"/>
     </g>
   </g>
-  <!-- prohibition pictogram: person inside crossed ring -->
-  <g>
-    <circle cx="60" cy="32.5" r="2.4" fill="#ffffff"/>
-    <path d="M 56.6,42.6 v-3.1 a 3.4,3.4 0 0 1 6.8,0 v3.1 z" fill="#ffffff"/>
-    <circle cx="60" cy="36.5" r="10.5" fill="none" stroke="#ffffff" stroke-width="2.1"/>
-    <line x1="52.6" y1="29.1" x2="67.4" y2="43.9" stroke="#ffffff" stroke-width="2.1"/>
+  {brand}
+  <!-- prohibition pictogram: standing person inside crossed ring -->
+  <g fill="#ffffff">
+    <circle cx="60" cy="30.6" r="2.6"/>
+    <rect x="56.6" y="33.9" width="6.8" height="7.4" rx="2.4"/>
+    <rect x="57.4" y="41.2" width="2.2" height="5.0" rx="1.0"/>
+    <rect x="60.4" y="41.2" width="2.2" height="5.0" rx="1.0"/>
   </g>
+  <circle cx="60" cy="37.5" r="11" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+  <line x1="52.2" y1="29.7" x2="67.8" y2="45.3" stroke="#ffffff" stroke-width="2.2"/>
   {en}
-  <g opacity="0.55">{brand}</g>
 </svg>'''
 
 svg_path = f"{REPO}/willipu_kleebis_privaatruum.svg"
