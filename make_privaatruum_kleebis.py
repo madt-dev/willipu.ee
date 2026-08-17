@@ -66,15 +66,18 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="70mm" vi
     </g>
   </g>
   {brand}
-  <!-- prohibition pictogram: standing person inside crossed ring -->
-  <g fill="#ffffff">
-    <circle cx="60" cy="30.6" r="2.6"/>
-    <rect x="56.6" y="33.9" width="6.8" height="7.4" rx="2.4"/>
-    <rect x="57.4" y="41.2" width="2.2" height="5.0" rx="1.0"/>
-    <rect x="60.4" y="41.2" width="2.2" height="5.0" rx="1.0"/>
+  <!-- prohibition pictogram: ISO-style stop hand in red crossed ring -->
+  <circle cx="60" cy="37.5" r="12.6" fill="#ffffff"/>
+  <g fill="#1a1a1a">
+    <rect x="55.0" y="32.0" width="2.2" height="7.0" rx="1.1"/>
+    <rect x="57.6" y="30.3" width="2.2" height="8.7" rx="1.1"/>
+    <rect x="60.2" y="29.8" width="2.2" height="9.2" rx="1.1"/>
+    <rect x="62.8" y="30.8" width="2.2" height="8.2" rx="1.1"/>
+    <rect x="55.0" y="37.6" width="10.0" height="8.4" rx="3.2"/>
+    <rect x="64.6" y="36.6" width="2.4" height="7.4" rx="1.2" transform="rotate(-35 65.8 37.2)"/>
   </g>
-  <circle cx="60" cy="37.5" r="11" fill="none" stroke="#ffffff" stroke-width="2.2"/>
-  <line x1="52.2" y1="29.7" x2="67.8" y2="45.3" stroke="#ffffff" stroke-width="2.2"/>
+  <circle cx="60" cy="37.5" r="12.6" fill="none" stroke="#d3222a" stroke-width="2.6"/>
+  <line x1="51.1" y1="28.6" x2="68.9" y2="46.4" stroke="#d3222a" stroke-width="2.6"/>
   {en}
 </svg>'''
 
