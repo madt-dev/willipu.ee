@@ -51,7 +51,11 @@ title_et = sys.argv[2] if len(sys.argv) > 2 else "Tasuline pesumasin"
 sub_et = sys.argv[3] if len(sys.argv) > 3 else "Juhend / osta kasutus"
 title_en = sys.argv[4] if len(sys.argv) > 4 else "Paid washing machine · Instructions / purchase"
 phone = sys.argv[5] if len(sys.argv) > 5 else "Sularahas maksmine / Cash payment · +372 5695 5758"
-url = f"https://willipu.ee/juhend/{slug}/"
+# Short tourist-friendly aliases (redirect pages in public/<short>/index.html)
+SHORT_URLS = {"pesumasin": "wash", "pesukuivati": "dry"}
+short_slug = SHORT_URLS.get(slug)
+url = f"https://willipu.ee/{short_slug}/" if short_slug else f"https://willipu.ee/juhend/{slug}/"
+url_display = url.replace("https://", "").rstrip("/") if short_slug else url.replace("https://", "")
 
 fetch_fonts()
 
@@ -105,8 +109,8 @@ tw_p = d.textbbox((0, 0), phone, font=f_ph)[2]
 d.text(((W - tw_p) // 2, y + 234), phone, font=f_ph, fill=WHITE)
 
 # url pill at the bottom
-f_url = F("inter-600.ttf", 28)
-short = url.replace("https://", "")
+f_url = F("inter-600.ttf", 30)
+short = url_display
 tb = d.textbbox((0, 0), short, font=f_url)
 pw, ph = tb[2] - tb[0], tb[3] - tb[1]
 px1, px2 = (W - pw - 76) // 2, (W + pw + 76) // 2
@@ -185,7 +189,7 @@ _, et_frag = placed_text("fraunces-600.ttf", title_et, 5.4, 90.6, "#ffffff", cen
 _, en_frag = placed_text("inter-600.ttf", title_en, 3.7, 97.4, "#ffffff", center_x=60)
 _, sub_frag = placed_text("inter-500.ttf", sub_et, 3.1, 103.0, "#ffffff", center_x=60)
 _, ph_frag = placed_text("inter-600.ttf", phone, 2.8, 108.6, "#ffffff", center_x=60)
-url_w, url_frag = placed_text("inter-600.ttf", url.replace("https://", ""), 2.2, 115.5, GREEN_HEX, center_x=60)
+url_w, url_frag = placed_text("inter-600.ttf", url_display, 2.4, 115.5, GREEN_HEX, center_x=60)
 pill_w = url_w + 7
 # wordmark from the existing vector logo (already outlines)
 WORDMARK = (
