@@ -78,26 +78,26 @@ img.paste(icon, (84, 58), icon)
 d.text((248, 66), "Willipu", font=F("fraunces-700.ttf", 96), fill=WHITE)
 
 # white card with QR
-CARD = 850
-card = ((W - CARD) // 2, 200, (W + CARD) // 2, 200 + CARD)
-d.rounded_rectangle(card, radius=34, fill=WHITE)
-qr_size = CARD - 118
+CARD = 732
+card = ((W - CARD) // 2, 284, (W + CARD) // 2, 284 + CARD)
+d.rounded_rectangle(card, radius=31, fill=WHITE)
+qr_size = CARD - 94
 qr_big = qr_img.resize((qr_size, qr_size), Image.NEAREST)
-img.paste(qr_big, (card[0] + 59, card[1] + 59))
+img.paste(qr_big, (card[0] + 47, card[1] + 47))
 
 # titles under the card
-y = card[3] + 26
-f_et = F("fraunces-600.ttf", 62)
+y = card[3] + 30
+f_et = F("fraunces-600.ttf", 64)
 tw = d.textbbox((0, 0), title_et, font=f_et)[2]
 d.text(((W - tw) // 2, y), title_et, font=f_et, fill=WHITE)
 
-f_sub = F("inter-500.ttf", 37)
+f_sub = F("inter-600.ttf", 50)
 tw_s = d.textbbox((0, 0), sub_et, font=f_sub)[2]
-d.text(((W - tw_s) // 2, y + 88), sub_et, font=f_sub, fill=(228, 233, 229))
+d.text(((W - tw_s) // 2, y + 94), sub_et, font=f_sub, fill=WHITE)
 
-f_en = F("inter-500.ttf", 33)
+f_en = F("inter-500.ttf", 36)
 tw2 = d.textbbox((0, 0), title_en, font=f_en)[2]
-d.text(((W - tw2) // 2, y + 148), title_en, font=f_en, fill=(200, 210, 203))
+d.text(((W - tw2) // 2, y + 172), title_en, font=f_en, fill=(200, 210, 203))
 
 # url pill at the bottom
 f_url = F("inter-600.ttf", 28)
@@ -173,12 +173,12 @@ qr0.add_data(url)
 qr0.make(fit=True)
 matrix = qr0.get_matrix()
 
-QR_MM = 62.0
-qr_x, qr_y = (120 - QR_MM) / 2, 22.0
+QR_MM = 54.0
+qr_x, qr_y = (120 - QR_MM) / 2, 28.0
 
-_, et_frag = placed_text("fraunces-600.ttf", title_et, 5.2, 95.8, "#ffffff", center_x=60)
-_, sub_frag = placed_text("inter-500.ttf", sub_et, 3.1, 101.7, "#ffffff", center_x=60)
-_, en_frag = placed_text("inter-500.ttf", title_en, 2.8, 106.9, "#ffffff", center_x=60)
+_, et_frag = placed_text("fraunces-600.ttf", title_et, 5.4, 93.6, "#ffffff", center_x=60)
+_, sub_frag = placed_text("inter-600.ttf", sub_et, 4.2, 100.8, "#ffffff", center_x=60)
+_, en_frag = placed_text("inter-500.ttf", title_en, 2.9, 106.6, "#ffffff", center_x=60)
 url_w, url_frag = placed_text("inter-600.ttf", url.replace("https://", ""), 2.3, 113.7, GREEN_HEX, center_x=60)
 pill_w = url_w + 7
 # wordmark from the existing vector logo (already outlines)
@@ -204,10 +204,10 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="120mm" v
     </g>
   </g>
   {WORDMARK}
-  <rect x="24" y="17" width="72" height="72" rx="2.9" fill="#ffffff"/>
+  <rect x="29" y="24" width="62" height="62" rx="2.6" fill="#ffffff"/>
   <path transform="translate({qr_x:.3f} {qr_y:.3f})" d="{qr_svg_path(matrix, QR_MM)}" fill="{GREEN_HEX}"/>
   {et_frag}
-  <g opacity="0.9">{sub_frag}</g>
+  {sub_frag}
   <g opacity="0.75">{en_frag}</g>
   <rect x="{60 - pill_w / 2:.3f}" y="109.8" width="{pill_w:.3f}" height="6.2" rx="3.1" fill="{CREAM_HEX}"/>
   {url_frag}
