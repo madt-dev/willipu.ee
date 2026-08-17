@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate a QR code + print-ready sticker for a willipu.ee manual page.
 
-Usage: python3 make_qr_kleebis.py [slug] [title_et] [sub_et] [title_en]
+Usage: python3 make_qr_kleebis.py [slug] [title_et] [sub_et] [title_en] [phone_line]
 Defaults to the washing machine manual. Outputs:
   willipu_qr_<slug>.png       — plain QR code (for custom layouts)
   willipu_kleebis_<slug>.png  — print-ready sticker, 120x120mm at 300dpi
@@ -50,6 +50,7 @@ slug = sys.argv[1] if len(sys.argv) > 1 else "pesumasin"
 title_et = sys.argv[2] if len(sys.argv) > 2 else "Tasuline pesumasin"
 sub_et = sys.argv[3] if len(sys.argv) > 3 else "Juhend / osta kasutus"
 title_en = sys.argv[4] if len(sys.argv) > 4 else "Paid washing machine · Instructions / purchase"
+phone = sys.argv[5] if len(sys.argv) > 5 else "Sularahas maksmine / Cash payment · +372 5695 5758"
 url = f"https://willipu.ee/juhend/{slug}/"
 
 fetch_fonts()
@@ -79,7 +80,7 @@ d.text((248, 66), "Willipu", font=F("fraunces-700.ttf", 96), fill=WHITE)
 
 # white card with QR
 CARD = 732
-card = ((W - CARD) // 2, 284, (W + CARD) // 2, 284 + CARD)
+card = ((W - CARD) // 2, 248, (W + CARD) // 2, 248 + CARD)
 d.rounded_rectangle(card, radius=31, fill=WHITE)
 qr_size = CARD - 94
 qr_big = qr_img.resize((qr_size, qr_size), Image.NEAREST)
@@ -99,14 +100,18 @@ f_sub = F("inter-500.ttf", 38)
 tw_s = d.textbbox((0, 0), sub_et, font=f_sub)[2]
 d.text(((W - tw_s) // 2, y + 168), sub_et, font=f_sub, fill=(205, 214, 208))
 
+f_ph = F("inter-600.ttf", 34)
+tw_p = d.textbbox((0, 0), phone, font=f_ph)[2]
+d.text(((W - tw_p) // 2, y + 234), phone, font=f_ph, fill=WHITE)
+
 # url pill at the bottom
 f_url = F("inter-600.ttf", 28)
 short = url.replace("https://", "")
 tb = d.textbbox((0, 0), short, font=f_url)
 pw, ph = tb[2] - tb[0], tb[3] - tb[1]
 px1, px2 = (W - pw - 76) // 2, (W + pw + 76) // 2
-py2 = H - 46
-py1 = py2 - ph - 42
+py2 = H - 38
+py1 = py2 - ph - 40
 d.rounded_rectangle((px1, py1, px2, py2), radius=(py2 - py1) // 2, fill=CREAM)
 d.text(((px1 + px2 - pw) // 2 - tb[0], (py1 + py2 - ph) // 2 - tb[1]),
        short, font=f_url, fill=DARKTXT)
@@ -174,12 +179,13 @@ qr0.make(fit=True)
 matrix = qr0.get_matrix()
 
 QR_MM = 54.0
-qr_x, qr_y = (120 - QR_MM) / 2, 28.0
+qr_x, qr_y = (120 - QR_MM) / 2, 25.0
 
-_, et_frag = placed_text("fraunces-600.ttf", title_et, 5.4, 93.6, "#ffffff", center_x=60)
-_, en_frag = placed_text("inter-600.ttf", title_en, 3.7, 100.6, "#ffffff", center_x=60)
-_, sub_frag = placed_text("inter-500.ttf", sub_et, 3.1, 106.6, "#ffffff", center_x=60)
-url_w, url_frag = placed_text("inter-600.ttf", url.replace("https://", ""), 2.3, 113.7, GREEN_HEX, center_x=60)
+_, et_frag = placed_text("fraunces-600.ttf", title_et, 5.4, 90.6, "#ffffff", center_x=60)
+_, en_frag = placed_text("inter-600.ttf", title_en, 3.7, 97.4, "#ffffff", center_x=60)
+_, sub_frag = placed_text("inter-500.ttf", sub_et, 3.1, 103.0, "#ffffff", center_x=60)
+_, ph_frag = placed_text("inter-600.ttf", phone, 2.8, 108.6, "#ffffff", center_x=60)
+url_w, url_frag = placed_text("inter-600.ttf", url.replace("https://", ""), 2.2, 115.5, GREEN_HEX, center_x=60)
 pill_w = url_w + 7
 # wordmark from the existing vector logo (already outlines)
 WORDMARK = (
@@ -204,12 +210,13 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="120mm" v
     </g>
   </g>
   {WORDMARK}
-  <rect x="29" y="24" width="62" height="62" rx="2.6" fill="#ffffff"/>
+  <rect x="29" y="21" width="62" height="62" rx="2.6" fill="#ffffff"/>
   <path transform="translate({qr_x:.3f} {qr_y:.3f})" d="{qr_svg_path(matrix, QR_MM)}" fill="{GREEN_HEX}"/>
   {et_frag}
   {en_frag}
   <g opacity="0.8">{sub_frag}</g>
-  <rect x="{60 - pill_w / 2:.3f}" y="109.8" width="{pill_w:.3f}" height="6.2" rx="3.1" fill="{CREAM_HEX}"/>
+  {ph_frag}
+  <rect x="{60 - pill_w / 2:.3f}" y="111.6" width="{pill_w:.3f}" height="5.8" rx="2.9" fill="{CREAM_HEX}"/>
   {url_frag}
 </svg>'''
 
