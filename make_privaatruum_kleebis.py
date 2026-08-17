@@ -66,18 +66,13 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="70mm" vi
     </g>
   </g>
   {brand}
-  <!-- prohibition pictogram: ISO-style stop hand in red crossed ring -->
-  <circle cx="60" cy="37.5" r="12.6" fill="#ffffff"/>
-  <g fill="#1a1a1a">
-    <rect x="55.0" y="32.0" width="2.2" height="7.0" rx="1.1"/>
-    <rect x="57.6" y="30.3" width="2.2" height="8.7" rx="1.1"/>
-    <rect x="60.2" y="29.8" width="2.2" height="9.2" rx="1.1"/>
-    <rect x="62.8" y="30.8" width="2.2" height="8.2" rx="1.1"/>
-    <rect x="55.0" y="37.6" width="10.0" height="8.4" rx="3.2"/>
-    <rect x="64.6" y="36.6" width="2.4" height="7.4" rx="1.2" transform="rotate(-35 65.8 37.2)"/>
+  <!-- prohibition pictogram: stop hand (Font Awesome Free, CC BY 4.0) in red crossed ring -->
+  <circle cx="60" cy="37.5" r="13.2" fill="#ffffff"/>
+  <g transform="translate(52.6 30.2) scale(0.0288)" fill="#1a1a1a">
+    <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-176c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 272c0 1.5 0 3.1 .1 4.6L67.6 283c-16-15.2-41.3-14.6-56.6 1.4S-3.6 325.7 12.4 341L124.8 448c43.1 41.1 100.4 64 160 64l19.2 0c97.2 0 176-78.8 176-176l0-208c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-176c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 176c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-208z"/>
   </g>
-  <circle cx="60" cy="37.5" r="12.6" fill="none" stroke="#d3222a" stroke-width="2.6"/>
-  <line x1="51.1" y1="28.6" x2="68.9" y2="46.4" stroke="#d3222a" stroke-width="2.6"/>
+  <circle cx="60" cy="37.5" r="13.2" fill="none" stroke="#d3222a" stroke-width="2.7"/>
+  <line x1="50.7" y1="28.2" x2="69.3" y2="46.8" stroke="#d3222a" stroke-width="2.7"/>
   {en}
 </svg>'''
 
