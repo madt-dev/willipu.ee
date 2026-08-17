@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Generate a QR code + print-ready sticker for a willipu.ee manual page.
 
-Usage: python3 make_qr_kleebis.py [slug] [title_et] [title_en]
+Usage: python3 make_qr_kleebis.py [slug] [title_et] [sub_et] [title_en]
 Defaults to the washing machine manual. Outputs:
   willipu_qr_<slug>.png       — plain QR code (for custom layouts)
-  willipu_kleebis_<slug>.png  — print-ready sticker, 80x100mm at 300dpi
+  willipu_kleebis_<slug>.png  — print-ready sticker, 120x120mm at 300dpi
+  willipu_kleebis_<slug>.svg / .pdf — vector versions (text as outlines)
 
 Fonts are downloaded to ./fonts/ by make_og_image.py (run it once first,
 or this script fetches them the same way).
@@ -46,8 +47,9 @@ def fetch_fonts():
 
 
 slug = sys.argv[1] if len(sys.argv) > 1 else "pesumasin"
-title_et = sys.argv[2] if len(sys.argv) > 2 else "Pesumasina kasutusjuhend"
-title_en = sys.argv[3] if len(sys.argv) > 3 else "Washing machine · Инструкция"
+title_et = sys.argv[2] if len(sys.argv) > 2 else "Tasuline pesumasin"
+sub_et = sys.argv[3] if len(sys.argv) > 3 else "Juhend / osta kasutus"
+title_en = sys.argv[4] if len(sys.argv) > 4 else "Paid washing machine · Instructions / purchase"
 url = f"https://willipu.ee/juhend/{slug}/"
 
 fetch_fonts()
@@ -63,44 +65,48 @@ qr_img = qr.make_image(fill_color=GREEN, back_color="white").convert("RGB")
 qr_path = f"{REPO}/willipu_qr_{slug}.png"
 qr_img.save(qr_path)
 
-# --- sticker: 80x100 mm at 300 dpi = 945x1181 px ---
-W, H = 945, 1181
+# --- sticker: 120x120 mm at 300 dpi = 1417x1417 px ---
+W, H = 1417, 1417
 img = Image.new("RGB", (W, H), GREEN)
 d = ImageDraw.Draw(img)
 
 # header: wave icon + wordmark
 logo = Image.open(f"{REPO}/willipu_logo_white.png").convert("RGBA")
 bbox = logo.crop((0, 0, 300, logo.height)).getbbox()
-icon = logo.crop(bbox).resize((92, 92), Image.LANCZOS)
-img.paste(icon, (64, 56), icon)
-d.text((180, 62), "Willipu", font=F("fraunces-700.ttf", 68), fill=WHITE)
+icon = logo.crop(bbox).resize((132, 132), Image.LANCZOS)
+img.paste(icon, (84, 58), icon)
+d.text((248, 66), "Willipu", font=F("fraunces-700.ttf", 96), fill=WHITE)
 
 # white card with QR
-CARD = 700
-card = ((W - CARD) // 2, 190, (W + CARD) // 2, 190 + CARD)
-d.rounded_rectangle(card, radius=28, fill=WHITE)
-qr_size = CARD - 72
+CARD = 850
+card = ((W - CARD) // 2, 200, (W + CARD) // 2, 200 + CARD)
+d.rounded_rectangle(card, radius=34, fill=WHITE)
+qr_size = CARD - 118
 qr_big = qr_img.resize((qr_size, qr_size), Image.NEAREST)
-img.paste(qr_big, (card[0] + 36, card[1] + 36))
+img.paste(qr_big, (card[0] + 59, card[1] + 59))
 
 # titles under the card
-y = card[3] + 40
-f_et = F("fraunces-600.ttf", 44)
+y = card[3] + 26
+f_et = F("fraunces-600.ttf", 62)
 tw = d.textbbox((0, 0), title_et, font=f_et)[2]
 d.text(((W - tw) // 2, y), title_et, font=f_et, fill=WHITE)
 
-f_en = F("inter-500.ttf", 27)
+f_sub = F("inter-500.ttf", 37)
+tw_s = d.textbbox((0, 0), sub_et, font=f_sub)[2]
+d.text(((W - tw_s) // 2, y + 88), sub_et, font=f_sub, fill=(228, 233, 229))
+
+f_en = F("inter-500.ttf", 33)
 tw2 = d.textbbox((0, 0), title_en, font=f_en)[2]
-d.text(((W - tw2) // 2, y + 66), title_en, font=f_en, fill=(255, 255, 255, 220))
+d.text(((W - tw2) // 2, y + 148), title_en, font=f_en, fill=(200, 210, 203))
 
 # url pill at the bottom
-f_url = F("inter-600.ttf", 26)
+f_url = F("inter-600.ttf", 28)
 short = url.replace("https://", "")
 tb = d.textbbox((0, 0), short, font=f_url)
 pw, ph = tb[2] - tb[0], tb[3] - tb[1]
-px1, px2 = (W - pw - 72) // 2, (W + pw + 72) // 2
-py2 = H - 56
-py1 = py2 - ph - 40
+px1, px2 = (W - pw - 76) // 2, (W + pw + 76) // 2
+py2 = H - 46
+py1 = py2 - ph - 42
 d.rounded_rectangle((px1, py1, px2, py2), radius=(py2 - py1) // 2, fill=CREAM)
 d.text(((px1 + px2 - pw) // 2 - tb[0], (py1 + py2 - ph) // 2 - tb[1]),
        short, font=f_url, fill=DARKTXT)
@@ -108,7 +114,7 @@ d.text(((px1 + px2 - pw) // 2 - tb[0], (py1 + py2 - ph) // 2 - tb[1]),
 out = f"{REPO}/willipu_kleebis_{slug}.png"
 img.save(out, "PNG", dpi=(300, 300))
 print(qr_path)
-print(out, "· 80x100 mm @ 300 dpi")
+print(out, "· 120x120 mm @ 300 dpi")
 
 # ---------------------------------------------------------------------------
 # Vector outputs: SVG (all text converted to outlines) + print-ready PDF
@@ -167,16 +173,17 @@ qr0.add_data(url)
 qr0.make(fit=True)
 matrix = qr0.get_matrix()
 
-QR_MM = 49.0
-qr_x, qr_y = (80 - QR_MM) / 2, 21.5
+QR_MM = 62.0
+qr_x, qr_y = (120 - QR_MM) / 2, 22.0
 
-_, et_frag = placed_text("fraunces-600.ttf", title_et, 3.73, 81.6, "#ffffff", center_x=40)
-_, en_frag = placed_text("inter-500.ttf", title_en, 2.29, 86.2, "#ffffff", center_x=40)
-url_w, url_frag = placed_text("inter-600.ttf", url.replace("https://", ""), 2.2, 93.1, GREEN_HEX, center_x=40)
-pill_w = url_w + 6
+_, et_frag = placed_text("fraunces-600.ttf", title_et, 5.2, 95.8, "#ffffff", center_x=60)
+_, sub_frag = placed_text("inter-500.ttf", sub_et, 3.1, 101.7, "#ffffff", center_x=60)
+_, en_frag = placed_text("inter-500.ttf", title_en, 2.8, 106.9, "#ffffff", center_x=60)
+url_w, url_frag = placed_text("inter-600.ttf", url.replace("https://", ""), 2.3, 113.7, GREEN_HEX, center_x=60)
+pill_w = url_w + 7
 # wordmark from the existing vector logo (already outlines)
 WORDMARK = (
-    '<g transform="translate(15.2 10.55) scale(0.0796)" fill="#ffffff">'
+    '<g transform="translate(22.8 15.83) scale(0.1194)" fill="#ffffff">'
     '<path transform="translate(0.00 0) scale(0.048828 -0.048828)" d="M1745 0H1487L1149 1087L811 0H553L127 1372H-18V1493H690V1372H530L815 455L1137 1493H1421L1749 438L2040 1372H1862V1493H2324V1372H2171Z"/>'
     '<path transform="translate(112.30 0) scale(0.048828 -0.048828)" d="M188 1364Q188 1445 244.0 1500.5Q300 1556 381 1556Q460 1556 515.5 1500.5Q571 1445 571 1364Q571 1285 515.5 1229.5Q460 1174 381 1174Q300 1174 244.0 1229.0Q188 1284 188 1364ZM575 121H727V0H70V121H221V942H70V1063H575Z"/>'
     '<path transform="translate(150.29 0) scale(0.048828 -0.048828)" d="M575 121H727V0H70V121H221V1436H70V1556H575Z"/>'
@@ -187,9 +194,9 @@ WORDMARK = (
     "</g>"
 )
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="80mm" height="100mm" viewBox="0 0 80 100">
-  <rect width="80" height="100" fill="{GREEN_HEX}"/>
-  <g transform="translate(4.8 4.6) scale(0.0615)">
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="120mm" viewBox="0 0 120 120">
+  <rect width="120" height="120" fill="{GREEN_HEX}"/>
+  <g transform="translate(7.2 6.9) scale(0.09225)">
     <circle cx="65" cy="65" r="55" fill="#ffffff" fill-opacity="0.14"/>
     <g transform="translate(27.60 27.60) scale(3.1167)" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round">
       <path d="M3 14c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3"/>
@@ -197,11 +204,12 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="80mm" height="100mm" vi
     </g>
   </g>
   {WORDMARK}
-  <rect x="10" y="16" width="60" height="60" rx="2.4" fill="#ffffff"/>
+  <rect x="24" y="17" width="72" height="72" rx="2.9" fill="#ffffff"/>
   <path transform="translate({qr_x:.3f} {qr_y:.3f})" d="{qr_svg_path(matrix, QR_MM)}" fill="{GREEN_HEX}"/>
   {et_frag}
-  <g opacity="0.88">{en_frag}</g>
-  <rect x="{40 - pill_w / 2:.3f}" y="89.2" width="{pill_w:.3f}" height="6.1" rx="3.05" fill="{CREAM_HEX}"/>
+  <g opacity="0.9">{sub_frag}</g>
+  <g opacity="0.75">{en_frag}</g>
+  <rect x="{60 - pill_w / 2:.3f}" y="109.8" width="{pill_w:.3f}" height="6.2" rx="3.1" fill="{CREAM_HEX}"/>
   {url_frag}
 </svg>'''
 
@@ -223,5 +231,5 @@ with open(qr_svg_file, "w") as fh:
     fh.write(qr_plain)
 
 print(svg_path)
-print(pdf_path, "· vektor, 80x100 mm")
+print(pdf_path, "· vektor, 120x120 mm")
 print(qr_svg_file)

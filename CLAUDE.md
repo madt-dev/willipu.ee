@@ -38,8 +38,8 @@ and caravan park on Lake Peipus, Pusi küla, Tartumaa, Estonia).
 - To add a new manual: copy `public/juhend/pesumasin/index.html`, edit the
   `T` translations object (all 7 languages), and add a card link to the
   list in `public/juhend/index.html`.
-- Generate the QR code + print-ready sticker (80x100 mm, 300 dpi):
-  `python3 make_qr_kleebis.py <slug> "<Estonian title>" "<subtitle>"`.
+- Generate the QR code + print-ready sticker (120x120 mm, 300 dpi):
+  `python3 make_qr_kleebis.py <slug> "<Estonian title>" "<Estonian subtitle>" "<English line>"`.
 
 ## Marketing materials page (`/turundus/`)
 
