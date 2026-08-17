@@ -91,13 +91,13 @@ f_et = F("fraunces-600.ttf", 64)
 tw = d.textbbox((0, 0), title_et, font=f_et)[2]
 d.text(((W - tw) // 2, y), title_et, font=f_et, fill=WHITE)
 
-f_sub = F("inter-600.ttf", 50)
-tw_s = d.textbbox((0, 0), sub_et, font=f_sub)[2]
-d.text(((W - tw_s) // 2, y + 94), sub_et, font=f_sub, fill=WHITE)
-
-f_en = F("inter-500.ttf", 36)
+f_en = F("inter-600.ttf", 44)
 tw2 = d.textbbox((0, 0), title_en, font=f_en)[2]
-d.text(((W - tw2) // 2, y + 172), title_en, font=f_en, fill=(200, 210, 203))
+d.text(((W - tw2) // 2, y + 94), title_en, font=f_en, fill=WHITE)
+
+f_sub = F("inter-500.ttf", 38)
+tw_s = d.textbbox((0, 0), sub_et, font=f_sub)[2]
+d.text(((W - tw_s) // 2, y + 168), sub_et, font=f_sub, fill=(205, 214, 208))
 
 # url pill at the bottom
 f_url = F("inter-600.ttf", 28)
@@ -177,8 +177,8 @@ QR_MM = 54.0
 qr_x, qr_y = (120 - QR_MM) / 2, 28.0
 
 _, et_frag = placed_text("fraunces-600.ttf", title_et, 5.4, 93.6, "#ffffff", center_x=60)
-_, sub_frag = placed_text("inter-600.ttf", sub_et, 4.2, 100.8, "#ffffff", center_x=60)
-_, en_frag = placed_text("inter-500.ttf", title_en, 2.9, 106.6, "#ffffff", center_x=60)
+_, en_frag = placed_text("inter-600.ttf", title_en, 3.7, 100.6, "#ffffff", center_x=60)
+_, sub_frag = placed_text("inter-500.ttf", sub_et, 3.1, 106.6, "#ffffff", center_x=60)
 url_w, url_frag = placed_text("inter-600.ttf", url.replace("https://", ""), 2.3, 113.7, GREEN_HEX, center_x=60)
 pill_w = url_w + 7
 # wordmark from the existing vector logo (already outlines)
@@ -207,8 +207,8 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="120mm" v
   <rect x="29" y="24" width="62" height="62" rx="2.6" fill="#ffffff"/>
   <path transform="translate({qr_x:.3f} {qr_y:.3f})" d="{qr_svg_path(matrix, QR_MM)}" fill="{GREEN_HEX}"/>
   {et_frag}
-  {sub_frag}
-  <g opacity="0.75">{en_frag}</g>
+  {en_frag}
+  <g opacity="0.8">{sub_frag}</g>
   <rect x="{60 - pill_w / 2:.3f}" y="109.8" width="{pill_w:.3f}" height="6.2" rx="3.1" fill="{CREAM_HEX}"/>
   {url_frag}
 </svg>'''
