@@ -71,8 +71,8 @@ def tracked(font_file, text, em_mm, baseline_y, fill, tracking, x):
     return total, f'<g transform="translate({x:.3f} {baseline_y:.3f})" fill="{fill}">{"".join(parts)}</g>'
 
 
-# text block is centred in the area right of the divider
-TEXT_CX = 175.0
+# text block is centred on the sign
+TEXT_CX = 130.0
 
 def centred(fn, text, em, y, fill, tracking=None):
     if tracking is None:
@@ -81,44 +81,11 @@ def centred(fn, text, em, y, fill, tracking=None):
     w, _ = tracked(fn, text, em, y, fill, tracking, 0)
     return tracked(fn, text, em, y, fill, tracking, TEXT_CX - w / 2)[1]
 
-et_frag = centred("fraunces-600.ttf", "Köök", 33.0, 78.0, "#ffffff")
-en_frag = centred("inter-600.ttf", "KITCHEN", 11.0, 97.0, "#ffffff", tracking=0.12)
-
-brand_w, brand_frag = at("fraunces-700.ttf", "Willipu", 6.4, 22.5, "#ffffff", 25.5)
+et_frag = centred("fraunces-600.ttf", "Köök", 48.0, 72.0, "#ffffff")
+en_frag = centred("inter-600.ttf", "KITCHEN", 15.0, 93.0, "#ffffff", tracking=0.14)
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="260mm" height="130mm" viewBox="0 0 260 130">
   <rect width="260" height="130" rx="6" fill="{GREEN_HEX}"/>
-
-  <!-- brand mark, top left -->
-  <g transform="translate(12.5 12.5) scale(0.083)">
-    <circle cx="65" cy="65" r="55" fill="#ffffff" fill-opacity="0.14"/>
-    <g transform="translate(27.60 27.60) scale(3.1167)" fill="none" stroke="#ffffff"
-       stroke-width="1.8" stroke-linecap="round">
-      <path d="M3 14c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3"/>
-      <path d="M3 19c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3"/>
-    </g>
-  </g>
-  {brand_frag}
-
-  <!-- pictogram: plate with fork and knife -->
-  <g stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="49" cy="76" r="19.5" stroke-width="3.0"/>
-    <circle cx="49" cy="76" r="12.0" stroke-width="2.0"/>
-  </g>
-  <g fill="#ffffff">
-    <!-- fork -->
-    <rect x="14.2" y="49" width="2.4" height="15" rx="1.2"/>
-    <rect x="19.0" y="49" width="2.4" height="15" rx="1.2"/>
-    <rect x="23.8" y="49" width="2.4" height="15" rx="1.2"/>
-    <path d="M 14.2 61 h 12 v 3.2 a 4.4 4.4 0 0 1 -4.4 4.4 h -0.5 v 34.4 a 1.9 1.9 0 0 1 -2.2 0 v -34.4 h -0.5 a 4.4 4.4 0 0 1 -4.4 -4.4 z"/>
-    <rect x="18.9" y="66" width="3.0" height="37.4" rx="1.5"/>
-    <!-- knife -->
-    <path d="M 74.6 49 a 5.6 5.6 0 0 1 5.6 5.6 v 16.2 a 5.6 5.6 0 0 1 -5.6 5.6 z"/>
-    <rect x="73.2" y="70" width="3.0" height="33.4" rx="1.5"/>
-  </g>
-
-  <!-- divider -->
-  <line x1="88" y1="36" x2="88" y2="106" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.7"/>
 
   {et_frag}
   {en_frag}
