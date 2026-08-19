@@ -52,7 +52,7 @@ sub_et = sys.argv[3] if len(sys.argv) > 3 else "Juhend / osta kasutus"
 title_en = sys.argv[4] if len(sys.argv) > 4 else "Paid washing machine · Instructions / purchase"
 phone = sys.argv[5] if len(sys.argv) > 5 else "Sularahas maksmine / Cash payment · +372 5695 5758"
 # Short tourist-friendly aliases (redirect pages in public/<short>/index.html)
-SHORT_URLS = {"pesumasin": "wash", "pesukuivati": "dry"}
+SHORT_URLS = {"pesumasin": "wash", "pesukuivati": "dry", "saun": "sauna"}
 short_slug = SHORT_URLS.get(slug)
 url = f"https://willipu.ee/{short_slug}/" if short_slug else f"https://willipu.ee/juhend/{slug}/"
 url_display = url.replace("https://", "").rstrip("/") if short_slug else url.replace("https://", "")
