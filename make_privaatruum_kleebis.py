@@ -53,7 +53,8 @@ def placed_text_left(font_file, text, em_mm, baseline_y, fill, left_x=0):
     _, frag = text_outline(font_file, text, em_mm)
     return f'<g transform="translate({left_x:.3f} {baseline_y:.3f})" fill="{fill}">{frag}</g>'
 
-en = placed_text("inter-600.ttf", "Private · Staff only", 5.2, 59.0, "#ffffff")
+et = placed_text("fraunces-600.ttf", "Läbipääs keelatud", 6.4, 56.6, "#ffffff")
+en = placed_text("inter-600.ttf", "Private · Staff only", 3.7, 64.2, "#ffffff")
 brand = placed_text_left("fraunces-700.ttf", "Willipu", 6.5, 14.4, "#ffffff", left_x=21.0)
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="70mm" viewBox="0 0 120 70">
@@ -67,12 +68,13 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="70mm" vi
   </g>
   {brand}
   <!-- prohibition pictogram: stop hand (Font Awesome Free, CC BY 4.0) in white crossed ring -->
-  <g transform="translate(52.6 30.2) scale(0.0288)" fill="#ffffff">
+  <g transform="translate(53.5 28.5) scale(0.0253)" fill="#ffffff">
     <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-176c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 272c0 1.5 0 3.1 .1 4.6L67.6 283c-16-15.2-41.3-14.6-56.6 1.4S-3.6 325.7 12.4 341L124.8 448c43.1 41.1 100.4 64 160 64l19.2 0c97.2 0 176-78.8 176-176l0-208c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-176c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 176c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-208z"/>
   </g>
-  <line x1="50.7" y1="28.2" x2="69.3" y2="46.8" stroke="{GREEN_HEX}" stroke-width="4.6"/>
-  <line x1="50.7" y1="28.2" x2="69.3" y2="46.8" stroke="#ffffff" stroke-width="2.4"/>
-  <circle cx="60" cy="37.5" r="13.2" fill="none" stroke="#ffffff" stroke-width="2.4"/>
+  <line x1="51.8" y1="26.8" x2="68.2" y2="43.2" stroke="{GREEN_HEX}" stroke-width="4.2"/>
+  <line x1="51.8" y1="26.8" x2="68.2" y2="43.2" stroke="#ffffff" stroke-width="2.2"/>
+  <circle cx="60" cy="35" r="11.6" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+  {et}
   {en}
 </svg>'''
 
