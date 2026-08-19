@@ -81,10 +81,8 @@ def centred(fn, text, em, y, fill, tracking=None):
     w, _ = tracked(fn, text, em, y, fill, tracking, 0)
     return tracked(fn, text, em, y, fill, tracking, TEXT_CX - w / 2)[1]
 
-et_frag = centred("fraunces-600.ttf", "Köök", 29.0, 69.0, "#ffffff")
-en_frag = centred("inter-600.ttf", "KITCHEN", 10.0, 86.5, "#ffffff", tracking=0.12)
-other_frag = centred("inter-500.ttf", "Küche · Keittiö · Virtuve · Virtuvė · Кухня",
-                     5.4, 103.0, MUTED)
+et_frag = centred("fraunces-600.ttf", "Köök", 33.0, 78.0, "#ffffff")
+en_frag = centred("inter-600.ttf", "KITCHEN", 11.0, 97.0, "#ffffff", tracking=0.12)
 
 brand_w, brand_frag = at("fraunces-700.ttf", "Willipu", 6.4, 22.5, "#ffffff", 25.5)
 
@@ -124,7 +122,6 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="260mm" height="130mm" v
 
   {et_frag}
   {en_frag}
-  {other_frag}
 </svg>'''
 
 svg_path = f"{REPO}/willipu_silt_kook.svg"
