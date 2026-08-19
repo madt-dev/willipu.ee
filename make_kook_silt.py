@@ -71,8 +71,36 @@ def tracked(font_file, text, em_mm, baseline_y, fill, tracking, x):
     return total, f'<g transform="translate({x:.3f} {baseline_y:.3f})" fill="{fill}">{"".join(parts)}</g>'
 
 
-# text block is centred on the sign
-TEXT_CX = 130.0
+# ── layout: fit the type to the sign so little empty green is left ─────────
+W, H = 260.0, 130.0
+MARGIN_X = 16.0          # side margin
+TEXT_CX = W / 2
+
+def cap_ratio(fn):
+    f = _tt(fn)
+    return f["OS/2"].sCapHeight / f["head"].unitsPerEm
+
+def fit_em(fn, text, target_w, tracking=0.0):
+    """Em size at which `text` is exactly `target_w` mm wide."""
+    w1, _ = text_outline(fn, text, 1.0)
+    if tracking:
+        w1 += tracking * max(len(text) - 1, 0)
+    return target_w / w1
+
+ET_FN, EN_FN = "fraunces-600.ttf", "inter-600.ttf"
+EN_TRACK = 0.14
+
+et_em = fit_em(ET_FN, "Köök", W - 2 * MARGIN_X)
+en_em = fit_em(EN_FN, "KITCHEN", (W - 2 * MARGIN_X) * 0.66, EN_TRACK)
+
+et_cap = et_em * cap_ratio(ET_FN)
+en_cap = en_em * cap_ratio(EN_FN)
+GAP = et_cap * 0.28
+
+block_h = et_cap + GAP + en_cap
+top = (H - block_h) / 2
+et_y = top + et_cap          # baseline of "Köök"
+en_y = et_y + GAP + en_cap   # baseline of "KITCHEN"
 
 def centred(fn, text, em, y, fill, tracking=None):
     if tracking is None:
@@ -81,8 +109,8 @@ def centred(fn, text, em, y, fill, tracking=None):
     w, _ = tracked(fn, text, em, y, fill, tracking, 0)
     return tracked(fn, text, em, y, fill, tracking, TEXT_CX - w / 2)[1]
 
-et_frag = centred("fraunces-600.ttf", "Köök", 48.0, 72.0, "#ffffff")
-en_frag = centred("inter-600.ttf", "KITCHEN", 15.0, 93.0, "#ffffff", tracking=0.14)
+et_frag = centred(ET_FN, "Köök", et_em, et_y, "#ffffff")
+en_frag = centred(EN_FN, "KITCHEN", en_em, en_y, "#ffffff", tracking=EN_TRACK)
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="260mm" height="130mm" viewBox="0 0 260 130">
   <rect width="260" height="130" rx="6" fill="{GREEN_HEX}"/>
