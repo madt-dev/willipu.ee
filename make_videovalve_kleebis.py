@@ -117,15 +117,15 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="80mm" height="120mm" vi
   </g>
   {brand_frag}
 
-  <!-- CCTV camera pictogram -->
-  <g transform="translate(40 42.5)" fill="#ffffff">
-    <g transform="rotate(-20)">
-      <rect x="-10.5" y="-5.0" width="21.5" height="10.0" rx="2.6"/>
-      <rect x="-14.8" y="-6.6" width="5.0" height="13.2" rx="1.5"/>
-      <rect x="10.6" y="-2.8" width="3.4" height="5.6" rx="1.1"/>
+  <!-- CCTV camera pictogram — outlined, wall-mounted -->
+  <g transform="translate(40 38)" fill="none" stroke="#ffffff"
+     stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round">
+    <g transform="rotate(-24)">
+      <rect x="-8.6" y="-5.6" width="19.6" height="11.2" rx="2.8"/>
+      <rect x="-14.4" y="-3.7" width="5.8" height="7.4" rx="1.8"/>
     </g>
-    <rect x="3.0" y="3.2" width="3.0" height="13.4" rx="1.2"/>
-    <rect x="-3.4" y="16.0" width="15.8" height="3.0" rx="1.5"/>
+    <path d="M 4.6 7.2 V 17.6"/>
+    <path d="M -2.6 17.6 H 11.8"/>
   </g>
 
   {title}
