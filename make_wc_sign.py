@@ -82,9 +82,11 @@ build_svg("/home/user/willipu.ee/willipu_wc_sign.svg")
 
 # PDF 150×150 mm trükiks
 import cairosvg
+from pdf_compat import rewrite_pdf
 cairosvg.svg2pdf(url="/home/user/willipu.ee/willipu_wc_sign.svg",
                  write_to="/home/user/willipu.ee/willipu_wc_sign.pdf",
                  output_width=425.2, output_height=425.2)  # 150mm punktides
+rewrite_pdf("/home/user/willipu.ee/willipu_wc_sign.pdf")
 print("✓ willipu_wc_sign.pdf (150×150 mm)")
 
 # PNG eelvaade

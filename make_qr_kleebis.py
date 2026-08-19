@@ -229,8 +229,9 @@ with open(svg_path, "w") as fh:
     fh.write(svg)
 
 import cairosvg
+from pdf_compat import svg_to_pdf
 pdf_path = f"{REPO}/willipu_kleebis_{slug}.pdf"
-cairosvg.svg2pdf(bytestring=svg.encode(), write_to=pdf_path)
+svg_to_pdf(svg, pdf_path)
 
 # plain QR as SVG too
 qr_plain = f'''<svg xmlns="http://www.w3.org/2000/svg" width="50mm" height="50mm" viewBox="-4 -4 {len(matrix) + 8} {len(matrix) + 8}">

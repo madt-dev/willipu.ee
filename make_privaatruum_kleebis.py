@@ -83,8 +83,9 @@ with open(svg_path, "w") as fh:
     fh.write(svg)
 
 import cairosvg
+from pdf_compat import svg_to_pdf
 pdf_path = f"{REPO}/willipu_kleebis_privaatruum.pdf"
-cairosvg.svg2pdf(bytestring=svg.encode(), write_to=pdf_path)
+svg_to_pdf(svg, pdf_path)
 
 png_path = f"{REPO}/willipu_kleebis_privaatruum.png"
 cairosvg.svg2png(bytestring=svg.encode(), write_to=png_path, output_width=1417, output_height=827)

@@ -9,6 +9,7 @@ import re
 import urllib.request
 
 import cairosvg
+from pdf_compat import svg_to_pdf
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 
@@ -169,7 +170,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}mm" height="{H}mm" v
 
 base = os.path.join(REPO, "willipu_tahvel_purgimine")
 open(base + ".svg", "w").write(svg)
-cairosvg.svg2pdf(bytestring=svg.encode(), write_to=base + ".pdf")
+svg_to_pdf(svg, base + ".pdf")
 cairosvg.svg2png(bytestring=svg.encode(), write_to=base + ".png", output_width=1403)
 for ext in (".svg", ".pdf", ".png"):
     print(base + ext, os.path.getsize(base + ext) // 1024, "KB")
