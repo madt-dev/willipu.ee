@@ -47,5 +47,7 @@ and caravan park on Lake Peipus, Pusi küla, Tartumaa, Estonia).
   linked from the site) listing all logos, banners, Facebook ads and QR
   stickers. Share by direct URL only.
 - Generated assets live in the repo root (script outputs); the copies
-  served for download live in `public/turundus/`. When a new asset is
+  served for download live in `public/turundus/`. All PDFs are written
+  through `pdf_compat.py` (PDF 1.4, classic xref) — cairosvg's default
+  PDF 1.7 output fails to open in CorelDRAW and Photoshop. When a new asset is
   generated, copy it there and add a row to the page.
