@@ -71,36 +71,43 @@ def tracked(font_file, text, em_mm, baseline_y, fill, tracking, x):
     return total, f'<g transform="translate({x:.3f} {baseline_y:.3f})" fill="{fill}">{"".join(parts)}</g>'
 
 
-# ── layout: fit the type to the sign so little empty green is left ─────────
-W, H = 260.0, 130.0
-MARGIN_X = 16.0          # side margin
-TEXT_CX = W / 2
+# ── layout ────────────────────────────────────────────────────────────────
+# Height is fixed; the type is sized from it and the width follows, so the
+# sign gets longer rather than more cramped.
+H = 130.0
+MARGIN_Y = 17.0          # green above/below the type block
+SIDE = 26.0              # green left/right of the longest line
+GAP_RATIO = 0.30         # space between the two lines, as a share of cap height
+EN_RATIO = 0.26          # "KITCHEN" cap height relative to "Köök"
+
+ET_FN, EN_FN = "fraunces-600.ttf", "inter-600.ttf"
+EN_TRACK = 0.16
 
 def cap_ratio(fn):
     f = _tt(fn)
     return f["OS/2"].sCapHeight / f["head"].unitsPerEm
 
-def fit_em(fn, text, target_w, tracking=0.0):
-    """Em size at which `text` is exactly `target_w` mm wide."""
-    w1, _ = text_outline(fn, text, 1.0)
-    if tracking:
-        w1 += tracking * max(len(text) - 1, 0)
-    return target_w / w1
+def em_width(fn, text, tracking=0.0):
+    """Width in mm of `text` set at em size 1."""
+    w, _ = text_outline(fn, text, 1.0)
+    return w + tracking * max(len(text) - 1, 0)
 
-ET_FN, EN_FN = "fraunces-600.ttf", "inter-600.ttf"
-EN_TRACK = 0.14
+block_h = H - 2 * MARGIN_Y
+et_cap = block_h / (1 + GAP_RATIO + EN_RATIO)
+en_cap = et_cap * EN_RATIO
+gap = et_cap * GAP_RATIO
 
-et_em = fit_em(ET_FN, "Köök", W - 2 * MARGIN_X)
-en_em = fit_em(EN_FN, "KITCHEN", (W - 2 * MARGIN_X) * 0.66, EN_TRACK)
+et_em = et_cap / cap_ratio(ET_FN)
+en_em = en_cap / cap_ratio(EN_FN)
 
-et_cap = et_em * cap_ratio(ET_FN)
-en_cap = en_em * cap_ratio(EN_FN)
-GAP = et_cap * 0.28
+et_w = em_width(ET_FN, "Köök") * et_em
+en_w = em_width(EN_FN, "KITCHEN", EN_TRACK) * en_em
 
-block_h = et_cap + GAP + en_cap
-top = (H - block_h) / 2
-et_y = top + et_cap          # baseline of "Köök"
-en_y = et_y + GAP + en_cap   # baseline of "KITCHEN"
+W = round((max(et_w, en_w) + 2 * SIDE) / 10) * 10   # round up to a clean width
+TEXT_CX = W / 2
+
+et_y = MARGIN_Y + et_cap
+en_y = et_y + gap + en_cap
 
 def centred(fn, text, em, y, fill, tracking=None):
     if tracking is None:
@@ -112,8 +119,8 @@ def centred(fn, text, em, y, fill, tracking=None):
 et_frag = centred(ET_FN, "Köök", et_em, et_y, "#ffffff")
 en_frag = centred(EN_FN, "KITCHEN", en_em, en_y, "#ffffff", tracking=EN_TRACK)
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="260mm" height="130mm" viewBox="0 0 260 130">
-  <rect width="260" height="130" rx="6" fill="{GREEN_HEX}"/>
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W:g}mm" height="{H:g}mm" viewBox="0 0 {W:g} {H:g}">
+  <rect width="{W:g}" height="{H:g}" rx="6" fill="{GREEN_HEX}"/>
 
   {et_frag}
   {en_frag}
@@ -128,10 +135,10 @@ pdf_path = svg_to_pdf(svg, f"{REPO}/willipu_silt_kook.pdf")
 import cairosvg
 png_path = f"{REPO}/willipu_silt_kook.png"
 cairosvg.svg2png(bytestring=svg.encode(), write_to=png_path,
-                 output_width=3071, output_height=1535)
+                 output_width=round(W / 25.4 * 300), output_height=round(H / 25.4 * 300))
 from PIL import Image
 Image.open(png_path).save(png_path, "PNG", dpi=(300, 300))
 
 print(svg_path)
-print(pdf_path, "· vektor, 260x130 mm")
+print(pdf_path, f"· vektor, {W:g}x{H:g} mm")
 print(png_path, "· 300 dpi")
