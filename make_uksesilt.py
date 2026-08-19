@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
-"""Kitchen door sign for Willipu — pictogram + 7 languages, 260x130 mm.
+"""Door signs for Willipu — Estonian word over an English one, fixed height.
 
-Outputs willipu_silt_kook.{svg,pdf,png}. Fonts come from ./fonts/
+Usage: python3 make_uksesilt.py <slug> "<Estonian>" "<ENGLISH>"
+   e.g. python3 make_uksesilt.py kook "Köök" "KITCHEN"
+        python3 make_uksesilt.py dussid "Duššid" "SHOWERS"
+
+Height is fixed at 130 mm; the type is sized from it and the width follows,
+so a longer word makes a longer sign rather than a cramped one.
+Outputs willipu_silt_<slug>.{svg,pdf,png}. Fonts come from ./fonts/
 (run make_qr_kleebis.py once first to fetch them).
 """
 import os
+import sys
 
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
@@ -14,10 +21,13 @@ from pdf_compat import svg_to_pdf
 REPO = os.path.dirname(os.path.abspath(__file__))
 FONTS = os.path.join(REPO, "fonts")
 GREEN_HEX = "#2d4a3e"
-MUTED = "#c3d0c8"
 
 if not os.path.exists(os.path.join(FONTS, "fraunces-600.ttf")):
     raise SystemExit("Run make_qr_kleebis.py once first to fetch fonts.")
+
+slug = sys.argv[1] if len(sys.argv) > 1 else "kook"
+et_text = sys.argv[2] if len(sys.argv) > 2 else "Köök"
+en_text = sys.argv[3] if len(sys.argv) > 3 else "KITCHEN"
 
 _font_cache = {}
 
@@ -72,13 +82,11 @@ def tracked(font_file, text, em_mm, baseline_y, fill, tracking, x):
 
 
 # ── layout ────────────────────────────────────────────────────────────────
-# Height is fixed; the type is sized from it and the width follows, so the
-# sign gets longer rather than more cramped.
 H = 130.0
 MARGIN_Y = 17.0          # green above/below the type block
 SIDE = 26.0              # green left/right of the longest line
-GAP_RATIO = 0.30         # space between the two lines, as a share of cap height
-EN_RATIO = 0.26          # "KITCHEN" cap height relative to "Köök"
+GAP_RATIO = 0.30         # space between the lines, as a share of cap height
+EN_RATIO = 0.26          # English cap height relative to the Estonian one
 
 ET_FN, EN_FN = "fraunces-600.ttf", "inter-600.ttf"
 EN_TRACK = 0.16
@@ -100,10 +108,10 @@ gap = et_cap * GAP_RATIO
 et_em = et_cap / cap_ratio(ET_FN)
 en_em = en_cap / cap_ratio(EN_FN)
 
-et_w = em_width(ET_FN, "Köök") * et_em
-en_w = em_width(EN_FN, "KITCHEN", EN_TRACK) * en_em
+et_w = em_width(ET_FN, et_text) * et_em
+en_w = em_width(EN_FN, en_text, EN_TRACK) * en_em
 
-W = round((max(et_w, en_w) + 2 * SIDE) / 10) * 10   # round up to a clean width
+W = round((max(et_w, en_w) + 2 * SIDE) / 10) * 10   # clean, round width
 TEXT_CX = W / 2
 
 et_y = MARGIN_Y + et_cap
@@ -116,8 +124,8 @@ def centred(fn, text, em, y, fill, tracking=None):
     w, _ = tracked(fn, text, em, y, fill, tracking, 0)
     return tracked(fn, text, em, y, fill, tracking, TEXT_CX - w / 2)[1]
 
-et_frag = centred(ET_FN, "Köök", et_em, et_y, "#ffffff")
-en_frag = centred(EN_FN, "KITCHEN", en_em, en_y, "#ffffff", tracking=EN_TRACK)
+et_frag = centred(ET_FN, et_text, et_em, et_y, "#ffffff")
+en_frag = centred(EN_FN, en_text, en_em, en_y, "#ffffff", tracking=EN_TRACK)
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W:g}mm" height="{H:g}mm" viewBox="0 0 {W:g} {H:g}">
   <rect width="{W:g}" height="{H:g}" rx="6" fill="{GREEN_HEX}"/>
@@ -126,14 +134,14 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W:g}mm" height="{H:g}m
   {en_frag}
 </svg>'''
 
-svg_path = f"{REPO}/willipu_silt_kook.svg"
+svg_path = f"{REPO}/willipu_silt_{slug}.svg"
 with open(svg_path, "w") as fh:
     fh.write(svg)
 
-pdf_path = svg_to_pdf(svg, f"{REPO}/willipu_silt_kook.pdf")
+pdf_path = svg_to_pdf(svg, f"{REPO}/willipu_silt_{slug}.pdf")
 
 import cairosvg
-png_path = f"{REPO}/willipu_silt_kook.png"
+png_path = f"{REPO}/willipu_silt_{slug}.png"
 cairosvg.svg2png(bytestring=svg.encode(), write_to=png_path,
                  output_width=round(W / 25.4 * 300), output_height=round(H / 25.4 * 300))
 from PIL import Image
