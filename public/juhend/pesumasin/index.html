@@ -34,6 +34,26 @@
       letter-spacing: 0.2px;
     }
     header .sub { font-size: 12px; opacity: 0.75; margin-top: 1px; }
+    header .titles { min-width: 0; }
+    header .pay {
+      margin-left: auto;
+      flex: none;
+      font: 700 13px 'Inter', sans-serif;
+      background: #f5f2ea;
+      color: #2d4a3e;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 999px;
+      white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+    }
+    header .pay:hover { background: #fff; }
+    @media (max-width: 420px) {
+      header { gap: 10px; padding: 16px 14px 14px; }
+      header .name { font-size: 20px; }
+      header .sub { font-size: 11px; }
+      header .pay { font-size: 12px; padding: 9px 13px; }
+    }
     .langs {
       display: flex;
       flex-wrap: wrap;
@@ -174,10 +194,12 @@
       <path d="M20 44 q7.5 -9 15 0 t15 0 t15 0 t15 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
       <path d="M20 62 q7.5 -9 15 0 t15 0 t15 0 t15 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
     </svg>
-    <div>
+    <div class="titles">
       <div class="name">Willipu</div>
       <div class="sub">Külalistemaja ja Karavanipark</div>
     </div>
+    <a class="pay" id="pay" href="https://willipu.pargihaldur.ee/device/pesumasin"
+       target="_blank" rel="noopener">Maksa siin</a>
   </header>
 
   <nav class="langs" id="langs" aria-label="Keel / Language"></nav>
@@ -192,6 +214,7 @@
   const T = {
     et: {
       title: 'Pesumasina kasutusjuhend',
+      pay: 'Maksa siin',
       intro: 'Pesumasin: Samsung WW5000 seeria. Kasutamine on tasuline — osta kasutuskord vastavalt hinnakirjale. Seejärel järgi lihtsaid samme:',
       steps: [
         'Tühjenda taskud ja kontrolli hooldussilte. Aseta pesu trumlisse — ära ületäida — ja sulge uks õrnalt.',
@@ -218,6 +241,7 @@
     },
     en: {
       title: 'Washing machine instructions',
+      pay: 'Pay here',
       intro: 'Washer: Samsung WW5000 series. Using the washing machine is a paid service — please purchase a wash according to the price list. Then follow these simple steps:',
       steps: [
         'Empty all pockets and check the care labels. Load the drum — do not overload — and close the door gently.',
@@ -244,6 +268,7 @@
     },
     de: {
       title: 'Waschmaschine — Anleitung',
+      pay: 'Hier bezahlen',
       intro: 'Waschmaschine: Samsung Serie WW5000. Die Nutzung ist kostenpflichtig — bitte erwerben Sie einen Waschgang gemäß Preisliste. Folgen Sie dann diesen Schritten:',
       steps: [
         'Alle Taschen leeren und Pflegeetiketten prüfen. Wäsche einfüllen — nicht überladen — und die Tür sanft schließen.',
@@ -270,6 +295,7 @@
     },
     fi: {
       title: 'Pesukoneen käyttöohje',
+      pay: 'Maksa tästä',
       intro: 'Pesukone: Samsung WW5000 -sarja. Käyttö on maksullista — osta pesukerta hinnaston mukaan. Seuraa sitten näitä ohjeita:',
       steps: [
         'Tyhjennä taskut ja tarkista hoito-ohjeet. Laita pyykki rumpuun — älä ylitäytä — ja sulje luukku kevyesti.',
@@ -296,6 +322,7 @@
     },
     lv: {
       title: 'Veļas mašīnas lietošanas instrukcija',
+      pay: 'Maksāt šeit',
       intro: 'Veļas mašīna: Samsung WW5000 sērija. Lietošana ir maksas pakalpojums — lūdzu, iegādājieties mazgāšanas reizi saskaņā ar cenrādi. Pēc tam sekojiet šiem soļiem:',
       steps: [
         'Iztukšojiet kabatas un pārbaudiet kopšanas etiķetes. Ielieciet veļu tvertnē — nepārpildiet — un maigi aizveriet durvis.',
@@ -322,6 +349,7 @@
     },
     lt: {
       title: 'Skalbimo mašinos instrukcija',
+      pay: 'Mokėti čia',
       intro: 'Skalbimo mašina: Samsung WW5000 serija. Naudojimas mokamas — įsigykite skalbimą pagal kainoraštį. Tada sekite šiuos žingsnius:',
       steps: [
         'Ištuštinkite kišenes ir patikrinkite priežiūros etiketes. Sudėkite skalbinius į būgną — neperkraukite — ir švelniai uždarykite dureles.',
@@ -348,6 +376,7 @@
     },
     ru: {
       title: 'Инструкция стиральной машины',
+      pay: 'Оплатить здесь',
       intro: 'Стиральная машина: Samsung серии WW5000. Пользование платное — приобретите стирку согласно прейскуранту. Затем следуйте простым шагам:',
       steps: [
         'Проверьте карманы и ярлыки по уходу. Загрузите бельё в барабан — не перегружайте — и аккуратно закройте дверцу.',
@@ -389,6 +418,7 @@
     const t = T[lang];
     document.documentElement.lang = lang;
     document.title = t.title + ' · Willipu';
+    document.getElementById('pay').textContent = t.pay;
     document.getElementById('content').innerHTML =
       '<h1>' + esc(t.title) + '</h1>' +
       '<p class="intro">' + esc(t.intro) + '</p>' +
