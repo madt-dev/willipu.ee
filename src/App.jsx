@@ -837,7 +837,7 @@ function Contact({ t }) {
                 <span className="eu-statement">{t.eu.statement}</span>
               </div>
               {t.eu.url && (
-                <a className="partner-link" href={t.eu.url} target="_blank" rel="noopener noreferrer">
+                <a className="partner-link" href={t.eu.url}>
                   {t.eu.linkLabel} <span aria-hidden>→</span>
                 </a>
               )}

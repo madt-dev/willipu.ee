@@ -229,12 +229,12 @@ export const content = {
         title: 'WhiteCaravan',
         body: 'Meie arendatav automatiseeritud broneerimis- ja ligipääsulahendus karavaniparkidele.',
         linkLabel: 'Vaata lähemalt',
-        url: '',
+        url: 'https://whitecaravan.com',
       },
       eu: {
         statement: 'Kaasrahastanud Euroopa Liit',
         linkLabel: 'Projekti info',
-        url: '',
+        url: '#',
       },
     },
     footer: {
@@ -472,12 +472,12 @@ export const content = {
         title: 'WhiteCaravan',
         body: 'An automated booking and access solution for caravan parks, developed by us.',
         linkLabel: 'Learn more',
-        url: '',
+        url: 'https://whitecaravan.com',
       },
       eu: {
         statement: 'Co-funded by the European Union',
         linkLabel: 'Project info',
-        url: '',
+        url: '#',
       },
     },
     footer: {
@@ -712,12 +712,12 @@ export const content = {
         title: 'WhiteCaravan',
         body: 'Unsere selbst entwickelte automatisierte Buchungs- und Zugangslösung für Campingplätze.',
         linkLabel: 'Mehr erfahren',
-        url: '',
+        url: 'https://whitecaravan.com',
       },
       eu: {
         statement: 'Kofinanziert von der Europäischen Union',
         linkLabel: 'Projektinfo',
-        url: '',
+        url: '#',
       },
     },
     footer: {
@@ -952,12 +952,12 @@ export const content = {
         title: 'WhiteCaravan',
         body: 'Kehittämämme automatisoitu varaus- ja kulunhallintaratkaisu karavaanialueille.',
         linkLabel: 'Lue lisää',
-        url: '',
+        url: 'https://whitecaravan.com',
       },
       eu: {
         statement: 'Euroopan unionin osarahoittama',
         linkLabel: 'Hankkeen tiedot',
-        url: '',
+        url: '#',
       },
     },
     footer: {
@@ -1192,12 +1192,12 @@ export const content = {
         title: 'WhiteCaravan',
         body: 'Mūsu izstrādāts automatizēts rezervēšanas un piekļuves risinājums karavānu parkiem.',
         linkLabel: 'Uzzināt vairāk',
-        url: '',
+        url: 'https://whitecaravan.com',
       },
       eu: {
         statement: 'Līdzfinansē Eiropas Savienība',
         linkLabel: 'Projekta informācija',
-        url: '',
+        url: '#',
       },
     },
     footer: {
@@ -1432,12 +1432,12 @@ export const content = {
         title: 'WhiteCaravan',
         body: 'Mūsų kuriamas automatizuotas rezervavimo ir prieigos sprendimas kemperių parkams.',
         linkLabel: 'Sužinoti daugiau',
-        url: '',
+        url: 'https://whitecaravan.com',
       },
       eu: {
         statement: 'Bendrai finansuoja Europos Sąjunga',
         linkLabel: 'Projekto informacija',
-        url: '',
+        url: '#',
       },
     },
     footer: {
@@ -1666,12 +1666,12 @@ export const content = {
         title: 'WhiteCaravan',
         body: 'Разрабатываемое нами автоматизированное решение для бронирования и доступа в караванных парках.',
         linkLabel: 'Подробнее',
-        url: '',
+        url: 'https://whitecaravan.com',
       },
       eu: {
         statement: 'Co-funded by the European Union',
         linkLabel: 'О проекте',
-        url: '',
+        url: '#',
       },
     },
     footer: {

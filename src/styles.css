@@ -54,59 +54,7 @@
   color: var(--ink);
 }
 
-[data-theme="dark"] /* WhiteCaravan + EU cards under contact info */
-.partner-card {
-  margin-top: 1.25rem;
-  padding: 1.4rem 1.75rem;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius);
-  background: rgba(255,255,255,0.04);
-  text-align: left;
-}
-.partner-card p { margin: 0; color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.5; }
-.wc-card-head {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-bottom: 0.7rem;
-  margin-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-}
-.wc-card-head h3 { margin: 0; color: #fff; font-size: 1.5rem; }
-.wc-card-icon { display: inline-flex; color: #fff; }
-.wc-card-icon svg { width: 46px; height: 46px; }
-.partner-link {
-  display: inline-block;
-  margin-top: 0.8rem;
-  color: #8bc498;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  font-weight: 500;
-}
-.partner-link:hover { color: #fff; }
-.contact-wrap .partner-card {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-}
-.contact-wrap.in-view .partner-card { opacity: 1; transform: none; transition-delay: 0.55s; }
-.eu-emblem {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.eu-flag { width: 96px; height: auto; flex: none; display: block; }
-/* Official statement: allowed typeface, white on dark, no effects */
-.eu-statement {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #fff;
-  font-size: 1.15rem;
-  line-height: 1.2;
-}
-
-.site-footer {
+[data-theme="dark"] .site-footer {
   background: #060d08;
 }
 
@@ -1288,6 +1236,58 @@ button.contact-item:hover { background: rgba(255,255,255,0.09); }
   line-height: 1.7;
   word-break: break-word;
   overflow-wrap: anywhere;
+}
+
+/* WhiteCaravan + EU cards under contact info */
+.partner-card {
+  margin-top: 1.25rem;
+  padding: 1.4rem 1.75rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  text-align: left;
+}
+.partner-card p { margin: 0; color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.5; }
+.wc-card-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.wc-card-head h3 { margin: 0; color: #fff; font-size: 1.5rem; }
+.wc-card-icon { display: inline-flex; color: #fff; }
+.wc-card-icon svg { width: 46px; height: 46px; }
+.partner-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #8bc498;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 500;
+}
+.partner-link:hover { color: #fff; }
+.contact-wrap .partner-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.contact-wrap.in-view .partner-card { opacity: 1; transform: none; transition-delay: 0.55s; }
+.eu-emblem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.eu-flag { width: 96px; height: auto; flex: none; display: block; }
+/* Official statement: allowed typeface, white on dark, no effects */
+.eu-statement {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  font-size: 1.15rem;
+  line-height: 1.2;
 }
 
 .site-footer {
