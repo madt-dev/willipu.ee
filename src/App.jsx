@@ -816,10 +816,65 @@ function Contact({ t }) {
               <br />{t.legal.bankLabel}: {t.legal.iban} &nbsp;·&nbsp; {t.legal.bank} &nbsp;·&nbsp; SWIFT: {t.legal.swift}
             </p>
           )}
+          {t.whiteCaravan && (
+            <div className="partner-card wc-card">
+              <div className="wc-card-head">
+                <span className="wc-card-icon" aria-hidden><Icon name="caravan" /></span>
+                <h3>{t.whiteCaravan.title}</h3>
+              </div>
+              <p>{t.whiteCaravan.body}</p>
+              {t.whiteCaravan.url && (
+                <a className="partner-link" href={t.whiteCaravan.url} target="_blank" rel="noopener noreferrer">
+                  {t.whiteCaravan.linkLabel} <span aria-hidden>→</span>
+                </a>
+              )}
+            </div>
+          )}
+          {t.eu && (
+            <div className="partner-card eu-card">
+              <div className="eu-emblem">
+                <EuFlag />
+                <span className="eu-statement">{t.eu.statement}</span>
+              </div>
+              {t.eu.url && (
+                <a className="partner-link" href={t.eu.url} target="_blank" rel="noopener noreferrer">
+                  {t.eu.linkLabel} <span aria-hidden>→</span>
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
       {navOpen && <NavPicker address={t.address} onClose={() => setNavOpen(false)} />}
     </section>
+  )
+}
+
+// Official EU emblem geometry: 3:2 flag, 12 stars on a circle of radius
+// h/3, star radius h/18, Reflex Blue + Yellow. On dark backgrounds the
+// guidelines require a white border of h/25 around the flag.
+const EU_STARS = Array.from({ length: 12 }, (_, i) => {
+  const a = (i * Math.PI) / 6
+  const cx = 150 + (200 / 3) * Math.sin(a)
+  const cy = 100 - (200 / 3) * Math.cos(a)
+  const R = 200 / 18
+  const r = R * 0.381966
+  const pts = []
+  for (let k = 0; k < 10; k++) {
+    const rad = k % 2 ? r : R
+    const b = (k * Math.PI) / 5
+    pts.push(`${(cx + rad * Math.sin(b)).toFixed(2)},${(cy - rad * Math.cos(b)).toFixed(2)}`)
+  }
+  return pts.join(' ')
+})
+
+function EuFlag() {
+  return (
+    <svg className="eu-flag" viewBox="-8 -8 316 216" role="img" aria-label="EU">
+      <rect x="-8" y="-8" width="316" height="216" fill="#fff" />
+      <rect width="300" height="200" fill="#003399" />
+      {EU_STARS.map((pts, i) => <polygon key={i} points={pts} fill="#FFCC00" />)}
+    </svg>
   )
 }
 

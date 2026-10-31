@@ -225,6 +225,17 @@ export const content = {
         bank: 'Swedbank AS',
         swift: 'HABAEE2X',
       },
+      whiteCaravan: {
+        title: 'WhiteCaravan',
+        body: 'Meie arendatav automatiseeritud broneerimis- ja ligipääsulahendus karavaniparkidele.',
+        linkLabel: 'Vaata lähemalt',
+        url: '',
+      },
+      eu: {
+        statement: 'Kaasrahastanud Euroopa Liit',
+        linkLabel: 'Projekti info',
+        url: '',
+      },
     },
     footer: {
       tagline: 'Peipsi järve ääres alates 2010.',
@@ -457,6 +468,17 @@ export const content = {
         bank: 'Swedbank AS',
         swift: 'HABAEE2X',
       },
+      whiteCaravan: {
+        title: 'WhiteCaravan',
+        body: 'An automated booking and access solution for caravan parks, developed by us.',
+        linkLabel: 'Learn more',
+        url: '',
+      },
+      eu: {
+        statement: 'Co-funded by the European Union',
+        linkLabel: 'Project info',
+        url: '',
+      },
     },
     footer: {
       tagline: 'On Lake Peipus since 2010.',
@@ -685,6 +707,17 @@ export const content = {
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
         swift: 'HABAEE2X',
+      },
+      whiteCaravan: {
+        title: 'WhiteCaravan',
+        body: 'Unsere selbst entwickelte automatisierte Buchungs- und Zugangslösung für Campingplätze.',
+        linkLabel: 'Mehr erfahren',
+        url: '',
+      },
+      eu: {
+        statement: 'Kofinanziert von der Europäischen Union',
+        linkLabel: 'Projektinfo',
+        url: '',
       },
     },
     footer: {
@@ -915,6 +948,17 @@ export const content = {
         bank: 'Swedbank AS',
         swift: 'HABAEE2X',
       },
+      whiteCaravan: {
+        title: 'WhiteCaravan',
+        body: 'Kehittämämme automatisoitu varaus- ja kulunhallintaratkaisu karavaanialueille.',
+        linkLabel: 'Lue lisää',
+        url: '',
+      },
+      eu: {
+        statement: 'Euroopan unionin osarahoittama',
+        linkLabel: 'Hankkeen tiedot',
+        url: '',
+      },
     },
     footer: {
       tagline: 'Peipsijärven rannalla vuodesta 2010.',
@@ -1143,6 +1187,17 @@ export const content = {
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
         swift: 'HABAEE2X',
+      },
+      whiteCaravan: {
+        title: 'WhiteCaravan',
+        body: 'Mūsu izstrādāts automatizēts rezervēšanas un piekļuves risinājums karavānu parkiem.',
+        linkLabel: 'Uzzināt vairāk',
+        url: '',
+      },
+      eu: {
+        statement: 'Līdzfinansē Eiropas Savienība',
+        linkLabel: 'Projekta informācija',
+        url: '',
       },
     },
     footer: {
@@ -1373,6 +1428,17 @@ export const content = {
         bank: 'Swedbank AS',
         swift: 'HABAEE2X',
       },
+      whiteCaravan: {
+        title: 'WhiteCaravan',
+        body: 'Mūsų kuriamas automatizuotas rezervavimo ir prieigos sprendimas kemperių parkams.',
+        linkLabel: 'Sužinoti daugiau',
+        url: '',
+      },
+      eu: {
+        statement: 'Bendrai finansuoja Europos Sąjunga',
+        linkLabel: 'Projekto informacija',
+        url: '',
+      },
     },
     footer: {
       tagline: 'Prie Peipaus ežero nuo 2010 m.',
@@ -1595,6 +1661,17 @@ export const content = {
         iban: 'EE402200221023806138',
         bank: 'Swedbank AS',
         swift: 'HABAEE2X',
+      },
+      whiteCaravan: {
+        title: 'WhiteCaravan',
+        body: 'Разрабатываемое нами автоматизированное решение для бронирования и доступа в караванных парках.',
+        linkLabel: 'Подробнее',
+        url: '',
+      },
+      eu: {
+        statement: 'Co-funded by the European Union',
+        linkLabel: 'О проекте',
+        url: '',
       },
     },
     footer: {

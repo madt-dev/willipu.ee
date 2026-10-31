@@ -127,6 +127,16 @@ const paths = {
       <path d="M8 7h.01M11 7h2" />
     </g>
   ),
+  caravan: (
+    <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 17H3.5A1.5 1.5 0 012 15.5V8a3 3 0 013-3h12a4 4 0 014 4v6.5a1.5 1.5 0 01-1.5 1.5H19" />
+      <path d="M11 17h2M21 15h1.5" />
+      <circle cx="8" cy="17.5" r="2.2" />
+      <circle cx="16" cy="17.5" r="2.2" />
+      <rect x="5.5" y="8" width="4.5" height="3" rx="0.6" />
+      <rect x="13" y="8" width="4.5" height="3" rx="0.6" />
+    </g>
+  ),
   location: (
     <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 13 6 13s6-8.5 6-13c0-3.314-2.686-6-6-6z" />
