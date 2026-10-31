@@ -51,3 +51,12 @@ and caravan park on Lake Peipus, Pusi küla, Tartumaa, Estonia).
   through `pdf_compat.py` (PDF 1.4, classic xref) — cairosvg's default
   PDF 1.7 output fails to open in CorelDRAW and Photoshop. When a new asset is
   generated, copy it there and add a row to the page.
+
+## EU project page (`/projekt/`)
+
+- `public/projekt/index.html` — standalone multilingual (7 languages, `T`
+  object) WhiteCaravan project overview, linked from the "Projekti info"
+  link in the contact section and listed in the sitemap (indexable).
+- The EU emblem must stay in its official form (geometry/colours in
+  `EuFlag` in `src/App.jsx` and `euFlag()` on the page; Arial statement).
+  Russian is not an EU language, so the statement is in English there.

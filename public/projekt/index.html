@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2d4a3e" />
+  <meta name="description" content="WhiteCaravan – karavaniparkide digitaalse iseteeninduslahenduse arendusprojekt. Kaasrahastanud Euroopa Liit." />
+  <link rel="canonical" href="https://willipu.ee/projekt/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>WhiteCaravan – projekti tutvustus · Willipu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f5f2ea;
+      color: #22322b;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: #2d4a3e;
+      color: #fff;
+      padding: 18px 20px;
+    }
+    .bar {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+    .brand svg { flex: none; }
+    .brand .name { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; }
+    .langs { margin-left: auto; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; }
+    .langs button {
+      font: 600 12px 'Inter', sans-serif;
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      cursor: pointer;
+    }
+    .langs button.active { background: #f5f2ea; color: #2d4a3e; }
+    main { max-width: 720px; margin: 0 auto; padding: 36px 20px 40px; }
+    .back { display: inline-block; font-size: 14px; color: #5d8a6a; text-decoration: none; margin-bottom: 20px; }
+    .back:hover { text-decoration: underline; }
+    .kicker { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #5d8a6a; }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 6vw, 40px);
+      line-height: 1.15;
+      font-weight: 700;
+      margin: 6px 0 28px;
+    }
+    section { padding: 22px 0; border-top: 1px solid #d9d2c2; }
+    h2 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+    p { font-size: 16px; line-height: 1.65; color: #3b4a42; }
+    p + p { margin-top: 10px; }
+    .eu {
+      margin-top: 12px;
+      padding: 22px 24px;
+      background: #fff;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .eu svg { width: 90px; height: auto; flex: none; display: block; }
+    /* Official statement: allowed typeface, no effects */
+    .eu span { font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 18px; color: #000; }
+    footer { text-align: center; font-size: 13px; color: #8b978f; padding: 0 20px 32px; }
+    footer a { color: #2d4a3e; }
+    @media (max-width: 480px) {
+      .brand .name { font-size: 19px; }
+      .brand svg { width: 36px; height: 36px; }
+      .langs button { padding: 5px 7px; font-size: 11px; }
+      .eu { padding: 18px; gap: 14px; }
+      .eu svg { width: 72px; }
+      .eu span { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <a class="brand" href="/">
+        <svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="50" fill="#fff" opacity="0.14"/>
+          <path d="M20 44 q7.5 -9 15 0 t15 0 t15 0 t15 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+          <path d="M20 62 q7.5 -9 15 0 t15 0 t15 0 t15 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        <span class="name">Willipu</span>
+      </a>
+      <nav class="langs" id="langs" aria-label="Keel / Language"></nav>
+    </div>
+  </header>
+  <main id="content"></main>
+  <footer>
+    <a href="https://willipu.ee">willipu.ee</a> · OÜ Willipu Turism · +372 56 955 758
+  </footer>
+  <script>
+  const LANGS = ['et', 'en', 'de', 'fi', 'lv', 'lt', 'ru'];
+  const T = {
+    et: {
+      kicker: 'Projekt',
+      title: 'WhiteCaravan – projekti tutvustus',
+      back: '← Tagasi avalehele',
+      sections: [
+        ['Projekti lühikirjeldus', [
+          'Projekti raames arendatakse WhiteCaravani digitaalset iseteeninduslahendust, mille eesmärk on muuta karavaniparkide teenuste kasutamine külastajatele lihtsamaks, mugavamaks ja kättesaadavamaks. Lahendus võimaldab automatiseerida karavaniparkide igapäevaseid teenindusprotsesse ning parandada teenuste kvaliteeti.',
+        ]],
+        ['Projekti eesmärk', [
+          'Projekti eesmärk on edendada karavaniturismi digitaliseerimist ja automatiseerimist, vähendada teenusepakkujate halduskoormust ning võimaldada külastajatele paindlikku ja ööpäevaringset iseteenindust.',
+          'Samuti soovitakse suurendada piirkonna turismiteenuste konkurentsivõimet ja toetada väiksemate karavaniparkide arengut.',
+        ]],
+        ['Projekti oodatavad tulemused', [
+          'Projekti tulemusena valmib digitaalne iseteenindusplatvorm, mis võimaldab karavaniparkidel automatiseerida teenindusprotsesse, lihtsustada igapäevast haldust ning pakkuda külastajatele mugavat ja ööpäevaringselt kättesaadavat teenust.',
+          'Lahendus on mõeldud kasutamiseks erinevates karavaniparkides, aidates kaasa karavaniturismi teenuste kvaliteedi, kättesaadavuse ja konkurentsivõime parandamisele.',
+        ]],
+      ],
+      eu: 'Kaasrahastanud Euroopa Liit',
+    },
+    en: {
+      kicker: 'Project',
+      title: 'WhiteCaravan – project overview',
+      back: '← Back to home page',
+      sections: [
+        ['Project summary', [
+          'The project develops WhiteCaravan, a digital self-service solution that aims to make caravan park services simpler, more convenient and more accessible for visitors. The solution automates the everyday service processes of caravan parks and improves the quality of their services.',
+        ]],
+        ['Project objective', [
+          'The objective of the project is to advance the digitalisation and automation of caravan tourism, reduce the administrative burden on service providers and offer visitors flexible, round-the-clock self-service.',
+          'The project also aims to increase the competitiveness of tourism services in the region and support the development of smaller caravan parks.',
+        ]],
+        ['Expected results', [
+          'The project will deliver a digital self-service platform that allows caravan parks to automate service processes, simplify day-to-day management and offer visitors a convenient service available 24/7.',
+          'The solution is designed for use in different caravan parks, helping to improve the quality, accessibility and competitiveness of caravan tourism services.',
+        ]],
+      ],
+      eu: 'Co-funded by the European Union',
+    },
+    de: {
+      kicker: 'Projekt',
+      title: 'WhiteCaravan – Projektvorstellung',
+      back: '← Zurück zur Startseite',
+      sections: [
+        ['Kurzbeschreibung', [
+          'Im Rahmen des Projekts wird WhiteCaravan entwickelt – eine digitale Self-Service-Lösung, die die Nutzung der Leistungen von Campingplätzen für Gäste einfacher, bequemer und zugänglicher machen soll. Die Lösung automatisiert die täglichen Serviceabläufe von Campingplätzen und verbessert die Qualität der Leistungen.',
+        ]],
+        ['Projektziel', [
+          'Ziel des Projekts ist es, die Digitalisierung und Automatisierung des Caravantourismus voranzutreiben, den Verwaltungsaufwand der Anbieter zu verringern und den Gästen einen flexiblen Self-Service rund um die Uhr zu ermöglichen.',
+          'Außerdem sollen die Wettbewerbsfähigkeit der touristischen Angebote in der Region gesteigert und die Entwicklung kleinerer Campingplätze unterstützt werden.',
+        ]],
+        ['Erwartete Ergebnisse', [
+          'Als Ergebnis des Projekts entsteht eine digitale Self-Service-Plattform, mit der Campingplätze ihre Serviceabläufe automatisieren, die tägliche Verwaltung vereinfachen und ihren Gästen einen bequemen, rund um die Uhr verfügbaren Service bieten können.',
+          'Die Lösung ist für den Einsatz auf verschiedenen Campingplätzen konzipiert und trägt dazu bei, die Qualität, Zugänglichkeit und Wettbewerbsfähigkeit der Angebote im Caravantourismus zu verbessern.',
+        ]],
+      ],
+      eu: 'Kofinanziert von der Europäischen Union',
+    },
+    fi: {
+      kicker: 'Hanke',
+      title: 'WhiteCaravan – hankkeen esittely',
+      back: '← Takaisin etusivulle',
+      sections: [
+        ['Hankkeen lyhyt kuvaus', [
+          'Hankkeessa kehitetään WhiteCaravan-digitaalista itsepalveluratkaisua, jonka tavoitteena on tehdä karavaanialueiden palveluiden käytöstä vierailijoille helpompaa, mukavampaa ja saavutettavampaa. Ratkaisu automatisoi karavaanialueiden päivittäisiä palveluprosesseja ja parantaa palveluiden laatua.',
+        ]],
+        ['Hankkeen tavoite', [
+          'Hankkeen tavoitteena on edistää karavaanimatkailun digitalisointia ja automatisointia, keventää palveluntarjoajien hallinnollista kuormaa sekä tarjota vierailijoille joustavaa ja ympärivuorokautista itsepalvelua.',
+          'Lisäksi halutaan parantaa alueen matkailupalveluiden kilpailukykyä ja tukea pienempien karavaanialueiden kehitystä.',
+        ]],
+        ['Hankkeen odotetut tulokset', [
+          'Hankkeen tuloksena valmistuu digitaalinen itsepalvelualusta, jonka avulla karavaanialueet voivat automatisoida palveluprosessejaan, yksinkertaistaa päivittäistä hallintoa ja tarjota vierailijoille vaivattoman, ympäri vuorokauden saatavilla olevan palvelun.',
+          'Ratkaisu on suunniteltu käytettäväksi eri karavaanialueilla, ja se edistää karavaanimatkailupalveluiden laatua, saavutettavuutta ja kilpailukykyä.',
+        ]],
+      ],
+      eu: 'Euroopan unionin osarahoittama',
+    },
+    lv: {
+      kicker: 'Projekts',
+      title: 'WhiteCaravan – projekta apraksts',
+      back: '← Atpakaļ uz sākumlapu',
+      sections: [
+        ['Projekta īss apraksts', [
+          'Projekta ietvaros tiek izstrādāts WhiteCaravan digitālais pašapkalpošanās risinājums, kura mērķis ir padarīt karavānu parku pakalpojumu izmantošanu apmeklētājiem vienkāršāku, ērtāku un pieejamāku. Risinājums ļauj automatizēt karavānu parku ikdienas apkalpošanas procesus un uzlabot pakalpojumu kvalitāti.',
+        ]],
+        ['Projekta mērķis', [
+          'Projekta mērķis ir veicināt karavānu tūrisma digitalizāciju un automatizāciju, samazināt pakalpojumu sniedzēju administratīvo slogu un nodrošināt apmeklētājiem elastīgu un diennakts pašapkalpošanos.',
+          'Tāpat vēlamies palielināt reģiona tūrisma pakalpojumu konkurētspēju un atbalstīt mazāku karavānu parku attīstību.',
+        ]],
+        ['Projekta sagaidāmie rezultāti', [
+          'Projekta rezultātā tiks izveidota digitāla pašapkalpošanās platforma, kas ļaus karavānu parkiem automatizēt apkalpošanas procesus, vienkāršot ikdienas pārvaldību un piedāvāt apmeklētājiem ērtu, visu diennakti pieejamu pakalpojumu.',
+          'Risinājums ir paredzēts izmantošanai dažādos karavānu parkos, veicinot karavānu tūrisma pakalpojumu kvalitātes, pieejamības un konkurētspējas uzlabošanu.',
+        ]],
+      ],
+      eu: 'Līdzfinansē Eiropas Savienība',
+    },
+    lt: {
+      kicker: 'Projektas',
+      title: 'WhiteCaravan – projekto pristatymas',
+      back: '← Grįžti į pradžią',
+      sections: [
+        ['Trumpas projekto aprašymas', [
+          'Projekto metu kuriamas WhiteCaravan skaitmeninis savitarnos sprendimas, kurio tikslas – kemperių parkų paslaugų naudojimą lankytojams padaryti paprastesnį, patogesnį ir prieinamesnį. Sprendimas leidžia automatizuoti kasdienius kemperių parkų aptarnavimo procesus ir gerinti paslaugų kokybę.',
+        ]],
+        ['Projekto tikslas', [
+          'Projekto tikslas – skatinti karavanų turizmo skaitmeninimą ir automatizavimą, mažinti paslaugų teikėjų administracinę naštą ir suteikti lankytojams lanksčią, visą parą veikiančią savitarną.',
+          'Taip pat siekiama didinti regiono turizmo paslaugų konkurencingumą ir remti mažesnių kemperių parkų plėtrą.',
+        ]],
+        ['Laukiami projekto rezultatai', [
+          'Įgyvendinus projektą bus sukurta skaitmeninė savitarnos platforma, leisianti kemperių parkams automatizuoti aptarnavimo procesus, supaprastinti kasdienį valdymą ir pasiūlyti lankytojams patogią, visą parą prieinamą paslaugą.',
+          'Sprendimas skirtas naudoti įvairiuose kemperių parkuose ir padeda gerinti karavanų turizmo paslaugų kokybę, prieinamumą ir konkurencingumą.',
+        ]],
+      ],
+      eu: 'Bendrai finansuoja Europos Sąjunga',
+    },
+    ru: {
+      kicker: 'Проект',
+      title: 'WhiteCaravan – описание проекта',
+      back: '← На главную',
+      sections: [
+        ['Краткое описание проекта', [
+          'В рамках проекта разрабатывается цифровое решение самообслуживания WhiteCaravan, цель которого — сделать пользование услугами караванных парков для посетителей проще, удобнее и доступнее. Решение позволяет автоматизировать повседневные процессы обслуживания в караванных парках и повысить качество услуг.',
+        ]],
+        ['Цель проекта', [
+          'Цель проекта — содействовать цифровизации и автоматизации караванного туризма, снизить административную нагрузку на поставщиков услуг и предоставить посетителям гибкое круглосуточное самообслуживание.',
+          'Также проект призван повысить конкурентоспособность туристических услуг региона и поддержать развитие небольших караванных парков.',
+        ]],
+        ['Ожидаемые результаты', [
+          'В результате проекта будет создана цифровая платформа самообслуживания, которая позволит караванным паркам автоматизировать процессы обслуживания, упростить повседневное управление и предложить посетителям удобный, круглосуточно доступный сервис.',
+          'Решение предназначено для использования в различных караванных парках и способствует повышению качества, доступности и конкурентоспособности услуг караванного туризма.',
+        ]],
+      ],
+      // Russian is not an official EU language — the statement stays in English
+      eu: 'Co-funded by the European Union',
+    },
+  };
+
+  // Official EU emblem: 3:2 flag, 12 stars on a circle of radius h/3,
+  // star radius h/18, Reflex Blue + Yellow.
+  function euFlag() {
+    let stars = '';
+    for (let i = 0; i < 12; i++) {
+      const a = i * Math.PI / 6;
+      const cx = 150 + 200 / 3 * Math.sin(a), cy = 100 - 200 / 3 * Math.cos(a);
+      const R = 200 / 18, r = R * 0.381966, pts = [];
+      for (let k = 0; k < 10; k++) {
+        const rad = k % 2 ? r : R, b = k * Math.PI / 5;
+        pts.push((cx + rad * Math.sin(b)).toFixed(2) + ',' + (cy - rad * Math.cos(b)).toFixed(2));
+      }
+      stars += '<polygon points="' + pts.join(' ') + '" fill="#FFCC00"/>';
+    }
+    return '<svg viewBox="0 0 300 200" role="img" aria-label="EU"><rect width="300" height="200" fill="#003399"/>' + stars + '</svg>';
+  }
+
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function render(lang) {
+    const t = T[lang];
+    document.documentElement.lang = lang;
+    document.title = t.title + ' · Willipu';
+    document.getElementById('content').innerHTML =
+      '<a class="back" href="/">' + esc(t.back) + '</a>' +
+      '<div class="kicker">' + esc(t.kicker) + '</div>' +
+      '<h1>' + esc(t.title) + '</h1>' +
+      t.sections.map(([h, ps]) =>
+        '<section><h2>' + esc(h) + '</h2>' + ps.map(p => '<p>' + esc(p) + '</p>').join('') + '</section>'
+      ).join('') +
+      '<div class="eu">' + euFlag() + '<span>' + esc(t.eu) + '</span></div>';
+    document.querySelectorAll('.langs button').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === lang));
+    try { localStorage.setItem('willipu_lang', lang); } catch (e) {}
+  }
+
+  const nav = document.getElementById('langs');
+  LANGS.forEach(code => {
+    const b = document.createElement('button');
+    b.dataset.lang = code;
+    b.textContent = code.toUpperCase();
+    b.onclick = () => render(code);
+    nav.appendChild(b);
+  });
+
+  let initial = 'et';
+  try {
+    const saved = localStorage.getItem('willipu_lang');
+    if (LANGS.includes(saved)) initial = saved;
+    else {
+      const nav2 = (navigator.languages || [navigator.language || '']).map(l => l.slice(0, 2).toLowerCase());
+      initial = nav2.find(l => LANGS.includes(l)) || 'et';
+    }
+  } catch (e) {}
+  render(initial);
+  </script>
+</body>
+</html>

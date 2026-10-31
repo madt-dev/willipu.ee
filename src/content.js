@@ -234,7 +234,7 @@ export const content = {
       eu: {
         statement: 'Kaasrahastanud Euroopa Liit',
         linkLabel: 'Projekti info',
-        url: '#',
+        url: '/projekt/',
       },
     },
     footer: {
@@ -477,7 +477,7 @@ export const content = {
       eu: {
         statement: 'Co-funded by the European Union',
         linkLabel: 'Project info',
-        url: '#',
+        url: '/projekt/',
       },
     },
     footer: {
@@ -717,7 +717,7 @@ export const content = {
       eu: {
         statement: 'Kofinanziert von der Europäischen Union',
         linkLabel: 'Projektinfo',
-        url: '#',
+        url: '/projekt/',
       },
     },
     footer: {
@@ -957,7 +957,7 @@ export const content = {
       eu: {
         statement: 'Euroopan unionin osarahoittama',
         linkLabel: 'Hankkeen tiedot',
-        url: '#',
+        url: '/projekt/',
       },
     },
     footer: {
@@ -1197,7 +1197,7 @@ export const content = {
       eu: {
         statement: 'Līdzfinansē Eiropas Savienība',
         linkLabel: 'Projekta informācija',
-        url: '#',
+        url: '/projekt/',
       },
     },
     footer: {
@@ -1437,7 +1437,7 @@ export const content = {
       eu: {
         statement: 'Bendrai finansuoja Europos Sąjunga',
         linkLabel: 'Projekto informacija',
-        url: '#',
+        url: '/projekt/',
       },
     },
     footer: {
@@ -1671,7 +1671,7 @@ export const content = {
       eu: {
         statement: 'Co-funded by the European Union',
         linkLabel: 'О проекте',
-        url: '#',
+        url: '/projekt/',
       },
     },
     footer: {
