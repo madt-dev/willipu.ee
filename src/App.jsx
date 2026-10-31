@@ -816,30 +816,34 @@ function Contact({ t }) {
               <br />{t.legal.bankLabel}: {t.legal.iban} &nbsp;·&nbsp; {t.legal.bank} &nbsp;·&nbsp; SWIFT: {t.legal.swift}
             </p>
           )}
-          {t.whiteCaravan && (
-            <div className="partner-card wc-card">
-              <div className="wc-card-head">
-                <span className="wc-card-icon" aria-hidden><Icon name="caravan" /></span>
-                <h3>{t.whiteCaravan.title}</h3>
-              </div>
-              <p>{t.whiteCaravan.body}</p>
-              {t.whiteCaravan.url && (
-                <a className="partner-link" href={t.whiteCaravan.url} target="_blank" rel="noopener noreferrer">
-                  {t.whiteCaravan.linkLabel} <span aria-hidden>→</span>
-                </a>
+          {(t.whiteCaravan || t.eu) && (
+            <div className="partners">
+              {t.whiteCaravan && (
+                <div className="partner">
+                  <span className="partner-mark wc-mark" aria-hidden><Icon name="caravan" /></span>
+                  <div className="partner-text">
+                    <strong className="partner-title">{t.whiteCaravan.title}</strong>
+                    <span className="partner-desc">{t.whiteCaravan.body}</span>
+                    {t.whiteCaravan.url && (
+                      <a className="partner-link" href={t.whiteCaravan.url} target="_blank" rel="noopener noreferrer">
+                        {t.whiteCaravan.linkLabel} →
+                      </a>
+                    )}
+                  </div>
+                </div>
               )}
-            </div>
-          )}
-          {t.eu && (
-            <div className="partner-card eu-card">
-              <div className="eu-emblem">
-                <EuFlag />
-                <span className="eu-statement">{t.eu.statement}</span>
-              </div>
-              {t.eu.url && (
-                <a className="partner-link" href={t.eu.url}>
-                  {t.eu.linkLabel} <span aria-hidden>→</span>
-                </a>
+              {t.eu && (
+                <div className="partner">
+                  <span className="partner-mark"><EuFlag /></span>
+                  <div className="partner-text">
+                    <span className="eu-statement">{t.eu.statement}</span>
+                    {t.eu.url && (
+                      <a className="partner-link" href={t.eu.url}>
+                        {t.eu.linkLabel} →
+                      </a>
+                    )}
+                  </div>
+                </div>
               )}
             </div>
           )}
