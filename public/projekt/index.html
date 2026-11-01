@@ -48,6 +48,7 @@
     main { max-width: 720px; margin: 0 auto; padding: 36px 20px 40px; }
     .back { display: inline-block; font-size: 14px; color: #5d8a6a; text-decoration: none; margin-bottom: 20px; }
     .back:hover { text-decoration: underline; }
+    .wc-logo { display: block; height: 26px; width: auto; margin-bottom: 18px; }
     .kicker { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #5d8a6a; }
     h1 {
       font-family: 'Fraunces', serif;
@@ -270,6 +271,7 @@
     document.title = t.title + ' · Willipu';
     document.getElementById('content').innerHTML =
       '<a class="back" href="/">' + esc(t.back) + '</a>' +
+      '<a href="https://whitecaravan.com" target="_blank" rel="noopener"><img class="wc-logo" src="/whitecaravan-logo.png" alt="WhiteCaravan" width="640" height="68" /></a>' +
       '<div class="kicker">' + esc(t.kicker) + '</div>' +
       '<h1>' + esc(t.title) + '</h1>' +
       t.sections.map(([h, ps]) =>

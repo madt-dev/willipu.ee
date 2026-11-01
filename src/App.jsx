@@ -820,9 +820,15 @@ function Contact({ t }) {
             <div className="partners">
               {t.whiteCaravan && (
                 <div className="partner">
-                  <span className="partner-mark wc-mark" aria-hidden><Icon name="caravan" /></span>
                   <div className="partner-text">
-                    <strong className="partner-title">{t.whiteCaravan.title}</strong>
+                    <img
+                      className="wc-logo"
+                      src="/whitecaravan-logo-white.png"
+                      alt={t.whiteCaravan.title}
+                      width="640"
+                      height="68"
+                      loading="lazy"
+                    />
                     <span className="partner-desc">{t.whiteCaravan.body}</span>
                     {t.whiteCaravan.url && (
                       <a className="partner-link" href={t.whiteCaravan.url} target="_blank" rel="noopener noreferrer">

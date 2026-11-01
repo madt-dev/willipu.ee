@@ -1261,7 +1261,7 @@ button.contact-item:hover { background: rgba(255,255,255,0.09); }
   min-width: 0;
 }
 .partner-mark { flex: none; width: 60px; justify-content: center; display: inline-flex; color: rgba(255,255,255,0.85); }
-.wc-mark svg { width: 38px; height: 38px; }
+.wc-logo { display: block; align-self: flex-start; width: auto; height: 18px; max-width: 100%; object-fit: contain; margin-bottom: 0.4rem; }
 .partner-text {
   display: flex;
   flex-direction: column;
@@ -1270,7 +1270,6 @@ button.contact-item:hover { background: rgba(255,255,255,0.09); }
   font-size: 0.8rem;
   line-height: 1.4;
 }
-.partner-title { color: #fff; font-size: 0.9rem; font-weight: 600; }
 .partner-desc { color: rgba(255,255,255,0.55); }
 .partner-link {
   color: #8bc498;
