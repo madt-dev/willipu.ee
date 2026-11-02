@@ -58,7 +58,21 @@ export default function App() {
     const stored = typeof window !== 'undefined' && localStorage.getItem('willipu_theme')
     return stored === 'dark'
   })
+  const [consent, setConsent] = useState(() => {
+    try {
+      const c = localStorage.getItem('willipu_consent')
+      return c === 'granted' || c === 'denied' ? c : null
+    } catch { return null }
+  })
   const [navOpen, setNavOpen] = useState(false)
+
+  const chooseConsent = (value) => {
+    try { localStorage.setItem('willipu_consent', value) } catch {}
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', { analytics_storage: value })
+    }
+    setConsent(value)
+  }
   const [scrolled, setScrolled] = useState(false)
 
   const chooseLang = (code) => {
@@ -172,7 +186,8 @@ export default function App() {
         <Pricing t={t.pricing} />
         <Contact t={t.contact} />
       </main>
-      <Footer t={t.footer} />
+      <Footer t={t.footer} cookies={t.cookies} onCookieSettings={() => setConsent(null)} />
+      {consent === null && <CookieBanner t={t.cookies} onChoose={chooseConsent} />}
     </>
   )
 }
@@ -761,7 +776,21 @@ function NavPicker({ address, onClose }) {
 
 function Contact({ t }) {
   const ref = useRef(null)
+  const [consent, setConsent] = useState(() => {
+    try {
+      const c = localStorage.getItem('willipu_consent')
+      return c === 'granted' || c === 'denied' ? c : null
+    } catch { return null }
+  })
   const [navOpen, setNavOpen] = useState(false)
+
+  const chooseConsent = (value) => {
+    try { localStorage.setItem('willipu_consent', value) } catch {}
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', { analytics_storage: value })
+    }
+    setConsent(value)
+  }
 
   useEffect(() => {
     const el = ref.current
@@ -888,11 +917,24 @@ function EuFlag() {
   )
 }
 
-function Footer({ t }) {
+function CookieBanner({ t, onChoose }) {
+  return (
+    <div className="cookie-banner" role="dialog" aria-live="polite" aria-label={t.settings}>
+      <p>{t.text}</p>
+      <div className="cookie-actions">
+        <button type="button" className="cookie-btn cookie-decline" onClick={() => onChoose('denied')}>{t.decline}</button>
+        <button type="button" className="cookie-btn cookie-accept" onClick={() => onChoose('granted')}>{t.accept}</button>
+      </div>
+    </div>
+  )
+}
+
+function Footer({ t, cookies, onCookieSettings }) {
   return (
     <footer className="site-footer">
       <div className="container footer-row">
         <span><strong>Willipu</strong> · {t.tagline}</span>
+        <button type="button" className="footer-cookie-link" onClick={onCookieSettings}>{cookies.settings}</button>
         <span>© {new Date().getFullYear()} · {t.rights}</span>
       </div>
     </footer>

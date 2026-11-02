@@ -2,6 +2,26 @@
 <html lang="et">
   <head>
     <meta charset="UTF-8" />
+    <!-- Google Analytics (GA4) + Consent Mode v2: analüütika on vaikimisi keelatud, kuni külastaja annab nõusoleku -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var c = null;
+        try { c = localStorage.getItem('willipu_consent'); } catch (e) {}
+        var a = c === 'granted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: a,
+          wait_for_update: 500
+        });
+      })();
+      gtag('js', new Date());
+      gtag('config', 'G-CBVGVGN4G1', { anonymize_ip: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBVGVGN4G1"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#2d4a3e" />

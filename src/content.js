@@ -241,6 +241,12 @@ export const content = {
       tagline: 'Peipsi järve ääres alates 2010.',
       rights: 'Kõik õigused kaitstud',
     },
+    cookies: {
+      text: 'Kasutame Google Analyticsi küpsiseid, et mõista, kuidas külastajad meie lehte kasutavad. Andmeid kogume ainult sinu nõusolekul.',
+      accept: 'Nõustun',
+      decline: 'Keeldun',
+      settings: 'Küpsiste seaded',
+    },
   },
   en: {
     seo: {
@@ -484,6 +490,12 @@ export const content = {
       tagline: 'On Lake Peipus since 2010.',
       rights: 'All rights reserved',
     },
+    cookies: {
+      text: 'We use Google Analytics cookies to understand how visitors use our site. Data is collected only with your consent.',
+      accept: 'Accept',
+      decline: 'Decline',
+      settings: 'Cookie settings',
+    },
   },
   de: {
     seo: {
@@ -723,6 +735,12 @@ export const content = {
     footer: {
       tagline: 'Am Peipussee seit 2010.',
       rights: 'Alle Rechte vorbehalten',
+    },
+    cookies: {
+      text: 'Wir verwenden Google-Analytics-Cookies, um zu verstehen, wie Besucher unsere Website nutzen. Daten werden nur mit Ihrer Einwilligung erhoben.',
+      accept: 'Akzeptieren',
+      decline: 'Ablehnen',
+      settings: 'Cookie-Einstellungen',
     },
   },
   fi: {
@@ -964,6 +982,12 @@ export const content = {
       tagline: 'Peipsijärven rannalla vuodesta 2010.',
       rights: 'Kaikki oikeudet pidätetään',
     },
+    cookies: {
+      text: 'Käytämme Google Analytics -evästeitä ymmärtääksemme, miten kävijät käyttävät sivustoamme. Tietoja kerätään vain suostumuksellasi.',
+      accept: 'Hyväksyn',
+      decline: 'Hylkään',
+      settings: 'Evästeasetukset',
+    },
   },
   lv: {
     seo: {
@@ -1203,6 +1227,12 @@ export const content = {
     footer: {
       tagline: 'Pie Peipusa ezera kopš 2010. gada.',
       rights: 'Visas tiesības aizsargātas',
+    },
+    cookies: {
+      text: 'Mēs izmantojam Google Analytics sīkdatnes, lai saprastu, kā apmeklētāji izmanto mūsu vietni. Dati tiek vākti tikai ar jūsu piekrišanu.',
+      accept: 'Piekrītu',
+      decline: 'Noraidīt',
+      settings: 'Sīkdatņu iestatījumi',
     },
   },
   lt: {
@@ -1444,6 +1474,12 @@ export const content = {
       tagline: 'Prie Peipaus ežero nuo 2010 m.',
       rights: 'Visos teisės saugomos',
     },
+    cookies: {
+      text: 'Naudojame „Google Analytics“ slapukus, kad suprastume, kaip lankytojai naudojasi mūsų svetaine. Duomenys renkami tik gavus jūsų sutikimą.',
+      accept: 'Sutinku',
+      decline: 'Atsisakau',
+      settings: 'Slapukų nustatymai',
+    },
   },
   ru: {
     seo: {
@@ -1677,6 +1713,12 @@ export const content = {
     footer: {
       tagline: 'На берегу Чудского озера с 2010 года.',
       rights: 'Все права защищены',
+    },
+    cookies: {
+      text: 'Мы используем файлы cookie Google Analytics, чтобы понять, как посетители пользуются нашим сайтом. Данные собираются только с вашего согласия.',
+      accept: 'Принять',
+      decline: 'Отклонить',
+      settings: 'Настройки cookie',
     },
   },
 }
