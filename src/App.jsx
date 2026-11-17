@@ -419,8 +419,9 @@ function Hero({ t, lang }) {
         <h1 className="hero-title">{t.title}</h1>
         <p className="hero-sub">{t.subtitle}</p>
         <div className="hero-cta">
-          <a href={bookingUrl(lang)} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            {t.cta}
+          <a href={bookingUrl(lang)} target="_blank" rel="noopener noreferrer" className={`btn btn-primary${t.ctaClosed ? ' btn-closed' : ''}`}>
+            <span>{t.cta}</span>
+            {t.ctaClosed && <span className="btn-closed-note">{t.ctaClosed}</span>}
           </a>
           <a href="#pricing" className="btn btn-ghost">
             {t.ctaAlt} →

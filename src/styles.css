@@ -515,6 +515,26 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 [data-theme="dark"] .eyebrow.light { color: rgba(227, 221, 208, 0.65); }
 [data-theme="dark"] .hero-cta .btn-ghost { color: rgba(227, 221, 208, 0.85); }
 
+/* Caravan park closed for the season: greyed-out booking button (link stays active) */
+.hero-cta .btn-primary.btn-closed,
+.hero-cta .btn-primary.btn-closed:hover,
+[data-theme="dark"] .hero-cta .btn-primary.btn-closed,
+[data-theme="dark"] .hero-cta .btn-primary.btn-closed:hover {
+  background: #9a9a96;
+  color: #ecebe7;
+  transform: none;
+  box-shadow: none;
+  flex-direction: column;
+  gap: 0.1rem;
+  line-height: 1.2;
+}
+.btn-closed-note {
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
 .hero-scroll {
   position: absolute;
   bottom: 2rem;
